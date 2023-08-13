@@ -1,0 +1,52 @@
+import 'package:meta/meta.dart';
+import 'package:sh_self/tdlib_dart/src/api/extensions/data_class_extensions.dart';
+import 'package:sh_self/tdlib_dart/src/api/tdapi.dart';
+
+/// A message has been successfully sent
+@immutable
+class UpdateMessageSendSucceeded extends Update {
+  const UpdateMessageSendSucceeded({
+    required this.message,
+    required this.oldMessageId,
+  });
+
+  /// [message] The sent message. Usually only the message identifier, date, and
+  /// content are changed, but almost all other fields can also change
+  final Message message;
+
+  /// [oldMessageId] The previous temporary message identifier
+  final int oldMessageId;
+
+  static const String constructor = 'updateMessageSendSucceeded';
+
+  static UpdateMessageSendSucceeded? fromJson(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) {
+      return null;
+    }
+
+    return UpdateMessageSendSucceeded(
+      message: Message.fromJson(
+        json['message'] as Map<String, dynamic>?,
+      )!,
+      oldMessageId: json['old_message_id'] as int,
+    );
+  }
+
+  @override
+  String getConstructor() => constructor;
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'message': message.toJson(),
+        'old_message_id': oldMessageId,
+        '@type': constructor,
+      };
+
+  @override
+  bool operator ==(Object other) => overriddenEquality(other);
+
+  @override
+  int get hashCode => overriddenHashCode;
+}

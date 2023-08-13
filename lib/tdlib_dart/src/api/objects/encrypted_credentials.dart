@@ -1,0 +1,56 @@
+import 'package:meta/meta.dart';
+import 'package:sh_self/tdlib_dart/src/api/extensions/data_class_extensions.dart';
+import 'package:sh_self/tdlib_dart/src/api/tdapi.dart';
+
+/// Contains encrypted Telegram Passport data credentials
+@immutable
+class EncryptedCredentials extends TdObject {
+  const EncryptedCredentials({
+    required this.data,
+    required this.hash,
+    required this.secret,
+  });
+
+  /// [data] The encrypted credentials
+  final String data;
+
+  /// [hash] The decrypted data hash
+  final String hash;
+
+  /// [secret] Secret for data decryption, encrypted with the service's public
+  /// key
+  final String secret;
+
+  static const String constructor = 'encryptedCredentials';
+
+  static EncryptedCredentials? fromJson(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) {
+      return null;
+    }
+
+    return EncryptedCredentials(
+      data: json['data'] as String,
+      hash: json['hash'] as String,
+      secret: json['secret'] as String,
+    );
+  }
+
+  @override
+  String getConstructor() => constructor;
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'data': data,
+        'hash': hash,
+        'secret': secret,
+        '@type': constructor,
+      };
+
+  @override
+  bool operator ==(Object other) => overriddenEquality(other);
+
+  @override
+  int get hashCode => overriddenHashCode;
+}

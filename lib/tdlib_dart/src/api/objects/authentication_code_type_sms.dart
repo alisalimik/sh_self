@@ -1,0 +1,44 @@
+import 'package:meta/meta.dart';
+import 'package:sh_self/tdlib_dart/src/api/extensions/data_class_extensions.dart';
+import 'package:sh_self/tdlib_dart/src/api/tdapi.dart';
+
+/// An authentication code is delivered via an SMS message to the specified
+/// phone number; applications may not receive this type of code
+@immutable
+class AuthenticationCodeTypeSms extends AuthenticationCodeType {
+  const AuthenticationCodeTypeSms({
+    required this.length,
+  });
+
+  /// [length] Length of the code
+  final int length;
+
+  static const String constructor = 'authenticationCodeTypeSms';
+
+  static AuthenticationCodeTypeSms? fromJson(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) {
+      return null;
+    }
+
+    return AuthenticationCodeTypeSms(
+      length: json['length'] as int,
+    );
+  }
+
+  @override
+  String getConstructor() => constructor;
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'length': length,
+        '@type': constructor,
+      };
+
+  @override
+  bool operator ==(Object other) => overriddenEquality(other);
+
+  @override
+  int get hashCode => overriddenHashCode;
+}

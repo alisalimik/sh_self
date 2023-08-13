@@ -1,0 +1,59 @@
+import 'package:meta/meta.dart';
+import 'package:sh_self/tdlib_dart/src/api/extensions/data_class_extensions.dart';
+import 'package:sh_self/tdlib_dart/src/api/tdapi.dart';
+
+/// Contains a temporary identifier of validated order information, which is
+/// stored for one hour, and the available shipping options
+@immutable
+class ValidatedOrderInfo extends TdObject {
+  const ValidatedOrderInfo({
+    required this.orderInfoId,
+    required this.shippingOptions,
+  });
+
+  /// [orderInfoId] Temporary identifier of the order information
+  final String orderInfoId;
+
+  /// [shippingOptions] Available shipping options
+  final List<ShippingOption> shippingOptions;
+
+  static const String constructor = 'validatedOrderInfo';
+
+  static ValidatedOrderInfo? fromJson(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) {
+      return null;
+    }
+
+    return ValidatedOrderInfo(
+      orderInfoId: json['order_info_id'] as String,
+      shippingOptions: List<ShippingOption>.from(
+        ((json['shipping_options'] as List<dynamic>?) ?? <dynamic>[])
+            .map(
+              (item) => ShippingOption.fromJson(
+                item as Map<String, dynamic>?,
+              ),
+            )
+            .toList(),
+      ),
+    );
+  }
+
+  @override
+  String getConstructor() => constructor;
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'order_info_id': orderInfoId,
+        'shipping_options':
+            shippingOptions.map((item) => item.toJson()).toList(),
+        '@type': constructor,
+      };
+
+  @override
+  bool operator ==(Object other) => overriddenEquality(other);
+
+  @override
+  int get hashCode => overriddenHashCode;
+}

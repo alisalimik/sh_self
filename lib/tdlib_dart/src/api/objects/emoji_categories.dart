@@ -1,0 +1,51 @@
+import 'package:meta/meta.dart';
+import 'package:sh_self/tdlib_dart/src/api/extensions/data_class_extensions.dart';
+import 'package:sh_self/tdlib_dart/src/api/tdapi.dart';
+
+/// Represents a list of emoji categories
+@immutable
+class EmojiCategories extends TdObject {
+  const EmojiCategories({
+    required this.categories,
+  });
+
+  /// [categories] List of categories
+  final List<EmojiCategory> categories;
+
+  static const String constructor = 'emojiCategories';
+
+  static EmojiCategories? fromJson(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) {
+      return null;
+    }
+
+    return EmojiCategories(
+      categories: List<EmojiCategory>.from(
+        ((json['categories'] as List<dynamic>?) ?? <dynamic>[])
+            .map(
+              (item) => EmojiCategory.fromJson(
+                item as Map<String, dynamic>?,
+              ),
+            )
+            .toList(),
+      ),
+    );
+  }
+
+  @override
+  String getConstructor() => constructor;
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'categories': categories.map((item) => item.toJson()).toList(),
+        '@type': constructor,
+      };
+
+  @override
+  bool operator ==(Object other) => overriddenEquality(other);
+
+  @override
+  int get hashCode => overriddenHashCode;
+}

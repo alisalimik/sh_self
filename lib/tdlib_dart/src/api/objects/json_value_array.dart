@@ -1,0 +1,51 @@
+import 'package:meta/meta.dart';
+import 'package:sh_self/tdlib_dart/src/api/extensions/data_class_extensions.dart';
+import 'package:sh_self/tdlib_dart/src/api/tdapi.dart';
+
+/// Represents a JSON array
+@immutable
+class JsonValueArray extends JsonValue {
+  const JsonValueArray({
+    required this.values,
+  });
+
+  /// [values] The list of array elements
+  final List<JsonValue> values;
+
+  static const String constructor = 'jsonValueArray';
+
+  static JsonValueArray? fromJson(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) {
+      return null;
+    }
+
+    return JsonValueArray(
+      values: List<JsonValue>.from(
+        ((json['values'] as List<dynamic>?) ?? <dynamic>[])
+            .map(
+              (item) => JsonValue.fromJson(
+                item as Map<String, dynamic>?,
+              ),
+            )
+            .toList(),
+      ),
+    );
+  }
+
+  @override
+  String getConstructor() => constructor;
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'values': values.map((item) => item.toJson()).toList(),
+        '@type': constructor,
+      };
+
+  @override
+  bool operator ==(Object other) => overriddenEquality(other);
+
+  @override
+  int get hashCode => overriddenHashCode;
+}

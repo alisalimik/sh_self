@@ -1,0 +1,45 @@
+import 'package:meta/meta.dart';
+import 'package:sh_self/tdlib_dart/src/api/extensions/data_class_extensions.dart';
+import 'package:sh_self/tdlib_dart/src/api/tdapi.dart';
+
+/// The user authorization state has changed
+@immutable
+class UpdateAuthorizationState extends Update {
+  const UpdateAuthorizationState({
+    required this.authorizationState,
+  });
+
+  /// [authorizationState] New authorization state
+  final AuthorizationState authorizationState;
+
+  static const String constructor = 'updateAuthorizationState';
+
+  static UpdateAuthorizationState? fromJson(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) {
+      return null;
+    }
+
+    return UpdateAuthorizationState(
+      authorizationState: AuthorizationState.fromJson(
+        json['authorization_state'] as Map<String, dynamic>?,
+      )!,
+    );
+  }
+
+  @override
+  String getConstructor() => constructor;
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'authorization_state': authorizationState.toJson(),
+        '@type': constructor,
+      };
+
+  @override
+  bool operator ==(Object other) => overriddenEquality(other);
+
+  @override
+  int get hashCode => overriddenHashCode;
+}

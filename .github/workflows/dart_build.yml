@@ -1,0 +1,100 @@
+name: Dart Build Automation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_publish:
+    name: Build ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3.5.3
+
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@v1.5.0
+        with:
+          sdk: 3.0.7
+
+      - name: Cache Dart dependencies
+        id: pub-cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.pub-cache
+          key: ${{ runner.os }}-pub-cache-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-cache-
+
+      - name: Install dependencies
+        run: dart pub get
+            
+      - name: Cache Build automation
+        id: cache-build-aot
+        uses: actions/cache@v3
+        with:
+          path: ./build.aot
+          key: ${{ runner.os }}-build-aot-cache-${{ hashFiles('bin/build.dart') }}
+          restore-keys: |
+            ${{ runner.os }}-cache-build-aot-
+
+      - name: Cache Downloaded TDlib
+        id: cache-tdlib-shared-objects
+        uses: actions/cache@v3
+        with:
+          path: ./tdlib
+          key: ${{ runner.os }}-cache-tdlib-shared-objects-
+          restore-keys: |
+            ${{ runner.os }}-cache-tdlib-shared-objects-
+
+      - name: 'Check Build Automation Cache Exists'
+        id: check_aot
+        uses: andstor/file-existence-action@v2.0.0
+        with:
+          files: 'build.aot'
+
+      - name: Compile build automation (${{ matrix.os }})
+        run: dart compile aot-snapshot bin/build.dart -o ./build.aot
+        if: steps.check_aot.outputs.files_exists != 'true'
+
+      - name: Build Project (${{ matrix.os }})
+        run: dartaotruntime build.aot host
+
+      - name: Test Execution (Windows)
+        run: build/windows/sh_self.exe test
+        if: ${{ matrix.os == 'windows-latest' }}
+        
+      - name: Test Execution (Linux)
+        run: build/linux/sh_self test
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        
+      - name: Test Execution (MacOS)
+        run: build/macos/sh_self test
+        if: ${{ matrix.os == 'macos-latest' }}
+        
+      - name: Upload Artifact (Windows)
+        if:  ${{ matrix.os == 'windows-latest' }}
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: release-artifact-windows-x64
+          path: build/windows/sh_self-windows-x64.zip
+          
+      - name: Upload Artifact (Linux)
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: release-artifact-linux-x64
+          path: build/linux/sh_self-linux-x64.zip
+                   
+      - name: Upload Artifact (MacOS)
+        if:  ${{ matrix.os == 'macos-latest' }}
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: release-artifact-macos-x64
+          path: build/macos/sh_self-macos-x64.zip
+
+

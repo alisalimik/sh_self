@@ -1,0 +1,57 @@
+import 'package:meta/meta.dart';
+import 'package:sh_self/tdlib_dart/src/api/extensions/data_class_extensions.dart';
+import 'package:sh_self/tdlib_dart/src/api/tdapi.dart';
+
+/// Contains a list of message positions
+@immutable
+class MessagePositions extends TdObject {
+  const MessagePositions({
+    required this.totalCount,
+    required this.positions,
+  });
+
+  /// [totalCount] Total number of messages found
+  final int totalCount;
+
+  /// [positions] List of message positions
+  final List<MessagePosition> positions;
+
+  static const String constructor = 'messagePositions';
+
+  static MessagePositions? fromJson(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) {
+      return null;
+    }
+
+    return MessagePositions(
+      totalCount: json['total_count'] as int,
+      positions: List<MessagePosition>.from(
+        ((json['positions'] as List<dynamic>?) ?? <dynamic>[])
+            .map(
+              (item) => MessagePosition.fromJson(
+                item as Map<String, dynamic>?,
+              ),
+            )
+            .toList(),
+      ),
+    );
+  }
+
+  @override
+  String getConstructor() => constructor;
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'total_count': totalCount,
+        'positions': positions.map((item) => item.toJson()).toList(),
+        '@type': constructor,
+      };
+
+  @override
+  bool operator ==(Object other) => overriddenEquality(other);
+
+  @override
+  int get hashCode => overriddenHashCode;
+}

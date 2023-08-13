@@ -1,0 +1,16 @@
+**/doc/api/
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+/build/
+/test_build_dir/
+/files/
+/database/
+config.json
+.DS_Store
+/build.aot
+/sh_self
+/tdlib-test/
+/tdlib/
+.tmp/

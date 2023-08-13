@@ -1,0 +1,21 @@
+name: sh_self
+description: A Telegram user bot created with dart and tdlib
+version: 1.0.0
+repository: https://github.com/alisalimik/sh_self
+publish_to: none
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+dev_dependencies:
+  lint: ^2.1.2
+  test: ^1.24.6
+dependencies:
+  archive: ^3.3.7
+  collection: ^1.0.0
+  ffi: ^2.1.0
+  hive: ^2.2.3
+  http: ^1.1.0
+  meta: ^1.9.1
+  path: ^1.8.3
+  rxdart: ^0.27.7
+  shamsi_date: ^1.0.1
+  system_info2: ^4.0.0

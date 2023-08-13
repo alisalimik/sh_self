@@ -1,0 +1,55 @@
+import 'package:meta/meta.dart';
+import 'package:sh_self/tdlib_dart/src/api/extensions/data_class_extensions.dart';
+import 'package:sh_self/tdlib_dart/src/api/tdapi.dart';
+
+/// A new incoming query; for bots only
+@immutable
+class UpdateNewCustomQuery extends Update {
+  const UpdateNewCustomQuery({
+    required this.id,
+    required this.data,
+    required this.timeout,
+  });
+
+  /// [id] The query identifier
+  final int id;
+
+  /// [data] JSON-serialized query data
+  final String data;
+
+  /// [timeout] Query timeout
+  final int timeout;
+
+  static const String constructor = 'updateNewCustomQuery';
+
+  static UpdateNewCustomQuery? fromJson(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) {
+      return null;
+    }
+
+    return UpdateNewCustomQuery(
+      id: int.tryParse(json['id'].toString()) ?? 0,
+      data: json['data'] as String,
+      timeout: json['timeout'] as int,
+    );
+  }
+
+  @override
+  String getConstructor() => constructor;
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'id': id.toString(),
+        'data': data,
+        'timeout': timeout,
+        '@type': constructor,
+      };
+
+  @override
+  bool operator ==(Object other) => overriddenEquality(other);
+
+  @override
+  int get hashCode => overriddenHashCode;
+}

@@ -1,0 +1,54 @@
+import 'package:meta/meta.dart';
+import 'package:sh_self/tdlib_dart/src/api/extensions/data_class_extensions.dart';
+import 'package:sh_self/tdlib_dart/src/api/tdapi.dart';
+
+/// Contains a description of the required Telegram Passport element that was
+/// requested by a service
+@immutable
+class PassportRequiredElement extends TdObject {
+  const PassportRequiredElement({
+    required this.suitableElements,
+  });
+
+  /// [suitableElements] List of Telegram Passport elements any of which is
+  /// enough to provide
+  final List<PassportSuitableElement> suitableElements;
+
+  static const String constructor = 'passportRequiredElement';
+
+  static PassportRequiredElement? fromJson(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) {
+      return null;
+    }
+
+    return PassportRequiredElement(
+      suitableElements: List<PassportSuitableElement>.from(
+        ((json['suitable_elements'] as List<dynamic>?) ?? <dynamic>[])
+            .map(
+              (item) => PassportSuitableElement.fromJson(
+                item as Map<String, dynamic>?,
+              ),
+            )
+            .toList(),
+      ),
+    );
+  }
+
+  @override
+  String getConstructor() => constructor;
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'suitable_elements':
+            suitableElements.map((item) => item.toJson()).toList(),
+        '@type': constructor,
+      };
+
+  @override
+  bool operator ==(Object other) => overriddenEquality(other);
+
+  @override
+  int get hashCode => overriddenHashCode;
+}

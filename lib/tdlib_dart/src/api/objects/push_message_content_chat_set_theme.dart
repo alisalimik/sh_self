@@ -1,0 +1,44 @@
+import 'package:meta/meta.dart';
+import 'package:sh_self/tdlib_dart/src/api/extensions/data_class_extensions.dart';
+import 'package:sh_self/tdlib_dart/src/api/tdapi.dart';
+
+/// A chat theme was edited
+@immutable
+class PushMessageContentChatSetTheme extends PushMessageContent {
+  const PushMessageContentChatSetTheme({
+    required this.themeName,
+  });
+
+  /// [themeName] If non-empty, name of a new theme, set for the chat.
+  /// Otherwise, the chat theme was reset to the default one
+  final String themeName;
+
+  static const String constructor = 'pushMessageContentChatSetTheme';
+
+  static PushMessageContentChatSetTheme? fromJson(
+    Map<String, dynamic>? json,
+  ) {
+    if (json == null) {
+      return null;
+    }
+
+    return PushMessageContentChatSetTheme(
+      themeName: json['theme_name'] as String,
+    );
+  }
+
+  @override
+  String getConstructor() => constructor;
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'theme_name': themeName,
+        '@type': constructor,
+      };
+
+  @override
+  bool operator ==(Object other) => overriddenEquality(other);
+
+  @override
+  int get hashCode => overriddenHashCode;
+}
