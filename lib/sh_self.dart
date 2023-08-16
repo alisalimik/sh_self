@@ -1,7 +1,9 @@
+import 'package:sh_self/modules/addf.dart';
 import 'package:sh_self/modules/authorize.dart';
 import 'package:sh_self/modules/auto_delete.dart';
 import 'package:sh_self/modules/connection.dart';
 import 'package:sh_self/modules/date.dart';
+import 'package:sh_self/modules/delf.dart';
 import 'package:sh_self/modules/eval_compiler.dart';
 import 'package:sh_self/modules/eval_interpreter.dart';
 import 'package:sh_self/modules/eval_module_del.dart';
@@ -26,6 +28,8 @@ void runApp() {
   database = ShDatabase();
   telegramApp = ShTelegramApp(
     modules: [
+      addf,
+      delf,
       spamf,
       spam,
       server,
