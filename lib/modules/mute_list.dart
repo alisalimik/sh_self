@@ -31,22 +31,22 @@ Mute list *Help*:
     responseBuffer
         .write(ShMessageType.values.map((e) => '`${e.name}`').join(' '));
   } else if (command[1] == "summery") {
-    if (database.mutedUsers.isEmpty) {
+    if (database.mutedUsers?.isEmpty == true) {
       responseBuffer.writeln("Mute list is empty!");
     } else {
       responseBuffer.writeln("Mute list Summery:");
-      database.mutedUsers.toMap().forEach((key, value) {
+      database.mutedUsers?.toMap().forEach((key, value) {
         if (key is ShMessageType) {
           responseBuffer.writeln("- *${key.name}*: __${value.length}__");
         }
       });
     }
   } else if (command[1] == "all") {
-    if (database.mutedUsers.isEmpty) {
+    if (database.mutedUsers?.isEmpty == true) {
       responseBuffer.writeln("Mute list is empty!");
     } else {
       responseBuffer.writeln("Mute list:");
-      database.mutedUsers.toMap().forEach((key, value) {
+      database.mutedUsers?.toMap().forEach((key, value) {
         if (value.isNotEmpty && key is ShMessageType) {
           responseBuffer.writeln("- *${key.name}*: __${value.length}__");
           for (final userId in value) {
@@ -68,7 +68,7 @@ Mute list *Help*:
       });
     }
     for (final ShMessageType key in toBeDeleted) {
-      database.mutedUsers.delete(key);
+      database.mutedUsers?.delete(key);
     }
     if (command.length == 2) {
       responseBuffer.writeln("Mute list *cleard*");
@@ -86,7 +86,7 @@ Mute list *Help*:
       responseBuffer.writeln("Command ${command[1]} *not found!*");
     } else {
       final ShMessageType muted = filteredCollection.first;
-      final list = database.mutedUsers.get(muted) ?? [];
+      final list = database.mutedUsers?.get(muted) ?? [];
       if (list.isEmpty) {
         responseBuffer.writeln("Mute list for *${command[1]}* is Empty!");
       } else {

@@ -47,7 +47,7 @@ cd sh_self
 # Install dependencies
 dart pub get
 # package executable
-dart aotruntime build.aot your_target_os_here
+dartaotruntime build.aot host
 ```
 ## Todo
 - Explain how users can use your Telegram bot and interact with it. Provide examples of commands, messages, or interactions that the bot responds to. Include screenshots or GIFs if possible.

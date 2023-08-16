@@ -1,3 +1,5 @@
+// ignore_for_file: type_literal_in_constant_pattern
+
 import 'package:sh_self/sh_self.dart';
 import 'package:sh_self/tdlib_dart/td_api.dart' as td;
 import 'package:sh_self/utils/models/sh_chat_type.dart';
@@ -31,11 +33,52 @@ td.FormattedText formatMarkDown(String text) {
   return result;
 }
 
+String getMessageTextFromJsonEval(Map<String, dynamic> update) {
+  // ignore: avoid_dynamic_calls
+  return update["message"]?['content']?['text']?['text'] as String;
+}
+
+int getMessageChatIdFromJsonEval(Map<String, dynamic> update) {
+  // ignore: avoid_dynamic_calls
+  return update["message"]?['chat_id'] as int;
+}
+
+int getMessageIdFromJsonEval(Map<String, dynamic> update) {
+  // ignore: avoid_dynamic_calls
+  return update["message"]?['id'] as int;
+}
+
+void editMessageAndAutoDeleteEval(int chatId, int messageId, String text) {
+  editMessageEval(chatId, messageId, text).then((result) {
+    if (result is td.Message) {
+      autoDeleteMessage(chatId, [messageId]);
+    }
+  });
+}
+
 Future<void> editMessageAndAutoDelete(td.Message message, String text) async {
   final td.TdObject result = await editMessage(message, text);
   if (result is td.Message) {
     autoDeleteMessage(result.chatId, [message.id]);
   }
+}
+
+Future<td.TdObject> editMessageEval(
+  int chatId,
+  int messageId,
+  String text,
+) async {
+  return telegramApp.client.send(
+    td.EditMessageText(
+      chatId: chatId,
+      messageId: messageId,
+      inputMessageContent: td.InputMessageText(
+        text: formatMarkDown(text),
+        disableWebPagePreview: true,
+        clearDraft: true,
+      ),
+    ),
+  );
 }
 
 Future<td.TdObject> editMessage(td.Message message, String text) async {
@@ -95,6 +138,13 @@ ShEvent getEventType(td.Update update) {
   }
 }
 
+bool isReplied(td.Update update) {
+  if (update is td.UpdateNewMessage) {
+    return update.message.replyTo != null;
+  }
+  return false;
+}
+
 ShMessageTextAndType getMessageTextAndContentType(td.Update update) {
   td.MessageContent? content;
   if (update is td.UpdateNewMessage) {
@@ -102,71 +152,81 @@ ShMessageTextAndType getMessageTextAndContentType(td.Update update) {
   } else if (update is td.UpdateMessageContent) {
     content = update.newContent;
   }
-
   if (content != null) {
     switch (content.runtimeType) {
-      case td.MessageText _:
+      case td.MessageText:
+        final c = content as td.MessageText;
         return ShMessageTextAndType(
-          (content as td.MessageText).text.text,
+          c.text.text,
           ShMessageType.text,
         );
-      case td.MessagePhoto _:
+      case td.MessagePhoto:
+        final c = content as td.MessagePhoto;
         return ShMessageTextAndType(
-          (content as td.MessagePhoto).caption.text,
+          c.caption.text,
           ShMessageType.photo,
         );
-      case td.MessageDocument _:
+      case td.MessageDocument:
+        final c = content as td.MessageDocument;
         return ShMessageTextAndType(
-          (content as td.MessageDocument).caption.text,
+          c.caption.text,
           ShMessageType.document,
         );
-      case td.MessageVideo _:
+      case td.MessageVideo:
+        final c = content as td.MessageVideo;
         return ShMessageTextAndType(
-          (content as td.MessageVideo).caption.text,
+          c.caption.text,
           ShMessageType.video,
         );
-      case td.MessageAudio _:
+      case td.MessageAudio:
+        final c = content as td.MessageAudio;
         return ShMessageTextAndType(
-          (content as td.MessageAudio).caption.text,
+          c.caption.text,
           ShMessageType.audio,
         );
-      case td.MessageContact _:
+      case td.MessageContact:
+        final c = content as td.MessageContact;
         return ShMessageTextAndType(
-          (content as td.MessageContact).contact.firstName,
+          c.contact.firstName,
           ShMessageType.contact,
         );
-      case td.MessagePoll _:
+      case td.MessagePoll:
+        final c = content as td.MessagePoll;
         return ShMessageTextAndType(
-          (content as td.MessagePoll).poll.question,
+          c.poll.question,
           ShMessageType.poll,
         );
-      case td.MessageAnimation _:
+      case td.MessageAnimation:
+        final c = content as td.MessageAnimation;
         return ShMessageTextAndType(
-          (content as td.MessageAnimation).caption.text,
+          c.caption.text,
           ShMessageType.animation,
         );
-      case td.MessageGame _:
+      case td.MessageGame:
+        final c = content as td.MessageGame;
         return ShMessageTextAndType(
-          (content as td.MessageGame).game.title,
+          c.game.title,
           ShMessageType.game,
         );
-      case td.MessageAnimatedEmoji _:
+      case td.MessageAnimatedEmoji:
+        final c = content as td.MessageAnimatedEmoji;
         return ShMessageTextAndType(
-          (content as td.MessageAnimatedEmoji).emoji,
+          c.emoji,
           ShMessageType.animatedEmoji,
         );
-      case td.MessageDice _:
+      case td.MessageDice:
+        final c = content as td.MessageDice;
         return ShMessageTextAndType(
-          (content as td.MessageDice).emoji,
+          c.emoji,
           ShMessageType.dice,
         );
-      case td.MessageLocation _:
+      case td.MessageLocation:
         return const ShMessageTextAndType("", ShMessageType.location);
-      case td.MessageSticker _:
+      case td.MessageSticker:
         return const ShMessageTextAndType("", ShMessageType.sticker);
-      case td.MessageCall _:
+      case td.MessageCall:
         return const ShMessageTextAndType("", ShMessageType.call);
-      case td.MessageStory _:
+      case td.MessageStory:
         return const ShMessageTextAndType("", ShMessageType.story);
       default:
         return const ShMessageTextAndType("", ShMessageType.unsupported);
@@ -197,17 +257,17 @@ Future<ShChatTypeInfo> getEventChatTypeAndSender(td.Update update) async {
     final chat = await telegramApp.client.send(td.GetChat(chatId: chatId));
     if (chat is td.Chat) {
       switch (chat.type.runtimeType) {
-        case td.ChatTypeSecret _:
+        case td.ChatTypeSecret:
           return ShChatTypeInfo(
             ShChatType.secret,
             senderId != 0 ? senderId : chatId,
           );
-        case td.ChatTypePrivate _:
+        case td.ChatTypePrivate:
           return ShChatTypeInfo(
             ShChatType.private,
             senderId != 0 ? senderId : chatId,
           );
-        case td.ChatTypeBasicGroup _ || td.ChatTypeSupergroup _:
+        case td.ChatTypeBasicGroup || td.ChatTypeSupergroup:
           return ShChatTypeInfo(
             ShChatType.group,
             senderId != 0 ? senderId : chatId,
