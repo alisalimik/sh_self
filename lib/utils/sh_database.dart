@@ -10,6 +10,7 @@ class ShDatabase {
   Box<String>? storage;
   Box<List<int>>? mutedUsers;
   Box<Map>? modules;
+  Box<String>? fosh;
 
   ShDatabase() {
     Hive.init(getDbPath());
@@ -17,6 +18,7 @@ class ShDatabase {
     Hive.openBox<List<int>>('mutedUsersBox')
         .then((value) => mutedUsers = value);
     Hive.openBox<Map>('modulesBox').then((value) => modules = value);
+    Hive.openBox<String>('foshBox').then((value) => fosh = value);
   }
   void saveToDb(String key, String value) {
     storage?.put(key, value);
@@ -43,6 +45,14 @@ class ShDatabase {
     final List<int> userIds = mutedUsers?.get(messageType) ?? [];
     userIds.remove(userId);
     mutedUsers?.put(messageType, userIds);
+  }
+
+  void addFosh(String f) {
+    fosh?.add(f);
+  }
+
+  void deleteFosh(int id) {
+    fosh?.deleteAt(id);
   }
 
   String getDbPath() {
