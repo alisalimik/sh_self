@@ -429,4 +429,13 @@ class $ShDatabase implements ShDatabase, $Instance {
 
   @override
   void removeModule(String id) => $value.removeModule(id);
+
+  @override
+  Box<String>? fosh;
+
+  @override
+  void addFosh(String f) => $value.addFosh(f);
+
+  @override
+  void deleteFosh(int id) => $value.deleteFosh(id);
 }
