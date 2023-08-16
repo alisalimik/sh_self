@@ -5,18 +5,18 @@ packages:
     dependency: transitive
     description:
       name: _fe_analyzer_shared
-      sha256: "58826e40314219b223f4723dd4205845040161cdc2df3e6a1cdceed5d8165084"
+      sha256: ae92f5d747aee634b87f89d9946000c2de774be1d6ac3e58268224348cd0101a
       url: "https://pub.dev"
     source: hosted
-    version: "63.0.0"
+    version: "61.0.0"
   analyzer:
     dependency: transitive
     description:
       name: analyzer
-      sha256: f85566ec7b3d25cbea60f7dd4f157c5025f2f19233ca4feeed33b616c78a26a3
+      sha256: ea3d8652bda62982addfd92fdc2d0214e5f82e43325104990d4f4c4a2a313562
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.0"
+    version: "5.13.0"
   archive:
     dependency: "direct main"
     description:
@@ -81,6 +81,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
+  dart_eval:
+    dependency: "direct main"
+    description:
+      name: dart_eval
+      sha256: "9d11db96f2b396d0ad09504182e6e17d05e2fb22e92ec3aa21d4fde744c83171"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.0"
+  directed_graph:
+    dependency: transitive
+    description:
+      name: directed_graph
+      sha256: "82061c9ce3ac74d9c4c173fb03daac515d503a0f9f77c0010a872f8c344a4f03"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.9"
+  eval_annotation:
+    dependency: "direct main"
+    description:
+      name: eval_annotation
+      sha256: "65870a5cb758bf991f68ba3d1b4ef23f6a7b7266aaf4d58c68489682b1a9a80a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.0"
+  exception_templates:
+    dependency: transitive
+    description:
+      name: exception_templates
+      sha256: e9303fd16ecdb845a14b397cb93476f807dd2b4706f5ee44f708dbc95c256c33
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.4"
   ffi:
     dependency: "direct main"
     description:
@@ -121,6 +153,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  graphs:
+    dependency: transitive
+    description:
+      name: graphs
+      sha256: aedc5a15e78fc65a6e23bcd927f24c64dd995062bcd1ca6eda65a3cff92a4d19
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.1"
   hive:
     dependency: "direct main"
     description:
@@ -169,6 +209,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.7"
+  json_annotation:
+    dependency: transitive
+    description:
+      name: json_annotation
+      sha256: b10a7b2ff83d83c777edba3c6a0f97045ddadd56c944e1a23a3fdf43a1bf4467
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.8.1"
+  lazy_memo:
+    dependency: transitive
+    description:
+      name: lazy_memo
+      sha256: ca4be412d65726f79a30ba6e40b7056f1dbefbb35ec42913365b3f3e86d49279
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.9"
   lint:
     dependency: "direct dev"
     description:
@@ -257,6 +313,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  pubspec2:
+    dependency: transitive
+    description:
+      name: pubspec2
+      sha256: "7b1fd81927f1da6d88457c83b51134e1bc8cb07638bd8d9e205b2ce1cd9ec091"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.2"
+  quote_buffer:
+    dependency: transitive
+    description:
+      name: quote_buffer
+      sha256: a9eefd3ddc63bb310ffbc855b6ebe0363d925235485bc5778e28c492b1224b31
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.5"
   rxdart:
     dependency: "direct main"
     description:

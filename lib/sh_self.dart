@@ -2,6 +2,10 @@ import 'package:sh_self/modules/authorize.dart';
 import 'package:sh_self/modules/auto_delete.dart';
 import 'package:sh_self/modules/connection.dart';
 import 'package:sh_self/modules/date.dart';
+import 'package:sh_self/modules/eval_compiler.dart';
+import 'package:sh_self/modules/eval_interpreter.dart';
+import 'package:sh_self/modules/eval_module_del.dart';
+import 'package:sh_self/modules/eval_module_list.dart';
 import 'package:sh_self/modules/mute.dart';
 import 'package:sh_self/modules/mute_handler.dart';
 import 'package:sh_self/modules/mute_list.dart';
@@ -19,6 +23,10 @@ void runApp() {
   database = ShDatabase();
   telegramApp = ShTelegramApp(
     modules: [
+      evalModuleList,
+      evalModuleDelete,
+      evalInterpreter,
+      evalCompiler,
       connection,
       autorize,
       autoDelete,

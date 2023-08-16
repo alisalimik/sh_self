@@ -9,13 +9,16 @@ class ShFilter {
   final List<int> senderFilter;
   final List<ShChatType> incomingChatTypeFilter;
   final List<ShMessageType> messageTypesFilter;
+  final bool mustReply;
   const ShFilter({
     this.eventFilter = const [ShEvent.onNewMessage],
     this.regExFilter = const [""],
     this.senderFilter = const [],
+    this.mustReply = false,
     this.incomingChatTypeFilter = const [ShChatType.private, ShChatType.group],
     this.messageTypesFilter = const [ShMessageType.text],
   });
+
   // Override the + operator
   ShFilter operator +(ShFilter other) {
     // check if the already value is the default constructor one replace with new one and if the new one is default ignore else sum
@@ -82,11 +85,21 @@ class ShFilter {
           incomingChatTypeFilter + other.incomingChatTypeFilter;
     }
 
+    bool newMustReply = false;
+    if (!mustReply && other.mustReply) {
+      newMustReply = true;
+    } else if (mustReply && !other.mustReply) {
+      newMustReply = true;
+    } else {
+      newMustReply = mustReply;
+    }
+
     return copyWith(
       regExFilter: newRegExFilter,
       eventFilter: newEventFilter,
       senderFilter: newSenderFilter,
       incomingChatTypeFilter: newIncomingChatTypeFilter,
+      mustReply: newMustReply,
     );
   }
 
@@ -96,7 +109,7 @@ class ShFilter {
       const ShFilter(incomingChatTypeFilter: [ShChatType.private]);
   factory ShFilter.group() =>
       const ShFilter(incomingChatTypeFilter: [ShChatType.group]);
-
+  factory ShFilter.reply() => const ShFilter(mustReply: true);
   factory ShFilter.text() => const ShFilter();
   factory ShFilter.document() =>
       const ShFilter(messageTypesFilter: [ShMessageType.document]);
@@ -140,6 +153,7 @@ class ShFilter {
     List<int>? senderFilter,
     List<ShChatType>? incomingChatTypeFilter,
     List<ShMessageType>? messageTypesFilter,
+    bool? mustReply,
   }) {
     return ShFilter(
       eventFilter: eventFilter ?? this.eventFilter,
@@ -148,6 +162,7 @@ class ShFilter {
       incomingChatTypeFilter:
           incomingChatTypeFilter ?? this.incomingChatTypeFilter,
       messageTypesFilter: messageTypesFilter ?? this.messageTypesFilter,
+      mustReply: mustReply ?? this.mustReply,
     );
   }
 }
