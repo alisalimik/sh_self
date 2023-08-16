@@ -8,6 +8,7 @@ import 'package:sh_self/modules/eval_compiler.dart';
 import 'package:sh_self/modules/eval_interpreter.dart';
 import 'package:sh_self/modules/eval_module_del.dart';
 import 'package:sh_self/modules/eval_module_list.dart';
+import 'package:sh_self/modules/listf.dart';
 import 'package:sh_self/modules/mute.dart';
 import 'package:sh_self/modules/mute_handler.dart';
 import 'package:sh_self/modules/mute_list.dart';
@@ -28,6 +29,7 @@ void runApp() {
   database = ShDatabase();
   telegramApp = ShTelegramApp(
     modules: [
+      listf,
       addf,
       delf,
       spamf,
