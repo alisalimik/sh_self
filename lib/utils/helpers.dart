@@ -277,3 +277,7 @@ Future<ShChatTypeInfo> getEventChatTypeAndSender(td.Update update) async {
   }
   return ShChatTypeInfo(ShChatType.unknown, senderId);
 }
+
+num clamp(num value, num min, num max) {
+  return value < min ? min : (value > max ? max : value);
+}
