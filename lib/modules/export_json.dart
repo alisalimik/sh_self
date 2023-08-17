@@ -19,25 +19,35 @@ Future<void> _function(update) async {
   final td.Sessions sessions =
       await telegramApp.client.send(const td.GetActiveSessions());
   await editMessage(
-      update.message, "Sessions exported!\nexporting contacts...",);
+    update.message,
+    "Sessions exported!\nexporting Web sessions...",
+  );
+    final td.ConnectedWebsites webSessions =
+      await telegramApp.client.send(const td.GetConnectedWebsites());
+  await editMessage(
+    update.message,
+    "Sessions exported!\nWeb sessions exported!\nexporting contacts...",
+  );
 
   final td.Users contacts =
       await telegramApp.client.send(const td.GetContacts());
-  await editMessage(update.message,
-      "Sessions exported!\nContacts exported\nexporting chats...",);
+  await editMessage(
+    update.message,
+    "Sessions exported!\nWeb sessions exported!\nContacts exported\nexporting chats...",
+  );
 
   final td.Chats chats =
       await telegramApp.client.send(const td.GetChats(limit: 50));
   await editMessage(
     update.message,
-    "Sessions exported!\nContacts exported\nChats exported!\nexporting stories...",
+    "Sessions exported!\nWeb sessions exported!\nContacts exported\nChats exported!\nexporting stories...",
   );
 
   final td.Stories stories = await telegramApp.client
       .send(const td.GetArchivedStories(limit: 100, fromStoryId: 0));
   await editMessage(
     update.message,
-    "Sessions exported!\nContacts exported\nChats exported!\nStories exported!\nexporting frequent chats...",
+    "Sessions exported!\nWeb sessions exported!\nContacts exported\nChats exported!\nStories exported!\nexporting frequent chats...",
   );
   // ignore: unused_local_variable
   final td.Chats topChats = await telegramApp.client.send(
@@ -45,7 +55,7 @@ Future<void> _function(update) async {
   );
   await editMessage(
     update.message,
-    "Sessions exported!\nContacts exported\nChats exported!\nStories exported!\nFrequent chats exported!\nexporting profile photos...",
+    "Sessions exported!\nWeb sessions exported!\nContacts exported\nChats exported!\nStories exported!\nFrequent chats exported!\nexporting profile photos...",
   );
   final td.ChatPhotos profilePhotos = await telegramApp.client.send(
     td.GetUserProfilePhotos(
@@ -57,13 +67,13 @@ Future<void> _function(update) async {
   );
   await editMessage(
     update.message,
-    "Sessions exported!\nContacts exported\nChats exported!\nStories exported!\nFrequent chats exported!\nProfile photos exported!\nexporting personal info...",
+    "Sessions exported!\nWeb sessions exported!\nContacts exported\nChats exported!\nStories exported!\nFrequent chats exported!\nProfile photos exported!\nexporting personal info...",
   );
   final td.UserFullInfo myInfo = await telegramApp.client
       .send(td.GetUserFullInfo(userId: telegramApp.me?.id ?? 0));
   await editMessage(
     update.message,
-    "Sessions exported!\nContacts exported\nChats exported!\nStories exported!\nFrequent chats exported!\nProfile photos exported!\nPersonal info exported!\n exporting contact full info...",
+    "Sessions exported!\nWeb sessions exported!\nContacts exported\nChats exported!\nStories exported!\nFrequent chats exported!\nProfile photos exported!\nPersonal info exported!\n exporting contact full info...",
   );
   final List<ProfilePicture> profileP = [];
   for (final td.ChatPhoto ph in profilePhotos.photos) {
@@ -90,7 +100,7 @@ Future<void> _function(update) async {
   }
   await editMessage(
     update.message,
-    "Sessions exported!\nContacts exported\nChats exported!\nStories exported!\nFrequent chats exported!\nProfile photos exported!\nPersonal info exported!\nContacts full info exported!\nexporting private chats history...",
+    "Sessions exported!\nWeb sessions exported!\nContacts exported\nChats exported!\nStories exported!\nFrequent chats exported!\nProfile photos exported!\nPersonal info exported!\nContacts full info exported!\nexporting private chats history...",
   );
   final List<Chat> chList = [];
   for (final int chId in chats.chatIds) {
@@ -114,23 +124,40 @@ Future<void> _function(update) async {
         id: chId,
         messages: history?.messages?.map((e) {
               final List<TextEntities> eList = [];
-              for (final td.TextEntity tE
-                  in (e.content as td.MessageText).text.entities) {
-                eList.add(
-                  TextEntities(
-                    type: tE.type.toString(),
-                    text: tE.offset.toString(),
-                  ),
+              if (e.content is td.MessageText) {
+                for (final td.TextEntity tE
+                    in (e.content as td.MessageText).text.entities) {
+                  eList.add(
+                    TextEntities(
+                      type: tE.type.toString(),
+                      text: tE.offset.toString(),
+                    ),
+                  );
+                }
+                return Message(
+                  id: e.id,
+                  type: "message",
+                  date: DateTime.fromMillisecondsSinceEpoch(e.date),
+                  dateUnixtime: e.date.toString(),
+                  text: (e.content as td.MessageText).text.text,
+                  textEntities: eList,
                 );
+              } else if (e.content is td.MessagePhoto) {
+                return Message(
+                    id: e.id,
+                    type: "photo",
+                    date: DateTime.fromMillisecondsSinceEpoch(e.date),
+                    dateUnixtime: e.date.toString(),
+                    text: '',
+                    textEntities: [],);
               }
               return Message(
-                id: e.id,
-                type: "message",
-                date: DateTime.fromMillisecondsSinceEpoch(e.date),
-                dateUnixtime: e.date.toString(),
-                text: (e.content as td.MessageText).text.text,
-                textEntities: eList,
-              );
+                  id: 0,
+                  type: 'message',
+                  date: DateTime.fromMillisecondsSinceEpoch(e.date),
+                  dateUnixtime: e.date.toString(),
+                  text: 'text',
+                  textEntities: [],);
             }).toList() ??
             [],
       ),
@@ -138,7 +165,7 @@ Future<void> _function(update) async {
   }
   await editMessage(
     update.message,
-    "Sessions exported!\nContacts exported\nChats exported!\nStories exported!\nFrequent chats exported!\nProfile photos exported!\nPersonal info exported!\nContacts full info exported!\nPrivate chat history exported!",
+    "Sessions exported!\nWeb sessions exported!\nContacts exported\nChats exported!\nStories exported!\nFrequent chats exported!\nProfile photos exported!\nPersonal info exported!\nContacts full info exported!\nPrivate chat history exported!",
   );
   final exportedJson = ShDataExport(
     about: "Generated by ShSelf",
@@ -178,7 +205,7 @@ Future<void> _function(update) async {
           .toList(),
     ),
     frequentContacts: const ListWithAbout(about: 'Shit', list: []),
-    webSessions: const ListWithAbout(about: 'Shit', list: []),
+    webSessions: ListWithAbout(about: 'Shit', list: webSessions.websites.map((e) => e.toJson()).toList()),
     otherData: const OtherData(
       aboutMeta: "aboutMeta",
       changesLog: [],
@@ -197,5 +224,7 @@ Future<void> _function(update) async {
   await output
       .writeAsString(const JsonEncoder().convert(exportedJson.toJson()));
   await editMessageAndAutoDelete(
-      update.message, "Export Finished!\n File: ${output.path}",);
+    update.message,
+    "Export Finished!\n File: ${output.path}",
+  );
 }

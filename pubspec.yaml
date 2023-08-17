@@ -13,6 +13,7 @@ dev_dependencies:
   test: ^1.24.6
 dependencies:
   archive: ^3.3.7
+  build_config: ^1.1.1
   collection: ^1.0.0
   dart_eval: ^0.6.0
   eval_annotation: ^0.6.0
