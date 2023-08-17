@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'generated/sh_data_export.freezed.dart';
@@ -6,17 +8,21 @@ part 'generated/sh_data_export.g.dart';
 @freezed
 class ShDataExport with _$ShDataExport {
   const factory ShDataExport({
-    required String about,
+    @JsonKey(name: "about") required String about,
+    @JsonKey(name: "personal_information")
     required PersonalInformation personalInformation,
+    @JsonKey(name: "profile_pictures")
     required List<ProfilePicture> profilePictures,
-    required List<dynamic> stories,
-    required ListWithAbout<Contact> contacts,
-    required ListWithAbout<Contact> frequentContacts,
-    required ListWithAbout<Session> sessions,
-    required ListWithAbout<String> webSessions,
-    required OtherData otherData,
-    required ListWithAbout<Chat> chats,
-    required ListWithAbout<Chat> leftChats,
+    @JsonKey(name: "stories") required List<dynamic> stories,
+    @JsonKey(name: "contacts") required ListWithAbout<Contact> contacts,
+    @JsonKey(name: "frequent_contacts")
+    required ListWithAbout<FrequentContact> frequentContacts,
+    @JsonKey(name: "sessions") required ListWithAbout<Session> sessions,
+    @JsonKey(name: "web_sessions")
+    required ListWithAbout<Map<String, dynamic>> webSessions,
+    @JsonKey(name: "other_data") required OtherData otherData,
+    @JsonKey(name: "chats") required ListWithAbout<Chat> chats,
+    @JsonKey(name: "left_chats") required ListWithAbout<Chat> leftChats,
   }) = _ShDataExport;
 
   factory ShDataExport.fromJson(Map<String, dynamic> json) =>
@@ -41,32 +47,32 @@ class Message with _$Message {
     required int id,
     required String type,
     required DateTime date,
-    required String dateUnixtime,
+    @JsonKey(name: "date_unixtime") required String dateUnixtime,
     String? from,
-    String? fromId,
+    @JsonKey(name: "from_id") String? fromId,
     required dynamic text,
-    required List<TextEntities> textEntities,
+    @JsonKey(name: "text_entities") required List<TextEntities> textEntities,
     DateTime? edited,
-    String? editedUnixtime,
-    int? replyToMessageId,
+    @JsonKey(name: "edited_unixtime") String? editedUnixtime,
+    @JsonKey(name: "reply_to_message_id") int? replyToMessageId,
     String? photo,
     int? width,
     int? height,
     String? actor,
-    String? actorId,
+    @JsonKey(name: "actor_id") String? actorId,
     String? action,
     List<String>? members,
     String? file,
     String? thumbnail,
-    String? mediaType,
-    String? stickerEmoji,
-    String? mimeType,
-    int? durationSeconds,
-    String? forwardedFrom,
-    String? invoiceInformation,
-    String? savedFrom,
-    Contact? contactInformation,
-    int? messageId,
+    @JsonKey(name: "media_type") String? mediaType,
+    @JsonKey(name: "sticker_emoji") String? stickerEmoji,
+    @JsonKey(name: "mime_type") String? mimeType,
+    @JsonKey(name: "duration_seconds") int? durationSeconds,
+    @JsonKey(name: "forwarded_from") String? forwardedFrom,
+    @JsonKey(name: "invoice_information") String? invoiceInformation,
+    @JsonKey(name: "saved_from") String? savedFrom,
+    @JsonKey(name: "contact_information") Contact? contactInformation,
+    @JsonKey(name: "message_id") int? messageId,
     String? cost,
     int? months,
     String? title,
@@ -81,9 +87,9 @@ class TextEntities with _$TextEntities {
   const factory TextEntities({
     required String type,
     required String text,
-    String? documentId,
+    @JsonKey(name: "document_id") String? documentId,
     String? href,
-    int? userId,
+    @JsonKey(name: "user_id") int? userId,
   }) = _TextEntities;
 
   factory TextEntities.fromJson(Map<String, dynamic> json) =>
@@ -93,11 +99,11 @@ class TextEntities with _$TextEntities {
 @freezed
 class Contact with _$Contact {
   const factory Contact({
-    required String firstName,
-    required String lastName,
-    required String phoneNumber,
-    required DateTime date,
-    required String dateUnixtime,
+    @JsonKey(name: "first_name") required String firstName,
+    @JsonKey(name: "last_name") required String lastName,
+    @JsonKey(name: "phone_number") required String phoneNumber,
+    DateTime? date,
+    @JsonKey(name: "date_unixtime") String? dateUnixtime,
   }) = _Contact;
 
   factory Contact.fromJson(Map<String, dynamic> json) =>
@@ -107,11 +113,12 @@ class Contact with _$Contact {
 @freezed
 class OtherData with _$OtherData {
   const factory OtherData({
-    required String aboutMeta,
-    required List<dynamic> changesLog,
-    required String help,
-    required List<String> installedStickers,
-    required List<String> ips,
+    @JsonKey(name: "about_meta") required String aboutMeta,
+    @JsonKey(name: "changes_log") required List<dynamic> changesLog,
+    @JsonKey(name: "help") required String help,
+    @JsonKey(name: "installed_stickers")
+    required List<InstalledSticker> installedStickers,
+    @JsonKey(name: "ips") required List<Ip> ips,
   }) = _OtherData;
 
   factory OtherData.fromJson(Map<String, dynamic> json) =>
@@ -121,12 +128,12 @@ class OtherData with _$OtherData {
 @freezed
 class PersonalInformation with _$PersonalInformation {
   const factory PersonalInformation({
-    required int userId,
-    required String firstName,
-    required String lastName,
-    required String phoneNumber,
-    required String username,
-    required String bio,
+    @JsonKey(name: "user_id") required int userId,
+    @JsonKey(name: "first_name") required String firstName,
+    @JsonKey(name: "last_name") required String lastName,
+    @JsonKey(name: "phone_number") required String phoneNumber,
+    @JsonKey(name: "username") required String username,
+    @JsonKey(name: "bio") required String bio,
   }) = _PersonalInformation;
 
   factory PersonalInformation.fromJson(Map<String, dynamic> json) =>
@@ -137,7 +144,7 @@ class PersonalInformation with _$PersonalInformation {
 class ProfilePicture with _$ProfilePicture {
   const factory ProfilePicture({
     required DateTime date,
-    required String dateUnixtime,
+    @JsonKey(name: "date_unixtime") required String dateUnixtime,
     required String photo,
   }) = _ProfilePicture;
 
@@ -152,8 +159,9 @@ class ListWithAbout<T> with _$ListWithAbout<T> {
     required String about,
     required List<T> list,
   }) = _ListWithAbout;
-
-
+  
+  Map<String, dynamic> toJson(Object Function(T value) toJsonT) => _$ListWithAboutToJson<T>(this, toJsonT);
+  
   factory ListWithAbout.fromJson(
     Map<String, dynamic> json,
     T Function(Object? json) fromJsonT,
@@ -165,20 +173,53 @@ class ListWithAbout<T> with _$ListWithAbout<T> {
 @freezed
 class Session with _$Session {
   const factory Session({
-    required DateTime lastActive,
-    required String lastActiveUnixtime,
-    required String lastIp,
-    required String lastCountry,
-    required String lastRegion,
-    required String applicationName,
-    required String applicationVersion,
-    required String deviceModel,
-    required String platform,
-    required String systemVersion,
-    required DateTime created,
-    required String createdUnixtime,
+    @JsonKey(name: "last_active") required DateTime lastActive,
+    @JsonKey(name: "last_active_unixtime") required String lastActiveUnixtime,
+    @JsonKey(name: "last_ip") required String lastIp,
+    @JsonKey(name: "last_country") required String lastCountry,
+    @JsonKey(name: "last_region") required String lastRegion,
+    @JsonKey(name: "application_name") required String applicationName,
+    @JsonKey(name: "application_version") required String applicationVersion,
+    @JsonKey(name: "device_model") required String deviceModel,
+    @JsonKey(name: "platform") required String platform,
+    @JsonKey(name: "system_version") required String systemVersion,
+    @JsonKey(name: "created") required DateTime created,
+    @JsonKey(name: "created_unixtime") required String createdUnixtime,
   }) = _Session;
 
   factory Session.fromJson(Map<String, dynamic> json) =>
       _$SessionFromJson(json);
+}
+
+@freezed
+class FrequentContact with _$FrequentContact {
+  const factory FrequentContact({
+    @JsonKey(name: "id") required int id,
+    @JsonKey(name: "category") required String category,
+    @JsonKey(name: "type") required String type,
+    @JsonKey(name: "name") required String name,
+    @JsonKey(name: "rating") required double rating,
+  }) = _FrequentContact;
+
+  factory FrequentContact.fromJson(Map<String, dynamic> json) =>
+      _$FrequentContactFromJson(json);
+}
+
+@freezed
+class InstalledSticker with _$InstalledSticker {
+  const factory InstalledSticker({
+    @JsonKey(name: "url") required String url,
+  }) = _InstalledSticker;
+
+  factory InstalledSticker.fromJson(Map<String, dynamic> json) =>
+      _$InstalledStickerFromJson(json);
+}
+
+@freezed
+class Ip with _$Ip {
+  const factory Ip({
+    @JsonKey(name: "ip") required String ip,
+  }) = _Ip;
+
+  factory Ip.fromJson(Map<String, dynamic> json) => _$IpFromJson(json);
 }

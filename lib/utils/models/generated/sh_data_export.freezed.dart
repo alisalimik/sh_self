@@ -20,19 +20,31 @@ ShDataExport _$ShDataExportFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ShDataExport {
+  @JsonKey(name: "about")
   String get about => throw _privateConstructorUsedError;
+  @JsonKey(name: "personal_information")
   PersonalInformation get personalInformation =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: "profile_pictures")
   List<ProfilePicture> get profilePictures =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: "stories")
   List<dynamic> get stories => throw _privateConstructorUsedError;
+  @JsonKey(name: "contacts")
   ListWithAbout<Contact> get contacts => throw _privateConstructorUsedError;
-  ListWithAbout<Contact> get frequentContacts =>
+  @JsonKey(name: "frequent_contacts")
+  ListWithAbout<FrequentContact> get frequentContacts =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: "sessions")
   ListWithAbout<Session> get sessions => throw _privateConstructorUsedError;
-  ListWithAbout<String> get webSessions => throw _privateConstructorUsedError;
+  @JsonKey(name: "web_sessions")
+  ListWithAbout<Map<String, dynamic>> get webSessions =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: "other_data")
   OtherData get otherData => throw _privateConstructorUsedError;
+  @JsonKey(name: "chats")
   ListWithAbout<Chat> get chats => throw _privateConstructorUsedError;
+  @JsonKey(name: "left_chats")
   ListWithAbout<Chat> get leftChats => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,23 +60,26 @@ abstract class $ShDataExportCopyWith<$Res> {
       _$ShDataExportCopyWithImpl<$Res, ShDataExport>;
   @useResult
   $Res call(
-      {String about,
+      {@JsonKey(name: "about") String about,
+      @JsonKey(name: "personal_information")
       PersonalInformation personalInformation,
-      List<ProfilePicture> profilePictures,
-      List<dynamic> stories,
-      ListWithAbout<Contact> contacts,
-      ListWithAbout<Contact> frequentContacts,
-      ListWithAbout<Session> sessions,
-      ListWithAbout<String> webSessions,
-      OtherData otherData,
-      ListWithAbout<Chat> chats,
-      ListWithAbout<Chat> leftChats});
+      @JsonKey(name: "profile_pictures") List<ProfilePicture> profilePictures,
+      @JsonKey(name: "stories") List<dynamic> stories,
+      @JsonKey(name: "contacts") ListWithAbout<Contact> contacts,
+      @JsonKey(name: "frequent_contacts")
+      ListWithAbout<FrequentContact> frequentContacts,
+      @JsonKey(name: "sessions") ListWithAbout<Session> sessions,
+      @JsonKey(name: "web_sessions")
+      ListWithAbout<Map<String, dynamic>> webSessions,
+      @JsonKey(name: "other_data") OtherData otherData,
+      @JsonKey(name: "chats") ListWithAbout<Chat> chats,
+      @JsonKey(name: "left_chats") ListWithAbout<Chat> leftChats});
 
   $PersonalInformationCopyWith<$Res> get personalInformation;
   $ListWithAboutCopyWith<Contact, $Res> get contacts;
-  $ListWithAboutCopyWith<Contact, $Res> get frequentContacts;
+  $ListWithAboutCopyWith<FrequentContact, $Res> get frequentContacts;
   $ListWithAboutCopyWith<Session, $Res> get sessions;
-  $ListWithAboutCopyWith<String, $Res> get webSessions;
+  $ListWithAboutCopyWith<Map<String, dynamic>, $Res> get webSessions;
   $OtherDataCopyWith<$Res> get otherData;
   $ListWithAboutCopyWith<Chat, $Res> get chats;
   $ListWithAboutCopyWith<Chat, $Res> get leftChats;
@@ -119,7 +134,7 @@ class _$ShDataExportCopyWithImpl<$Res, $Val extends ShDataExport>
       frequentContacts: null == frequentContacts
           ? _value.frequentContacts
           : frequentContacts // ignore: cast_nullable_to_non_nullable
-              as ListWithAbout<Contact>,
+              as ListWithAbout<FrequentContact>,
       sessions: null == sessions
           ? _value.sessions
           : sessions // ignore: cast_nullable_to_non_nullable
@@ -127,7 +142,7 @@ class _$ShDataExportCopyWithImpl<$Res, $Val extends ShDataExport>
       webSessions: null == webSessions
           ? _value.webSessions
           : webSessions // ignore: cast_nullable_to_non_nullable
-              as ListWithAbout<String>,
+              as ListWithAbout<Map<String, dynamic>>,
       otherData: null == otherData
           ? _value.otherData
           : otherData // ignore: cast_nullable_to_non_nullable
@@ -162,9 +177,9 @@ class _$ShDataExportCopyWithImpl<$Res, $Val extends ShDataExport>
 
   @override
   @pragma('vm:prefer-inline')
-  $ListWithAboutCopyWith<Contact, $Res> get frequentContacts {
-    return $ListWithAboutCopyWith<Contact, $Res>(_value.frequentContacts,
-        (value) {
+  $ListWithAboutCopyWith<FrequentContact, $Res> get frequentContacts {
+    return $ListWithAboutCopyWith<FrequentContact, $Res>(
+        _value.frequentContacts, (value) {
       return _then(_value.copyWith(frequentContacts: value) as $Val);
     });
   }
@@ -179,8 +194,9 @@ class _$ShDataExportCopyWithImpl<$Res, $Val extends ShDataExport>
 
   @override
   @pragma('vm:prefer-inline')
-  $ListWithAboutCopyWith<String, $Res> get webSessions {
-    return $ListWithAboutCopyWith<String, $Res>(_value.webSessions, (value) {
+  $ListWithAboutCopyWith<Map<String, dynamic>, $Res> get webSessions {
+    return $ListWithAboutCopyWith<Map<String, dynamic>, $Res>(
+        _value.webSessions, (value) {
       return _then(_value.copyWith(webSessions: value) as $Val);
     });
   }
@@ -219,28 +235,31 @@ abstract class _$$_ShDataExportCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String about,
+      {@JsonKey(name: "about") String about,
+      @JsonKey(name: "personal_information")
       PersonalInformation personalInformation,
-      List<ProfilePicture> profilePictures,
-      List<dynamic> stories,
-      ListWithAbout<Contact> contacts,
-      ListWithAbout<Contact> frequentContacts,
-      ListWithAbout<Session> sessions,
-      ListWithAbout<String> webSessions,
-      OtherData otherData,
-      ListWithAbout<Chat> chats,
-      ListWithAbout<Chat> leftChats});
+      @JsonKey(name: "profile_pictures") List<ProfilePicture> profilePictures,
+      @JsonKey(name: "stories") List<dynamic> stories,
+      @JsonKey(name: "contacts") ListWithAbout<Contact> contacts,
+      @JsonKey(name: "frequent_contacts")
+      ListWithAbout<FrequentContact> frequentContacts,
+      @JsonKey(name: "sessions") ListWithAbout<Session> sessions,
+      @JsonKey(name: "web_sessions")
+      ListWithAbout<Map<String, dynamic>> webSessions,
+      @JsonKey(name: "other_data") OtherData otherData,
+      @JsonKey(name: "chats") ListWithAbout<Chat> chats,
+      @JsonKey(name: "left_chats") ListWithAbout<Chat> leftChats});
 
   @override
   $PersonalInformationCopyWith<$Res> get personalInformation;
   @override
   $ListWithAboutCopyWith<Contact, $Res> get contacts;
   @override
-  $ListWithAboutCopyWith<Contact, $Res> get frequentContacts;
+  $ListWithAboutCopyWith<FrequentContact, $Res> get frequentContacts;
   @override
   $ListWithAboutCopyWith<Session, $Res> get sessions;
   @override
-  $ListWithAboutCopyWith<String, $Res> get webSessions;
+  $ListWithAboutCopyWith<Map<String, dynamic>, $Res> get webSessions;
   @override
   $OtherDataCopyWith<$Res> get otherData;
   @override
@@ -296,7 +315,7 @@ class __$$_ShDataExportCopyWithImpl<$Res>
       frequentContacts: null == frequentContacts
           ? _value.frequentContacts
           : frequentContacts // ignore: cast_nullable_to_non_nullable
-              as ListWithAbout<Contact>,
+              as ListWithAbout<FrequentContact>,
       sessions: null == sessions
           ? _value.sessions
           : sessions // ignore: cast_nullable_to_non_nullable
@@ -304,7 +323,7 @@ class __$$_ShDataExportCopyWithImpl<$Res>
       webSessions: null == webSessions
           ? _value.webSessions
           : webSessions // ignore: cast_nullable_to_non_nullable
-              as ListWithAbout<String>,
+              as ListWithAbout<Map<String, dynamic>>,
       otherData: null == otherData
           ? _value.otherData
           : otherData // ignore: cast_nullable_to_non_nullable
@@ -325,17 +344,18 @@ class __$$_ShDataExportCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ShDataExport implements _ShDataExport {
   const _$_ShDataExport(
-      {required this.about,
-      required this.personalInformation,
+      {@JsonKey(name: "about") required this.about,
+      @JsonKey(name: "personal_information") required this.personalInformation,
+      @JsonKey(name: "profile_pictures")
       required final List<ProfilePicture> profilePictures,
-      required final List<dynamic> stories,
-      required this.contacts,
-      required this.frequentContacts,
-      required this.sessions,
-      required this.webSessions,
-      required this.otherData,
-      required this.chats,
-      required this.leftChats})
+      @JsonKey(name: "stories") required final List<dynamic> stories,
+      @JsonKey(name: "contacts") required this.contacts,
+      @JsonKey(name: "frequent_contacts") required this.frequentContacts,
+      @JsonKey(name: "sessions") required this.sessions,
+      @JsonKey(name: "web_sessions") required this.webSessions,
+      @JsonKey(name: "other_data") required this.otherData,
+      @JsonKey(name: "chats") required this.chats,
+      @JsonKey(name: "left_chats") required this.leftChats})
       : _profilePictures = profilePictures,
         _stories = stories;
 
@@ -343,11 +363,14 @@ class _$_ShDataExport implements _ShDataExport {
       _$$_ShDataExportFromJson(json);
 
   @override
+  @JsonKey(name: "about")
   final String about;
   @override
+  @JsonKey(name: "personal_information")
   final PersonalInformation personalInformation;
   final List<ProfilePicture> _profilePictures;
   @override
+  @JsonKey(name: "profile_pictures")
   List<ProfilePicture> get profilePictures {
     if (_profilePictures is EqualUnmodifiableListView) return _profilePictures;
     // ignore: implicit_dynamic_type
@@ -356,6 +379,7 @@ class _$_ShDataExport implements _ShDataExport {
 
   final List<dynamic> _stories;
   @override
+  @JsonKey(name: "stories")
   List<dynamic> get stories {
     if (_stories is EqualUnmodifiableListView) return _stories;
     // ignore: implicit_dynamic_type
@@ -363,18 +387,25 @@ class _$_ShDataExport implements _ShDataExport {
   }
 
   @override
+  @JsonKey(name: "contacts")
   final ListWithAbout<Contact> contacts;
   @override
-  final ListWithAbout<Contact> frequentContacts;
+  @JsonKey(name: "frequent_contacts")
+  final ListWithAbout<FrequentContact> frequentContacts;
   @override
+  @JsonKey(name: "sessions")
   final ListWithAbout<Session> sessions;
   @override
-  final ListWithAbout<String> webSessions;
+  @JsonKey(name: "web_sessions")
+  final ListWithAbout<Map<String, dynamic>> webSessions;
   @override
+  @JsonKey(name: "other_data")
   final OtherData otherData;
   @override
+  @JsonKey(name: "chats")
   final ListWithAbout<Chat> chats;
   @override
+  @JsonKey(name: "left_chats")
   final ListWithAbout<Chat> leftChats;
 
   @override
@@ -440,42 +471,58 @@ class _$_ShDataExport implements _ShDataExport {
 
 abstract class _ShDataExport implements ShDataExport {
   const factory _ShDataExport(
-      {required final String about,
+      {@JsonKey(name: "about") required final String about,
+      @JsonKey(name: "personal_information")
       required final PersonalInformation personalInformation,
+      @JsonKey(name: "profile_pictures")
       required final List<ProfilePicture> profilePictures,
-      required final List<dynamic> stories,
-      required final ListWithAbout<Contact> contacts,
-      required final ListWithAbout<Contact> frequentContacts,
-      required final ListWithAbout<Session> sessions,
-      required final ListWithAbout<String> webSessions,
-      required final OtherData otherData,
-      required final ListWithAbout<Chat> chats,
+      @JsonKey(name: "stories") required final List<dynamic> stories,
+      @JsonKey(name: "contacts") required final ListWithAbout<Contact> contacts,
+      @JsonKey(name: "frequent_contacts")
+      required final ListWithAbout<FrequentContact> frequentContacts,
+      @JsonKey(name: "sessions") required final ListWithAbout<Session> sessions,
+      @JsonKey(name: "web_sessions")
+      required final ListWithAbout<Map<String, dynamic>> webSessions,
+      @JsonKey(name: "other_data") required final OtherData otherData,
+      @JsonKey(name: "chats") required final ListWithAbout<Chat> chats,
+      @JsonKey(name: "left_chats")
       required final ListWithAbout<Chat> leftChats}) = _$_ShDataExport;
 
   factory _ShDataExport.fromJson(Map<String, dynamic> json) =
       _$_ShDataExport.fromJson;
 
   @override
+  @JsonKey(name: "about")
   String get about;
   @override
+  @JsonKey(name: "personal_information")
   PersonalInformation get personalInformation;
   @override
+  @JsonKey(name: "profile_pictures")
   List<ProfilePicture> get profilePictures;
   @override
+  @JsonKey(name: "stories")
   List<dynamic> get stories;
   @override
+  @JsonKey(name: "contacts")
   ListWithAbout<Contact> get contacts;
   @override
-  ListWithAbout<Contact> get frequentContacts;
+  @JsonKey(name: "frequent_contacts")
+  ListWithAbout<FrequentContact> get frequentContacts;
   @override
+  @JsonKey(name: "sessions")
   ListWithAbout<Session> get sessions;
   @override
-  ListWithAbout<String> get webSessions;
+  @JsonKey(name: "web_sessions")
+  ListWithAbout<Map<String, dynamic>> get webSessions;
   @override
+  @JsonKey(name: "other_data")
   OtherData get otherData;
   @override
+  @JsonKey(name: "chats")
   ListWithAbout<Chat> get chats;
   @override
+  @JsonKey(name: "left_chats")
   ListWithAbout<Chat> get leftChats;
   @override
   @JsonKey(ignore: true)
@@ -682,31 +729,46 @@ mixin _$Message {
   int get id => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
+  @JsonKey(name: "date_unixtime")
   String get dateUnixtime => throw _privateConstructorUsedError;
   String? get from => throw _privateConstructorUsedError;
+  @JsonKey(name: "from_id")
   String? get fromId => throw _privateConstructorUsedError;
   dynamic get text => throw _privateConstructorUsedError;
+  @JsonKey(name: "text_entities")
   List<TextEntities> get textEntities => throw _privateConstructorUsedError;
   DateTime? get edited => throw _privateConstructorUsedError;
+  @JsonKey(name: "edited_unixtime")
   String? get editedUnixtime => throw _privateConstructorUsedError;
+  @JsonKey(name: "reply_to_message_id")
   int? get replyToMessageId => throw _privateConstructorUsedError;
   String? get photo => throw _privateConstructorUsedError;
   int? get width => throw _privateConstructorUsedError;
   int? get height => throw _privateConstructorUsedError;
   String? get actor => throw _privateConstructorUsedError;
+  @JsonKey(name: "actor_id")
   String? get actorId => throw _privateConstructorUsedError;
   String? get action => throw _privateConstructorUsedError;
   List<String>? get members => throw _privateConstructorUsedError;
   String? get file => throw _privateConstructorUsedError;
   String? get thumbnail => throw _privateConstructorUsedError;
+  @JsonKey(name: "media_type")
   String? get mediaType => throw _privateConstructorUsedError;
+  @JsonKey(name: "sticker_emoji")
   String? get stickerEmoji => throw _privateConstructorUsedError;
+  @JsonKey(name: "mime_type")
   String? get mimeType => throw _privateConstructorUsedError;
+  @JsonKey(name: "duration_seconds")
   int? get durationSeconds => throw _privateConstructorUsedError;
+  @JsonKey(name: "forwarded_from")
   String? get forwardedFrom => throw _privateConstructorUsedError;
+  @JsonKey(name: "invoice_information")
   String? get invoiceInformation => throw _privateConstructorUsedError;
+  @JsonKey(name: "saved_from")
   String? get savedFrom => throw _privateConstructorUsedError;
+  @JsonKey(name: "contact_information")
   Contact? get contactInformation => throw _privateConstructorUsedError;
+  @JsonKey(name: "message_id")
   int? get messageId => throw _privateConstructorUsedError;
   String? get cost => throw _privateConstructorUsedError;
   int? get months => throw _privateConstructorUsedError;
@@ -726,32 +788,32 @@ abstract class $MessageCopyWith<$Res> {
       {int id,
       String type,
       DateTime date,
-      String dateUnixtime,
+      @JsonKey(name: "date_unixtime") String dateUnixtime,
       String? from,
-      String? fromId,
+      @JsonKey(name: "from_id") String? fromId,
       dynamic text,
-      List<TextEntities> textEntities,
+      @JsonKey(name: "text_entities") List<TextEntities> textEntities,
       DateTime? edited,
-      String? editedUnixtime,
-      int? replyToMessageId,
+      @JsonKey(name: "edited_unixtime") String? editedUnixtime,
+      @JsonKey(name: "reply_to_message_id") int? replyToMessageId,
       String? photo,
       int? width,
       int? height,
       String? actor,
-      String? actorId,
+      @JsonKey(name: "actor_id") String? actorId,
       String? action,
       List<String>? members,
       String? file,
       String? thumbnail,
-      String? mediaType,
-      String? stickerEmoji,
-      String? mimeType,
-      int? durationSeconds,
-      String? forwardedFrom,
-      String? invoiceInformation,
-      String? savedFrom,
-      Contact? contactInformation,
-      int? messageId,
+      @JsonKey(name: "media_type") String? mediaType,
+      @JsonKey(name: "sticker_emoji") String? stickerEmoji,
+      @JsonKey(name: "mime_type") String? mimeType,
+      @JsonKey(name: "duration_seconds") int? durationSeconds,
+      @JsonKey(name: "forwarded_from") String? forwardedFrom,
+      @JsonKey(name: "invoice_information") String? invoiceInformation,
+      @JsonKey(name: "saved_from") String? savedFrom,
+      @JsonKey(name: "contact_information") Contact? contactInformation,
+      @JsonKey(name: "message_id") int? messageId,
       String? cost,
       int? months,
       String? title});
@@ -961,32 +1023,32 @@ abstract class _$$_MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
       {int id,
       String type,
       DateTime date,
-      String dateUnixtime,
+      @JsonKey(name: "date_unixtime") String dateUnixtime,
       String? from,
-      String? fromId,
+      @JsonKey(name: "from_id") String? fromId,
       dynamic text,
-      List<TextEntities> textEntities,
+      @JsonKey(name: "text_entities") List<TextEntities> textEntities,
       DateTime? edited,
-      String? editedUnixtime,
-      int? replyToMessageId,
+      @JsonKey(name: "edited_unixtime") String? editedUnixtime,
+      @JsonKey(name: "reply_to_message_id") int? replyToMessageId,
       String? photo,
       int? width,
       int? height,
       String? actor,
-      String? actorId,
+      @JsonKey(name: "actor_id") String? actorId,
       String? action,
       List<String>? members,
       String? file,
       String? thumbnail,
-      String? mediaType,
-      String? stickerEmoji,
-      String? mimeType,
-      int? durationSeconds,
-      String? forwardedFrom,
-      String? invoiceInformation,
-      String? savedFrom,
-      Contact? contactInformation,
-      int? messageId,
+      @JsonKey(name: "media_type") String? mediaType,
+      @JsonKey(name: "sticker_emoji") String? stickerEmoji,
+      @JsonKey(name: "mime_type") String? mimeType,
+      @JsonKey(name: "duration_seconds") int? durationSeconds,
+      @JsonKey(name: "forwarded_from") String? forwardedFrom,
+      @JsonKey(name: "invoice_information") String? invoiceInformation,
+      @JsonKey(name: "saved_from") String? savedFrom,
+      @JsonKey(name: "contact_information") Contact? contactInformation,
+      @JsonKey(name: "message_id") int? messageId,
       String? cost,
       int? months,
       String? title});
@@ -1178,32 +1240,33 @@ class _$_Message implements _Message {
       {required this.id,
       required this.type,
       required this.date,
-      required this.dateUnixtime,
+      @JsonKey(name: "date_unixtime") required this.dateUnixtime,
       this.from,
-      this.fromId,
+      @JsonKey(name: "from_id") this.fromId,
       required this.text,
+      @JsonKey(name: "text_entities")
       required final List<TextEntities> textEntities,
       this.edited,
-      this.editedUnixtime,
-      this.replyToMessageId,
+      @JsonKey(name: "edited_unixtime") this.editedUnixtime,
+      @JsonKey(name: "reply_to_message_id") this.replyToMessageId,
       this.photo,
       this.width,
       this.height,
       this.actor,
-      this.actorId,
+      @JsonKey(name: "actor_id") this.actorId,
       this.action,
       final List<String>? members,
       this.file,
       this.thumbnail,
-      this.mediaType,
-      this.stickerEmoji,
-      this.mimeType,
-      this.durationSeconds,
-      this.forwardedFrom,
-      this.invoiceInformation,
-      this.savedFrom,
-      this.contactInformation,
-      this.messageId,
+      @JsonKey(name: "media_type") this.mediaType,
+      @JsonKey(name: "sticker_emoji") this.stickerEmoji,
+      @JsonKey(name: "mime_type") this.mimeType,
+      @JsonKey(name: "duration_seconds") this.durationSeconds,
+      @JsonKey(name: "forwarded_from") this.forwardedFrom,
+      @JsonKey(name: "invoice_information") this.invoiceInformation,
+      @JsonKey(name: "saved_from") this.savedFrom,
+      @JsonKey(name: "contact_information") this.contactInformation,
+      @JsonKey(name: "message_id") this.messageId,
       this.cost,
       this.months,
       this.title})
@@ -1220,15 +1283,18 @@ class _$_Message implements _Message {
   @override
   final DateTime date;
   @override
+  @JsonKey(name: "date_unixtime")
   final String dateUnixtime;
   @override
   final String? from;
   @override
+  @JsonKey(name: "from_id")
   final String? fromId;
   @override
   final dynamic text;
   final List<TextEntities> _textEntities;
   @override
+  @JsonKey(name: "text_entities")
   List<TextEntities> get textEntities {
     if (_textEntities is EqualUnmodifiableListView) return _textEntities;
     // ignore: implicit_dynamic_type
@@ -1238,8 +1304,10 @@ class _$_Message implements _Message {
   @override
   final DateTime? edited;
   @override
+  @JsonKey(name: "edited_unixtime")
   final String? editedUnixtime;
   @override
+  @JsonKey(name: "reply_to_message_id")
   final int? replyToMessageId;
   @override
   final String? photo;
@@ -1250,6 +1318,7 @@ class _$_Message implements _Message {
   @override
   final String? actor;
   @override
+  @JsonKey(name: "actor_id")
   final String? actorId;
   @override
   final String? action;
@@ -1268,22 +1337,31 @@ class _$_Message implements _Message {
   @override
   final String? thumbnail;
   @override
+  @JsonKey(name: "media_type")
   final String? mediaType;
   @override
+  @JsonKey(name: "sticker_emoji")
   final String? stickerEmoji;
   @override
+  @JsonKey(name: "mime_type")
   final String? mimeType;
   @override
+  @JsonKey(name: "duration_seconds")
   final int? durationSeconds;
   @override
+  @JsonKey(name: "forwarded_from")
   final String? forwardedFrom;
   @override
+  @JsonKey(name: "invoice_information")
   final String? invoiceInformation;
   @override
+  @JsonKey(name: "saved_from")
   final String? savedFrom;
   @override
+  @JsonKey(name: "contact_information")
   final Contact? contactInformation;
   @override
+  @JsonKey(name: "message_id")
   final int? messageId;
   @override
   final String? cost;
@@ -1407,32 +1485,33 @@ abstract class _Message implements Message {
       {required final int id,
       required final String type,
       required final DateTime date,
-      required final String dateUnixtime,
+      @JsonKey(name: "date_unixtime") required final String dateUnixtime,
       final String? from,
-      final String? fromId,
+      @JsonKey(name: "from_id") final String? fromId,
       required final dynamic text,
+      @JsonKey(name: "text_entities")
       required final List<TextEntities> textEntities,
       final DateTime? edited,
-      final String? editedUnixtime,
-      final int? replyToMessageId,
+      @JsonKey(name: "edited_unixtime") final String? editedUnixtime,
+      @JsonKey(name: "reply_to_message_id") final int? replyToMessageId,
       final String? photo,
       final int? width,
       final int? height,
       final String? actor,
-      final String? actorId,
+      @JsonKey(name: "actor_id") final String? actorId,
       final String? action,
       final List<String>? members,
       final String? file,
       final String? thumbnail,
-      final String? mediaType,
-      final String? stickerEmoji,
-      final String? mimeType,
-      final int? durationSeconds,
-      final String? forwardedFrom,
-      final String? invoiceInformation,
-      final String? savedFrom,
-      final Contact? contactInformation,
-      final int? messageId,
+      @JsonKey(name: "media_type") final String? mediaType,
+      @JsonKey(name: "sticker_emoji") final String? stickerEmoji,
+      @JsonKey(name: "mime_type") final String? mimeType,
+      @JsonKey(name: "duration_seconds") final int? durationSeconds,
+      @JsonKey(name: "forwarded_from") final String? forwardedFrom,
+      @JsonKey(name: "invoice_information") final String? invoiceInformation,
+      @JsonKey(name: "saved_from") final String? savedFrom,
+      @JsonKey(name: "contact_information") final Contact? contactInformation,
+      @JsonKey(name: "message_id") final int? messageId,
       final String? cost,
       final int? months,
       final String? title}) = _$_Message;
@@ -1446,20 +1525,25 @@ abstract class _Message implements Message {
   @override
   DateTime get date;
   @override
+  @JsonKey(name: "date_unixtime")
   String get dateUnixtime;
   @override
   String? get from;
   @override
+  @JsonKey(name: "from_id")
   String? get fromId;
   @override
   dynamic get text;
   @override
+  @JsonKey(name: "text_entities")
   List<TextEntities> get textEntities;
   @override
   DateTime? get edited;
   @override
+  @JsonKey(name: "edited_unixtime")
   String? get editedUnixtime;
   @override
+  @JsonKey(name: "reply_to_message_id")
   int? get replyToMessageId;
   @override
   String? get photo;
@@ -1470,6 +1554,7 @@ abstract class _Message implements Message {
   @override
   String? get actor;
   @override
+  @JsonKey(name: "actor_id")
   String? get actorId;
   @override
   String? get action;
@@ -1480,22 +1565,31 @@ abstract class _Message implements Message {
   @override
   String? get thumbnail;
   @override
+  @JsonKey(name: "media_type")
   String? get mediaType;
   @override
+  @JsonKey(name: "sticker_emoji")
   String? get stickerEmoji;
   @override
+  @JsonKey(name: "mime_type")
   String? get mimeType;
   @override
+  @JsonKey(name: "duration_seconds")
   int? get durationSeconds;
   @override
+  @JsonKey(name: "forwarded_from")
   String? get forwardedFrom;
   @override
+  @JsonKey(name: "invoice_information")
   String? get invoiceInformation;
   @override
+  @JsonKey(name: "saved_from")
   String? get savedFrom;
   @override
+  @JsonKey(name: "contact_information")
   Contact? get contactInformation;
   @override
+  @JsonKey(name: "message_id")
   int? get messageId;
   @override
   String? get cost;
@@ -1517,8 +1611,10 @@ TextEntities _$TextEntitiesFromJson(Map<String, dynamic> json) {
 mixin _$TextEntities {
   String get type => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
+  @JsonKey(name: "document_id")
   String? get documentId => throw _privateConstructorUsedError;
   String? get href => throw _privateConstructorUsedError;
+  @JsonKey(name: "user_id")
   int? get userId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1536,9 +1632,9 @@ abstract class $TextEntitiesCopyWith<$Res> {
   $Res call(
       {String type,
       String text,
-      String? documentId,
+      @JsonKey(name: "document_id") String? documentId,
       String? href,
-      int? userId});
+      @JsonKey(name: "user_id") int? userId});
 }
 
 /// @nodoc
@@ -1596,9 +1692,9 @@ abstract class _$$_TextEntitiesCopyWith<$Res>
   $Res call(
       {String type,
       String text,
-      String? documentId,
+      @JsonKey(name: "document_id") String? documentId,
       String? href,
-      int? userId});
+      @JsonKey(name: "user_id") int? userId});
 }
 
 /// @nodoc
@@ -1649,9 +1745,9 @@ class _$_TextEntities implements _TextEntities {
   const _$_TextEntities(
       {required this.type,
       required this.text,
-      this.documentId,
+      @JsonKey(name: "document_id") this.documentId,
       this.href,
-      this.userId});
+      @JsonKey(name: "user_id") this.userId});
 
   factory _$_TextEntities.fromJson(Map<String, dynamic> json) =>
       _$$_TextEntitiesFromJson(json);
@@ -1661,10 +1757,12 @@ class _$_TextEntities implements _TextEntities {
   @override
   final String text;
   @override
+  @JsonKey(name: "document_id")
   final String? documentId;
   @override
   final String? href;
   @override
+  @JsonKey(name: "user_id")
   final int? userId;
 
   @override
@@ -1708,9 +1806,9 @@ abstract class _TextEntities implements TextEntities {
   const factory _TextEntities(
       {required final String type,
       required final String text,
-      final String? documentId,
+      @JsonKey(name: "document_id") final String? documentId,
       final String? href,
-      final int? userId}) = _$_TextEntities;
+      @JsonKey(name: "user_id") final int? userId}) = _$_TextEntities;
 
   factory _TextEntities.fromJson(Map<String, dynamic> json) =
       _$_TextEntities.fromJson;
@@ -1720,10 +1818,12 @@ abstract class _TextEntities implements TextEntities {
   @override
   String get text;
   @override
+  @JsonKey(name: "document_id")
   String? get documentId;
   @override
   String? get href;
   @override
+  @JsonKey(name: "user_id")
   int? get userId;
   @override
   @JsonKey(ignore: true)
@@ -1737,11 +1837,15 @@ Contact _$ContactFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Contact {
+  @JsonKey(name: "first_name")
   String get firstName => throw _privateConstructorUsedError;
+  @JsonKey(name: "last_name")
   String get lastName => throw _privateConstructorUsedError;
+  @JsonKey(name: "phone_number")
   String get phoneNumber => throw _privateConstructorUsedError;
-  DateTime get date => throw _privateConstructorUsedError;
-  String get dateUnixtime => throw _privateConstructorUsedError;
+  DateTime? get date => throw _privateConstructorUsedError;
+  @JsonKey(name: "date_unixtime")
+  String? get dateUnixtime => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1754,11 +1858,11 @@ abstract class $ContactCopyWith<$Res> {
       _$ContactCopyWithImpl<$Res, Contact>;
   @useResult
   $Res call(
-      {String firstName,
-      String lastName,
-      String phoneNumber,
-      DateTime date,
-      String dateUnixtime});
+      {@JsonKey(name: "first_name") String firstName,
+      @JsonKey(name: "last_name") String lastName,
+      @JsonKey(name: "phone_number") String phoneNumber,
+      DateTime? date,
+      @JsonKey(name: "date_unixtime") String? dateUnixtime});
 }
 
 /// @nodoc
@@ -1777,8 +1881,8 @@ class _$ContactCopyWithImpl<$Res, $Val extends Contact>
     Object? firstName = null,
     Object? lastName = null,
     Object? phoneNumber = null,
-    Object? date = null,
-    Object? dateUnixtime = null,
+    Object? date = freezed,
+    Object? dateUnixtime = freezed,
   }) {
     return _then(_value.copyWith(
       firstName: null == firstName
@@ -1793,14 +1897,14 @@ class _$ContactCopyWithImpl<$Res, $Val extends Contact>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      date: null == date
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      dateUnixtime: null == dateUnixtime
+              as DateTime?,
+      dateUnixtime: freezed == dateUnixtime
           ? _value.dateUnixtime
           : dateUnixtime // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -1813,11 +1917,11 @@ abstract class _$$_ContactCopyWith<$Res> implements $ContactCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String firstName,
-      String lastName,
-      String phoneNumber,
-      DateTime date,
-      String dateUnixtime});
+      {@JsonKey(name: "first_name") String firstName,
+      @JsonKey(name: "last_name") String lastName,
+      @JsonKey(name: "phone_number") String phoneNumber,
+      DateTime? date,
+      @JsonKey(name: "date_unixtime") String? dateUnixtime});
 }
 
 /// @nodoc
@@ -1833,8 +1937,8 @@ class __$$_ContactCopyWithImpl<$Res>
     Object? firstName = null,
     Object? lastName = null,
     Object? phoneNumber = null,
-    Object? date = null,
-    Object? dateUnixtime = null,
+    Object? date = freezed,
+    Object? dateUnixtime = freezed,
   }) {
     return _then(_$_Contact(
       firstName: null == firstName
@@ -1849,14 +1953,14 @@ class __$$_ContactCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      date: null == date
+      date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      dateUnixtime: null == dateUnixtime
+              as DateTime?,
+      dateUnixtime: freezed == dateUnixtime
           ? _value.dateUnixtime
           : dateUnixtime // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -1865,25 +1969,29 @@ class __$$_ContactCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Contact implements _Contact {
   const _$_Contact(
-      {required this.firstName,
-      required this.lastName,
-      required this.phoneNumber,
-      required this.date,
-      required this.dateUnixtime});
+      {@JsonKey(name: "first_name") required this.firstName,
+      @JsonKey(name: "last_name") required this.lastName,
+      @JsonKey(name: "phone_number") required this.phoneNumber,
+      this.date,
+      @JsonKey(name: "date_unixtime") this.dateUnixtime});
 
   factory _$_Contact.fromJson(Map<String, dynamic> json) =>
       _$$_ContactFromJson(json);
 
   @override
+  @JsonKey(name: "first_name")
   final String firstName;
   @override
+  @JsonKey(name: "last_name")
   final String lastName;
   @override
+  @JsonKey(name: "phone_number")
   final String phoneNumber;
   @override
-  final DateTime date;
+  final DateTime? date;
   @override
-  final String dateUnixtime;
+  @JsonKey(name: "date_unixtime")
+  final String? dateUnixtime;
 
   @override
   String toString() {
@@ -1927,24 +2035,28 @@ class _$_Contact implements _Contact {
 
 abstract class _Contact implements Contact {
   const factory _Contact(
-      {required final String firstName,
-      required final String lastName,
-      required final String phoneNumber,
-      required final DateTime date,
-      required final String dateUnixtime}) = _$_Contact;
+      {@JsonKey(name: "first_name") required final String firstName,
+      @JsonKey(name: "last_name") required final String lastName,
+      @JsonKey(name: "phone_number") required final String phoneNumber,
+      final DateTime? date,
+      @JsonKey(name: "date_unixtime") final String? dateUnixtime}) = _$_Contact;
 
   factory _Contact.fromJson(Map<String, dynamic> json) = _$_Contact.fromJson;
 
   @override
+  @JsonKey(name: "first_name")
   String get firstName;
   @override
+  @JsonKey(name: "last_name")
   String get lastName;
   @override
+  @JsonKey(name: "phone_number")
   String get phoneNumber;
   @override
-  DateTime get date;
+  DateTime? get date;
   @override
-  String get dateUnixtime;
+  @JsonKey(name: "date_unixtime")
+  String? get dateUnixtime;
   @override
   @JsonKey(ignore: true)
   _$$_ContactCopyWith<_$_Contact> get copyWith =>
@@ -1957,11 +2069,17 @@ OtherData _$OtherDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OtherData {
+  @JsonKey(name: "about_meta")
   String get aboutMeta => throw _privateConstructorUsedError;
+  @JsonKey(name: "changes_log")
   List<dynamic> get changesLog => throw _privateConstructorUsedError;
+  @JsonKey(name: "help")
   String get help => throw _privateConstructorUsedError;
-  List<String> get installedStickers => throw _privateConstructorUsedError;
-  List<String> get ips => throw _privateConstructorUsedError;
+  @JsonKey(name: "installed_stickers")
+  List<InstalledSticker> get installedStickers =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: "ips")
+  List<Ip> get ips => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1975,11 +2093,12 @@ abstract class $OtherDataCopyWith<$Res> {
       _$OtherDataCopyWithImpl<$Res, OtherData>;
   @useResult
   $Res call(
-      {String aboutMeta,
-      List<dynamic> changesLog,
-      String help,
-      List<String> installedStickers,
-      List<String> ips});
+      {@JsonKey(name: "about_meta") String aboutMeta,
+      @JsonKey(name: "changes_log") List<dynamic> changesLog,
+      @JsonKey(name: "help") String help,
+      @JsonKey(name: "installed_stickers")
+      List<InstalledSticker> installedStickers,
+      @JsonKey(name: "ips") List<Ip> ips});
 }
 
 /// @nodoc
@@ -2017,11 +2136,11 @@ class _$OtherDataCopyWithImpl<$Res, $Val extends OtherData>
       installedStickers: null == installedStickers
           ? _value.installedStickers
           : installedStickers // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<InstalledSticker>,
       ips: null == ips
           ? _value.ips
           : ips // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<Ip>,
     ) as $Val);
   }
 }
@@ -2034,11 +2153,12 @@ abstract class _$$_OtherDataCopyWith<$Res> implements $OtherDataCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String aboutMeta,
-      List<dynamic> changesLog,
-      String help,
-      List<String> installedStickers,
-      List<String> ips});
+      {@JsonKey(name: "about_meta") String aboutMeta,
+      @JsonKey(name: "changes_log") List<dynamic> changesLog,
+      @JsonKey(name: "help") String help,
+      @JsonKey(name: "installed_stickers")
+      List<InstalledSticker> installedStickers,
+      @JsonKey(name: "ips") List<Ip> ips});
 }
 
 /// @nodoc
@@ -2074,11 +2194,11 @@ class __$$_OtherDataCopyWithImpl<$Res>
       installedStickers: null == installedStickers
           ? _value._installedStickers
           : installedStickers // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<InstalledSticker>,
       ips: null == ips
           ? _value._ips
           : ips // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<Ip>,
     ));
   }
 }
@@ -2087,11 +2207,12 @@ class __$$_OtherDataCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_OtherData implements _OtherData {
   const _$_OtherData(
-      {required this.aboutMeta,
-      required final List<dynamic> changesLog,
-      required this.help,
-      required final List<String> installedStickers,
-      required final List<String> ips})
+      {@JsonKey(name: "about_meta") required this.aboutMeta,
+      @JsonKey(name: "changes_log") required final List<dynamic> changesLog,
+      @JsonKey(name: "help") required this.help,
+      @JsonKey(name: "installed_stickers")
+      required final List<InstalledSticker> installedStickers,
+      @JsonKey(name: "ips") required final List<Ip> ips})
       : _changesLog = changesLog,
         _installedStickers = installedStickers,
         _ips = ips;
@@ -2100,9 +2221,11 @@ class _$_OtherData implements _OtherData {
       _$$_OtherDataFromJson(json);
 
   @override
+  @JsonKey(name: "about_meta")
   final String aboutMeta;
   final List<dynamic> _changesLog;
   @override
+  @JsonKey(name: "changes_log")
   List<dynamic> get changesLog {
     if (_changesLog is EqualUnmodifiableListView) return _changesLog;
     // ignore: implicit_dynamic_type
@@ -2110,19 +2233,22 @@ class _$_OtherData implements _OtherData {
   }
 
   @override
+  @JsonKey(name: "help")
   final String help;
-  final List<String> _installedStickers;
+  final List<InstalledSticker> _installedStickers;
   @override
-  List<String> get installedStickers {
+  @JsonKey(name: "installed_stickers")
+  List<InstalledSticker> get installedStickers {
     if (_installedStickers is EqualUnmodifiableListView)
       return _installedStickers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_installedStickers);
   }
 
-  final List<String> _ips;
+  final List<Ip> _ips;
   @override
-  List<String> get ips {
+  @JsonKey(name: "ips")
+  List<Ip> get ips {
     if (_ips is EqualUnmodifiableListView) return _ips;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_ips);
@@ -2174,25 +2300,31 @@ class _$_OtherData implements _OtherData {
 
 abstract class _OtherData implements OtherData {
   const factory _OtherData(
-      {required final String aboutMeta,
-      required final List<dynamic> changesLog,
-      required final String help,
-      required final List<String> installedStickers,
-      required final List<String> ips}) = _$_OtherData;
+      {@JsonKey(name: "about_meta") required final String aboutMeta,
+      @JsonKey(name: "changes_log") required final List<dynamic> changesLog,
+      @JsonKey(name: "help") required final String help,
+      @JsonKey(name: "installed_stickers")
+      required final List<InstalledSticker> installedStickers,
+      @JsonKey(name: "ips") required final List<Ip> ips}) = _$_OtherData;
 
   factory _OtherData.fromJson(Map<String, dynamic> json) =
       _$_OtherData.fromJson;
 
   @override
+  @JsonKey(name: "about_meta")
   String get aboutMeta;
   @override
+  @JsonKey(name: "changes_log")
   List<dynamic> get changesLog;
   @override
+  @JsonKey(name: "help")
   String get help;
   @override
-  List<String> get installedStickers;
+  @JsonKey(name: "installed_stickers")
+  List<InstalledSticker> get installedStickers;
   @override
-  List<String> get ips;
+  @JsonKey(name: "ips")
+  List<Ip> get ips;
   @override
   @JsonKey(ignore: true)
   _$$_OtherDataCopyWith<_$_OtherData> get copyWith =>
@@ -2205,11 +2337,17 @@ PersonalInformation _$PersonalInformationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PersonalInformation {
+  @JsonKey(name: "user_id")
   int get userId => throw _privateConstructorUsedError;
+  @JsonKey(name: "first_name")
   String get firstName => throw _privateConstructorUsedError;
+  @JsonKey(name: "last_name")
   String get lastName => throw _privateConstructorUsedError;
+  @JsonKey(name: "phone_number")
   String get phoneNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: "username")
   String get username => throw _privateConstructorUsedError;
+  @JsonKey(name: "bio")
   String get bio => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2225,12 +2363,12 @@ abstract class $PersonalInformationCopyWith<$Res> {
       _$PersonalInformationCopyWithImpl<$Res, PersonalInformation>;
   @useResult
   $Res call(
-      {int userId,
-      String firstName,
-      String lastName,
-      String phoneNumber,
-      String username,
-      String bio});
+      {@JsonKey(name: "user_id") int userId,
+      @JsonKey(name: "first_name") String firstName,
+      @JsonKey(name: "last_name") String lastName,
+      @JsonKey(name: "phone_number") String phoneNumber,
+      @JsonKey(name: "username") String username,
+      @JsonKey(name: "bio") String bio});
 }
 
 /// @nodoc
@@ -2291,12 +2429,12 @@ abstract class _$$_PersonalInformationCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int userId,
-      String firstName,
-      String lastName,
-      String phoneNumber,
-      String username,
-      String bio});
+      {@JsonKey(name: "user_id") int userId,
+      @JsonKey(name: "first_name") String firstName,
+      @JsonKey(name: "last_name") String lastName,
+      @JsonKey(name: "phone_number") String phoneNumber,
+      @JsonKey(name: "username") String username,
+      @JsonKey(name: "bio") String bio});
 }
 
 /// @nodoc
@@ -2350,27 +2488,33 @@ class __$$_PersonalInformationCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PersonalInformation implements _PersonalInformation {
   const _$_PersonalInformation(
-      {required this.userId,
-      required this.firstName,
-      required this.lastName,
-      required this.phoneNumber,
-      required this.username,
-      required this.bio});
+      {@JsonKey(name: "user_id") required this.userId,
+      @JsonKey(name: "first_name") required this.firstName,
+      @JsonKey(name: "last_name") required this.lastName,
+      @JsonKey(name: "phone_number") required this.phoneNumber,
+      @JsonKey(name: "username") required this.username,
+      @JsonKey(name: "bio") required this.bio});
 
   factory _$_PersonalInformation.fromJson(Map<String, dynamic> json) =>
       _$$_PersonalInformationFromJson(json);
 
   @override
+  @JsonKey(name: "user_id")
   final int userId;
   @override
+  @JsonKey(name: "first_name")
   final String firstName;
   @override
+  @JsonKey(name: "last_name")
   final String lastName;
   @override
+  @JsonKey(name: "phone_number")
   final String phoneNumber;
   @override
+  @JsonKey(name: "username")
   final String username;
   @override
+  @JsonKey(name: "bio")
   final String bio;
 
   @override
@@ -2417,27 +2561,34 @@ class _$_PersonalInformation implements _PersonalInformation {
 
 abstract class _PersonalInformation implements PersonalInformation {
   const factory _PersonalInformation(
-      {required final int userId,
-      required final String firstName,
-      required final String lastName,
-      required final String phoneNumber,
-      required final String username,
-      required final String bio}) = _$_PersonalInformation;
+          {@JsonKey(name: "user_id") required final int userId,
+          @JsonKey(name: "first_name") required final String firstName,
+          @JsonKey(name: "last_name") required final String lastName,
+          @JsonKey(name: "phone_number") required final String phoneNumber,
+          @JsonKey(name: "username") required final String username,
+          @JsonKey(name: "bio") required final String bio}) =
+      _$_PersonalInformation;
 
   factory _PersonalInformation.fromJson(Map<String, dynamic> json) =
       _$_PersonalInformation.fromJson;
 
   @override
+  @JsonKey(name: "user_id")
   int get userId;
   @override
+  @JsonKey(name: "first_name")
   String get firstName;
   @override
+  @JsonKey(name: "last_name")
   String get lastName;
   @override
+  @JsonKey(name: "phone_number")
   String get phoneNumber;
   @override
+  @JsonKey(name: "username")
   String get username;
   @override
+  @JsonKey(name: "bio")
   String get bio;
   @override
   @JsonKey(ignore: true)
@@ -2452,6 +2603,7 @@ ProfilePicture _$ProfilePictureFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ProfilePicture {
   DateTime get date => throw _privateConstructorUsedError;
+  @JsonKey(name: "date_unixtime")
   String get dateUnixtime => throw _privateConstructorUsedError;
   String get photo => throw _privateConstructorUsedError;
 
@@ -2467,7 +2619,10 @@ abstract class $ProfilePictureCopyWith<$Res> {
           ProfilePicture value, $Res Function(ProfilePicture) then) =
       _$ProfilePictureCopyWithImpl<$Res, ProfilePicture>;
   @useResult
-  $Res call({DateTime date, String dateUnixtime, String photo});
+  $Res call(
+      {DateTime date,
+      @JsonKey(name: "date_unixtime") String dateUnixtime,
+      String photo});
 }
 
 /// @nodoc
@@ -2512,7 +2667,10 @@ abstract class _$$_ProfilePictureCopyWith<$Res>
       __$$_ProfilePictureCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({DateTime date, String dateUnixtime, String photo});
+  $Res call(
+      {DateTime date,
+      @JsonKey(name: "date_unixtime") String dateUnixtime,
+      String photo});
 }
 
 /// @nodoc
@@ -2551,7 +2709,9 @@ class __$$_ProfilePictureCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ProfilePicture implements _ProfilePicture {
   const _$_ProfilePicture(
-      {required this.date, required this.dateUnixtime, required this.photo});
+      {required this.date,
+      @JsonKey(name: "date_unixtime") required this.dateUnixtime,
+      required this.photo});
 
   factory _$_ProfilePicture.fromJson(Map<String, dynamic> json) =>
       _$$_ProfilePictureFromJson(json);
@@ -2559,6 +2719,7 @@ class _$_ProfilePicture implements _ProfilePicture {
   @override
   final DateTime date;
   @override
+  @JsonKey(name: "date_unixtime")
   final String dateUnixtime;
   @override
   final String photo;
@@ -2600,7 +2761,7 @@ class _$_ProfilePicture implements _ProfilePicture {
 abstract class _ProfilePicture implements ProfilePicture {
   const factory _ProfilePicture(
       {required final DateTime date,
-      required final String dateUnixtime,
+      @JsonKey(name: "date_unixtime") required final String dateUnixtime,
       required final String photo}) = _$_ProfilePicture;
 
   factory _ProfilePicture.fromJson(Map<String, dynamic> json) =
@@ -2609,6 +2770,7 @@ abstract class _ProfilePicture implements ProfilePicture {
   @override
   DateTime get date;
   @override
+  @JsonKey(name: "date_unixtime")
   String get dateUnixtime;
   @override
   String get photo;
@@ -2743,6 +2905,14 @@ class _$_ListWithAbout<T> implements _ListWithAbout<T> {
   @pragma('vm:prefer-inline')
   _$$_ListWithAboutCopyWith<T, _$_ListWithAbout<T>> get copyWith =>
       __$$_ListWithAboutCopyWithImpl<T, _$_ListWithAbout<T>>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson(Object Function(T value) toJsonT) {
+    return {
+      'about': about,
+      'list': list.map((item) => toJsonT(item)).toList(),
+    };
+  }
 }
 
 abstract class _ListWithAbout<T> implements ListWithAbout<T> {
@@ -2766,17 +2936,29 @@ Session _$SessionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Session {
+  @JsonKey(name: "last_active")
   DateTime get lastActive => throw _privateConstructorUsedError;
+  @JsonKey(name: "last_active_unixtime")
   String get lastActiveUnixtime => throw _privateConstructorUsedError;
+  @JsonKey(name: "last_ip")
   String get lastIp => throw _privateConstructorUsedError;
+  @JsonKey(name: "last_country")
   String get lastCountry => throw _privateConstructorUsedError;
+  @JsonKey(name: "last_region")
   String get lastRegion => throw _privateConstructorUsedError;
+  @JsonKey(name: "application_name")
   String get applicationName => throw _privateConstructorUsedError;
+  @JsonKey(name: "application_version")
   String get applicationVersion => throw _privateConstructorUsedError;
+  @JsonKey(name: "device_model")
   String get deviceModel => throw _privateConstructorUsedError;
+  @JsonKey(name: "platform")
   String get platform => throw _privateConstructorUsedError;
+  @JsonKey(name: "system_version")
   String get systemVersion => throw _privateConstructorUsedError;
+  @JsonKey(name: "created")
   DateTime get created => throw _privateConstructorUsedError;
+  @JsonKey(name: "created_unixtime")
   String get createdUnixtime => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2790,18 +2972,18 @@ abstract class $SessionCopyWith<$Res> {
       _$SessionCopyWithImpl<$Res, Session>;
   @useResult
   $Res call(
-      {DateTime lastActive,
-      String lastActiveUnixtime,
-      String lastIp,
-      String lastCountry,
-      String lastRegion,
-      String applicationName,
-      String applicationVersion,
-      String deviceModel,
-      String platform,
-      String systemVersion,
-      DateTime created,
-      String createdUnixtime});
+      {@JsonKey(name: "last_active") DateTime lastActive,
+      @JsonKey(name: "last_active_unixtime") String lastActiveUnixtime,
+      @JsonKey(name: "last_ip") String lastIp,
+      @JsonKey(name: "last_country") String lastCountry,
+      @JsonKey(name: "last_region") String lastRegion,
+      @JsonKey(name: "application_name") String applicationName,
+      @JsonKey(name: "application_version") String applicationVersion,
+      @JsonKey(name: "device_model") String deviceModel,
+      @JsonKey(name: "platform") String platform,
+      @JsonKey(name: "system_version") String systemVersion,
+      @JsonKey(name: "created") DateTime created,
+      @JsonKey(name: "created_unixtime") String createdUnixtime});
 }
 
 /// @nodoc
@@ -2891,18 +3073,18 @@ abstract class _$$_SessionCopyWith<$Res> implements $SessionCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {DateTime lastActive,
-      String lastActiveUnixtime,
-      String lastIp,
-      String lastCountry,
-      String lastRegion,
-      String applicationName,
-      String applicationVersion,
-      String deviceModel,
-      String platform,
-      String systemVersion,
-      DateTime created,
-      String createdUnixtime});
+      {@JsonKey(name: "last_active") DateTime lastActive,
+      @JsonKey(name: "last_active_unixtime") String lastActiveUnixtime,
+      @JsonKey(name: "last_ip") String lastIp,
+      @JsonKey(name: "last_country") String lastCountry,
+      @JsonKey(name: "last_region") String lastRegion,
+      @JsonKey(name: "application_name") String applicationName,
+      @JsonKey(name: "application_version") String applicationVersion,
+      @JsonKey(name: "device_model") String deviceModel,
+      @JsonKey(name: "platform") String platform,
+      @JsonKey(name: "system_version") String systemVersion,
+      @JsonKey(name: "created") DateTime created,
+      @JsonKey(name: "created_unixtime") String createdUnixtime});
 }
 
 /// @nodoc
@@ -2985,45 +3167,57 @@ class __$$_SessionCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Session implements _Session {
   const _$_Session(
-      {required this.lastActive,
-      required this.lastActiveUnixtime,
-      required this.lastIp,
-      required this.lastCountry,
-      required this.lastRegion,
-      required this.applicationName,
-      required this.applicationVersion,
-      required this.deviceModel,
-      required this.platform,
-      required this.systemVersion,
-      required this.created,
-      required this.createdUnixtime});
+      {@JsonKey(name: "last_active") required this.lastActive,
+      @JsonKey(name: "last_active_unixtime") required this.lastActiveUnixtime,
+      @JsonKey(name: "last_ip") required this.lastIp,
+      @JsonKey(name: "last_country") required this.lastCountry,
+      @JsonKey(name: "last_region") required this.lastRegion,
+      @JsonKey(name: "application_name") required this.applicationName,
+      @JsonKey(name: "application_version") required this.applicationVersion,
+      @JsonKey(name: "device_model") required this.deviceModel,
+      @JsonKey(name: "platform") required this.platform,
+      @JsonKey(name: "system_version") required this.systemVersion,
+      @JsonKey(name: "created") required this.created,
+      @JsonKey(name: "created_unixtime") required this.createdUnixtime});
 
   factory _$_Session.fromJson(Map<String, dynamic> json) =>
       _$$_SessionFromJson(json);
 
   @override
+  @JsonKey(name: "last_active")
   final DateTime lastActive;
   @override
+  @JsonKey(name: "last_active_unixtime")
   final String lastActiveUnixtime;
   @override
+  @JsonKey(name: "last_ip")
   final String lastIp;
   @override
+  @JsonKey(name: "last_country")
   final String lastCountry;
   @override
+  @JsonKey(name: "last_region")
   final String lastRegion;
   @override
+  @JsonKey(name: "application_name")
   final String applicationName;
   @override
+  @JsonKey(name: "application_version")
   final String applicationVersion;
   @override
+  @JsonKey(name: "device_model")
   final String deviceModel;
   @override
+  @JsonKey(name: "platform")
   final String platform;
   @override
+  @JsonKey(name: "system_version")
   final String systemVersion;
   @override
+  @JsonKey(name: "created")
   final DateTime created;
   @override
+  @JsonKey(name: "created_unixtime")
   final String createdUnixtime;
 
   @override
@@ -3093,47 +3287,569 @@ class _$_Session implements _Session {
 
 abstract class _Session implements Session {
   const factory _Session(
-      {required final DateTime lastActive,
+      {@JsonKey(name: "last_active") required final DateTime lastActive,
+      @JsonKey(name: "last_active_unixtime")
       required final String lastActiveUnixtime,
-      required final String lastIp,
-      required final String lastCountry,
-      required final String lastRegion,
-      required final String applicationName,
+      @JsonKey(name: "last_ip") required final String lastIp,
+      @JsonKey(name: "last_country") required final String lastCountry,
+      @JsonKey(name: "last_region") required final String lastRegion,
+      @JsonKey(name: "application_name") required final String applicationName,
+      @JsonKey(name: "application_version")
       required final String applicationVersion,
-      required final String deviceModel,
-      required final String platform,
-      required final String systemVersion,
-      required final DateTime created,
+      @JsonKey(name: "device_model") required final String deviceModel,
+      @JsonKey(name: "platform") required final String platform,
+      @JsonKey(name: "system_version") required final String systemVersion,
+      @JsonKey(name: "created") required final DateTime created,
+      @JsonKey(name: "created_unixtime")
       required final String createdUnixtime}) = _$_Session;
 
   factory _Session.fromJson(Map<String, dynamic> json) = _$_Session.fromJson;
 
   @override
+  @JsonKey(name: "last_active")
   DateTime get lastActive;
   @override
+  @JsonKey(name: "last_active_unixtime")
   String get lastActiveUnixtime;
   @override
+  @JsonKey(name: "last_ip")
   String get lastIp;
   @override
+  @JsonKey(name: "last_country")
   String get lastCountry;
   @override
+  @JsonKey(name: "last_region")
   String get lastRegion;
   @override
+  @JsonKey(name: "application_name")
   String get applicationName;
   @override
+  @JsonKey(name: "application_version")
   String get applicationVersion;
   @override
+  @JsonKey(name: "device_model")
   String get deviceModel;
   @override
+  @JsonKey(name: "platform")
   String get platform;
   @override
+  @JsonKey(name: "system_version")
   String get systemVersion;
   @override
+  @JsonKey(name: "created")
   DateTime get created;
   @override
+  @JsonKey(name: "created_unixtime")
   String get createdUnixtime;
   @override
   @JsonKey(ignore: true)
   _$$_SessionCopyWith<_$_Session> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+FrequentContact _$FrequentContactFromJson(Map<String, dynamic> json) {
+  return _FrequentContact.fromJson(json);
+}
+
+/// @nodoc
+mixin _$FrequentContact {
+  @JsonKey(name: "id")
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "category")
+  String get category => throw _privateConstructorUsedError;
+  @JsonKey(name: "type")
+  String get type => throw _privateConstructorUsedError;
+  @JsonKey(name: "name")
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: "rating")
+  double get rating => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FrequentContactCopyWith<FrequentContact> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FrequentContactCopyWith<$Res> {
+  factory $FrequentContactCopyWith(
+          FrequentContact value, $Res Function(FrequentContact) then) =
+      _$FrequentContactCopyWithImpl<$Res, FrequentContact>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "category") String category,
+      @JsonKey(name: "type") String type,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "rating") double rating});
+}
+
+/// @nodoc
+class _$FrequentContactCopyWithImpl<$Res, $Val extends FrequentContact>
+    implements $FrequentContactCopyWith<$Res> {
+  _$FrequentContactCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? category = null,
+    Object? type = null,
+    Object? name = null,
+    Object? rating = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      rating: null == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_FrequentContactCopyWith<$Res>
+    implements $FrequentContactCopyWith<$Res> {
+  factory _$$_FrequentContactCopyWith(
+          _$_FrequentContact value, $Res Function(_$_FrequentContact) then) =
+      __$$_FrequentContactCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "category") String category,
+      @JsonKey(name: "type") String type,
+      @JsonKey(name: "name") String name,
+      @JsonKey(name: "rating") double rating});
+}
+
+/// @nodoc
+class __$$_FrequentContactCopyWithImpl<$Res>
+    extends _$FrequentContactCopyWithImpl<$Res, _$_FrequentContact>
+    implements _$$_FrequentContactCopyWith<$Res> {
+  __$$_FrequentContactCopyWithImpl(
+      _$_FrequentContact _value, $Res Function(_$_FrequentContact) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? category = null,
+    Object? type = null,
+    Object? name = null,
+    Object? rating = null,
+  }) {
+    return _then(_$_FrequentContact(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      rating: null == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_FrequentContact implements _FrequentContact {
+  const _$_FrequentContact(
+      {@JsonKey(name: "id") required this.id,
+      @JsonKey(name: "category") required this.category,
+      @JsonKey(name: "type") required this.type,
+      @JsonKey(name: "name") required this.name,
+      @JsonKey(name: "rating") required this.rating});
+
+  factory _$_FrequentContact.fromJson(Map<String, dynamic> json) =>
+      _$$_FrequentContactFromJson(json);
+
+  @override
+  @JsonKey(name: "id")
+  final int id;
+  @override
+  @JsonKey(name: "category")
+  final String category;
+  @override
+  @JsonKey(name: "type")
+  final String type;
+  @override
+  @JsonKey(name: "name")
+  final String name;
+  @override
+  @JsonKey(name: "rating")
+  final double rating;
+
+  @override
+  String toString() {
+    return 'FrequentContact(id: $id, category: $category, type: $type, name: $name, rating: $rating)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_FrequentContact &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.rating, rating) || other.rating == rating));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, category, type, name, rating);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_FrequentContactCopyWith<_$_FrequentContact> get copyWith =>
+      __$$_FrequentContactCopyWithImpl<_$_FrequentContact>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_FrequentContactToJson(
+      this,
+    );
+  }
+}
+
+abstract class _FrequentContact implements FrequentContact {
+  const factory _FrequentContact(
+          {@JsonKey(name: "id") required final int id,
+          @JsonKey(name: "category") required final String category,
+          @JsonKey(name: "type") required final String type,
+          @JsonKey(name: "name") required final String name,
+          @JsonKey(name: "rating") required final double rating}) =
+      _$_FrequentContact;
+
+  factory _FrequentContact.fromJson(Map<String, dynamic> json) =
+      _$_FrequentContact.fromJson;
+
+  @override
+  @JsonKey(name: "id")
+  int get id;
+  @override
+  @JsonKey(name: "category")
+  String get category;
+  @override
+  @JsonKey(name: "type")
+  String get type;
+  @override
+  @JsonKey(name: "name")
+  String get name;
+  @override
+  @JsonKey(name: "rating")
+  double get rating;
+  @override
+  @JsonKey(ignore: true)
+  _$$_FrequentContactCopyWith<_$_FrequentContact> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+InstalledSticker _$InstalledStickerFromJson(Map<String, dynamic> json) {
+  return _InstalledSticker.fromJson(json);
+}
+
+/// @nodoc
+mixin _$InstalledSticker {
+  @JsonKey(name: "url")
+  String get url => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InstalledStickerCopyWith<InstalledSticker> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InstalledStickerCopyWith<$Res> {
+  factory $InstalledStickerCopyWith(
+          InstalledSticker value, $Res Function(InstalledSticker) then) =
+      _$InstalledStickerCopyWithImpl<$Res, InstalledSticker>;
+  @useResult
+  $Res call({@JsonKey(name: "url") String url});
+}
+
+/// @nodoc
+class _$InstalledStickerCopyWithImpl<$Res, $Val extends InstalledSticker>
+    implements $InstalledStickerCopyWith<$Res> {
+  _$InstalledStickerCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? url = null,
+  }) {
+    return _then(_value.copyWith(
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_InstalledStickerCopyWith<$Res>
+    implements $InstalledStickerCopyWith<$Res> {
+  factory _$$_InstalledStickerCopyWith(
+          _$_InstalledSticker value, $Res Function(_$_InstalledSticker) then) =
+      __$$_InstalledStickerCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: "url") String url});
+}
+
+/// @nodoc
+class __$$_InstalledStickerCopyWithImpl<$Res>
+    extends _$InstalledStickerCopyWithImpl<$Res, _$_InstalledSticker>
+    implements _$$_InstalledStickerCopyWith<$Res> {
+  __$$_InstalledStickerCopyWithImpl(
+      _$_InstalledSticker _value, $Res Function(_$_InstalledSticker) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? url = null,
+  }) {
+    return _then(_$_InstalledSticker(
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_InstalledSticker implements _InstalledSticker {
+  const _$_InstalledSticker({@JsonKey(name: "url") required this.url});
+
+  factory _$_InstalledSticker.fromJson(Map<String, dynamic> json) =>
+      _$$_InstalledStickerFromJson(json);
+
+  @override
+  @JsonKey(name: "url")
+  final String url;
+
+  @override
+  String toString() {
+    return 'InstalledSticker(url: $url)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_InstalledSticker &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, url);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_InstalledStickerCopyWith<_$_InstalledSticker> get copyWith =>
+      __$$_InstalledStickerCopyWithImpl<_$_InstalledSticker>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_InstalledStickerToJson(
+      this,
+    );
+  }
+}
+
+abstract class _InstalledSticker implements InstalledSticker {
+  const factory _InstalledSticker(
+      {@JsonKey(name: "url") required final String url}) = _$_InstalledSticker;
+
+  factory _InstalledSticker.fromJson(Map<String, dynamic> json) =
+      _$_InstalledSticker.fromJson;
+
+  @override
+  @JsonKey(name: "url")
+  String get url;
+  @override
+  @JsonKey(ignore: true)
+  _$$_InstalledStickerCopyWith<_$_InstalledSticker> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Ip _$IpFromJson(Map<String, dynamic> json) {
+  return _Ip.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Ip {
+  @JsonKey(name: "ip")
+  String get ip => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IpCopyWith<Ip> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IpCopyWith<$Res> {
+  factory $IpCopyWith(Ip value, $Res Function(Ip) then) =
+      _$IpCopyWithImpl<$Res, Ip>;
+  @useResult
+  $Res call({@JsonKey(name: "ip") String ip});
+}
+
+/// @nodoc
+class _$IpCopyWithImpl<$Res, $Val extends Ip> implements $IpCopyWith<$Res> {
+  _$IpCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ip = null,
+  }) {
+    return _then(_value.copyWith(
+      ip: null == ip
+          ? _value.ip
+          : ip // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_IpCopyWith<$Res> implements $IpCopyWith<$Res> {
+  factory _$$_IpCopyWith(_$_Ip value, $Res Function(_$_Ip) then) =
+      __$$_IpCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: "ip") String ip});
+}
+
+/// @nodoc
+class __$$_IpCopyWithImpl<$Res> extends _$IpCopyWithImpl<$Res, _$_Ip>
+    implements _$$_IpCopyWith<$Res> {
+  __$$_IpCopyWithImpl(_$_Ip _value, $Res Function(_$_Ip) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ip = null,
+  }) {
+    return _then(_$_Ip(
+      ip: null == ip
+          ? _value.ip
+          : ip // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Ip implements _Ip {
+  const _$_Ip({@JsonKey(name: "ip") required this.ip});
+
+  factory _$_Ip.fromJson(Map<String, dynamic> json) => _$$_IpFromJson(json);
+
+  @override
+  @JsonKey(name: "ip")
+  final String ip;
+
+  @override
+  String toString() {
+    return 'Ip(ip: $ip)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Ip &&
+            (identical(other.ip, ip) || other.ip == ip));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, ip);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_IpCopyWith<_$_Ip> get copyWith =>
+      __$$_IpCopyWithImpl<_$_Ip>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_IpToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Ip implements Ip {
+  const factory _Ip({@JsonKey(name: "ip") required final String ip}) = _$_Ip;
+
+  factory _Ip.fromJson(Map<String, dynamic> json) = _$_Ip.fromJson;
+
+  @override
+  @JsonKey(name: "ip")
+  String get ip;
+  @override
+  @JsonKey(ignore: true)
+  _$$_IpCopyWith<_$_Ip> get copyWith => throw _privateConstructorUsedError;
 }

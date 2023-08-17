@@ -1,0 +1,15 @@
+targets:
+  $default:
+    builders:
+      freezed:
+        generate_for:
+          # Add the paths to the files that contain freezed classes
+          include:
+            - lib/utils/models/*.dart
+        options:
+          toJson: true
+      json_serializable:
+          options:
+            create_to_json: true
+            explicit_to_json: true
+            generic_argument_factories: true
