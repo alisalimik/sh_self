@@ -4,6 +4,7 @@ import 'package:sh_self/sh_self.dart';
 import 'package:sh_self/tdlib_dart/td_api.dart' as td;
 import 'package:sh_self/utils/models/sh_chat_type.dart';
 import 'package:sh_self/utils/models/sh_chat_type_info.dart';
+import 'package:sh_self/utils/models/sh_data_export.dart';
 import 'package:sh_self/utils/models/sh_event.dart';
 import 'package:sh_self/utils/models/sh_message_type.dart';
 import 'package:sh_self/utils/models/sh_text_and_type.dart';
@@ -280,4 +281,92 @@ Future<ShChatTypeInfo> getEventChatTypeAndSender(td.Update update) async {
 
 num clamp(num value, num min, num max) {
   return value < min ? min : (value > max ? max : value);
+}
+
+extension IntToDateTime on int {
+  DateTime toDateTime() {
+    return DateTime.fromMillisecondsSinceEpoch(this * 1000, isUtc: true);
+  }
+}
+
+List<TextEntities> tdEntitiesToShEntities(Map<String, dynamic> input) {
+  final Map<String, String> entityTypes = {
+    "textEntityTypeBold": "bold",
+    "textEntityTypeItalic": "italic",
+    "textEntityTypeUnderline": "underline",
+    "textEntityTypeStrikethrough": "strikethrough",
+    "textEntityTypeCode": "code",
+    "textEntityTypeSpoiler": "spoiler",
+    "textEntityTypeTextUrl": "text_link",
+    "textEntityTypeUrl": "link",
+    "textEntityTypeCustomEmoji": "custom_emoji",
+    "textEntityTypePre": "pre",
+    "textEntityTypeBotCommand": "bot_command",
+  };
+  int lastIndex = 0; // To track the end of the last processed entity
+
+  final List<Map<String, dynamic>> newMap = [];
+
+  for (final entity in input["entities"] as List<Map<String, dynamic>>) {
+    final String entityText = (input["text"] as String).substring(
+      entity["offset"] as int,
+      (entity["offset"] as int) + (entity["length"] as int),
+    );
+    final String entityType =
+        entityTypes[(entity["type"] as Map<String, dynamic>)["@type"]]
+            .toString();
+    String customEmojiId = "";
+    String href = "";
+
+    // Add "plain" entity for text between entities
+    if (entity["offset"] as int > lastIndex) {
+      final String plainText = (input["text"] as String)
+          .substring(lastIndex, entity["offset"] as int);
+      newMap.add({
+        "type": "plain",
+        "text": plainText,
+        "document_id": null,
+        "href": null,
+      });
+    }
+    if (entityType == "custom_emoji") {
+      customEmojiId =
+          (entity["type"] as Map<String, dynamic>)["custom_emoji_id"].toString();
+    }
+
+    if (entityType == "text_link") {
+      href = (entity["type"] as Map<String, dynamic>)["url"].toString();
+    }
+
+    newMap.add({
+      "type": entityType,
+      "text": entityText,
+      "document_id": customEmojiId,
+      "href": href,
+    });
+
+    lastIndex = (entity["offset"] as int) + (entity["length"] as int);
+  }
+
+  // Add "plain" entity for text after the last entity
+  if (lastIndex < (input["text"] as String).length) {
+    final String plainText = (input["text"] as String).substring(lastIndex);
+    newMap.add({
+      "type": "plain",
+      "text": plainText,
+      "document_id": null,
+      "href": null,
+    });
+  }
+
+  return newMap
+      .map(
+        (e) => TextEntities(
+          type: e['type'].toString(),
+          text: e['text'].toString(),
+          href: e['href'] as String?,
+          documentId: e['document_id'] as String?,
+        ),
+      )
+      .toList();
 }

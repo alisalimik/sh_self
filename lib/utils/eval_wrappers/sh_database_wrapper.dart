@@ -157,7 +157,7 @@ class $ShDatabase implements ShDatabase, $Instance {
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation($type),
         ),
-      )
+      ),
     },
     fields: {
       'storage': const BridgeFieldDef(
@@ -169,7 +169,7 @@ class $ShDatabase implements ShDatabase, $Instance {
         BridgeTypeAnnotation(
           BridgeTypeRef.type(RuntimeTypes.objectType),
         ),
-      )
+      ),
     },
     methods: {
       'getDbPath': const BridgeMethodDef(

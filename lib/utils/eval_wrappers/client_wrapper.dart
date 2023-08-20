@@ -89,7 +89,7 @@ class $Client implements Client, $Instance {
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation($type),
         ),
-      )
+      ),
     },
     fields: {
       'updates': BridgeFieldDef(
@@ -133,7 +133,7 @@ class $Client implements Client, $Instance {
                 ),
               ),
               false,
-            )
+            ),
           ],
         ),
       ),
@@ -153,7 +153,7 @@ class $Client implements Client, $Instance {
                 ),
               ),
               false,
-            )
+            ),
           ],
         ),
       ),
