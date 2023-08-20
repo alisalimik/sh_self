@@ -13,7 +13,7 @@ class ShDataExport with _$ShDataExport {
     required PersonalInformation personalInformation,
     @JsonKey(name: "profile_pictures")
     required List<ProfilePicture> profilePictures,
-    @JsonKey(name: "stories") required List<dynamic> stories,
+    @JsonKey(name: "stories") required List<Story> stories,
     @JsonKey(name: "contacts") required ListWithAbout<Contact> contacts,
     @JsonKey(name: "frequent_contacts")
     required ListWithAbout<FrequentContact> frequentContacts,
@@ -44,42 +44,72 @@ class Chat with _$Chat {
 @freezed
 class Message with _$Message {
   const factory Message({
-    required int id,
-    required String type,
-    required DateTime date,
+    @JsonKey(name: "id") required int id,
+    @JsonKey(name: "type") required String type,
+    @JsonKey(name: "date") required DateTime date,
     @JsonKey(name: "date_unixtime") required String dateUnixtime,
-    String? from,
-    @JsonKey(name: "from_id") String? fromId,
-    required dynamic text,
-    @JsonKey(name: "text_entities") required List<TextEntities> textEntities,
-    DateTime? edited,
-    @JsonKey(name: "edited_unixtime") String? editedUnixtime,
+    @JsonKey(name: "from") required String from,
+    @JsonKey(name: "from_id") required String fromId,
     @JsonKey(name: "reply_to_message_id") int? replyToMessageId,
-    String? photo,
-    int? width,
-    int? height,
-    String? actor,
-    @JsonKey(name: "actor_id") String? actorId,
-    String? action,
-    List<String>? members,
-    String? file,
-    String? thumbnail,
+    @JsonKey(name: "text") required dynamic text,
+    @JsonKey(name: "text_entities") required List<TextEntities> textEntities,
+    @JsonKey(name: "photo") String? photo,
+    @JsonKey(name: "width") int? width,
+    @JsonKey(name: "height") int? height,
+    @JsonKey(name: "file") String? file,
+    @JsonKey(name: "thumbnail") String? thumbnail,
     @JsonKey(name: "media_type") String? mediaType,
-    @JsonKey(name: "sticker_emoji") String? stickerEmoji,
     @JsonKey(name: "mime_type") String? mimeType,
     @JsonKey(name: "duration_seconds") int? durationSeconds,
-    @JsonKey(name: "forwarded_from") String? forwardedFrom,
-    @JsonKey(name: "invoice_information") String? invoiceInformation,
-    @JsonKey(name: "saved_from") String? savedFrom,
+    @JsonKey(name: "sticker_emoji") String? stickerEmoji,
+    @JsonKey(name: "location_information")
+    LocationInformation? locationInformation,
+    @JsonKey(name: "poll") Poll? poll,
     @JsonKey(name: "contact_information") Contact? contactInformation,
-    @JsonKey(name: "message_id") int? messageId,
-    String? cost,
-    int? months,
-    String? title,
+    @JsonKey(name: "via_bot") String? viaBot,
+    @JsonKey(name: "game_title") String? gameTitle,
+    @JsonKey(name: "game_description") String? gameDescription,
+    @JsonKey(name: "game_link") String? gameLink,
+    @JsonKey(name: "performer") String? performer,
+    @JsonKey(name: "title") String? title,
   }) = _Message;
 
   factory Message.fromJson(Map<String, dynamic> json) =>
       _$MessageFromJson(json);
+}
+
+@freezed
+class LocationInformation with _$LocationInformation {
+  const factory LocationInformation({
+    @JsonKey(name: "latitude") required double latitude,
+    @JsonKey(name: "longitude") required double longitude,
+  }) = _LocationInformation;
+
+  factory LocationInformation.fromJson(Map<String, dynamic> json) =>
+      _$LocationInformationFromJson(json);
+}
+
+@freezed
+class Poll with _$Poll {
+  const factory Poll({
+    @JsonKey(name: "question") required String question,
+    @JsonKey(name: "closed") required bool closed,
+    @JsonKey(name: "total_voters") required int totalVoters,
+    @JsonKey(name: "answers") required List<Answer> answers,
+  }) = _Poll;
+
+  factory Poll.fromJson(Map<String, dynamic> json) => _$PollFromJson(json);
+}
+
+@freezed
+class Answer with _$Answer {
+  const factory Answer({
+    @JsonKey(name: "text") required String text,
+    @JsonKey(name: "voters") required int voters,
+    @JsonKey(name: "chosen") required bool chosen,
+  }) = _Answer;
+
+  factory Answer.fromJson(Map<String, dynamic> json) => _$AnswerFromJson(json);
 }
 
 @freezed
@@ -159,9 +189,10 @@ class ListWithAbout<T> with _$ListWithAbout<T> {
     required String about,
     required List<T> list,
   }) = _ListWithAbout;
-  
-  Map<String, dynamic> toJson(Object Function(T value) toJsonT) => _$ListWithAboutToJson<T>(this, toJsonT);
-  
+
+  Map<String, dynamic> toJson(Object Function(T value) toJsonT) =>
+      _$ListWithAboutToJson<T>(this, toJsonT);
+
   factory ListWithAbout.fromJson(
     Map<String, dynamic> json,
     T Function(Object? json) fromJsonT,
@@ -222,4 +253,19 @@ class Ip with _$Ip {
   }) = _Ip;
 
   factory Ip.fromJson(Map<String, dynamic> json) => _$IpFromJson(json);
+}
+
+@freezed
+class Story with _$Story {
+  const factory Story({
+    @JsonKey(name: "date") required DateTime date,
+    @JsonKey(name: "date_unixtime") required String dateUnixtime,
+    @JsonKey(name: "expires") required DateTime expires,
+    @JsonKey(name: "expires_unixtime") required String expiresUnixtime,
+    @JsonKey(name: "pinned") required bool pinned,
+    @JsonKey(name: "media") required String media,
+    @JsonKey(name: "caption") String? caption,
+  }) = _Story;
+
+  factory Story.fromJson(Map<String, dynamic> json) => _$StoryFromJson(json);
 }

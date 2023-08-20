@@ -32,8 +32,8 @@ Future<void> _function(update) async {
     try {
       final program = compiler.compile({
         'sh_self': {
-          'main.dart': (repliedMessage.content as td.MessageText).text.text
-        }
+          'main.dart': (repliedMessage.content as td.MessageText).text.text,
+        },
       });
       final file =
           await File('eval_modules/m-$randomName.evc').create(recursive: true);

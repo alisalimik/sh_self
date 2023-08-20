@@ -29,7 +29,7 @@ mixin _$ShDataExport {
   List<ProfilePicture> get profilePictures =>
       throw _privateConstructorUsedError;
   @JsonKey(name: "stories")
-  List<dynamic> get stories => throw _privateConstructorUsedError;
+  List<Story> get stories => throw _privateConstructorUsedError;
   @JsonKey(name: "contacts")
   ListWithAbout<Contact> get contacts => throw _privateConstructorUsedError;
   @JsonKey(name: "frequent_contacts")
@@ -64,7 +64,7 @@ abstract class $ShDataExportCopyWith<$Res> {
       @JsonKey(name: "personal_information")
       PersonalInformation personalInformation,
       @JsonKey(name: "profile_pictures") List<ProfilePicture> profilePictures,
-      @JsonKey(name: "stories") List<dynamic> stories,
+      @JsonKey(name: "stories") List<Story> stories,
       @JsonKey(name: "contacts") ListWithAbout<Contact> contacts,
       @JsonKey(name: "frequent_contacts")
       ListWithAbout<FrequentContact> frequentContacts,
@@ -126,7 +126,7 @@ class _$ShDataExportCopyWithImpl<$Res, $Val extends ShDataExport>
       stories: null == stories
           ? _value.stories
           : stories // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<Story>,
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
@@ -239,7 +239,7 @@ abstract class _$$_ShDataExportCopyWith<$Res>
       @JsonKey(name: "personal_information")
       PersonalInformation personalInformation,
       @JsonKey(name: "profile_pictures") List<ProfilePicture> profilePictures,
-      @JsonKey(name: "stories") List<dynamic> stories,
+      @JsonKey(name: "stories") List<Story> stories,
       @JsonKey(name: "contacts") ListWithAbout<Contact> contacts,
       @JsonKey(name: "frequent_contacts")
       ListWithAbout<FrequentContact> frequentContacts,
@@ -307,7 +307,7 @@ class __$$_ShDataExportCopyWithImpl<$Res>
       stories: null == stories
           ? _value._stories
           : stories // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<Story>,
       contacts: null == contacts
           ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
@@ -348,7 +348,7 @@ class _$_ShDataExport implements _ShDataExport {
       @JsonKey(name: "personal_information") required this.personalInformation,
       @JsonKey(name: "profile_pictures")
       required final List<ProfilePicture> profilePictures,
-      @JsonKey(name: "stories") required final List<dynamic> stories,
+      @JsonKey(name: "stories") required final List<Story> stories,
       @JsonKey(name: "contacts") required this.contacts,
       @JsonKey(name: "frequent_contacts") required this.frequentContacts,
       @JsonKey(name: "sessions") required this.sessions,
@@ -377,10 +377,10 @@ class _$_ShDataExport implements _ShDataExport {
     return EqualUnmodifiableListView(_profilePictures);
   }
 
-  final List<dynamic> _stories;
+  final List<Story> _stories;
   @override
   @JsonKey(name: "stories")
-  List<dynamic> get stories {
+  List<Story> get stories {
     if (_stories is EqualUnmodifiableListView) return _stories;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_stories);
@@ -476,7 +476,7 @@ abstract class _ShDataExport implements ShDataExport {
       required final PersonalInformation personalInformation,
       @JsonKey(name: "profile_pictures")
       required final List<ProfilePicture> profilePictures,
-      @JsonKey(name: "stories") required final List<dynamic> stories,
+      @JsonKey(name: "stories") required final List<Story> stories,
       @JsonKey(name: "contacts") required final ListWithAbout<Contact> contacts,
       @JsonKey(name: "frequent_contacts")
       required final ListWithAbout<FrequentContact> frequentContacts,
@@ -502,7 +502,7 @@ abstract class _ShDataExport implements ShDataExport {
   List<ProfilePicture> get profilePictures;
   @override
   @JsonKey(name: "stories")
-  List<dynamic> get stories;
+  List<Story> get stories;
   @override
   @JsonKey(name: "contacts")
   ListWithAbout<Contact> get contacts;
@@ -726,52 +726,60 @@ Message _$MessageFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Message {
+  @JsonKey(name: "id")
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: "type")
   String get type => throw _privateConstructorUsedError;
+  @JsonKey(name: "date")
   DateTime get date => throw _privateConstructorUsedError;
   @JsonKey(name: "date_unixtime")
   String get dateUnixtime => throw _privateConstructorUsedError;
-  String? get from => throw _privateConstructorUsedError;
+  @JsonKey(name: "from")
+  String get from => throw _privateConstructorUsedError;
   @JsonKey(name: "from_id")
-  String? get fromId => throw _privateConstructorUsedError;
+  String get fromId => throw _privateConstructorUsedError;
+  @JsonKey(name: "reply_to_message_id")
+  int? get replyToMessageId => throw _privateConstructorUsedError;
+  @JsonKey(name: "text")
   dynamic get text => throw _privateConstructorUsedError;
   @JsonKey(name: "text_entities")
   List<TextEntities> get textEntities => throw _privateConstructorUsedError;
-  DateTime? get edited => throw _privateConstructorUsedError;
-  @JsonKey(name: "edited_unixtime")
-  String? get editedUnixtime => throw _privateConstructorUsedError;
-  @JsonKey(name: "reply_to_message_id")
-  int? get replyToMessageId => throw _privateConstructorUsedError;
+  @JsonKey(name: "photo")
   String? get photo => throw _privateConstructorUsedError;
+  @JsonKey(name: "width")
   int? get width => throw _privateConstructorUsedError;
+  @JsonKey(name: "height")
   int? get height => throw _privateConstructorUsedError;
-  String? get actor => throw _privateConstructorUsedError;
-  @JsonKey(name: "actor_id")
-  String? get actorId => throw _privateConstructorUsedError;
-  String? get action => throw _privateConstructorUsedError;
-  List<String>? get members => throw _privateConstructorUsedError;
+  @JsonKey(name: "file")
   String? get file => throw _privateConstructorUsedError;
+  @JsonKey(name: "thumbnail")
   String? get thumbnail => throw _privateConstructorUsedError;
   @JsonKey(name: "media_type")
   String? get mediaType => throw _privateConstructorUsedError;
-  @JsonKey(name: "sticker_emoji")
-  String? get stickerEmoji => throw _privateConstructorUsedError;
   @JsonKey(name: "mime_type")
   String? get mimeType => throw _privateConstructorUsedError;
   @JsonKey(name: "duration_seconds")
   int? get durationSeconds => throw _privateConstructorUsedError;
-  @JsonKey(name: "forwarded_from")
-  String? get forwardedFrom => throw _privateConstructorUsedError;
-  @JsonKey(name: "invoice_information")
-  String? get invoiceInformation => throw _privateConstructorUsedError;
-  @JsonKey(name: "saved_from")
-  String? get savedFrom => throw _privateConstructorUsedError;
+  @JsonKey(name: "sticker_emoji")
+  String? get stickerEmoji => throw _privateConstructorUsedError;
+  @JsonKey(name: "location_information")
+  LocationInformation? get locationInformation =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: "poll")
+  Poll? get poll => throw _privateConstructorUsedError;
   @JsonKey(name: "contact_information")
   Contact? get contactInformation => throw _privateConstructorUsedError;
-  @JsonKey(name: "message_id")
-  int? get messageId => throw _privateConstructorUsedError;
-  String? get cost => throw _privateConstructorUsedError;
-  int? get months => throw _privateConstructorUsedError;
+  @JsonKey(name: "via_bot")
+  String? get viaBot => throw _privateConstructorUsedError;
+  @JsonKey(name: "game_title")
+  String? get gameTitle => throw _privateConstructorUsedError;
+  @JsonKey(name: "game_description")
+  String? get gameDescription => throw _privateConstructorUsedError;
+  @JsonKey(name: "game_link")
+  String? get gameLink => throw _privateConstructorUsedError;
+  @JsonKey(name: "performer")
+  String? get performer => throw _privateConstructorUsedError;
+  @JsonKey(name: "title")
   String? get title => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -785,39 +793,37 @@ abstract class $MessageCopyWith<$Res> {
       _$MessageCopyWithImpl<$Res, Message>;
   @useResult
   $Res call(
-      {int id,
-      String type,
-      DateTime date,
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "type") String type,
+      @JsonKey(name: "date") DateTime date,
       @JsonKey(name: "date_unixtime") String dateUnixtime,
-      String? from,
-      @JsonKey(name: "from_id") String? fromId,
-      dynamic text,
-      @JsonKey(name: "text_entities") List<TextEntities> textEntities,
-      DateTime? edited,
-      @JsonKey(name: "edited_unixtime") String? editedUnixtime,
+      @JsonKey(name: "from") String from,
+      @JsonKey(name: "from_id") String fromId,
       @JsonKey(name: "reply_to_message_id") int? replyToMessageId,
-      String? photo,
-      int? width,
-      int? height,
-      String? actor,
-      @JsonKey(name: "actor_id") String? actorId,
-      String? action,
-      List<String>? members,
-      String? file,
-      String? thumbnail,
+      @JsonKey(name: "text") dynamic text,
+      @JsonKey(name: "text_entities") List<TextEntities> textEntities,
+      @JsonKey(name: "photo") String? photo,
+      @JsonKey(name: "width") int? width,
+      @JsonKey(name: "height") int? height,
+      @JsonKey(name: "file") String? file,
+      @JsonKey(name: "thumbnail") String? thumbnail,
       @JsonKey(name: "media_type") String? mediaType,
-      @JsonKey(name: "sticker_emoji") String? stickerEmoji,
       @JsonKey(name: "mime_type") String? mimeType,
       @JsonKey(name: "duration_seconds") int? durationSeconds,
-      @JsonKey(name: "forwarded_from") String? forwardedFrom,
-      @JsonKey(name: "invoice_information") String? invoiceInformation,
-      @JsonKey(name: "saved_from") String? savedFrom,
+      @JsonKey(name: "sticker_emoji") String? stickerEmoji,
+      @JsonKey(name: "location_information")
+      LocationInformation? locationInformation,
+      @JsonKey(name: "poll") Poll? poll,
       @JsonKey(name: "contact_information") Contact? contactInformation,
-      @JsonKey(name: "message_id") int? messageId,
-      String? cost,
-      int? months,
-      String? title});
+      @JsonKey(name: "via_bot") String? viaBot,
+      @JsonKey(name: "game_title") String? gameTitle,
+      @JsonKey(name: "game_description") String? gameDescription,
+      @JsonKey(name: "game_link") String? gameLink,
+      @JsonKey(name: "performer") String? performer,
+      @JsonKey(name: "title") String? title});
 
+  $LocationInformationCopyWith<$Res>? get locationInformation;
+  $PollCopyWith<$Res>? get poll;
   $ContactCopyWith<$Res>? get contactInformation;
 }
 
@@ -838,33 +844,28 @@ class _$MessageCopyWithImpl<$Res, $Val extends Message>
     Object? type = null,
     Object? date = null,
     Object? dateUnixtime = null,
-    Object? from = freezed,
-    Object? fromId = freezed,
+    Object? from = null,
+    Object? fromId = null,
+    Object? replyToMessageId = freezed,
     Object? text = freezed,
     Object? textEntities = null,
-    Object? edited = freezed,
-    Object? editedUnixtime = freezed,
-    Object? replyToMessageId = freezed,
     Object? photo = freezed,
     Object? width = freezed,
     Object? height = freezed,
-    Object? actor = freezed,
-    Object? actorId = freezed,
-    Object? action = freezed,
-    Object? members = freezed,
     Object? file = freezed,
     Object? thumbnail = freezed,
     Object? mediaType = freezed,
-    Object? stickerEmoji = freezed,
     Object? mimeType = freezed,
     Object? durationSeconds = freezed,
-    Object? forwardedFrom = freezed,
-    Object? invoiceInformation = freezed,
-    Object? savedFrom = freezed,
+    Object? stickerEmoji = freezed,
+    Object? locationInformation = freezed,
+    Object? poll = freezed,
     Object? contactInformation = freezed,
-    Object? messageId = freezed,
-    Object? cost = freezed,
-    Object? months = freezed,
+    Object? viaBot = freezed,
+    Object? gameTitle = freezed,
+    Object? gameDescription = freezed,
+    Object? gameLink = freezed,
+    Object? performer = freezed,
     Object? title = freezed,
   }) {
     return _then(_value.copyWith(
@@ -884,14 +885,18 @@ class _$MessageCopyWithImpl<$Res, $Val extends Message>
           ? _value.dateUnixtime
           : dateUnixtime // ignore: cast_nullable_to_non_nullable
               as String,
-      from: freezed == from
+      from: null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromId: freezed == fromId
+              as String,
+      fromId: null == fromId
           ? _value.fromId
           : fromId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      replyToMessageId: freezed == replyToMessageId
+          ? _value.replyToMessageId
+          : replyToMessageId // ignore: cast_nullable_to_non_nullable
+              as int?,
       text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -900,18 +905,6 @@ class _$MessageCopyWithImpl<$Res, $Val extends Message>
           ? _value.textEntities
           : textEntities // ignore: cast_nullable_to_non_nullable
               as List<TextEntities>,
-      edited: freezed == edited
-          ? _value.edited
-          : edited // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      editedUnixtime: freezed == editedUnixtime
-          ? _value.editedUnixtime
-          : editedUnixtime // ignore: cast_nullable_to_non_nullable
-              as String?,
-      replyToMessageId: freezed == replyToMessageId
-          ? _value.replyToMessageId
-          : replyToMessageId // ignore: cast_nullable_to_non_nullable
-              as int?,
       photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
@@ -924,22 +917,6 @@ class _$MessageCopyWithImpl<$Res, $Val extends Message>
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int?,
-      actor: freezed == actor
-          ? _value.actor
-          : actor // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actorId: freezed == actorId
-          ? _value.actorId
-          : actorId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      action: freezed == action
-          ? _value.action
-          : action // ignore: cast_nullable_to_non_nullable
-              as String?,
-      members: freezed == members
-          ? _value.members
-          : members // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
       file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
@@ -952,10 +929,6 @@ class _$MessageCopyWithImpl<$Res, $Val extends Message>
           ? _value.mediaType
           : mediaType // ignore: cast_nullable_to_non_nullable
               as String?,
-      stickerEmoji: freezed == stickerEmoji
-          ? _value.stickerEmoji
-          : stickerEmoji // ignore: cast_nullable_to_non_nullable
-              as String?,
       mimeType: freezed == mimeType
           ? _value.mimeType
           : mimeType // ignore: cast_nullable_to_non_nullable
@@ -964,39 +937,72 @@ class _$MessageCopyWithImpl<$Res, $Val extends Message>
           ? _value.durationSeconds
           : durationSeconds // ignore: cast_nullable_to_non_nullable
               as int?,
-      forwardedFrom: freezed == forwardedFrom
-          ? _value.forwardedFrom
-          : forwardedFrom // ignore: cast_nullable_to_non_nullable
+      stickerEmoji: freezed == stickerEmoji
+          ? _value.stickerEmoji
+          : stickerEmoji // ignore: cast_nullable_to_non_nullable
               as String?,
-      invoiceInformation: freezed == invoiceInformation
-          ? _value.invoiceInformation
-          : invoiceInformation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      savedFrom: freezed == savedFrom
-          ? _value.savedFrom
-          : savedFrom // ignore: cast_nullable_to_non_nullable
-              as String?,
+      locationInformation: freezed == locationInformation
+          ? _value.locationInformation
+          : locationInformation // ignore: cast_nullable_to_non_nullable
+              as LocationInformation?,
+      poll: freezed == poll
+          ? _value.poll
+          : poll // ignore: cast_nullable_to_non_nullable
+              as Poll?,
       contactInformation: freezed == contactInformation
           ? _value.contactInformation
           : contactInformation // ignore: cast_nullable_to_non_nullable
               as Contact?,
-      messageId: freezed == messageId
-          ? _value.messageId
-          : messageId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      cost: freezed == cost
-          ? _value.cost
-          : cost // ignore: cast_nullable_to_non_nullable
+      viaBot: freezed == viaBot
+          ? _value.viaBot
+          : viaBot // ignore: cast_nullable_to_non_nullable
               as String?,
-      months: freezed == months
-          ? _value.months
-          : months // ignore: cast_nullable_to_non_nullable
-              as int?,
+      gameTitle: freezed == gameTitle
+          ? _value.gameTitle
+          : gameTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gameDescription: freezed == gameDescription
+          ? _value.gameDescription
+          : gameDescription // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gameLink: freezed == gameLink
+          ? _value.gameLink
+          : gameLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      performer: freezed == performer
+          ? _value.performer
+          : performer // ignore: cast_nullable_to_non_nullable
+              as String?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LocationInformationCopyWith<$Res>? get locationInformation {
+    if (_value.locationInformation == null) {
+      return null;
+    }
+
+    return $LocationInformationCopyWith<$Res>(_value.locationInformation!,
+        (value) {
+      return _then(_value.copyWith(locationInformation: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PollCopyWith<$Res>? get poll {
+    if (_value.poll == null) {
+      return null;
+    }
+
+    return $PollCopyWith<$Res>(_value.poll!, (value) {
+      return _then(_value.copyWith(poll: value) as $Val);
+    });
   }
 
   @override
@@ -1020,39 +1026,39 @@ abstract class _$$_MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
-      String type,
-      DateTime date,
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "type") String type,
+      @JsonKey(name: "date") DateTime date,
       @JsonKey(name: "date_unixtime") String dateUnixtime,
-      String? from,
-      @JsonKey(name: "from_id") String? fromId,
-      dynamic text,
-      @JsonKey(name: "text_entities") List<TextEntities> textEntities,
-      DateTime? edited,
-      @JsonKey(name: "edited_unixtime") String? editedUnixtime,
+      @JsonKey(name: "from") String from,
+      @JsonKey(name: "from_id") String fromId,
       @JsonKey(name: "reply_to_message_id") int? replyToMessageId,
-      String? photo,
-      int? width,
-      int? height,
-      String? actor,
-      @JsonKey(name: "actor_id") String? actorId,
-      String? action,
-      List<String>? members,
-      String? file,
-      String? thumbnail,
+      @JsonKey(name: "text") dynamic text,
+      @JsonKey(name: "text_entities") List<TextEntities> textEntities,
+      @JsonKey(name: "photo") String? photo,
+      @JsonKey(name: "width") int? width,
+      @JsonKey(name: "height") int? height,
+      @JsonKey(name: "file") String? file,
+      @JsonKey(name: "thumbnail") String? thumbnail,
       @JsonKey(name: "media_type") String? mediaType,
-      @JsonKey(name: "sticker_emoji") String? stickerEmoji,
       @JsonKey(name: "mime_type") String? mimeType,
       @JsonKey(name: "duration_seconds") int? durationSeconds,
-      @JsonKey(name: "forwarded_from") String? forwardedFrom,
-      @JsonKey(name: "invoice_information") String? invoiceInformation,
-      @JsonKey(name: "saved_from") String? savedFrom,
+      @JsonKey(name: "sticker_emoji") String? stickerEmoji,
+      @JsonKey(name: "location_information")
+      LocationInformation? locationInformation,
+      @JsonKey(name: "poll") Poll? poll,
       @JsonKey(name: "contact_information") Contact? contactInformation,
-      @JsonKey(name: "message_id") int? messageId,
-      String? cost,
-      int? months,
-      String? title});
+      @JsonKey(name: "via_bot") String? viaBot,
+      @JsonKey(name: "game_title") String? gameTitle,
+      @JsonKey(name: "game_description") String? gameDescription,
+      @JsonKey(name: "game_link") String? gameLink,
+      @JsonKey(name: "performer") String? performer,
+      @JsonKey(name: "title") String? title});
 
+  @override
+  $LocationInformationCopyWith<$Res>? get locationInformation;
+  @override
+  $PollCopyWith<$Res>? get poll;
   @override
   $ContactCopyWith<$Res>? get contactInformation;
 }
@@ -1071,33 +1077,28 @@ class __$$_MessageCopyWithImpl<$Res>
     Object? type = null,
     Object? date = null,
     Object? dateUnixtime = null,
-    Object? from = freezed,
-    Object? fromId = freezed,
+    Object? from = null,
+    Object? fromId = null,
+    Object? replyToMessageId = freezed,
     Object? text = freezed,
     Object? textEntities = null,
-    Object? edited = freezed,
-    Object? editedUnixtime = freezed,
-    Object? replyToMessageId = freezed,
     Object? photo = freezed,
     Object? width = freezed,
     Object? height = freezed,
-    Object? actor = freezed,
-    Object? actorId = freezed,
-    Object? action = freezed,
-    Object? members = freezed,
     Object? file = freezed,
     Object? thumbnail = freezed,
     Object? mediaType = freezed,
-    Object? stickerEmoji = freezed,
     Object? mimeType = freezed,
     Object? durationSeconds = freezed,
-    Object? forwardedFrom = freezed,
-    Object? invoiceInformation = freezed,
-    Object? savedFrom = freezed,
+    Object? stickerEmoji = freezed,
+    Object? locationInformation = freezed,
+    Object? poll = freezed,
     Object? contactInformation = freezed,
-    Object? messageId = freezed,
-    Object? cost = freezed,
-    Object? months = freezed,
+    Object? viaBot = freezed,
+    Object? gameTitle = freezed,
+    Object? gameDescription = freezed,
+    Object? gameLink = freezed,
+    Object? performer = freezed,
     Object? title = freezed,
   }) {
     return _then(_$_Message(
@@ -1117,14 +1118,18 @@ class __$$_MessageCopyWithImpl<$Res>
           ? _value.dateUnixtime
           : dateUnixtime // ignore: cast_nullable_to_non_nullable
               as String,
-      from: freezed == from
+      from: null == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fromId: freezed == fromId
+              as String,
+      fromId: null == fromId
           ? _value.fromId
           : fromId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      replyToMessageId: freezed == replyToMessageId
+          ? _value.replyToMessageId
+          : replyToMessageId // ignore: cast_nullable_to_non_nullable
+              as int?,
       text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -1133,18 +1138,6 @@ class __$$_MessageCopyWithImpl<$Res>
           ? _value._textEntities
           : textEntities // ignore: cast_nullable_to_non_nullable
               as List<TextEntities>,
-      edited: freezed == edited
-          ? _value.edited
-          : edited // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      editedUnixtime: freezed == editedUnixtime
-          ? _value.editedUnixtime
-          : editedUnixtime // ignore: cast_nullable_to_non_nullable
-              as String?,
-      replyToMessageId: freezed == replyToMessageId
-          ? _value.replyToMessageId
-          : replyToMessageId // ignore: cast_nullable_to_non_nullable
-              as int?,
       photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
@@ -1157,22 +1150,6 @@ class __$$_MessageCopyWithImpl<$Res>
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
               as int?,
-      actor: freezed == actor
-          ? _value.actor
-          : actor // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actorId: freezed == actorId
-          ? _value.actorId
-          : actorId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      action: freezed == action
-          ? _value.action
-          : action // ignore: cast_nullable_to_non_nullable
-              as String?,
-      members: freezed == members
-          ? _value._members
-          : members // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
       file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
@@ -1185,10 +1162,6 @@ class __$$_MessageCopyWithImpl<$Res>
           ? _value.mediaType
           : mediaType // ignore: cast_nullable_to_non_nullable
               as String?,
-      stickerEmoji: freezed == stickerEmoji
-          ? _value.stickerEmoji
-          : stickerEmoji // ignore: cast_nullable_to_non_nullable
-              as String?,
       mimeType: freezed == mimeType
           ? _value.mimeType
           : mimeType // ignore: cast_nullable_to_non_nullable
@@ -1197,34 +1170,42 @@ class __$$_MessageCopyWithImpl<$Res>
           ? _value.durationSeconds
           : durationSeconds // ignore: cast_nullable_to_non_nullable
               as int?,
-      forwardedFrom: freezed == forwardedFrom
-          ? _value.forwardedFrom
-          : forwardedFrom // ignore: cast_nullable_to_non_nullable
+      stickerEmoji: freezed == stickerEmoji
+          ? _value.stickerEmoji
+          : stickerEmoji // ignore: cast_nullable_to_non_nullable
               as String?,
-      invoiceInformation: freezed == invoiceInformation
-          ? _value.invoiceInformation
-          : invoiceInformation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      savedFrom: freezed == savedFrom
-          ? _value.savedFrom
-          : savedFrom // ignore: cast_nullable_to_non_nullable
-              as String?,
+      locationInformation: freezed == locationInformation
+          ? _value.locationInformation
+          : locationInformation // ignore: cast_nullable_to_non_nullable
+              as LocationInformation?,
+      poll: freezed == poll
+          ? _value.poll
+          : poll // ignore: cast_nullable_to_non_nullable
+              as Poll?,
       contactInformation: freezed == contactInformation
           ? _value.contactInformation
           : contactInformation // ignore: cast_nullable_to_non_nullable
               as Contact?,
-      messageId: freezed == messageId
-          ? _value.messageId
-          : messageId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      cost: freezed == cost
-          ? _value.cost
-          : cost // ignore: cast_nullable_to_non_nullable
+      viaBot: freezed == viaBot
+          ? _value.viaBot
+          : viaBot // ignore: cast_nullable_to_non_nullable
               as String?,
-      months: freezed == months
-          ? _value.months
-          : months // ignore: cast_nullable_to_non_nullable
-              as int?,
+      gameTitle: freezed == gameTitle
+          ? _value.gameTitle
+          : gameTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gameDescription: freezed == gameDescription
+          ? _value.gameDescription
+          : gameDescription // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gameLink: freezed == gameLink
+          ? _value.gameLink
+          : gameLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      performer: freezed == performer
+          ? _value.performer
+          : performer // ignore: cast_nullable_to_non_nullable
+              as String?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -1237,60 +1218,62 @@ class __$$_MessageCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Message implements _Message {
   const _$_Message(
-      {required this.id,
-      required this.type,
-      required this.date,
+      {@JsonKey(name: "id") required this.id,
+      @JsonKey(name: "type") required this.type,
+      @JsonKey(name: "date") required this.date,
       @JsonKey(name: "date_unixtime") required this.dateUnixtime,
-      this.from,
-      @JsonKey(name: "from_id") this.fromId,
-      required this.text,
+      @JsonKey(name: "from") required this.from,
+      @JsonKey(name: "from_id") required this.fromId,
+      @JsonKey(name: "reply_to_message_id") this.replyToMessageId,
+      @JsonKey(name: "text") required this.text,
       @JsonKey(name: "text_entities")
       required final List<TextEntities> textEntities,
-      this.edited,
-      @JsonKey(name: "edited_unixtime") this.editedUnixtime,
-      @JsonKey(name: "reply_to_message_id") this.replyToMessageId,
-      this.photo,
-      this.width,
-      this.height,
-      this.actor,
-      @JsonKey(name: "actor_id") this.actorId,
-      this.action,
-      final List<String>? members,
-      this.file,
-      this.thumbnail,
+      @JsonKey(name: "photo") this.photo,
+      @JsonKey(name: "width") this.width,
+      @JsonKey(name: "height") this.height,
+      @JsonKey(name: "file") this.file,
+      @JsonKey(name: "thumbnail") this.thumbnail,
       @JsonKey(name: "media_type") this.mediaType,
-      @JsonKey(name: "sticker_emoji") this.stickerEmoji,
       @JsonKey(name: "mime_type") this.mimeType,
       @JsonKey(name: "duration_seconds") this.durationSeconds,
-      @JsonKey(name: "forwarded_from") this.forwardedFrom,
-      @JsonKey(name: "invoice_information") this.invoiceInformation,
-      @JsonKey(name: "saved_from") this.savedFrom,
+      @JsonKey(name: "sticker_emoji") this.stickerEmoji,
+      @JsonKey(name: "location_information") this.locationInformation,
+      @JsonKey(name: "poll") this.poll,
       @JsonKey(name: "contact_information") this.contactInformation,
-      @JsonKey(name: "message_id") this.messageId,
-      this.cost,
-      this.months,
-      this.title})
-      : _textEntities = textEntities,
-        _members = members;
+      @JsonKey(name: "via_bot") this.viaBot,
+      @JsonKey(name: "game_title") this.gameTitle,
+      @JsonKey(name: "game_description") this.gameDescription,
+      @JsonKey(name: "game_link") this.gameLink,
+      @JsonKey(name: "performer") this.performer,
+      @JsonKey(name: "title") this.title})
+      : _textEntities = textEntities;
 
   factory _$_Message.fromJson(Map<String, dynamic> json) =>
       _$$_MessageFromJson(json);
 
   @override
+  @JsonKey(name: "id")
   final int id;
   @override
+  @JsonKey(name: "type")
   final String type;
   @override
+  @JsonKey(name: "date")
   final DateTime date;
   @override
   @JsonKey(name: "date_unixtime")
   final String dateUnixtime;
   @override
-  final String? from;
+  @JsonKey(name: "from")
+  final String from;
   @override
   @JsonKey(name: "from_id")
-  final String? fromId;
+  final String fromId;
   @override
+  @JsonKey(name: "reply_to_message_id")
+  final int? replyToMessageId;
+  @override
+  @JsonKey(name: "text")
   final dynamic text;
   final List<TextEntities> _textEntities;
   @override
@@ -1302,46 +1285,23 @@ class _$_Message implements _Message {
   }
 
   @override
-  final DateTime? edited;
-  @override
-  @JsonKey(name: "edited_unixtime")
-  final String? editedUnixtime;
-  @override
-  @JsonKey(name: "reply_to_message_id")
-  final int? replyToMessageId;
-  @override
+  @JsonKey(name: "photo")
   final String? photo;
   @override
+  @JsonKey(name: "width")
   final int? width;
   @override
+  @JsonKey(name: "height")
   final int? height;
   @override
-  final String? actor;
-  @override
-  @JsonKey(name: "actor_id")
-  final String? actorId;
-  @override
-  final String? action;
-  final List<String>? _members;
-  @override
-  List<String>? get members {
-    final value = _members;
-    if (value == null) return null;
-    if (_members is EqualUnmodifiableListView) return _members;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
+  @JsonKey(name: "file")
   final String? file;
   @override
+  @JsonKey(name: "thumbnail")
   final String? thumbnail;
   @override
   @JsonKey(name: "media_type")
   final String? mediaType;
-  @override
-  @JsonKey(name: "sticker_emoji")
-  final String? stickerEmoji;
   @override
   @JsonKey(name: "mime_type")
   final String? mimeType;
@@ -1349,30 +1309,39 @@ class _$_Message implements _Message {
   @JsonKey(name: "duration_seconds")
   final int? durationSeconds;
   @override
-  @JsonKey(name: "forwarded_from")
-  final String? forwardedFrom;
+  @JsonKey(name: "sticker_emoji")
+  final String? stickerEmoji;
   @override
-  @JsonKey(name: "invoice_information")
-  final String? invoiceInformation;
+  @JsonKey(name: "location_information")
+  final LocationInformation? locationInformation;
   @override
-  @JsonKey(name: "saved_from")
-  final String? savedFrom;
+  @JsonKey(name: "poll")
+  final Poll? poll;
   @override
   @JsonKey(name: "contact_information")
   final Contact? contactInformation;
   @override
-  @JsonKey(name: "message_id")
-  final int? messageId;
+  @JsonKey(name: "via_bot")
+  final String? viaBot;
   @override
-  final String? cost;
+  @JsonKey(name: "game_title")
+  final String? gameTitle;
   @override
-  final int? months;
+  @JsonKey(name: "game_description")
+  final String? gameDescription;
   @override
+  @JsonKey(name: "game_link")
+  final String? gameLink;
+  @override
+  @JsonKey(name: "performer")
+  final String? performer;
+  @override
+  @JsonKey(name: "title")
   final String? title;
 
   @override
   String toString() {
-    return 'Message(id: $id, type: $type, date: $date, dateUnixtime: $dateUnixtime, from: $from, fromId: $fromId, text: $text, textEntities: $textEntities, edited: $edited, editedUnixtime: $editedUnixtime, replyToMessageId: $replyToMessageId, photo: $photo, width: $width, height: $height, actor: $actor, actorId: $actorId, action: $action, members: $members, file: $file, thumbnail: $thumbnail, mediaType: $mediaType, stickerEmoji: $stickerEmoji, mimeType: $mimeType, durationSeconds: $durationSeconds, forwardedFrom: $forwardedFrom, invoiceInformation: $invoiceInformation, savedFrom: $savedFrom, contactInformation: $contactInformation, messageId: $messageId, cost: $cost, months: $months, title: $title)';
+    return 'Message(id: $id, type: $type, date: $date, dateUnixtime: $dateUnixtime, from: $from, fromId: $fromId, replyToMessageId: $replyToMessageId, text: $text, textEntities: $textEntities, photo: $photo, width: $width, height: $height, file: $file, thumbnail: $thumbnail, mediaType: $mediaType, mimeType: $mimeType, durationSeconds: $durationSeconds, stickerEmoji: $stickerEmoji, locationInformation: $locationInformation, poll: $poll, contactInformation: $contactInformation, viaBot: $viaBot, gameTitle: $gameTitle, gameDescription: $gameDescription, gameLink: $gameLink, performer: $performer, title: $title)';
   }
 
   @override
@@ -1387,44 +1356,39 @@ class _$_Message implements _Message {
                 other.dateUnixtime == dateUnixtime) &&
             (identical(other.from, from) || other.from == from) &&
             (identical(other.fromId, fromId) || other.fromId == fromId) &&
+            (identical(other.replyToMessageId, replyToMessageId) ||
+                other.replyToMessageId == replyToMessageId) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality()
                 .equals(other._textEntities, _textEntities) &&
-            (identical(other.edited, edited) || other.edited == edited) &&
-            (identical(other.editedUnixtime, editedUnixtime) ||
-                other.editedUnixtime == editedUnixtime) &&
-            (identical(other.replyToMessageId, replyToMessageId) ||
-                other.replyToMessageId == replyToMessageId) &&
             (identical(other.photo, photo) || other.photo == photo) &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.height, height) || other.height == height) &&
-            (identical(other.actor, actor) || other.actor == actor) &&
-            (identical(other.actorId, actorId) || other.actorId == actorId) &&
-            (identical(other.action, action) || other.action == action) &&
-            const DeepCollectionEquality().equals(other._members, _members) &&
             (identical(other.file, file) || other.file == file) &&
             (identical(other.thumbnail, thumbnail) ||
                 other.thumbnail == thumbnail) &&
             (identical(other.mediaType, mediaType) ||
                 other.mediaType == mediaType) &&
-            (identical(other.stickerEmoji, stickerEmoji) ||
-                other.stickerEmoji == stickerEmoji) &&
             (identical(other.mimeType, mimeType) ||
                 other.mimeType == mimeType) &&
             (identical(other.durationSeconds, durationSeconds) ||
                 other.durationSeconds == durationSeconds) &&
-            (identical(other.forwardedFrom, forwardedFrom) ||
-                other.forwardedFrom == forwardedFrom) &&
-            (identical(other.invoiceInformation, invoiceInformation) ||
-                other.invoiceInformation == invoiceInformation) &&
-            (identical(other.savedFrom, savedFrom) ||
-                other.savedFrom == savedFrom) &&
+            (identical(other.stickerEmoji, stickerEmoji) ||
+                other.stickerEmoji == stickerEmoji) &&
+            (identical(other.locationInformation, locationInformation) ||
+                other.locationInformation == locationInformation) &&
+            (identical(other.poll, poll) || other.poll == poll) &&
             (identical(other.contactInformation, contactInformation) ||
                 other.contactInformation == contactInformation) &&
-            (identical(other.messageId, messageId) ||
-                other.messageId == messageId) &&
-            (identical(other.cost, cost) || other.cost == cost) &&
-            (identical(other.months, months) || other.months == months) &&
+            (identical(other.viaBot, viaBot) || other.viaBot == viaBot) &&
+            (identical(other.gameTitle, gameTitle) ||
+                other.gameTitle == gameTitle) &&
+            (identical(other.gameDescription, gameDescription) ||
+                other.gameDescription == gameDescription) &&
+            (identical(other.gameLink, gameLink) ||
+                other.gameLink == gameLink) &&
+            (identical(other.performer, performer) ||
+                other.performer == performer) &&
             (identical(other.title, title) || other.title == title));
   }
 
@@ -1438,31 +1402,26 @@ class _$_Message implements _Message {
         dateUnixtime,
         from,
         fromId,
+        replyToMessageId,
         const DeepCollectionEquality().hash(text),
         const DeepCollectionEquality().hash(_textEntities),
-        edited,
-        editedUnixtime,
-        replyToMessageId,
         photo,
         width,
         height,
-        actor,
-        actorId,
-        action,
-        const DeepCollectionEquality().hash(_members),
         file,
         thumbnail,
         mediaType,
-        stickerEmoji,
         mimeType,
         durationSeconds,
-        forwardedFrom,
-        invoiceInformation,
-        savedFrom,
+        stickerEmoji,
+        locationInformation,
+        poll,
         contactInformation,
-        messageId,
-        cost,
-        months,
+        viaBot,
+        gameTitle,
+        gameDescription,
+        gameLink,
+        performer,
         title
       ]);
 
@@ -1482,94 +1441,83 @@ class _$_Message implements _Message {
 
 abstract class _Message implements Message {
   const factory _Message(
-      {required final int id,
-      required final String type,
-      required final DateTime date,
+      {@JsonKey(name: "id") required final int id,
+      @JsonKey(name: "type") required final String type,
+      @JsonKey(name: "date") required final DateTime date,
       @JsonKey(name: "date_unixtime") required final String dateUnixtime,
-      final String? from,
-      @JsonKey(name: "from_id") final String? fromId,
-      required final dynamic text,
+      @JsonKey(name: "from") required final String from,
+      @JsonKey(name: "from_id") required final String fromId,
+      @JsonKey(name: "reply_to_message_id") final int? replyToMessageId,
+      @JsonKey(name: "text") required final dynamic text,
       @JsonKey(name: "text_entities")
       required final List<TextEntities> textEntities,
-      final DateTime? edited,
-      @JsonKey(name: "edited_unixtime") final String? editedUnixtime,
-      @JsonKey(name: "reply_to_message_id") final int? replyToMessageId,
-      final String? photo,
-      final int? width,
-      final int? height,
-      final String? actor,
-      @JsonKey(name: "actor_id") final String? actorId,
-      final String? action,
-      final List<String>? members,
-      final String? file,
-      final String? thumbnail,
+      @JsonKey(name: "photo") final String? photo,
+      @JsonKey(name: "width") final int? width,
+      @JsonKey(name: "height") final int? height,
+      @JsonKey(name: "file") final String? file,
+      @JsonKey(name: "thumbnail") final String? thumbnail,
       @JsonKey(name: "media_type") final String? mediaType,
-      @JsonKey(name: "sticker_emoji") final String? stickerEmoji,
       @JsonKey(name: "mime_type") final String? mimeType,
       @JsonKey(name: "duration_seconds") final int? durationSeconds,
-      @JsonKey(name: "forwarded_from") final String? forwardedFrom,
-      @JsonKey(name: "invoice_information") final String? invoiceInformation,
-      @JsonKey(name: "saved_from") final String? savedFrom,
+      @JsonKey(name: "sticker_emoji") final String? stickerEmoji,
+      @JsonKey(name: "location_information")
+      final LocationInformation? locationInformation,
+      @JsonKey(name: "poll") final Poll? poll,
       @JsonKey(name: "contact_information") final Contact? contactInformation,
-      @JsonKey(name: "message_id") final int? messageId,
-      final String? cost,
-      final int? months,
-      final String? title}) = _$_Message;
+      @JsonKey(name: "via_bot") final String? viaBot,
+      @JsonKey(name: "game_title") final String? gameTitle,
+      @JsonKey(name: "game_description") final String? gameDescription,
+      @JsonKey(name: "game_link") final String? gameLink,
+      @JsonKey(name: "performer") final String? performer,
+      @JsonKey(name: "title") final String? title}) = _$_Message;
 
   factory _Message.fromJson(Map<String, dynamic> json) = _$_Message.fromJson;
 
   @override
+  @JsonKey(name: "id")
   int get id;
   @override
+  @JsonKey(name: "type")
   String get type;
   @override
+  @JsonKey(name: "date")
   DateTime get date;
   @override
   @JsonKey(name: "date_unixtime")
   String get dateUnixtime;
   @override
-  String? get from;
+  @JsonKey(name: "from")
+  String get from;
   @override
   @JsonKey(name: "from_id")
-  String? get fromId;
+  String get fromId;
   @override
+  @JsonKey(name: "reply_to_message_id")
+  int? get replyToMessageId;
+  @override
+  @JsonKey(name: "text")
   dynamic get text;
   @override
   @JsonKey(name: "text_entities")
   List<TextEntities> get textEntities;
   @override
-  DateTime? get edited;
-  @override
-  @JsonKey(name: "edited_unixtime")
-  String? get editedUnixtime;
-  @override
-  @JsonKey(name: "reply_to_message_id")
-  int? get replyToMessageId;
-  @override
+  @JsonKey(name: "photo")
   String? get photo;
   @override
+  @JsonKey(name: "width")
   int? get width;
   @override
+  @JsonKey(name: "height")
   int? get height;
   @override
-  String? get actor;
-  @override
-  @JsonKey(name: "actor_id")
-  String? get actorId;
-  @override
-  String? get action;
-  @override
-  List<String>? get members;
-  @override
+  @JsonKey(name: "file")
   String? get file;
   @override
+  @JsonKey(name: "thumbnail")
   String? get thumbnail;
   @override
   @JsonKey(name: "media_type")
   String? get mediaType;
-  @override
-  @JsonKey(name: "sticker_emoji")
-  String? get stickerEmoji;
   @override
   @JsonKey(name: "mime_type")
   String? get mimeType;
@@ -1577,29 +1525,603 @@ abstract class _Message implements Message {
   @JsonKey(name: "duration_seconds")
   int? get durationSeconds;
   @override
-  @JsonKey(name: "forwarded_from")
-  String? get forwardedFrom;
+  @JsonKey(name: "sticker_emoji")
+  String? get stickerEmoji;
   @override
-  @JsonKey(name: "invoice_information")
-  String? get invoiceInformation;
+  @JsonKey(name: "location_information")
+  LocationInformation? get locationInformation;
   @override
-  @JsonKey(name: "saved_from")
-  String? get savedFrom;
+  @JsonKey(name: "poll")
+  Poll? get poll;
   @override
   @JsonKey(name: "contact_information")
   Contact? get contactInformation;
   @override
-  @JsonKey(name: "message_id")
-  int? get messageId;
+  @JsonKey(name: "via_bot")
+  String? get viaBot;
   @override
-  String? get cost;
+  @JsonKey(name: "game_title")
+  String? get gameTitle;
   @override
-  int? get months;
+  @JsonKey(name: "game_description")
+  String? get gameDescription;
   @override
+  @JsonKey(name: "game_link")
+  String? get gameLink;
+  @override
+  @JsonKey(name: "performer")
+  String? get performer;
+  @override
+  @JsonKey(name: "title")
   String? get title;
   @override
   @JsonKey(ignore: true)
   _$$_MessageCopyWith<_$_Message> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+LocationInformation _$LocationInformationFromJson(Map<String, dynamic> json) {
+  return _LocationInformation.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LocationInformation {
+  @JsonKey(name: "latitude")
+  double get latitude => throw _privateConstructorUsedError;
+  @JsonKey(name: "longitude")
+  double get longitude => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LocationInformationCopyWith<LocationInformation> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LocationInformationCopyWith<$Res> {
+  factory $LocationInformationCopyWith(
+          LocationInformation value, $Res Function(LocationInformation) then) =
+      _$LocationInformationCopyWithImpl<$Res, LocationInformation>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "latitude") double latitude,
+      @JsonKey(name: "longitude") double longitude});
+}
+
+/// @nodoc
+class _$LocationInformationCopyWithImpl<$Res, $Val extends LocationInformation>
+    implements $LocationInformationCopyWith<$Res> {
+  _$LocationInformationCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = null,
+    Object? longitude = null,
+  }) {
+    return _then(_value.copyWith(
+      latitude: null == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude: null == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_LocationInformationCopyWith<$Res>
+    implements $LocationInformationCopyWith<$Res> {
+  factory _$$_LocationInformationCopyWith(_$_LocationInformation value,
+          $Res Function(_$_LocationInformation) then) =
+      __$$_LocationInformationCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "latitude") double latitude,
+      @JsonKey(name: "longitude") double longitude});
+}
+
+/// @nodoc
+class __$$_LocationInformationCopyWithImpl<$Res>
+    extends _$LocationInformationCopyWithImpl<$Res, _$_LocationInformation>
+    implements _$$_LocationInformationCopyWith<$Res> {
+  __$$_LocationInformationCopyWithImpl(_$_LocationInformation _value,
+      $Res Function(_$_LocationInformation) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = null,
+    Object? longitude = null,
+  }) {
+    return _then(_$_LocationInformation(
+      latitude: null == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude: null == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_LocationInformation implements _LocationInformation {
+  const _$_LocationInformation(
+      {@JsonKey(name: "latitude") required this.latitude,
+      @JsonKey(name: "longitude") required this.longitude});
+
+  factory _$_LocationInformation.fromJson(Map<String, dynamic> json) =>
+      _$$_LocationInformationFromJson(json);
+
+  @override
+  @JsonKey(name: "latitude")
+  final double latitude;
+  @override
+  @JsonKey(name: "longitude")
+  final double longitude;
+
+  @override
+  String toString() {
+    return 'LocationInformation(latitude: $latitude, longitude: $longitude)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_LocationInformation &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, latitude, longitude);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LocationInformationCopyWith<_$_LocationInformation> get copyWith =>
+      __$$_LocationInformationCopyWithImpl<_$_LocationInformation>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_LocationInformationToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LocationInformation implements LocationInformation {
+  const factory _LocationInformation(
+          {@JsonKey(name: "latitude") required final double latitude,
+          @JsonKey(name: "longitude") required final double longitude}) =
+      _$_LocationInformation;
+
+  factory _LocationInformation.fromJson(Map<String, dynamic> json) =
+      _$_LocationInformation.fromJson;
+
+  @override
+  @JsonKey(name: "latitude")
+  double get latitude;
+  @override
+  @JsonKey(name: "longitude")
+  double get longitude;
+  @override
+  @JsonKey(ignore: true)
+  _$$_LocationInformationCopyWith<_$_LocationInformation> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Poll _$PollFromJson(Map<String, dynamic> json) {
+  return _Poll.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Poll {
+  @JsonKey(name: "question")
+  String get question => throw _privateConstructorUsedError;
+  @JsonKey(name: "closed")
+  bool get closed => throw _privateConstructorUsedError;
+  @JsonKey(name: "total_voters")
+  int get totalVoters => throw _privateConstructorUsedError;
+  @JsonKey(name: "answers")
+  List<Answer> get answers => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PollCopyWith<Poll> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PollCopyWith<$Res> {
+  factory $PollCopyWith(Poll value, $Res Function(Poll) then) =
+      _$PollCopyWithImpl<$Res, Poll>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "question") String question,
+      @JsonKey(name: "closed") bool closed,
+      @JsonKey(name: "total_voters") int totalVoters,
+      @JsonKey(name: "answers") List<Answer> answers});
+}
+
+/// @nodoc
+class _$PollCopyWithImpl<$Res, $Val extends Poll>
+    implements $PollCopyWith<$Res> {
+  _$PollCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? question = null,
+    Object? closed = null,
+    Object? totalVoters = null,
+    Object? answers = null,
+  }) {
+    return _then(_value.copyWith(
+      question: null == question
+          ? _value.question
+          : question // ignore: cast_nullable_to_non_nullable
+              as String,
+      closed: null == closed
+          ? _value.closed
+          : closed // ignore: cast_nullable_to_non_nullable
+              as bool,
+      totalVoters: null == totalVoters
+          ? _value.totalVoters
+          : totalVoters // ignore: cast_nullable_to_non_nullable
+              as int,
+      answers: null == answers
+          ? _value.answers
+          : answers // ignore: cast_nullable_to_non_nullable
+              as List<Answer>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_PollCopyWith<$Res> implements $PollCopyWith<$Res> {
+  factory _$$_PollCopyWith(_$_Poll value, $Res Function(_$_Poll) then) =
+      __$$_PollCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "question") String question,
+      @JsonKey(name: "closed") bool closed,
+      @JsonKey(name: "total_voters") int totalVoters,
+      @JsonKey(name: "answers") List<Answer> answers});
+}
+
+/// @nodoc
+class __$$_PollCopyWithImpl<$Res> extends _$PollCopyWithImpl<$Res, _$_Poll>
+    implements _$$_PollCopyWith<$Res> {
+  __$$_PollCopyWithImpl(_$_Poll _value, $Res Function(_$_Poll) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? question = null,
+    Object? closed = null,
+    Object? totalVoters = null,
+    Object? answers = null,
+  }) {
+    return _then(_$_Poll(
+      question: null == question
+          ? _value.question
+          : question // ignore: cast_nullable_to_non_nullable
+              as String,
+      closed: null == closed
+          ? _value.closed
+          : closed // ignore: cast_nullable_to_non_nullable
+              as bool,
+      totalVoters: null == totalVoters
+          ? _value.totalVoters
+          : totalVoters // ignore: cast_nullable_to_non_nullable
+              as int,
+      answers: null == answers
+          ? _value._answers
+          : answers // ignore: cast_nullable_to_non_nullable
+              as List<Answer>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Poll implements _Poll {
+  const _$_Poll(
+      {@JsonKey(name: "question") required this.question,
+      @JsonKey(name: "closed") required this.closed,
+      @JsonKey(name: "total_voters") required this.totalVoters,
+      @JsonKey(name: "answers") required final List<Answer> answers})
+      : _answers = answers;
+
+  factory _$_Poll.fromJson(Map<String, dynamic> json) => _$$_PollFromJson(json);
+
+  @override
+  @JsonKey(name: "question")
+  final String question;
+  @override
+  @JsonKey(name: "closed")
+  final bool closed;
+  @override
+  @JsonKey(name: "total_voters")
+  final int totalVoters;
+  final List<Answer> _answers;
+  @override
+  @JsonKey(name: "answers")
+  List<Answer> get answers {
+    if (_answers is EqualUnmodifiableListView) return _answers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_answers);
+  }
+
+  @override
+  String toString() {
+    return 'Poll(question: $question, closed: $closed, totalVoters: $totalVoters, answers: $answers)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Poll &&
+            (identical(other.question, question) ||
+                other.question == question) &&
+            (identical(other.closed, closed) || other.closed == closed) &&
+            (identical(other.totalVoters, totalVoters) ||
+                other.totalVoters == totalVoters) &&
+            const DeepCollectionEquality().equals(other._answers, _answers));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, question, closed, totalVoters,
+      const DeepCollectionEquality().hash(_answers));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_PollCopyWith<_$_Poll> get copyWith =>
+      __$$_PollCopyWithImpl<_$_Poll>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_PollToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Poll implements Poll {
+  const factory _Poll(
+      {@JsonKey(name: "question") required final String question,
+      @JsonKey(name: "closed") required final bool closed,
+      @JsonKey(name: "total_voters") required final int totalVoters,
+      @JsonKey(name: "answers") required final List<Answer> answers}) = _$_Poll;
+
+  factory _Poll.fromJson(Map<String, dynamic> json) = _$_Poll.fromJson;
+
+  @override
+  @JsonKey(name: "question")
+  String get question;
+  @override
+  @JsonKey(name: "closed")
+  bool get closed;
+  @override
+  @JsonKey(name: "total_voters")
+  int get totalVoters;
+  @override
+  @JsonKey(name: "answers")
+  List<Answer> get answers;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PollCopyWith<_$_Poll> get copyWith => throw _privateConstructorUsedError;
+}
+
+Answer _$AnswerFromJson(Map<String, dynamic> json) {
+  return _Answer.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Answer {
+  @JsonKey(name: "text")
+  String get text => throw _privateConstructorUsedError;
+  @JsonKey(name: "voters")
+  int get voters => throw _privateConstructorUsedError;
+  @JsonKey(name: "chosen")
+  bool get chosen => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AnswerCopyWith<Answer> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AnswerCopyWith<$Res> {
+  factory $AnswerCopyWith(Answer value, $Res Function(Answer) then) =
+      _$AnswerCopyWithImpl<$Res, Answer>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "text") String text,
+      @JsonKey(name: "voters") int voters,
+      @JsonKey(name: "chosen") bool chosen});
+}
+
+/// @nodoc
+class _$AnswerCopyWithImpl<$Res, $Val extends Answer>
+    implements $AnswerCopyWith<$Res> {
+  _$AnswerCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? text = null,
+    Object? voters = null,
+    Object? chosen = null,
+  }) {
+    return _then(_value.copyWith(
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+      voters: null == voters
+          ? _value.voters
+          : voters // ignore: cast_nullable_to_non_nullable
+              as int,
+      chosen: null == chosen
+          ? _value.chosen
+          : chosen // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_AnswerCopyWith<$Res> implements $AnswerCopyWith<$Res> {
+  factory _$$_AnswerCopyWith(_$_Answer value, $Res Function(_$_Answer) then) =
+      __$$_AnswerCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "text") String text,
+      @JsonKey(name: "voters") int voters,
+      @JsonKey(name: "chosen") bool chosen});
+}
+
+/// @nodoc
+class __$$_AnswerCopyWithImpl<$Res>
+    extends _$AnswerCopyWithImpl<$Res, _$_Answer>
+    implements _$$_AnswerCopyWith<$Res> {
+  __$$_AnswerCopyWithImpl(_$_Answer _value, $Res Function(_$_Answer) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? text = null,
+    Object? voters = null,
+    Object? chosen = null,
+  }) {
+    return _then(_$_Answer(
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+      voters: null == voters
+          ? _value.voters
+          : voters // ignore: cast_nullable_to_non_nullable
+              as int,
+      chosen: null == chosen
+          ? _value.chosen
+          : chosen // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Answer implements _Answer {
+  const _$_Answer(
+      {@JsonKey(name: "text") required this.text,
+      @JsonKey(name: "voters") required this.voters,
+      @JsonKey(name: "chosen") required this.chosen});
+
+  factory _$_Answer.fromJson(Map<String, dynamic> json) =>
+      _$$_AnswerFromJson(json);
+
+  @override
+  @JsonKey(name: "text")
+  final String text;
+  @override
+  @JsonKey(name: "voters")
+  final int voters;
+  @override
+  @JsonKey(name: "chosen")
+  final bool chosen;
+
+  @override
+  String toString() {
+    return 'Answer(text: $text, voters: $voters, chosen: $chosen)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Answer &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.voters, voters) || other.voters == voters) &&
+            (identical(other.chosen, chosen) || other.chosen == chosen));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, text, voters, chosen);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AnswerCopyWith<_$_Answer> get copyWith =>
+      __$$_AnswerCopyWithImpl<_$_Answer>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AnswerToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Answer implements Answer {
+  const factory _Answer(
+      {@JsonKey(name: "text") required final String text,
+      @JsonKey(name: "voters") required final int voters,
+      @JsonKey(name: "chosen") required final bool chosen}) = _$_Answer;
+
+  factory _Answer.fromJson(Map<String, dynamic> json) = _$_Answer.fromJson;
+
+  @override
+  @JsonKey(name: "text")
+  String get text;
+  @override
+  @JsonKey(name: "voters")
+  int get voters;
+  @override
+  @JsonKey(name: "chosen")
+  bool get chosen;
+  @override
+  @JsonKey(ignore: true)
+  _$$_AnswerCopyWith<_$_Answer> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3852,4 +4374,281 @@ abstract class _Ip implements Ip {
   @override
   @JsonKey(ignore: true)
   _$$_IpCopyWith<_$_Ip> get copyWith => throw _privateConstructorUsedError;
+}
+
+Story _$StoryFromJson(Map<String, dynamic> json) {
+  return _Story.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Story {
+  @JsonKey(name: "date")
+  DateTime get date => throw _privateConstructorUsedError;
+  @JsonKey(name: "date_unixtime")
+  String get dateUnixtime => throw _privateConstructorUsedError;
+  @JsonKey(name: "expires")
+  DateTime get expires => throw _privateConstructorUsedError;
+  @JsonKey(name: "expires_unixtime")
+  String get expiresUnixtime => throw _privateConstructorUsedError;
+  @JsonKey(name: "pinned")
+  bool get pinned => throw _privateConstructorUsedError;
+  @JsonKey(name: "media")
+  String get media => throw _privateConstructorUsedError;
+  @JsonKey(name: "caption")
+  String? get caption => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StoryCopyWith<Story> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StoryCopyWith<$Res> {
+  factory $StoryCopyWith(Story value, $Res Function(Story) then) =
+      _$StoryCopyWithImpl<$Res, Story>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: "date") DateTime date,
+      @JsonKey(name: "date_unixtime") String dateUnixtime,
+      @JsonKey(name: "expires") DateTime expires,
+      @JsonKey(name: "expires_unixtime") String expiresUnixtime,
+      @JsonKey(name: "pinned") bool pinned,
+      @JsonKey(name: "media") String media,
+      @JsonKey(name: "caption") String? caption});
+}
+
+/// @nodoc
+class _$StoryCopyWithImpl<$Res, $Val extends Story>
+    implements $StoryCopyWith<$Res> {
+  _$StoryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? date = null,
+    Object? dateUnixtime = null,
+    Object? expires = null,
+    Object? expiresUnixtime = null,
+    Object? pinned = null,
+    Object? media = null,
+    Object? caption = freezed,
+  }) {
+    return _then(_value.copyWith(
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      dateUnixtime: null == dateUnixtime
+          ? _value.dateUnixtime
+          : dateUnixtime // ignore: cast_nullable_to_non_nullable
+              as String,
+      expires: null == expires
+          ? _value.expires
+          : expires // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      expiresUnixtime: null == expiresUnixtime
+          ? _value.expiresUnixtime
+          : expiresUnixtime // ignore: cast_nullable_to_non_nullable
+              as String,
+      pinned: null == pinned
+          ? _value.pinned
+          : pinned // ignore: cast_nullable_to_non_nullable
+              as bool,
+      media: null == media
+          ? _value.media
+          : media // ignore: cast_nullable_to_non_nullable
+              as String,
+      caption: freezed == caption
+          ? _value.caption
+          : caption // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_StoryCopyWith<$Res> implements $StoryCopyWith<$Res> {
+  factory _$$_StoryCopyWith(_$_Story value, $Res Function(_$_Story) then) =
+      __$$_StoryCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "date") DateTime date,
+      @JsonKey(name: "date_unixtime") String dateUnixtime,
+      @JsonKey(name: "expires") DateTime expires,
+      @JsonKey(name: "expires_unixtime") String expiresUnixtime,
+      @JsonKey(name: "pinned") bool pinned,
+      @JsonKey(name: "media") String media,
+      @JsonKey(name: "caption") String? caption});
+}
+
+/// @nodoc
+class __$$_StoryCopyWithImpl<$Res> extends _$StoryCopyWithImpl<$Res, _$_Story>
+    implements _$$_StoryCopyWith<$Res> {
+  __$$_StoryCopyWithImpl(_$_Story _value, $Res Function(_$_Story) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? date = null,
+    Object? dateUnixtime = null,
+    Object? expires = null,
+    Object? expiresUnixtime = null,
+    Object? pinned = null,
+    Object? media = null,
+    Object? caption = freezed,
+  }) {
+    return _then(_$_Story(
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      dateUnixtime: null == dateUnixtime
+          ? _value.dateUnixtime
+          : dateUnixtime // ignore: cast_nullable_to_non_nullable
+              as String,
+      expires: null == expires
+          ? _value.expires
+          : expires // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      expiresUnixtime: null == expiresUnixtime
+          ? _value.expiresUnixtime
+          : expiresUnixtime // ignore: cast_nullable_to_non_nullable
+              as String,
+      pinned: null == pinned
+          ? _value.pinned
+          : pinned // ignore: cast_nullable_to_non_nullable
+              as bool,
+      media: null == media
+          ? _value.media
+          : media // ignore: cast_nullable_to_non_nullable
+              as String,
+      caption: freezed == caption
+          ? _value.caption
+          : caption // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Story implements _Story {
+  const _$_Story(
+      {@JsonKey(name: "date") required this.date,
+      @JsonKey(name: "date_unixtime") required this.dateUnixtime,
+      @JsonKey(name: "expires") required this.expires,
+      @JsonKey(name: "expires_unixtime") required this.expiresUnixtime,
+      @JsonKey(name: "pinned") required this.pinned,
+      @JsonKey(name: "media") required this.media,
+      @JsonKey(name: "caption") this.caption});
+
+  factory _$_Story.fromJson(Map<String, dynamic> json) =>
+      _$$_StoryFromJson(json);
+
+  @override
+  @JsonKey(name: "date")
+  final DateTime date;
+  @override
+  @JsonKey(name: "date_unixtime")
+  final String dateUnixtime;
+  @override
+  @JsonKey(name: "expires")
+  final DateTime expires;
+  @override
+  @JsonKey(name: "expires_unixtime")
+  final String expiresUnixtime;
+  @override
+  @JsonKey(name: "pinned")
+  final bool pinned;
+  @override
+  @JsonKey(name: "media")
+  final String media;
+  @override
+  @JsonKey(name: "caption")
+  final String? caption;
+
+  @override
+  String toString() {
+    return 'Story(date: $date, dateUnixtime: $dateUnixtime, expires: $expires, expiresUnixtime: $expiresUnixtime, pinned: $pinned, media: $media, caption: $caption)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Story &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.dateUnixtime, dateUnixtime) ||
+                other.dateUnixtime == dateUnixtime) &&
+            (identical(other.expires, expires) || other.expires == expires) &&
+            (identical(other.expiresUnixtime, expiresUnixtime) ||
+                other.expiresUnixtime == expiresUnixtime) &&
+            (identical(other.pinned, pinned) || other.pinned == pinned) &&
+            (identical(other.media, media) || other.media == media) &&
+            (identical(other.caption, caption) || other.caption == caption));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, date, dateUnixtime, expires,
+      expiresUnixtime, pinned, media, caption);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_StoryCopyWith<_$_Story> get copyWith =>
+      __$$_StoryCopyWithImpl<_$_Story>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_StoryToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Story implements Story {
+  const factory _Story(
+      {@JsonKey(name: "date") required final DateTime date,
+      @JsonKey(name: "date_unixtime") required final String dateUnixtime,
+      @JsonKey(name: "expires") required final DateTime expires,
+      @JsonKey(name: "expires_unixtime") required final String expiresUnixtime,
+      @JsonKey(name: "pinned") required final bool pinned,
+      @JsonKey(name: "media") required final String media,
+      @JsonKey(name: "caption") final String? caption}) = _$_Story;
+
+  factory _Story.fromJson(Map<String, dynamic> json) = _$_Story.fromJson;
+
+  @override
+  @JsonKey(name: "date")
+  DateTime get date;
+  @override
+  @JsonKey(name: "date_unixtime")
+  String get dateUnixtime;
+  @override
+  @JsonKey(name: "expires")
+  DateTime get expires;
+  @override
+  @JsonKey(name: "expires_unixtime")
+  String get expiresUnixtime;
+  @override
+  @JsonKey(name: "pinned")
+  bool get pinned;
+  @override
+  @JsonKey(name: "media")
+  String get media;
+  @override
+  @JsonKey(name: "caption")
+  String? get caption;
+  @override
+  @JsonKey(ignore: true)
+  _$$_StoryCopyWith<_$_Story> get copyWith =>
+      throw _privateConstructorUsedError;
 }

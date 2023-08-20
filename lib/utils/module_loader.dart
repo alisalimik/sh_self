@@ -17,19 +17,6 @@ Future<void> processModules(td.Update update) async {
   final hasReply = isReplied(update);
   final matchedModules = ShModule.registeredModules.where((module) {
     final filter = module.filter;
-    if (textAndContentType.text.contains("compile")) {
-      /*
-      print("me: ${telegramApp.me?.id}");
-      print('''
-filter.event = ${filter.eventFilter} isMatched: ${filter.eventFilter.contains(event)}
-filter.mustReply = ${filter.mustReply} isMatched: ${(filter.mustReply && hasReply) || !filter.mustReply}
-filter.regExFilter = ${filter.regExFilter.first} isMatched: ${filter.regExFilter.any((regex) => RegExp(regex).hasMatch(textAndContentType.text))}
-filter.messageTypesFilter = ${filter.messageTypesFilter} isMatched: ${filter.messageTypesFilter.contains(textAndContentType.type)}
-filter.senderFilter = ${filter.senderFilter} isMatched: ${filter.senderFilter.isEmpty || filter.senderFilter.contains(chatTypeAndSenderId.senderId) || (chatTypeAndSenderId.senderId == telegramApp.me?.id && filter.senderFilter.contains(0))}
-filter.incomingChatTypeFilter = ${filter.incomingChatTypeFilter} isMatched: ${filter.incomingChatTypeFilter.contains(chatTypeAndSenderId.chatType)}
-'''); */
-    }
-
     return filter.eventFilter.contains(event) &&
         (filter.mustReply && hasReply || !filter.mustReply) &&
         filter.regExFilter
@@ -73,7 +60,7 @@ void _runDynamicModule(String m, Map<String, dynamic> update) {
     [
       $ShDatabase.wrap(database),
       $ShTelegramApp.wrap(telegramApp),
-      $Map<String, dynamic>.wrap(update)
+      $Map<String, dynamic>.wrap(update),
     ],
   );
 }

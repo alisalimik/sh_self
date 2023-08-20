@@ -30,29 +30,39 @@ _$_ShDataExport _$$_ShDataExportFromJson(Map<String, dynamic> json) =>
     _$_ShDataExport(
       about: json['about'] as String,
       personalInformation: PersonalInformation.fromJson(
-          json['personal_information'] as Map<String, dynamic>,),
+        json['personal_information'] as Map<String, dynamic>,
+      ),
       profilePictures: (json['profile_pictures'] as List<dynamic>)
           .map((e) => ProfilePicture.fromJson(e as Map<String, dynamic>))
           .toList(),
-      stories: json['stories'] as List<dynamic>,
+      stories: (json['stories'] as List<dynamic>)
+          .map((e) => Story.fromJson(e as Map<String, dynamic>))
+          .toList(),
       contacts: ListWithAbout<Contact>.fromJson(
-          json['contacts'] as Map<String, dynamic>,
-          (value) => Contact.fromJson(value as Map<String, dynamic>),),
+        json['contacts'] as Map<String, dynamic>,
+        (value) => Contact.fromJson(value as Map<String, dynamic>),
+      ),
       frequentContacts: ListWithAbout<FrequentContact>.fromJson(
-          json['frequent_contacts'] as Map<String, dynamic>,
-          (value) => FrequentContact.fromJson(value as Map<String, dynamic>),),
+        json['frequent_contacts'] as Map<String, dynamic>,
+        (value) => FrequentContact.fromJson(value as Map<String, dynamic>),
+      ),
       sessions: ListWithAbout<Session>.fromJson(
-          json['sessions'] as Map<String, dynamic>,
-          (value) => Session.fromJson(value as Map<String, dynamic>),),
+        json['sessions'] as Map<String, dynamic>,
+        (value) => Session.fromJson(value as Map<String, dynamic>),
+      ),
       webSessions: ListWithAbout<Map<String, dynamic>>.fromJson(
-          json['web_sessions'] as Map<String, dynamic>,
-          (value) => value as Map<String, dynamic>,),
+        json['web_sessions'] as Map<String, dynamic>,
+        (value) => value as Map<String, dynamic>,
+      ),
       otherData: OtherData.fromJson(json['other_data'] as Map<String, dynamic>),
-      chats: ListWithAbout<Chat>.fromJson(json['chats'] as Map<String, dynamic>,
-          (value) => Chat.fromJson(value as Map<String, dynamic>),),
+      chats: ListWithAbout<Chat>.fromJson(
+        json['chats'] as Map<String, dynamic>,
+        (value) => Chat.fromJson(value as Map<String, dynamic>),
+      ),
       leftChats: ListWithAbout<Chat>.fromJson(
-          json['left_chats'] as Map<String, dynamic>,
-          (value) => Chat.fromJson(value as Map<String, dynamic>),),
+        json['left_chats'] as Map<String, dynamic>,
+        (value) => Chat.fromJson(value as Map<String, dynamic>),
+      ),
     );
 
 Map<String, dynamic> _$$_ShDataExportToJson(_$_ShDataExport instance) =>
@@ -61,7 +71,7 @@ Map<String, dynamic> _$$_ShDataExportToJson(_$_ShDataExport instance) =>
       'personal_information': instance.personalInformation.toJson(),
       'profile_pictures':
           instance.profilePictures.map((e) => e.toJson()).toList(),
-      'stories': instance.stories,
+      'stories': instance.stories.map((e) => e.toJson()).toList(),
       'contacts': instance.contacts.toJson(
         (value) => value.toJson(),
       ),
@@ -104,41 +114,40 @@ _$_Message _$$_MessageFromJson(Map<String, dynamic> json) => _$_Message(
       type: json['type'] as String,
       date: DateTime.parse(json['date'] as String),
       dateUnixtime: json['date_unixtime'] as String,
-      from: json['from'] as String?,
-      fromId: json['from_id'] as String?,
+      from: json['from'] as String,
+      fromId: json['from_id'] as String,
+      replyToMessageId: json['reply_to_message_id'] as int?,
       text: json['text'],
       textEntities: (json['text_entities'] as List<dynamic>)
           .map((e) => TextEntities.fromJson(e as Map<String, dynamic>))
           .toList(),
-      edited: json['edited'] == null
-          ? null
-          : DateTime.parse(json['edited'] as String),
-      editedUnixtime: json['edited_unixtime'] as String?,
-      replyToMessageId: json['reply_to_message_id'] as int?,
       photo: json['photo'] as String?,
       width: json['width'] as int?,
       height: json['height'] as int?,
-      actor: json['actor'] as String?,
-      actorId: json['actor_id'] as String?,
-      action: json['action'] as String?,
-      members:
-          (json['members'] as List<dynamic>?)?.map((e) => e as String).toList(),
       file: json['file'] as String?,
       thumbnail: json['thumbnail'] as String?,
       mediaType: json['media_type'] as String?,
-      stickerEmoji: json['sticker_emoji'] as String?,
       mimeType: json['mime_type'] as String?,
       durationSeconds: json['duration_seconds'] as int?,
-      forwardedFrom: json['forwarded_from'] as String?,
-      invoiceInformation: json['invoice_information'] as String?,
-      savedFrom: json['saved_from'] as String?,
+      stickerEmoji: json['sticker_emoji'] as String?,
+      locationInformation: json['location_information'] == null
+          ? null
+          : LocationInformation.fromJson(
+              json['location_information'] as Map<String, dynamic>,
+            ),
+      poll: json['poll'] == null
+          ? null
+          : Poll.fromJson(json['poll'] as Map<String, dynamic>),
       contactInformation: json['contact_information'] == null
           ? null
           : Contact.fromJson(
-              json['contact_information'] as Map<String, dynamic>,),
-      messageId: json['message_id'] as int?,
-      cost: json['cost'] as String?,
-      months: json['months'] as int?,
+              json['contact_information'] as Map<String, dynamic>,
+            ),
+      viaBot: json['via_bot'] as String?,
+      gameTitle: json['game_title'] as String?,
+      gameDescription: json['game_description'] as String?,
+      gameLink: json['game_link'] as String?,
+      performer: json['performer'] as String?,
       title: json['title'] as String?,
     );
 
@@ -150,32 +159,71 @@ Map<String, dynamic> _$$_MessageToJson(_$_Message instance) =>
       'date_unixtime': instance.dateUnixtime,
       'from': instance.from,
       'from_id': instance.fromId,
+      'reply_to_message_id': instance.replyToMessageId,
       'text': instance.text,
       'text_entities': instance.textEntities.map((e) => e.toJson()).toList(),
-      'edited': instance.edited?.toIso8601String(),
-      'edited_unixtime': instance.editedUnixtime,
-      'reply_to_message_id': instance.replyToMessageId,
       'photo': instance.photo,
       'width': instance.width,
       'height': instance.height,
-      'actor': instance.actor,
-      'actor_id': instance.actorId,
-      'action': instance.action,
-      'members': instance.members,
       'file': instance.file,
       'thumbnail': instance.thumbnail,
       'media_type': instance.mediaType,
-      'sticker_emoji': instance.stickerEmoji,
       'mime_type': instance.mimeType,
       'duration_seconds': instance.durationSeconds,
-      'forwarded_from': instance.forwardedFrom,
-      'invoice_information': instance.invoiceInformation,
-      'saved_from': instance.savedFrom,
+      'sticker_emoji': instance.stickerEmoji,
+      'location_information': instance.locationInformation?.toJson(),
+      'poll': instance.poll?.toJson(),
       'contact_information': instance.contactInformation?.toJson(),
-      'message_id': instance.messageId,
-      'cost': instance.cost,
-      'months': instance.months,
+      'via_bot': instance.viaBot,
+      'game_title': instance.gameTitle,
+      'game_description': instance.gameDescription,
+      'game_link': instance.gameLink,
+      'performer': instance.performer,
       'title': instance.title,
+    };
+
+_$_LocationInformation _$$_LocationInformationFromJson(
+  Map<String, dynamic> json,
+) =>
+    _$_LocationInformation(
+      latitude: (json['latitude'] as num).toDouble(),
+      longitude: (json['longitude'] as num).toDouble(),
+    );
+
+Map<String, dynamic> _$$_LocationInformationToJson(
+  _$_LocationInformation instance,
+) =>
+    <String, dynamic>{
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+    };
+
+_$_Poll _$$_PollFromJson(Map<String, dynamic> json) => _$_Poll(
+      question: json['question'] as String,
+      closed: json['closed'] as bool,
+      totalVoters: json['total_voters'] as int,
+      answers: (json['answers'] as List<dynamic>)
+          .map((e) => Answer.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_PollToJson(_$_Poll instance) => <String, dynamic>{
+      'question': instance.question,
+      'closed': instance.closed,
+      'total_voters': instance.totalVoters,
+      'answers': instance.answers.map((e) => e.toJson()).toList(),
+    };
+
+_$_Answer _$$_AnswerFromJson(Map<String, dynamic> json) => _$_Answer(
+      text: json['text'] as String,
+      voters: json['voters'] as int,
+      chosen: json['chosen'] as bool,
+    );
+
+Map<String, dynamic> _$$_AnswerToJson(_$_Answer instance) => <String, dynamic>{
+      'text': instance.text,
+      'voters': instance.voters,
+      'chosen': instance.chosen,
     };
 
 _$_TextEntities _$$_TextEntitiesFromJson(Map<String, dynamic> json) =>
@@ -237,7 +285,8 @@ Map<String, dynamic> _$$_OtherDataToJson(_$_OtherData instance) =>
     };
 
 _$_PersonalInformation _$$_PersonalInformationFromJson(
-        Map<String, dynamic> json,) =>
+  Map<String, dynamic> json,
+) =>
     _$_PersonalInformation(
       userId: json['user_id'] as int,
       firstName: json['first_name'] as String,
@@ -248,7 +297,8 @@ _$_PersonalInformation _$$_PersonalInformationFromJson(
     );
 
 Map<String, dynamic> _$$_PersonalInformationToJson(
-        _$_PersonalInformation instance,) =>
+  _$_PersonalInformation instance,
+) =>
     <String, dynamic>{
       'user_id': instance.userId,
       'first_name': instance.firstName,
@@ -337,4 +387,24 @@ _$_Ip _$$_IpFromJson(Map<String, dynamic> json) => _$_Ip(
 
 Map<String, dynamic> _$$_IpToJson(_$_Ip instance) => <String, dynamic>{
       'ip': instance.ip,
+    };
+
+_$_Story _$$_StoryFromJson(Map<String, dynamic> json) => _$_Story(
+      date: DateTime.parse(json['date'] as String),
+      dateUnixtime: json['date_unixtime'] as String,
+      expires: DateTime.parse(json['expires'] as String),
+      expiresUnixtime: json['expires_unixtime'] as String,
+      pinned: json['pinned'] as bool,
+      media: json['media'] as String,
+      caption: json['caption'] as String?,
+    );
+
+Map<String, dynamic> _$$_StoryToJson(_$_Story instance) => <String, dynamic>{
+      'date': instance.date.toIso8601String(),
+      'date_unixtime': instance.dateUnixtime,
+      'expires': instance.expires.toIso8601String(),
+      'expires_unixtime': instance.expiresUnixtime,
+      'pinned': instance.pinned,
+      'media': instance.media,
+      'caption': instance.caption,
     };

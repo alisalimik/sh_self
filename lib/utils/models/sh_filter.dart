@@ -71,7 +71,7 @@ class ShFilter {
 
     List<ShChatType> newIncomingChatTypeFilter = const [
       ShChatType.private,
-      ShChatType.group
+      ShChatType.group,
     ];
     if (incomingChatTypeFilter == newIncomingChatTypeFilter &&
         other.incomingChatTypeFilter != newIncomingChatTypeFilter) {
