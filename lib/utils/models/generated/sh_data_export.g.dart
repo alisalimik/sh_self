@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names, cast_nullable_to_non_nullable
+// ignore_for_file: cast_nullable_to_non_nullable, non_constant_identifier_names
 
 part of '../sh_data_export.dart';
 
@@ -117,6 +117,7 @@ _$_Message _$$_MessageFromJson(Map<String, dynamic> json) => _$_Message(
       from: json['from'] as String,
       fromId: json['from_id'] as String,
       replyToMessageId: json['reply_to_message_id'] as int?,
+      forwardedFrom: json['forwarded_from'] as String?,
       text: json['text'],
       textEntities: (json['text_entities'] as List<dynamic>)
           .map((e) => TextEntities.fromJson(e as Map<String, dynamic>))
@@ -160,6 +161,7 @@ Map<String, dynamic> _$$_MessageToJson(_$_Message instance) =>
       'from': instance.from,
       'from_id': instance.fromId,
       'reply_to_message_id': instance.replyToMessageId,
+      'forwarded_from': instance.forwardedFrom,
       'text': instance.text,
       'text_entities': instance.textEntities.map((e) => e.toJson()).toList(),
       'photo': instance.photo,

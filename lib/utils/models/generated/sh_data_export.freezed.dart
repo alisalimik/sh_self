@@ -740,6 +740,8 @@ mixin _$Message {
   String get fromId => throw _privateConstructorUsedError;
   @JsonKey(name: "reply_to_message_id")
   int? get replyToMessageId => throw _privateConstructorUsedError;
+  @JsonKey(name: "forwarded_from")
+  String? get forwardedFrom => throw _privateConstructorUsedError;
   @JsonKey(name: "text")
   dynamic get text => throw _privateConstructorUsedError;
   @JsonKey(name: "text_entities")
@@ -800,6 +802,7 @@ abstract class $MessageCopyWith<$Res> {
       @JsonKey(name: "from") String from,
       @JsonKey(name: "from_id") String fromId,
       @JsonKey(name: "reply_to_message_id") int? replyToMessageId,
+      @JsonKey(name: "forwarded_from") String? forwardedFrom,
       @JsonKey(name: "text") dynamic text,
       @JsonKey(name: "text_entities") List<TextEntities> textEntities,
       @JsonKey(name: "photo") String? photo,
@@ -847,6 +850,7 @@ class _$MessageCopyWithImpl<$Res, $Val extends Message>
     Object? from = null,
     Object? fromId = null,
     Object? replyToMessageId = freezed,
+    Object? forwardedFrom = freezed,
     Object? text = freezed,
     Object? textEntities = null,
     Object? photo = freezed,
@@ -897,6 +901,10 @@ class _$MessageCopyWithImpl<$Res, $Val extends Message>
           ? _value.replyToMessageId
           : replyToMessageId // ignore: cast_nullable_to_non_nullable
               as int?,
+      forwardedFrom: freezed == forwardedFrom
+          ? _value.forwardedFrom
+          : forwardedFrom // ignore: cast_nullable_to_non_nullable
+              as String?,
       text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -1033,6 +1041,7 @@ abstract class _$$_MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
       @JsonKey(name: "from") String from,
       @JsonKey(name: "from_id") String fromId,
       @JsonKey(name: "reply_to_message_id") int? replyToMessageId,
+      @JsonKey(name: "forwarded_from") String? forwardedFrom,
       @JsonKey(name: "text") dynamic text,
       @JsonKey(name: "text_entities") List<TextEntities> textEntities,
       @JsonKey(name: "photo") String? photo,
@@ -1080,6 +1089,7 @@ class __$$_MessageCopyWithImpl<$Res>
     Object? from = null,
     Object? fromId = null,
     Object? replyToMessageId = freezed,
+    Object? forwardedFrom = freezed,
     Object? text = freezed,
     Object? textEntities = null,
     Object? photo = freezed,
@@ -1130,6 +1140,10 @@ class __$$_MessageCopyWithImpl<$Res>
           ? _value.replyToMessageId
           : replyToMessageId // ignore: cast_nullable_to_non_nullable
               as int?,
+      forwardedFrom: freezed == forwardedFrom
+          ? _value.forwardedFrom
+          : forwardedFrom // ignore: cast_nullable_to_non_nullable
+              as String?,
       text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -1225,6 +1239,7 @@ class _$_Message implements _Message {
       @JsonKey(name: "from") required this.from,
       @JsonKey(name: "from_id") required this.fromId,
       @JsonKey(name: "reply_to_message_id") this.replyToMessageId,
+      @JsonKey(name: "forwarded_from") this.forwardedFrom,
       @JsonKey(name: "text") required this.text,
       @JsonKey(name: "text_entities")
       required final List<TextEntities> textEntities,
@@ -1272,6 +1287,9 @@ class _$_Message implements _Message {
   @override
   @JsonKey(name: "reply_to_message_id")
   final int? replyToMessageId;
+  @override
+  @JsonKey(name: "forwarded_from")
+  final String? forwardedFrom;
   @override
   @JsonKey(name: "text")
   final dynamic text;
@@ -1341,7 +1359,7 @@ class _$_Message implements _Message {
 
   @override
   String toString() {
-    return 'Message(id: $id, type: $type, date: $date, dateUnixtime: $dateUnixtime, from: $from, fromId: $fromId, replyToMessageId: $replyToMessageId, text: $text, textEntities: $textEntities, photo: $photo, width: $width, height: $height, file: $file, thumbnail: $thumbnail, mediaType: $mediaType, mimeType: $mimeType, durationSeconds: $durationSeconds, stickerEmoji: $stickerEmoji, locationInformation: $locationInformation, poll: $poll, contactInformation: $contactInformation, viaBot: $viaBot, gameTitle: $gameTitle, gameDescription: $gameDescription, gameLink: $gameLink, performer: $performer, title: $title)';
+    return 'Message(id: $id, type: $type, date: $date, dateUnixtime: $dateUnixtime, from: $from, fromId: $fromId, replyToMessageId: $replyToMessageId, forwardedFrom: $forwardedFrom, text: $text, textEntities: $textEntities, photo: $photo, width: $width, height: $height, file: $file, thumbnail: $thumbnail, mediaType: $mediaType, mimeType: $mimeType, durationSeconds: $durationSeconds, stickerEmoji: $stickerEmoji, locationInformation: $locationInformation, poll: $poll, contactInformation: $contactInformation, viaBot: $viaBot, gameTitle: $gameTitle, gameDescription: $gameDescription, gameLink: $gameLink, performer: $performer, title: $title)';
   }
 
   @override
@@ -1358,6 +1376,8 @@ class _$_Message implements _Message {
             (identical(other.fromId, fromId) || other.fromId == fromId) &&
             (identical(other.replyToMessageId, replyToMessageId) ||
                 other.replyToMessageId == replyToMessageId) &&
+            (identical(other.forwardedFrom, forwardedFrom) ||
+                other.forwardedFrom == forwardedFrom) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality()
                 .equals(other._textEntities, _textEntities) &&
@@ -1403,6 +1423,7 @@ class _$_Message implements _Message {
         from,
         fromId,
         replyToMessageId,
+        forwardedFrom,
         const DeepCollectionEquality().hash(text),
         const DeepCollectionEquality().hash(_textEntities),
         photo,
@@ -1448,6 +1469,7 @@ abstract class _Message implements Message {
       @JsonKey(name: "from") required final String from,
       @JsonKey(name: "from_id") required final String fromId,
       @JsonKey(name: "reply_to_message_id") final int? replyToMessageId,
+      @JsonKey(name: "forwarded_from") final String? forwardedFrom,
       @JsonKey(name: "text") required final dynamic text,
       @JsonKey(name: "text_entities")
       required final List<TextEntities> textEntities,
@@ -1494,6 +1516,9 @@ abstract class _Message implements Message {
   @override
   @JsonKey(name: "reply_to_message_id")
   int? get replyToMessageId;
+  @override
+  @JsonKey(name: "forwarded_from")
+  String? get forwardedFrom;
   @override
   @JsonKey(name: "text")
   dynamic get text;
@@ -3405,6 +3430,14 @@ class _$_ListWithAbout<T> implements _ListWithAbout<T> {
   }
 
   @override
+  Map<String, dynamic> toJson(Object Function(T value) toJsonT) {
+    return {
+      'about': about,
+      'list': list.map((item) => toJsonT(item)).toList(),
+    };
+  }
+
+  @override
   String toString() {
     return 'ListWithAbout<$T>(about: $about, list: $list)';
   }
@@ -3427,14 +3460,6 @@ class _$_ListWithAbout<T> implements _ListWithAbout<T> {
   @pragma('vm:prefer-inline')
   _$$_ListWithAboutCopyWith<T, _$_ListWithAbout<T>> get copyWith =>
       __$$_ListWithAboutCopyWithImpl<T, _$_ListWithAbout<T>>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson(Object Function(T value) toJsonT) {
-    return {
-      'about': about,
-      'list': list.map((item) => toJsonT(item)).toList(),
-    };
-  }
 }
 
 abstract class _ListWithAbout<T> implements ListWithAbout<T> {

@@ -31,7 +31,7 @@ class UpdateInstalledStickerSets extends Update {
       )!,
       stickerSetIds: List<int>.from(
         ((json['sticker_set_ids'] as List<dynamic>?) ?? <dynamic>[])
-            .map((item) => item)
+            .map((item) => int.tryParse(item.toString()) ?? 0)
             .toList(),
       ),
     );

@@ -51,6 +51,7 @@ class Message with _$Message {
     @JsonKey(name: "from") required String from,
     @JsonKey(name: "from_id") required String fromId,
     @JsonKey(name: "reply_to_message_id") int? replyToMessageId,
+    @JsonKey(name: "forwarded_from") String? forwardedFrom,
     @JsonKey(name: "text") required dynamic text,
     @JsonKey(name: "text_entities") required List<TextEntities> textEntities,
     @JsonKey(name: "photo") String? photo,
