@@ -43,7 +43,7 @@ Exported Data
 
       <a class="userpic_link" href="lists/profile_pictures.html">
 
-       <img class="userpic" src="{userpic}" style="width: 90px; height: 90px"/>
+       <img class="userpic" src="{userPic}" style="width: 90px; height: 90px"/>
 
       </a>
 
@@ -733,3 +733,75 @@ const joinedMessageRow = """
       </div>
 
      </div>""";
+const String gifItem = """
+       <div class="media_wrap clearfix">
+
+        <a class="animated_wrap clearfix pull_left" href="{video}">
+
+         <div class="video_play_bg">
+
+          <div class="gif_play">
+GIF
+          </div>
+
+         </div>
+
+         <img class="animated" src="{thumbnail}" style="width: {width}px; height: {height}px"/>
+
+        </a>
+
+       </div
+       """;
+const String forwardedMessageRow = """
+     <div class="message default clearfix" id="message{message_id}">
+
+      <div class="pull_left userpic_wrap">
+
+       <div class="userpic userpic{picIndex}" style="width: 42px; height: 42px">
+
+        <div class="initials" style="line-height: 42px">
+{leading}
+        </div>
+
+       </div>
+
+      </div>
+
+      <div class="body">
+
+       <div class="pull_right date details" title="{date}">
+{hour}
+       </div>
+
+       <div class="from_name">
+{from_name} 
+       </div>
+
+       <div class="pull_left forwarded userpic_wrap">
+
+        <div class="userpic userpic{picIndex}" style="width: 42px; height: 42px">
+
+         <div class="initials" style="line-height: 42px">
+{leading2}
+         </div>
+
+        </div>
+
+       </div>
+
+       <div class="forwarded body">
+
+        <div class="from_name">
+{forwarded_name} <span class="date details" title="{date}"></span>
+        </div>
+
+        <div class="text">
+{text}
+        </div>
+
+       </div>
+
+      </div>
+
+     </div>
+""";

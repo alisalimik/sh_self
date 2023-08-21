@@ -1,7 +1,7 @@
 const String styleCss = """
 body {
     margin: 0;
-    font: 12px/18px 'Open Sans',"Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,Verdana,sans-serif;
+    font: 12px/18px 'Vazirmatn','Open Sans',"Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,Verdana,sans-serif;
 }
 strong {
     font-weight: 700;
@@ -559,4 +559,30 @@ div.toast_shown {
 .spoiler.hidden span {
     opacity: 0;
     user-select: none;
-}""";
+}
+#inline-tgs {
+  display: inline-block;
+  vertical-align: middle; /* Set your desired vertical alignment */
+  width: 20px; /* Set your desired width */
+  height: 20px; /* Set your desired height */
+}
+#medium-tgs {
+  display: inline-block;
+  vertical-align: middle; /* Set your desired vertical alignment */
+  width: 48px; /* Set your desired width */
+  height: 48px; /* Set your desired height */
+}
+#sticker-tgs {
+  display: block;
+  vertical-align: middle; /* Set your desired vertical alignment */
+  width: 100px; /* Set your desired width */
+  height: 100px; /* Set your desired height */
+}
+.tgs-placeholder {
+  display: block; /* Initially hide the placeholder */
+}
+
+.tgs-fallback {
+  font-size: 16px; /* Adjust the font size */
+}
+""";

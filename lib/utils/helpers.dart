@@ -283,13 +283,29 @@ num clamp(num value, num min, num max) {
   return value < min ? min : (value > max ? max : value);
 }
 
-extension IntToDateTime on int {
+extension IntHelper on int {
   DateTime toDateTime() {
     return DateTime.fromMillisecondsSinceEpoch(this * 1000, isUtc: true);
   }
+
+  double bytesToMegabytes() {
+    return this / (1024 * 1024);
+  }
 }
 
-List<TextEntities> tdEntitiesToShEntities(Map<String, dynamic> input) {
+extension StringHelper on String {
+  bool isPersian() {
+    // Regular expression to match Arabic script characters (including Persian)
+    final RegExp arabicScriptRegex =
+        RegExp(r'[\u0600-\u06FF\uFB8A\u067E\u0686\u06AF\u200C\u200F]+');
+
+    return arabicScriptRegex.hasMatch(this);
+  }
+}
+
+Future<List<TextEntities>> tdEntitiesToShEntities(
+  Map<String, dynamic> input,
+) async {
   final Map<String, String> entityTypes = {
     "textEntityTypeBold": "bold",
     "textEntityTypeItalic": "italic",
@@ -301,6 +317,15 @@ List<TextEntities> tdEntitiesToShEntities(Map<String, dynamic> input) {
     "textEntityTypeUrl": "link",
     "textEntityTypeCustomEmoji": "custom_emoji",
     "textEntityTypePre": "pre",
+    "textEntityTypePreCode": "pre",
+    "textEntityTypeMention": "mention",
+    "textEntityTypeMentionName": "mention_name",
+    "textEntityTypeCashtag": "cashtag",
+    "textEntityTypeHashtag": "hashtag",
+    "textEntityTypePhoneNumber": "phone",
+    "textEntityTypeEmailAddress": "email",
+    "textEntityTypeBankCardNumber": "bank_card",
+    "textEntityTypeMediaTimestamp": "plain",
     "textEntityTypeBotCommand": "bot_command",
   };
   int lastIndex = 0; // To track the end of the last processed entity
@@ -331,7 +356,21 @@ List<TextEntities> tdEntitiesToShEntities(Map<String, dynamic> input) {
     }
     if (entityType == "custom_emoji") {
       customEmojiId =
-          (entity["type"] as Map<String, dynamic>)["custom_emoji_id"].toString();
+          (entity["type"] as Map<String, dynamic>)["custom_emoji_id"]
+              .toString();
+      final td.Stickers s = await telegramApp.client.send(
+        td.GetCustomEmojiStickers(customEmojiIds: [int.parse(customEmojiId)]),
+      );
+      final td.File f = await telegramApp.client.send(
+        td.DownloadFile(
+          fileId: s.stickers.first.sticker.id,
+          synchronous: true,
+          limit: 0,
+          offset: 0,
+          priority: 2,
+        ),
+      );
+      customEmojiId = f.local.path;
     }
 
     if (entityType == "text_link") {
@@ -369,4 +408,8 @@ List<TextEntities> tdEntitiesToShEntities(Map<String, dynamic> input) {
         ),
       )
       .toList();
+}
+
+ShMessageType shMessageTypeFromString(String value) {
+  return ShMessageType.values.firstWhere((e) => e.name == value);
 }
