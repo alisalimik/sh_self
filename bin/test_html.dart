@@ -25,7 +25,8 @@ Future main() async {
   await createChatsPage(exported);
   await createHomePage(exported);
   await createOtherDataBeta(
-      const JsonEncoder().convert(exported.otherData.toJson()));
+    const JsonEncoder().convert(exported.otherData.toJson()),
+  );
   await createDependencies();
 }
 
@@ -301,8 +302,8 @@ Future createProfilePicturesPage(ShDataExport exported) async {
   for (final ProfilePicture profile in exported.profilePictures) {
     copyFileToDirectory(profile.photo, 'files/html_export/profile_pictures');
     final stat = await File(
-            "files/html_export/profile_pictures/${profile.photo.split("/").last}")
-        .stat();
+      "files/html_export/profile_pictures/${profile.photo.split("/").last}",
+    ).stat();
     rows += selectableListRow
         .replaceAll(
           '''
