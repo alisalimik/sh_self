@@ -20,6 +20,7 @@ import 'package:sh_self/modules/reload.dart';
 import 'package:sh_self/modules/server.dart';
 import 'package:sh_self/modules/spam.dart';
 import 'package:sh_self/modules/spamf.dart';
+import 'package:sh_self/modules/youtube.dart';
 import 'package:sh_self/utils/sh_database.dart';
 import 'package:sh_self/utils/sh_telegram_app.dart';
 
@@ -31,6 +32,7 @@ void runApp() {
   database = ShDatabase();
   telegramApp = ShTelegramApp(
     modules: [
+      youtube,
       exportHtml,
       exportJson,
       listf,
