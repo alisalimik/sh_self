@@ -486,9 +486,7 @@ const String gifItem = """
 
          <div class="video_play_bg">
 
-          <div class="gif_play">
-GIF
-          </div>
+{playBtn}
 
          </div>
 
@@ -496,8 +494,9 @@ GIF
 
         </a>
 
-       </div
+       </div>
        """;
+
 const String forwardedMessageRow = """
      <div class="message default clearfix" id="message{message_id}">
 
