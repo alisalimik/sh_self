@@ -29,22 +29,22 @@ class ShDatabase {
   }
 
   bool isMutedUser(ShMessageType messageType, int userId) {
-    return mutedUsers?.get(messageType)?.contains(userId) ?? false;
+    return mutedUsers?.get(messageType.name)?.contains(userId) ?? false;
   }
 
-  void muteUser(ShMessageType messageType, int userId) {
-    if (mutedUsers?.containsKey(messageType) == false) {
-      mutedUsers?.put(messageType, []);
+  Future<void> muteUser(ShMessageType messageType, int userId) async {
+    if (mutedUsers?.containsKey(messageType.name) == false) {
+      await mutedUsers?.put(messageType.name, []);
     }
-    final List<int> userIds = mutedUsers?.get(messageType) ?? [];
+    final List<int> userIds = mutedUsers?.get(messageType.name) ?? [];
     userIds.add(userId);
-    mutedUsers?.put(messageType, userIds);
+    await mutedUsers?.put(messageType.name, userIds);
   }
 
-  void unmuteUser(ShMessageType messageType, int userId) {
-    final List<int> userIds = mutedUsers?.get(messageType) ?? [];
+  Future<void> unmuteUser(ShMessageType messageType, int userId) async {
+    final List<int> userIds = mutedUsers?.get(messageType.name) ?? [];
     userIds.remove(userId);
-    mutedUsers?.put(messageType, userIds);
+    await mutedUsers?.put(messageType.name, userIds);
   }
 
   void addFosh(String f) {

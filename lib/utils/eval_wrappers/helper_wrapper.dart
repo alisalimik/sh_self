@@ -82,7 +82,7 @@ BridgeFunctionDeclaration getMessageTextFromJsonEvalDec =
           BridgeTypeRef.type(RuntimeTypes.mapType),
         ),
         false,
-      )
+      ),
     ],
   ),
 );
@@ -102,7 +102,7 @@ BridgeFunctionDeclaration getMessageChatIdFromJsonEvalDec =
           BridgeTypeRef.type(RuntimeTypes.mapType),
         ),
         false,
-      )
+      ),
     ],
   ),
 );
@@ -122,7 +122,7 @@ BridgeFunctionDeclaration getMessageIdFromJsonEvalDec =
           BridgeTypeRef.type(RuntimeTypes.mapType),
         ),
         false,
-      )
+      ),
     ],
   ),
 );

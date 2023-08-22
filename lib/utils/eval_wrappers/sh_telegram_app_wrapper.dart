@@ -89,10 +89,10 @@ class $ShTelegramApp implements ShTelegramApp, $Instance {
                 BridgeTypeRef.type(RuntimeTypes.objectType),
               ),
               true,
-            )
+            ),
           ],
         ),
-      )
+      ),
     },
     fields: {
       'client': BridgeFieldDef(
@@ -114,7 +114,7 @@ class $ShTelegramApp implements ShTelegramApp, $Instance {
         BridgeTypeAnnotation(
           BridgeTypeRef.type(RuntimeTypes.objectType),
         ),
-      )
+      ),
     },
     methods: {
       'destroy': BridgeMethodDef(
@@ -125,7 +125,7 @@ class $ShTelegramApp implements ShTelegramApp, $Instance {
             ),
           ),
         ),
-      )
+      ),
     },
     wrap: true,
   );

@@ -119,7 +119,7 @@ Future<bool> compileScript([String? newPlatform]) async {
       "--target-os",
       newPlatform ?? platform,
       "-o",
-      getOutputPath()
+      getOutputPath(),
     ]);
     await stdout.addStream(process.stdout);
     return await process.exitCode == 0;

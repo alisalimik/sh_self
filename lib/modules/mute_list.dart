@@ -36,8 +36,8 @@ Mute list *Help*:
     } else {
       responseBuffer.writeln("Mute list Summery:");
       database.mutedUsers?.toMap().forEach((key, value) {
-        if (key is ShMessageType) {
-          responseBuffer.writeln("- *${key.name}*: __${value.length}__");
+        if (key is String) {
+          responseBuffer.writeln("- *$key*: __${value.length}__");
         }
       });
     }
@@ -47,8 +47,8 @@ Mute list *Help*:
     } else {
       responseBuffer.writeln("Mute list:");
       database.mutedUsers?.toMap().forEach((key, value) {
-        if (value.isNotEmpty && key is ShMessageType) {
-          responseBuffer.writeln("- *${key.name}*: __${value.length}__");
+        if (value.isNotEmpty && key is String) {
+          responseBuffer.writeln("- *$key*: __${value.length}__");
           for (final userId in value) {
             responseBuffer.writeln(generateUserLink(userId));
           }
@@ -68,7 +68,7 @@ Mute list *Help*:
       });
     }
     for (final ShMessageType key in toBeDeleted) {
-      database.mutedUsers?.delete(key);
+      database.mutedUsers?.delete(key.name);
     }
     if (command.length == 2) {
       responseBuffer.writeln("Mute list *cleard*");
@@ -86,7 +86,7 @@ Mute list *Help*:
       responseBuffer.writeln("Command ${command[1]} *not found!*");
     } else {
       final ShMessageType muted = filteredCollection.first;
-      final list = database.mutedUsers?.get(muted) ?? [];
+      final list = database.mutedUsers?.get(muted.name) ?? [];
       if (list.isEmpty) {
         responseBuffer.writeln("Mute list for *${command[1]}* is Empty!");
       } else {
@@ -102,9 +102,11 @@ Mute list *Help*:
 
 String generateUserLink(int userId) {
   final StringBuffer buffer = StringBuffer();
-  buffer.write(" --  [\\[");
+  // ignore: unnecessary_string_escapes
+  buffer.write(" --  \[");
   buffer.write(userId);
-  buffer.write("\\]](tg://user?id=");
+  // ignore: unnecessary_string_escapes
+  buffer.write("\](tg://user?id=");
   buffer.write(userId);
   buffer.write(")");
   return buffer.toString();
