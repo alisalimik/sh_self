@@ -27,3 +27,4 @@ dependencies:
   rxdart: ^0.27.7
   shamsi_date: ^1.0.1
   system_info2: ^4.0.0
+  youtube_explode_dart: ^2.0.2
