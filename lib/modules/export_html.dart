@@ -586,7 +586,7 @@ Future createChatsPage(ShDataExport exported) async {
           .replaceAll(
             '{title}',
             (chatType.contains("saved") || chat.id == telegramApp.me?.id
-                ? exported.personalInformation.firstName
+                ? "Saved Messages"
                 : (chat.name != null && chat.name != ""
                     ? chat.name.toString()
                     : 'Deleted Account')),
