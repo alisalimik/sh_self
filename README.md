@@ -34,6 +34,7 @@ Yet another Telegram userbot written in dart by using Tdlib. work in progress!
 - auto delete
 - run dart code (eval)
 - export account data (json & html)
+- Youtube video downloader
 
 ## Getting Started
 
