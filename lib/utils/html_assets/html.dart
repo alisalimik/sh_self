@@ -209,63 +209,6 @@ Other data
 
  </body>
 """;
-const String profilePicList = """
- <body onload="CheckLocation();">
-
-  <div class="page_wrap">
-
-   <div class="page_header">
-
-    <a class="content block_link" href="../export_results.html" onclick="return GoBack(this)">
-
-     <div class="text bold">
-Profile pictures
-     </div>
-
-    </a>
-
-   </div>
-
-   <div class="page_body list_page">
-
-    <div class="entry_list">
-{picRows}
-
-    </div>
-
-   </div>
-
-  </div>
-
- </body>
-""";
-const String profilePicRow = """
-     <a class="entry block_link clearfix" href="{picUrl}#allow_back">
-
-      <div class="pull_left userpic_wrap">
-
-       <img class="userpic" src="{picThumbnailUrl}" style="width: 48px; height: 48px"/>
-
-      </div>
-
-      <div class="body">
-
-       <div class="pull_right info details">
-{picDate}
-       </div>
-
-       <div class="name bold">
-{picName}
-       </div>
-
-       <div class="details_entry details">
-{picSize}
-       </div>
-
-      </div>
-
-     </a>
-""";
 const String listPage = """
  <body onload="CheckLocation();">
 
@@ -300,6 +243,7 @@ const String listPage = """
  </body>
 
 """;
+
 const String listRow = """
      <div class="entry clearfix">
 
@@ -333,6 +277,7 @@ const String listRow = """
 
      </div>
 """;
+
 const String selectableListRow = """
      <a class="entry block_link clearfix" href="{targetUrl}#allow_back">
 
@@ -365,174 +310,6 @@ const String selectableListRow = """
       </div>
 
      </a>
-""";
-const String contactsList = """
- <body onload="CheckLocation();">
-
-  <div class="page_wrap">
-
-   <div class="page_header">
-
-    <a class="content block_link" href="../export_results.html" onclick="return GoBack(this)">
-
-     <div class="text bold">
-Contacts
-     </div>
-
-    </a>
-
-   </div>
-
-   <div class="page_body list_page">
-
-    <div class="page_about details">
-If you allow access, your contacts are continuously synced with Telegram. Thanks to this, you can easily switch to Telegram and immediately connect with friends across all your devices. We use data about your contacts to let you know when they join Telegram, and to display them by the name you set for them in your phone.<br><br>You can disable contact syncing or delete your stored contacts in Settings &gt; Privacy &amp; Security on Telegram&apos;s mobile apps.
-    </div>
-        <div class="entry_list">
-{contactRows}
-    </div>
-
-   </div>
-
-  </div>
-
- </body>
-""";
-const String contactRow = """
-     <div class="entry clearfix">
-
-      <div class="pull_left userpic_wrap">
-
-       <div class="userpic userpic7" style="width: 48px; height: 48px">
-
-        <div class="initials" style="line-height: 48px">
-0
-        </div>
-
-       </div>
-
-      </div>
-
-      <div class="body">
-
-       <div class="pull_right info details">
-{date}
-       </div>
-
-       <div class="name bold">
-{name} 
-       </div>
-
-       <div class="details_entry details">
-{phoneNumber}
-       </div>
-
-      </div>
-
-     </div>
-""";
-const String frequentList = """
-<body onload="CheckLocation();">
-
-  <div class="page_wrap">
-
-   <div class="page_header">
-
-    <a class="content block_link" href="../export_results.html" onclick="return GoBack(this)">
-
-     <div class="text bold">
-Frequent contacts
-     </div>
-
-    </a>
-
-   </div>
-
-   <div class="page_body list_page">
-
-    <div class="page_about details">
-This rating shows which people you are likelier to message frequently. Telegram uses this data to populate the &apos;People&apos; box at the top of the Search section. This rating is also calculated for inline bots so that the app can suggest the bots you are most likely to use in the attachment menu (or when you start a new message with &quot;@&quot;).<br><br>To delete this data, go to Settings &gt; Privacy &amp; Security and disable &apos;Suggest Frequent Contacts&apos; (requires Telegram for iOS v.4.8.3 or Telegram for Android v.4.8.10 or higher).
-    </div>
-
-    <div class="entry_list">
-    {requentRows}
-
-    </div>
-
-   </div>
-
-  </div>
-
- </body>
-
-""";
-const String frequentRow = """
-  <div class="entry clearfix">
-
-      <div class="pull_left userpic_wrap">
-
-       <div class="userpic userpic7" style="width: 48px; height: 48px">
-
-        <div class="initials" style="line-height: 48px">
-BK
-        </div>
-
-       </div>
-
-      </div>
-
-      <div class="body">
-
-       <div class="pull_right info details">
-{type}
-       </div>
-
-       <div class="name bold">
-{name}
-       </div>
-
-       <div class="details_entry details">
-Rating: 0.203609
-       </div>
-
-      </div>
-
-     </div>
-
-""";
-const String sessionsList = """
- <body onload="CheckLocation();">
-
-  <div class="page_wrap">
-
-   <div class="page_header">
-
-    <a class="content block_link" href="../export_results.html" onclick="return GoBack(this)">
-
-     <div class="text bold">
-Sessions
-     </div>
-
-    </a>
-
-   </div>
-
-   <div class="page_body list_page">
-
-    <div class="page_about details">
-We store session info to display your connected devices in Settings &gt; Privacy &amp; Security &gt; Active Sessions.
-    </div>
-
-    <div class="entry_list">
-{sessionsRow}
-    </div>
-
-   </div>
-
-  </div>
-
- </body>
-
 """;
 const String sessionRow = """
     <div class="entry clearfix">
@@ -575,37 +352,6 @@ Created: {created}
 
      </div>
 """;
-const String storiesList = """
- <body onload="CheckLocation();">
-
-  <div class="page_wrap">
-
-   <div class="page_header">
-
-    <a class="content block_link" href="../export_results.html" onclick="return GoBack(this)">
-
-     <div class="text bold">
-Stories archive
-     </div>
-
-    </a>
-
-   </div>
-
-   <div class="page_body list_page">
-
-    <div class="entry_list">
-    {storeisRow}
-         </div>
-
-    </div>
-
-   </div>
-
-  </div>
-
- </body>
-    """;
 const String storyRow = """
      <div class="entry clearfix">
 
