@@ -5,6 +5,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:collection/collection.dart';
+import 'package:path/path.dart';
 import 'package:sh_self/tdlib_dart/td_api.dart' as td;
 import 'package:sh_self/utils/helpers.dart';
 import 'package:sh_self/utils/html_assets/html.dart';
@@ -143,7 +144,7 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
                 '<tgs-player id="${(message.textEntities.length <= 3 && !message.textEntities.any((element) => element.type != 'custom_emoji')) ? 'medium-tgs' : 'inline-tgs'}" autoplay loop mode="normal" src="stickers/${tE.documentId?.split("/").last}"><span class="tgs-placeholder">$t</span></tgs-player>';
             copyFileToDirectory(
               tE.documentId.toString(),
-              'files/html_export/chats/chat_${chatIndex.toString().padLeft(2, "0")}/stickers',
+              join('files','html_export','chats', 'chat_${chatIndex.toString().padLeft(2, "0")}', 'stickers'),
             );
           } else if (tE.type == "text_link") {
             htmlFromEnteties += '<a href="${tE.href}">$t</a>';
@@ -197,7 +198,7 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
         if (message.photo != null) {
           copyFileToDirectory(
             message.photo!,
-            'files/html_export/chats/chat_${chatIndex.toString().padLeft(2, "0")}/photos',
+            join('files','html_export','chats', 'chat_${chatIndex.toString().padLeft(2, "0")}', 'photos'),
           );
           photo =
               '''<div class="media_wrap clearfix"><a class="photo_wrap clearfix pull_left" href="photos/${message.photo?.split("/").last}"><img class="photo" src="photos/${message.photo?.split("/").last}" style="width: ${photoWidth}px; height: ${photoHeight}px"/></a></div>''';
@@ -205,11 +206,11 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
         if (message.mediaType == "animation") {
           copyFileToDirectory(
             message.file!,
-            'files/html_export/chats/chat_${chatIndex.toString().padLeft(2, "0")}/video_files',
+            join('files','html_export','chats', 'chat_${chatIndex.toString().padLeft(2, "0")}', 'video_files'),
           );
           copyFileToDirectory(
             message.thumbnail!,
-            'files/html_export/chats/chat_${chatIndex.toString().padLeft(2, "0")}/video_files',
+             join('files','html_export','chats', 'chat_${chatIndex.toString().padLeft(2, "0")}', 'video_files'),
           );
           photo = gifItem
               .replaceAll(
@@ -292,7 +293,7 @@ Future createStoriesPage(ShDataExport exported) async {
       .replaceAll('{title}', 'Archived stories');
   String rows = "";
   for (final Story story in exported.stories) {
-    copyFileToDirectory(story.media, 'files/html_export/stories');
+    copyFileToDirectory(story.media,  join('files','html_export','stories'));
     rows += storyRow
         .replaceAll('{storyUrl}', 'stories/${story.media.split("/").last}')
         .replaceAll('{date}', story.date.toIso8601String())
@@ -321,7 +322,7 @@ Future createProfilePicturesPage(ShDataExport exported) async {
       .replaceAll('{title}', 'Profile pictures');
   String rows = "";
   for (final ProfilePicture profile in exported.profilePictures) {
-    copyFileToDirectory(profile.photo, 'files/html_export/profile_pictures');
+    copyFileToDirectory(profile.photo, join('files','html_export','profile_pictures'));
     final stat = await File(
       "files/html_export/profile_pictures/${profile.photo.split("/").last}",
     ).stat();
