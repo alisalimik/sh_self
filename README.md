@@ -15,8 +15,8 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Todo](#usage)
-- [Usage](#modules)
+- [Screenshots](#screenshots)
+- [Usage](#usage)
 - [License](#license)
 
 ## About
