@@ -573,7 +573,7 @@ div.toast_shown {
   height: 48px; /* Set your desired height */
 }
 #sticker-tgs {
-  display: block;
+  display: inline-block;
   vertical-align: middle; /* Set your desired vertical alignment */
   width: 100px; /* Set your desired width */
   height: 100px; /* Set your desired height */

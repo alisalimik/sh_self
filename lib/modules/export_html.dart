@@ -54,7 +54,8 @@ Future<void> _function(update) async {
 Future createMessagesPage(int chatIndex, Chat chat) async {
   final bool hasAnimatedSticker = chat.messages.any(
     (element) =>
-        element.textEntities.any((element) => element.type == "custom_emoji"),
+        element.textEntities.any((element) => element.type == "custom_emoji") ||
+        element.mediaType == "sticker",
   );
   final bool hasPreText = chat.messages.any(
     (element) => element.textEntities.any((element) => element.type == "pre"),
@@ -144,7 +145,8 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
                 '<tgs-player id="${(message.textEntities.length <= 3 && !message.textEntities.any((element) => element.type != 'custom_emoji')) ? 'medium-tgs' : 'inline-tgs'}" autoplay loop mode="normal" src="stickers/${tE.documentId?.split("/").last}"><span class="tgs-placeholder">$t</span></tgs-player>';
             copyFileToDirectory(
               tE.documentId.toString(),
-              join('files','html_export','chats', 'chat_${chatIndex.toString().padLeft(2, "0")}', 'stickers'),
+              join('files', 'html_export', 'chats',
+                  'chat_${chatIndex.toString().padLeft(2, "0")}', 'stickers'),
             );
           } else if (tE.type == "text_link") {
             htmlFromEnteties += '<a href="${tE.href}">$t</a>';
@@ -198,7 +200,8 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
         if (message.photo != null) {
           copyFileToDirectory(
             message.photo!,
-            join('files','html_export','chats', 'chat_${chatIndex.toString().padLeft(2, "0")}', 'photos'),
+            join('files', 'html_export', 'chats',
+                'chat_${chatIndex.toString().padLeft(2, "0")}', 'photos'),
           );
           photo =
               '''<div class="media_wrap clearfix"><a class="photo_wrap clearfix pull_left" href="photos/${message.photo?.split("/").last}"><img class="photo" src="photos/${message.photo?.split("/").last}" style="width: ${photoWidth}px; height: ${photoHeight}px"/></a></div>''';
@@ -206,11 +209,13 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
         if (message.mediaType == "animation") {
           copyFileToDirectory(
             message.file!,
-            join('files','html_export','chats', 'chat_${chatIndex.toString().padLeft(2, "0")}', 'video_files'),
+            join('files', 'html_export', 'chats',
+                'chat_${chatIndex.toString().padLeft(2, "0")}', 'video_files'),
           );
           copyFileToDirectory(
             message.thumbnail!,
-             join('files','html_export','chats', 'chat_${chatIndex.toString().padLeft(2, "0")}', 'video_files'),
+            join('files', 'html_export', 'chats',
+                'chat_${chatIndex.toString().padLeft(2, "0")}', 'video_files'),
           );
           photo = gifItem
               .replaceAll(
@@ -223,6 +228,35 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
                 '{thumbnail}',
                 'video_files/${message.thumbnail?.split("/").last}',
               );
+        }
+        if (message.mediaType == "sticker") {
+          copyFileToDirectory(
+            message.file!,
+            join(
+              'files',
+              'html_export',
+              'chats',
+              'chat_${chatIndex.toString().padLeft(2, "0")}',
+              'stickers',
+            ),
+          );
+          copyFileToDirectory(
+            message.thumbnail!,
+            join(
+              'files',
+              'html_export',
+              'chats',
+              'chat_${chatIndex.toString().padLeft(2, "0")}',
+              'stickers',
+            ),
+          );
+          if (message.file?.endsWith("tgs") == true) {
+            htmlFromEnteties =
+                '<tgs-player id="sticker-tgs" autoplay loop mode="normal" src="stickers/${message.file?.split("/").last}"></tgs-player>';
+          } else {
+            htmlFromEnteties =
+                '<img width="100" height="100" src="stickers/${message.file?.split("/").last}" />';
+          }
         }
         rows += (message.forwardedFrom != null
                 ? forwardedMessageRow
@@ -293,7 +327,7 @@ Future createStoriesPage(ShDataExport exported) async {
       .replaceAll('{title}', 'Archived stories');
   String rows = "";
   for (final Story story in exported.stories) {
-    copyFileToDirectory(story.media,  join('files','html_export','stories'));
+    copyFileToDirectory(story.media, join('files', 'html_export', 'stories'));
     rows += storyRow
         .replaceAll('{storyUrl}', 'stories/${story.media.split("/").last}')
         .replaceAll('{date}', story.date.toIso8601String())
@@ -322,7 +356,8 @@ Future createProfilePicturesPage(ShDataExport exported) async {
       .replaceAll('{title}', 'Profile pictures');
   String rows = "";
   for (final ProfilePicture profile in exported.profilePictures) {
-    copyFileToDirectory(profile.photo, join('files','html_export','profile_pictures'));
+    copyFileToDirectory(
+        profile.photo, join('files', 'html_export', 'profile_pictures'));
     final stat = await File(
       "files/html_export/profile_pictures/${profile.photo.split("/").last}",
     ).stat();
