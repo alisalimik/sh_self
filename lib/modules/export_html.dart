@@ -6,6 +6,7 @@ import 'dart:math';
 
 import 'package:collection/collection.dart';
 import 'package:path/path.dart';
+import 'package:sh_self/sh_self.dart';
 import 'package:sh_self/tdlib_dart/td_api.dart' as td;
 import 'package:sh_self/utils/helpers.dart';
 import 'package:sh_self/utils/html_assets/html.dart';
@@ -93,7 +94,8 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
         newHead.replaceAll('{headWhite}', headWhiteSpace),
       )
       .replaceAll('{body}', messagesBody);
-  messagesPage = messagesPage.replaceAll('{title}', chat.name ?? '');
+  messagesPage =
+      messagesPage.replaceAll('{title}', chat.name ?? 'Deleted Account');
   String rows = "";
   final chatUserIds = chat.messages.map((e) => e.fromId);
   final Map<String, String> colorIndex = {};
@@ -583,10 +585,11 @@ Future createChatsPage(ShDataExport exported) async {
           .replaceAll('{trailing}', chatType)
           .replaceAll(
             '{title}',
-            (chatType.contains("saved")
-                    ? exported.personalInformation.firstName
-                    : chat.name.toString())
-                .replaceAll('null', 'Deleted Account'),
+            (chatType.contains("saved") || chat.id == telegramApp.me?.id
+                ? exported.personalInformation.firstName
+                : (chat.name != null && chat.name != ""
+                    ? chat.name.toString()
+                    : 'Deleted Account')),
           )
           .replaceAll('{subtitle}', "${chat.messages.length} messages");
       index += 1;
