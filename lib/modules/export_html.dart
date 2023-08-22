@@ -132,10 +132,9 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
         String htmlFromEnteties = "";
         for (final TextEntities tE in message.textEntities) {
           String t = "";
+          t = sanitizer.convert(tE.text);
           if (tE.type != 'pre') {
-            t = tE.text.replaceAll('\n', '<br>');
-          } else {
-            t = sanitizer.convert(tE.text);
+            t = t.replaceAll('\n', '<br>');
           }
           if (tE.type == "plain") {
             htmlFromEnteties += t;
@@ -193,6 +192,8 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
                 '<a href="https://t.me/${t.split("@").last}">$t</a>';
           }
         }
+        final Duration duration =
+            Duration(seconds: message.durationSeconds ?? 0);
         int photoWidth = 260;
         int photoHeight = 260;
         String photo = "";
@@ -258,8 +259,56 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
                 'video_files/${message.thumbnail?.split("/").last}',
               );
         }
+        if (message.mimeType == "document") {
+          copyFileToDirectory(
+            message.file!,
+            join(
+              'files',
+              'html_export',
+              'chats',
+              'chat_${chatIndex.toString().padLeft(2, "0")}',
+              'files',
+            ),
+          );
+          final stat = File(
+            join(
+              'files',
+              'html_export',
+              'chats',
+              'chat_${chatIndex.toString().padLeft(2, "0")}',
+              'files',
+              message.file?.split("/").last,
+            ),
+          ).statSync();
+          photo = """
+<div class="media_wrap clearfix">
+
+        <a class="media clearfix pull_left block_link media_file" href="files/${message.file?.split("/").last}">
+
+         <div class="fill pull_left">
+
+         </div>
+
+         <div class="body">
+
+          <div class="title bold">
+${message.title}
+          </div>
+
+          <div class="status details">
+${stat.size ~/ 1024} KB'
+          </div>
+
+         </div>
+
+        </a>
+
+       </div>
+""";
+        }
         if (message.contactInformation != null) {
           photo = """
+<div class="media_wrap clearfix">
 <div class="media clearfix pull_left media_contact">
 
          <div class="fill pull_left">
@@ -278,7 +327,82 @@ ${message.contactInformation?.phoneNumber}
 
          </div>
 
-        </div>""";
+        </div>
+        </div>
+        """;
+        }
+        if (message.mediaType == "voice_message") {
+          copyFileToDirectory(
+            message.file!,
+            join(
+              'files',
+              'html_export',
+              'chats',
+              'chat_${chatIndex.toString().padLeft(2, "0")}',
+              'voice_messages',
+            ),
+          );
+          photo = """
+<div class="media_wrap clearfix">
+
+        <a class="media clearfix pull_left block_link media_voice_message" href="voice_messages/${message.file?.split("/").last}">
+
+         <div class="fill pull_left">
+
+         </div>
+
+         <div class="body">
+
+          <div class="title bold">
+Voice message
+          </div>
+
+          <div class="status details">
+${duration.inMinutes}:${duration.inSeconds % 60}
+          </div>
+
+         </div>
+
+        </a>
+
+       </div>""";
+        }
+        if (message.mediaType == "audio_file") {
+          copyFileToDirectory(
+            message.file!,
+            join(
+              'files',
+              'html_export',
+              'chats',
+              'chat_${chatIndex.toString().padLeft(2, "0")}',
+              'files',
+            ),
+          );
+
+          photo = """
+<div class="media_wrap clearfix">
+
+        <a class="media clearfix pull_left block_link media_audio_file" href="files/${message.file?.split("/").last}">
+
+         <div class="fill pull_left">
+
+         </div>
+
+         <div class="body">
+
+          <div class="title bold">
+${message.title}
+          </div>
+
+          <div class="status details">
+${duration.inMinutes}:${duration.inSeconds % 60}
+          </div>
+
+         </div>
+
+        </a>
+
+       </div>""";
         }
         if (message.mediaType == "sticker") {
           copyFileToDirectory(
@@ -301,6 +425,7 @@ ${message.contactInformation?.phoneNumber}
               'stickers',
             ),
           );
+
           if (message.file?.endsWith("tgs") == true) {
             htmlFromEnteties =
                 '<tgs-player id="sticker-tgs" autoplay loop mode="normal" src="stickers/${message.file?.split("/").last}"></tgs-player>';

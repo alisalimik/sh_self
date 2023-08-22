@@ -585,8 +585,10 @@ Future<Message> tdMessageToShMessage(td.Message incoming, td.Message e) async {
         ),
       );
     }
+    mediaType = "document";
     mimeType = (e.content as td.MessageDocument).document.mimeType;
     file = (e.content as td.MessageDocument).document.document.local.path;
+    title = (e.content as td.MessageDocument).document.fileName;
     thumbnail =
         (e.content as td.MessageDocument).document.thumbnail?.file.local.path;
   }
