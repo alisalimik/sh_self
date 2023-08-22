@@ -188,15 +188,26 @@ Future<void> _function(update) async {
         media = (e.content as td.StoryContentPhoto)
             .photo
             .sizes
-            .first
+            .last
             .photo
             .local
             .path;
+        telegramApp.client.send(
+          td.DownloadFile(
+            fileId:
+                (e.content as td.StoryContentPhoto).photo.sizes.last.photo.id,
+            synchronous: true,
+            priority: 1,
+            offset: 0,
+            limit: 0,
+          ),
+        );
       } else if (e.content is td.StoryContentVideo) {
         media = (e.content as td.StoryContentVideo).video.video.local.path;
       } else if (e.content is td.StoryContentUnsupported) {
         media = "Unsupported Media";
       }
+
       return Story(
         date: date,
         dateUnixtime: e.date.toString(),
