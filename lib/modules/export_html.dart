@@ -145,8 +145,13 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
                 '<tgs-player id="${(message.textEntities.length <= 3 && !message.textEntities.any((element) => element.type != 'custom_emoji')) ? 'medium-tgs' : 'inline-tgs'}" autoplay loop mode="normal" src="stickers/${tE.documentId?.split("/").last}"><span class="tgs-placeholder">$t</span></tgs-player>';
             copyFileToDirectory(
               tE.documentId.toString(),
-              join('files', 'html_export', 'chats',
-                  'chat_${chatIndex.toString().padLeft(2, "0")}', 'stickers'),
+              join(
+                'files',
+                'html_export',
+                'chats',
+                'chat_${chatIndex.toString().padLeft(2, "0")}',
+                'stickers',
+              ),
             );
           } else if (tE.type == "text_link") {
             htmlFromEnteties += '<a href="${tE.href}">$t</a>';
@@ -200,27 +205,49 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
         if (message.photo != null) {
           copyFileToDirectory(
             message.photo!,
-            join('files', 'html_export', 'chats',
-                'chat_${chatIndex.toString().padLeft(2, "0")}', 'photos'),
+            join(
+              'files',
+              'html_export',
+              'chats',
+              'chat_${chatIndex.toString().padLeft(2, "0")}',
+              'photos',
+            ),
           );
           photo =
               '''<div class="media_wrap clearfix"><a class="photo_wrap clearfix pull_left" href="photos/${message.photo?.split("/").last}"><img class="photo" src="photos/${message.photo?.split("/").last}" style="width: ${photoWidth}px; height: ${photoHeight}px"/></a></div>''';
         }
-        if (message.mediaType == "animation") {
+        if (message.mediaType == "animation" ||
+            message.mediaType == "video_file") {
           copyFileToDirectory(
             message.file!,
-            join('files', 'html_export', 'chats',
-                'chat_${chatIndex.toString().padLeft(2, "0")}', 'video_files'),
+            join(
+              'files',
+              'html_export',
+              'chats',
+              'chat_${chatIndex.toString().padLeft(2, "0")}',
+              'video_files',
+            ),
           );
           copyFileToDirectory(
             message.thumbnail!,
-            join('files', 'html_export', 'chats',
-                'chat_${chatIndex.toString().padLeft(2, "0")}', 'video_files'),
+            join(
+              'files',
+              'html_export',
+              'chats',
+              'chat_${chatIndex.toString().padLeft(2, "0")}',
+              'video_files',
+            ),
           );
           photo = gifItem
               .replaceAll(
                 '{video}',
                 'video_files/${message.file?.split("/").last}',
+              )
+              .replaceAll(
+                '{playBtn}',
+                message.mediaType == "animation"
+                    ? '''<div class="gif_play">GIF</div>'''
+                    : '''<div class="video_play"></div>''',
               )
               .replaceAll('{width}', photoWidth.toString())
               .replaceAll('{height}', photoHeight.toString())
@@ -228,6 +255,28 @@ Future createMessagesPage(int chatIndex, Chat chat) async {
                 '{thumbnail}',
                 'video_files/${message.thumbnail?.split("/").last}',
               );
+        }
+        if (message.contactInformation != null) {
+          photo = """
+<div class="media clearfix pull_left media_contact">
+
+         <div class="fill pull_left">
+
+         </div>
+
+         <div class="body">
+
+          <div class="title bold">
+${message.contactInformation?.firstName} ${message.contactInformation?.lastName}
+          </div>
+
+          <div class="status details">
+${message.contactInformation?.phoneNumber}
+          </div>
+
+         </div>
+
+        </div>""";
         }
         if (message.mediaType == "sticker") {
           copyFileToDirectory(
@@ -357,7 +406,9 @@ Future createProfilePicturesPage(ShDataExport exported) async {
   String rows = "";
   for (final ProfilePicture profile in exported.profilePictures) {
     copyFileToDirectory(
-        profile.photo, join('files', 'html_export', 'profile_pictures'));
+      profile.photo,
+      join('files', 'html_export', 'profile_pictures'),
+    );
     final stat = await File(
       "files/html_export/profile_pictures/${profile.photo.split("/").last}",
     ).stat();
