@@ -23,7 +23,7 @@ Mute list *Help*:
 `mutelist all` - all muted users
 `mutelist summery` - get muted users count
 `mutelist message_type` - get muted users for special message type e.g., `mutelist text` __Case Sensitive__
-`mutelist clear` - clear muted users list (optional splitted types)
+`mutelist clear` - clear muted users list __optional splitted types__
 `m message_type` - reply to user and the user will be toggle mute for the special message type
 ''');
 
