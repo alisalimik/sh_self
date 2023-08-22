@@ -66,25 +66,25 @@ void openTDlibDependecies(ShPlatformInfo platformInfo) {
 Map<String, Map<String, List<String>>> librariesToLoad = {
   'linux': {
     'x64': ['libtdjson.so'],
-    'arm64': ['libtdjson.so']
+    'arm64': ['libtdjson.so'],
   },
   'macos': {
     'x64': ['libtdjson.dylib'],
-    'arm64': ['libtdjson.dylib']
+    'arm64': ['libtdjson.dylib'],
   },
   'windows': {
     'x64': [
       'zlib1.dll',
       'libcrypto-3-x64.dll',
       'libssl-3-x64.dll',
-      'tdjson.dll'
+      'tdjson.dll',
     ],
     'arm64': [
       'zlib1.dll',
       'libcrypto-3-arm64.dll',
       'libssl-3-arm64.dll',
-      'tdjson.dll'
-    ]
+      'tdjson.dll',
+    ],
   },
 };
 
@@ -100,20 +100,20 @@ Future<void> downloadAndExtractTDLib([String downloadPath = '']) async {
       'arm64':
           'https://github.com/alisalimik/sh_self/releases/download/tdlib-1.8.15/tdlib-macos-arm64.zip',
       'x64':
-          'https://github.com/alisalimik/sh_self/releases/download/tdlib-1.8.15/tdlib-macos-x64.zip'
+          'https://github.com/alisalimik/sh_self/releases/download/tdlib-1.8.15/tdlib-macos-x64.zip',
     },
     'windows': {
       'arm64':
           'https://github.com/alisalimik/sh_self/releases/download/tdlib-1.8.15/tdlib-windows-arm64.zip',
       'x64':
-          'https://github.com/alisalimik/sh_self/releases/download/tdlib-1.8.15/tdlib-windows-x64.zip'
+          'https://github.com/alisalimik/sh_self/releases/download/tdlib-1.8.15/tdlib-windows-x64.zip',
     },
     'linux': {
       'arm64':
           'https://github.com/alisalimik/sh_self/releases/download/tdlib-1.8.15/tdlib-linux-arm64.zip',
       'x64':
-          'https://github.com/alisalimik/sh_self/releases/download/tdlib-1.8.15/tdlib-linux-x64.zip'
-    }
+          'https://github.com/alisalimik/sh_self/releases/download/tdlib-1.8.15/tdlib-linux-x64.zip',
+    },
   };
   final tempDir = Directory(join(Directory.current.path, '.tmp'));
   final tdlibDir = downloadPath != ''

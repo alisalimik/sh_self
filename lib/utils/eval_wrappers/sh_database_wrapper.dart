@@ -23,7 +23,7 @@ class $ShDatabase implements ShDatabase, $Instance {
       $value.isMutedUser(messageType, userId);
 
   @override
-  void muteUser(ShMessageType messageType, int userId) =>
+  Future<void> muteUser(ShMessageType messageType, int userId) =>
       $value.muteUser(messageType, userId);
 
   @override
@@ -34,7 +34,7 @@ class $ShDatabase implements ShDatabase, $Instance {
   void saveToDb(String key, String value) => $value.saveToDb(key, value);
 
   @override
-  void unmuteUser(ShMessageType messageType, int userId) =>
+  Future<void> unmuteUser(ShMessageType messageType, int userId) =>
       $value.unmuteUser(messageType, userId);
 
   @override
@@ -157,7 +157,7 @@ class $ShDatabase implements ShDatabase, $Instance {
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation($type),
         ),
-      )
+      ),
     },
     fields: {
       'storage': const BridgeFieldDef(
@@ -169,7 +169,7 @@ class $ShDatabase implements ShDatabase, $Instance {
         BridgeTypeAnnotation(
           BridgeTypeRef.type(RuntimeTypes.objectType),
         ),
-      )
+      ),
     },
     methods: {
       'getDbPath': const BridgeMethodDef(
@@ -223,7 +223,7 @@ class $ShDatabase implements ShDatabase, $Instance {
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
             BridgeTypeRef.type(
-              RuntimeTypes.voidType,
+              RuntimeTypes.futureType,
             ),
           ),
           params: [
@@ -312,7 +312,7 @@ class $ShDatabase implements ShDatabase, $Instance {
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation(
             BridgeTypeRef.type(
-              RuntimeTypes.voidType,
+              RuntimeTypes.futureType,
             ),
           ),
           params: [

@@ -13,7 +13,7 @@ extension TdErrorDataClassExtensions on TdError {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(code),
-        const DeepCollectionEquality().hash(message)
+        const DeepCollectionEquality().hash(message),
       ]);
 }
 
@@ -98,7 +98,7 @@ extension AuthenticationCodeTypeMissedCallDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(phoneNumberPrefix),
-        const DeepCollectionEquality().hash(length)
+        const DeepCollectionEquality().hash(length),
       ]);
 }
 
@@ -114,7 +114,7 @@ extension AuthenticationCodeTypeFragmentDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(length)
+        const DeepCollectionEquality().hash(length),
       ]);
 }
 
@@ -130,7 +130,7 @@ extension AuthenticationCodeTypeFirebaseAndroidDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(nonce),
-        const DeepCollectionEquality().hash(length)
+        const DeepCollectionEquality().hash(length),
       ]);
 }
 
@@ -149,7 +149,7 @@ extension AuthenticationCodeTypeFirebaseIosDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(receipt),
         const DeepCollectionEquality().hash(pushTimeout),
-        const DeepCollectionEquality().hash(length)
+        const DeepCollectionEquality().hash(length),
       ]);
 }
 
@@ -169,7 +169,7 @@ extension AuthenticationCodeInfoDataClassExtensions on AuthenticationCodeInfo {
         const DeepCollectionEquality().hash(phoneNumber),
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(nextType),
-        const DeepCollectionEquality().hash(timeout)
+        const DeepCollectionEquality().hash(timeout),
       ]);
 }
 
@@ -186,7 +186,7 @@ extension EmailAddressAuthenticationCodeInfoDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(emailAddressPattern),
-        const DeepCollectionEquality().hash(length)
+        const DeepCollectionEquality().hash(length),
       ]);
 }
 
@@ -282,7 +282,7 @@ extension TextEntityDataClassExtensions on TextEntity {
         runtimeType,
         const DeepCollectionEquality().hash(offset),
         const DeepCollectionEquality().hash(length),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -309,7 +309,7 @@ extension FormattedTextDataClassExtensions on FormattedText {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(entities)
+        const DeepCollectionEquality().hash(entities),
       ]);
 }
 
@@ -326,7 +326,7 @@ extension TermsOfServiceDataClassExtensions on TermsOfService {
         runtimeType,
         const DeepCollectionEquality().hash(text),
         const DeepCollectionEquality().hash(minUserAge),
-        const DeepCollectionEquality().hash(showPopup)
+        const DeepCollectionEquality().hash(showPopup),
       ]);
 }
 
@@ -372,7 +372,7 @@ extension AuthorizationStateWaitEmailAddressDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(allowAppleId),
-        const DeepCollectionEquality().hash(allowGoogleId)
+        const DeepCollectionEquality().hash(allowGoogleId),
       ]);
 }
 
@@ -395,7 +395,7 @@ extension AuthorizationStateWaitEmailCodeDataClassExtensions
         const DeepCollectionEquality().hash(allowAppleId),
         const DeepCollectionEquality().hash(allowGoogleId),
         const DeepCollectionEquality().hash(codeInfo),
-        const DeepCollectionEquality().hash(emailAddressResetState)
+        const DeepCollectionEquality().hash(emailAddressResetState),
       ]);
 }
 
@@ -460,7 +460,7 @@ extension AuthorizationStateWaitPasswordDataClassExtensions
         const DeepCollectionEquality().hash(passwordHint),
         const DeepCollectionEquality().hash(hasRecoveryEmailAddress),
         const DeepCollectionEquality().hash(hasPassportData),
-        const DeepCollectionEquality().hash(recoveryEmailAddressPattern)
+        const DeepCollectionEquality().hash(recoveryEmailAddressPattern),
       ]);
 }
 
@@ -533,7 +533,7 @@ extension PasswordStateDataClassExtensions on PasswordState {
         const DeepCollectionEquality().hash(hasPassportData),
         const DeepCollectionEquality().hash(recoveryEmailAddressCodeInfo),
         const DeepCollectionEquality().hash(loginEmailAddressPattern),
-        const DeepCollectionEquality().hash(pendingResetDate)
+        const DeepCollectionEquality().hash(pendingResetDate),
       ]);
 }
 
@@ -548,7 +548,7 @@ extension RecoveryEmailAddressDataClassExtensions on RecoveryEmailAddress {
   int get overriddenHashCode => Object.hashAll(
         [
           runtimeType,
-          const DeepCollectionEquality().hash(recoveryEmailAddress)
+          const DeepCollectionEquality().hash(recoveryEmailAddress),
         ],
       );
 }
@@ -565,7 +565,7 @@ extension TemporaryPasswordStateDataClassExtensions on TemporaryPasswordState {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(hasPassword),
-        const DeepCollectionEquality().hash(validFor)
+        const DeepCollectionEquality().hash(validFor),
       ]);
 }
 
@@ -599,7 +599,7 @@ extension LocalFileDataClassExtensions on LocalFile {
         const DeepCollectionEquality().hash(isDownloadingCompleted),
         const DeepCollectionEquality().hash(downloadOffset),
         const DeepCollectionEquality().hash(downloadedPrefixSize),
-        const DeepCollectionEquality().hash(downloadedSize)
+        const DeepCollectionEquality().hash(downloadedSize),
       ]);
 }
 
@@ -623,7 +623,7 @@ extension RemoteFileDataClassExtensions on RemoteFile {
         const DeepCollectionEquality().hash(uniqueId),
         const DeepCollectionEquality().hash(isUploadingActive),
         const DeepCollectionEquality().hash(isUploadingCompleted),
-        const DeepCollectionEquality().hash(uploadedSize)
+        const DeepCollectionEquality().hash(uploadedSize),
       ]);
 }
 
@@ -645,7 +645,7 @@ extension FileDataClassExtensions on File {
         const DeepCollectionEquality().hash(size),
         const DeepCollectionEquality().hash(expectedSize),
         const DeepCollectionEquality().hash(local),
-        const DeepCollectionEquality().hash(remote)
+        const DeepCollectionEquality().hash(remote),
       ]);
 }
 
@@ -705,7 +705,7 @@ extension InputFileGeneratedDataClassExtensions on InputFileGenerated {
         runtimeType,
         const DeepCollectionEquality().hash(originalPath),
         const DeepCollectionEquality().hash(conversion),
-        const DeepCollectionEquality().hash(expectedSize)
+        const DeepCollectionEquality().hash(expectedSize),
       ]);
 }
 
@@ -727,7 +727,7 @@ extension PhotoSizeDataClassExtensions on PhotoSize {
         const DeepCollectionEquality().hash(photo),
         const DeepCollectionEquality().hash(width),
         const DeepCollectionEquality().hash(height),
-        const DeepCollectionEquality().hash(progressiveSizes)
+        const DeepCollectionEquality().hash(progressiveSizes),
       ]);
 }
 
@@ -744,7 +744,7 @@ extension MinithumbnailDataClassExtensions on Minithumbnail {
         runtimeType,
         const DeepCollectionEquality().hash(width),
         const DeepCollectionEquality().hash(height),
-        const DeepCollectionEquality().hash(data)
+        const DeepCollectionEquality().hash(data),
       ]);
 }
 
@@ -827,7 +827,7 @@ extension ThumbnailDataClassExtensions on Thumbnail {
         const DeepCollectionEquality().hash(format),
         const DeepCollectionEquality().hash(width),
         const DeepCollectionEquality().hash(height),
-        const DeepCollectionEquality().hash(file)
+        const DeepCollectionEquality().hash(file),
       ]);
 }
 
@@ -886,7 +886,7 @@ extension MaskPositionDataClassExtensions on MaskPosition {
         const DeepCollectionEquality().hash(point),
         const DeepCollectionEquality().hash(xShift),
         const DeepCollectionEquality().hash(yShift),
-        const DeepCollectionEquality().hash(scale)
+        const DeepCollectionEquality().hash(scale),
       ]);
 }
 
@@ -1002,7 +1002,7 @@ extension StickerFullTypeCustomEmojiDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(customEmojiId),
-        const DeepCollectionEquality().hash(needsRepainting)
+        const DeepCollectionEquality().hash(needsRepainting),
       ]);
 }
 
@@ -1037,7 +1037,7 @@ extension PollOptionDataClassExtensions on PollOption {
         const DeepCollectionEquality().hash(voterCount),
         const DeepCollectionEquality().hash(votePercentage),
         const DeepCollectionEquality().hash(isChosen),
-        const DeepCollectionEquality().hash(isBeingChosen)
+        const DeepCollectionEquality().hash(isBeingChosen),
       ]);
 }
 
@@ -1060,7 +1060,7 @@ extension PollTypeRegularDataClassExtensions on PollTypeRegular {
   int get overriddenHashCode => Object.hashAll(
         [
           runtimeType,
-          const DeepCollectionEquality().hash(allowMultipleAnswers)
+          const DeepCollectionEquality().hash(allowMultipleAnswers),
         ],
       );
 }
@@ -1078,7 +1078,7 @@ extension PollTypeQuizDataClassExtensions on PollTypeQuiz {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(correctOptionId),
-        const DeepCollectionEquality().hash(explanation)
+        const DeepCollectionEquality().hash(explanation),
       ]);
 }
 
@@ -1109,7 +1109,7 @@ extension AnimationDataClassExtensions on Animation {
         const DeepCollectionEquality().hash(hasStickers),
         const DeepCollectionEquality().hash(minithumbnail),
         const DeepCollectionEquality().hash(thumbnail),
-        const DeepCollectionEquality().hash(animation)
+        const DeepCollectionEquality().hash(animation),
       ]);
 }
 
@@ -1141,7 +1141,7 @@ extension AudioDataClassExtensions on Audio {
         const DeepCollectionEquality().hash(albumCoverMinithumbnail),
         const DeepCollectionEquality().hash(albumCoverThumbnail),
         const DeepCollectionEquality().hash(externalAlbumCovers),
-        const DeepCollectionEquality().hash(audio)
+        const DeepCollectionEquality().hash(audio),
       ]);
 }
 
@@ -1163,7 +1163,7 @@ extension DocumentDataClassExtensions on Document {
         const DeepCollectionEquality().hash(mimeType),
         const DeepCollectionEquality().hash(minithumbnail),
         const DeepCollectionEquality().hash(thumbnail),
-        const DeepCollectionEquality().hash(document)
+        const DeepCollectionEquality().hash(document),
       ]);
 }
 
@@ -1182,7 +1182,7 @@ extension PhotoDataClassExtensions on Photo {
         runtimeType,
         const DeepCollectionEquality().hash(hasStickers),
         const DeepCollectionEquality().hash(minithumbnail),
-        const DeepCollectionEquality().hash(sizes)
+        const DeepCollectionEquality().hash(sizes),
       ]);
 }
 
@@ -1213,7 +1213,7 @@ extension StickerDataClassExtensions on Sticker {
         const DeepCollectionEquality().hash(fullType),
         const DeepCollectionEquality().hash(outline),
         const DeepCollectionEquality().hash(thumbnail),
-        const DeepCollectionEquality().hash(sticker)
+        const DeepCollectionEquality().hash(sticker),
       ]);
 }
 
@@ -1247,7 +1247,7 @@ extension VideoDataClassExtensions on Video {
         const DeepCollectionEquality().hash(supportsStreaming),
         const DeepCollectionEquality().hash(minithumbnail),
         const DeepCollectionEquality().hash(thumbnail),
-        const DeepCollectionEquality().hash(video)
+        const DeepCollectionEquality().hash(video),
       ]);
 }
 
@@ -1274,7 +1274,7 @@ extension VideoNoteDataClassExtensions on VideoNote {
         const DeepCollectionEquality().hash(minithumbnail),
         const DeepCollectionEquality().hash(thumbnail),
         const DeepCollectionEquality().hash(speechRecognitionResult),
-        const DeepCollectionEquality().hash(video)
+        const DeepCollectionEquality().hash(video),
       ]);
 }
 
@@ -1296,7 +1296,7 @@ extension VoiceNoteDataClassExtensions on VoiceNote {
         const DeepCollectionEquality().hash(waveform),
         const DeepCollectionEquality().hash(mimeType),
         const DeepCollectionEquality().hash(speechRecognitionResult),
-        const DeepCollectionEquality().hash(voice)
+        const DeepCollectionEquality().hash(voice),
       ]);
 }
 
@@ -1320,7 +1320,7 @@ extension AnimatedEmojiDataClassExtensions on AnimatedEmoji {
         const DeepCollectionEquality().hash(stickerWidth),
         const DeepCollectionEquality().hash(stickerHeight),
         const DeepCollectionEquality().hash(fitzpatrickType),
-        const DeepCollectionEquality().hash(sound)
+        const DeepCollectionEquality().hash(sound),
       ]);
 }
 
@@ -1342,7 +1342,7 @@ extension ContactDataClassExtensions on Contact {
         const DeepCollectionEquality().hash(firstName),
         const DeepCollectionEquality().hash(lastName),
         const DeepCollectionEquality().hash(vcard),
-        const DeepCollectionEquality().hash(userId)
+        const DeepCollectionEquality().hash(userId),
       ]);
 }
 
@@ -1360,7 +1360,7 @@ extension LocationDataClassExtensions on Location {
         runtimeType,
         const DeepCollectionEquality().hash(latitude),
         const DeepCollectionEquality().hash(longitude),
-        const DeepCollectionEquality().hash(horizontalAccuracy)
+        const DeepCollectionEquality().hash(horizontalAccuracy),
       ]);
 }
 
@@ -1383,7 +1383,7 @@ extension VenueDataClassExtensions on Venue {
         const DeepCollectionEquality().hash(address),
         const DeepCollectionEquality().hash(provider),
         const DeepCollectionEquality().hash(id),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -1409,7 +1409,7 @@ extension GameDataClassExtensions on Game {
         const DeepCollectionEquality().hash(text),
         const DeepCollectionEquality().hash(description),
         const DeepCollectionEquality().hash(photo),
-        const DeepCollectionEquality().hash(animation)
+        const DeepCollectionEquality().hash(animation),
       ]);
 }
 
@@ -1431,7 +1431,7 @@ extension WebAppDataClassExtensions on WebApp {
         const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(description),
         const DeepCollectionEquality().hash(photo),
-        const DeepCollectionEquality().hash(animation)
+        const DeepCollectionEquality().hash(animation),
       ]);
 }
 
@@ -1465,7 +1465,7 @@ extension PollDataClassExtensions on Poll {
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(openPeriod),
         const DeepCollectionEquality().hash(closeDate),
-        const DeepCollectionEquality().hash(isClosed)
+        const DeepCollectionEquality().hash(isClosed),
       ]);
 }
 
@@ -1488,7 +1488,7 @@ extension BackgroundDataClassExtensions on Background {
         const DeepCollectionEquality().hash(isDark),
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(document),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -1517,7 +1517,7 @@ extension ChatBackgroundDataClassExtensions on ChatBackground {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(background),
-        const DeepCollectionEquality().hash(darkThemeDimming)
+        const DeepCollectionEquality().hash(darkThemeDimming),
       ]);
 }
 
@@ -1542,7 +1542,7 @@ extension ProfilePhotoDataClassExtensions on ProfilePhoto {
         const DeepCollectionEquality().hash(big),
         const DeepCollectionEquality().hash(minithumbnail),
         const DeepCollectionEquality().hash(hasAnimation),
-        const DeepCollectionEquality().hash(isPersonal)
+        const DeepCollectionEquality().hash(isPersonal),
       ]);
 }
 
@@ -1565,7 +1565,7 @@ extension ChatPhotoInfoDataClassExtensions on ChatPhotoInfo {
         const DeepCollectionEquality().hash(big),
         const DeepCollectionEquality().hash(minithumbnail),
         const DeepCollectionEquality().hash(hasAnimation),
-        const DeepCollectionEquality().hash(isPersonal)
+        const DeepCollectionEquality().hash(isPersonal),
       ]);
 }
 
@@ -1622,7 +1622,7 @@ extension UserTypeBotDataClassExtensions on UserTypeBot {
         const DeepCollectionEquality().hash(isInline),
         const DeepCollectionEquality().hash(inlineQueryPlaceholder),
         const DeepCollectionEquality().hash(needLocation),
-        const DeepCollectionEquality().hash(canBeAddedToAttachmentMenu)
+        const DeepCollectionEquality().hash(canBeAddedToAttachmentMenu),
       ]);
 }
 
@@ -1646,7 +1646,7 @@ extension BotCommandDataClassExtensions on BotCommand {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(command),
-        const DeepCollectionEquality().hash(description)
+        const DeepCollectionEquality().hash(description),
       ]);
 }
 
@@ -1661,7 +1661,7 @@ extension BotCommandsDataClassExtensions on BotCommands {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
-        const DeepCollectionEquality().hash(commands)
+        const DeepCollectionEquality().hash(commands),
       ]);
 }
 
@@ -1676,7 +1676,7 @@ extension BotMenuButtonDataClassExtensions on BotMenuButton {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(url)
+        const DeepCollectionEquality().hash(url),
       ]);
 }
 
@@ -1691,7 +1691,7 @@ extension ChatLocationDataClassExtensions on ChatLocation {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(location),
-        const DeepCollectionEquality().hash(address)
+        const DeepCollectionEquality().hash(address),
       ]);
 }
 
@@ -1716,7 +1716,7 @@ extension ChatPhotoStickerTypeRegularOrMaskDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(stickerSetId),
-        const DeepCollectionEquality().hash(stickerId)
+        const DeepCollectionEquality().hash(stickerId),
       ]);
 }
 
@@ -1746,7 +1746,7 @@ extension ChatPhotoStickerDataClassExtensions on ChatPhotoSticker {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(type),
-        const DeepCollectionEquality().hash(backgroundFill)
+        const DeepCollectionEquality().hash(backgroundFill),
       ]);
 }
 
@@ -1764,7 +1764,7 @@ extension AnimatedChatPhotoDataClassExtensions on AnimatedChatPhoto {
         runtimeType,
         const DeepCollectionEquality().hash(length),
         const DeepCollectionEquality().hash(file),
-        const DeepCollectionEquality().hash(mainFrameTimestamp)
+        const DeepCollectionEquality().hash(mainFrameTimestamp),
       ]);
 }
 
@@ -1791,7 +1791,7 @@ extension ChatPhotoDataClassExtensions on ChatPhoto {
         const DeepCollectionEquality().hash(sizes),
         const DeepCollectionEquality().hash(animation),
         const DeepCollectionEquality().hash(smallAnimation),
-        const DeepCollectionEquality().hash(sticker)
+        const DeepCollectionEquality().hash(sticker),
       ]);
 }
 
@@ -1806,7 +1806,7 @@ extension ChatPhotosDataClassExtensions on ChatPhotos {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(photos)
+        const DeepCollectionEquality().hash(photos),
       ]);
 }
 
@@ -1855,7 +1855,7 @@ extension InputChatPhotoAnimationDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(animation),
-        const DeepCollectionEquality().hash(mainFrameTimestamp)
+        const DeepCollectionEquality().hash(mainFrameTimestamp),
       ]);
 }
 
@@ -1920,7 +1920,7 @@ extension ChatPermissionsDataClassExtensions on ChatPermissions {
         const DeepCollectionEquality().hash(canChangeInfo),
         const DeepCollectionEquality().hash(canInviteUsers),
         const DeepCollectionEquality().hash(canPinMessages),
-        const DeepCollectionEquality().hash(canManageTopics)
+        const DeepCollectionEquality().hash(canManageTopics),
       ]);
 }
 
@@ -1968,7 +1968,7 @@ extension ChatAdministratorRightsDataClassExtensions
         const DeepCollectionEquality().hash(canManageTopics),
         const DeepCollectionEquality().hash(canPromoteMembers),
         const DeepCollectionEquality().hash(canManageVideoChats),
-        const DeepCollectionEquality().hash(isAnonymous)
+        const DeepCollectionEquality().hash(isAnonymous),
       ]);
 }
 
@@ -1994,7 +1994,7 @@ extension PremiumPaymentOptionDataClassExtensions on PremiumPaymentOption {
         const DeepCollectionEquality().hash(discountPercentage),
         const DeepCollectionEquality().hash(monthCount),
         const DeepCollectionEquality().hash(storeProductId),
-        const DeepCollectionEquality().hash(paymentLink)
+        const DeepCollectionEquality().hash(paymentLink),
       ]);
 }
 
@@ -2016,7 +2016,7 @@ extension PremiumStatePaymentOptionDataClassExtensions
         const DeepCollectionEquality().hash(paymentOption),
         const DeepCollectionEquality().hash(isCurrent),
         const DeepCollectionEquality().hash(isUpgrade),
-        const DeepCollectionEquality().hash(lastTransactionId)
+        const DeepCollectionEquality().hash(lastTransactionId),
       ]);
 }
 
@@ -2033,7 +2033,7 @@ extension EmojiStatusDataClassExtensions on EmojiStatus {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(customEmojiId),
-        const DeepCollectionEquality().hash(expirationDate)
+        const DeepCollectionEquality().hash(expirationDate),
       ]);
 }
 
@@ -2066,7 +2066,7 @@ extension UsernamesDataClassExtensions on Usernames {
         runtimeType,
         const DeepCollectionEquality().hash(activeUsernames),
         const DeepCollectionEquality().hash(disabledUsernames),
-        const DeepCollectionEquality().hash(editableUsername)
+        const DeepCollectionEquality().hash(editableUsername),
       ]);
 }
 
@@ -2133,7 +2133,7 @@ extension UserDataClassExtensions on User {
         const DeepCollectionEquality().hash(haveAccess),
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(languageCode),
-        const DeepCollectionEquality().hash(addedToAttachmentMenu)
+        const DeepCollectionEquality().hash(addedToAttachmentMenu),
       ]);
 }
 
@@ -2182,7 +2182,7 @@ extension BotInfoDataClassExtensions on BotInfo {
         const DeepCollectionEquality().hash(editCommandsLink),
         const DeepCollectionEquality().hash(editDescriptionLink),
         const DeepCollectionEquality().hash(editDescriptionMediaLink),
-        const DeepCollectionEquality().hash(editSettingsLink)
+        const DeepCollectionEquality().hash(editSettingsLink),
       ]);
 }
 
@@ -2239,7 +2239,7 @@ extension UserFullInfoDataClassExtensions on UserFullInfo {
         const DeepCollectionEquality().hash(bio),
         const DeepCollectionEquality().hash(premiumGiftOptions),
         const DeepCollectionEquality().hash(groupInCommonCount),
-        const DeepCollectionEquality().hash(botInfo)
+        const DeepCollectionEquality().hash(botInfo),
       ]);
 }
 
@@ -2254,7 +2254,7 @@ extension UsersDataClassExtensions on Users {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(userIds)
+        const DeepCollectionEquality().hash(userIds),
       ]);
 }
 
@@ -2272,7 +2272,7 @@ extension ChatAdministratorDataClassExtensions on ChatAdministrator {
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(customTitle),
-        const DeepCollectionEquality().hash(isOwner)
+        const DeepCollectionEquality().hash(isOwner),
       ]);
 }
 
@@ -2313,7 +2313,7 @@ extension ChatMemberStatusCreatorDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(customTitle),
         const DeepCollectionEquality().hash(isAnonymous),
-        const DeepCollectionEquality().hash(isMember)
+        const DeepCollectionEquality().hash(isMember),
       ]);
 }
 
@@ -2333,7 +2333,7 @@ extension ChatMemberStatusAdministratorDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(customTitle),
         const DeepCollectionEquality().hash(canBeEdited),
-        const DeepCollectionEquality().hash(rights)
+        const DeepCollectionEquality().hash(rights),
       ]);
 }
 
@@ -2361,7 +2361,7 @@ extension ChatMemberStatusRestrictedDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(isMember),
         const DeepCollectionEquality().hash(restrictedUntilDate),
-        const DeepCollectionEquality().hash(permissions)
+        const DeepCollectionEquality().hash(permissions),
       ]);
 }
 
@@ -2403,7 +2403,7 @@ extension ChatMemberDataClassExtensions on ChatMember {
         const DeepCollectionEquality().hash(memberId),
         const DeepCollectionEquality().hash(inviterUserId),
         const DeepCollectionEquality().hash(joinedChatDate),
-        const DeepCollectionEquality().hash(status)
+        const DeepCollectionEquality().hash(status),
       ]);
 }
 
@@ -2418,7 +2418,7 @@ extension ChatMembersDataClassExtensions on ChatMembers {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(members)
+        const DeepCollectionEquality().hash(members),
       ]);
 }
 
@@ -2589,7 +2589,7 @@ extension SupergroupMembersFilterMentionDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(query),
-        const DeepCollectionEquality().hash(messageThreadId)
+        const DeepCollectionEquality().hash(messageThreadId),
       ]);
 }
 
@@ -2640,7 +2640,7 @@ extension ChatInviteLinkDataClassExtensions on ChatInviteLink {
         const DeepCollectionEquality().hash(pendingJoinRequestCount),
         const DeepCollectionEquality().hash(createsJoinRequest),
         const DeepCollectionEquality().hash(isPrimary),
-        const DeepCollectionEquality().hash(isRevoked)
+        const DeepCollectionEquality().hash(isRevoked),
       ]);
 }
 
@@ -2656,7 +2656,7 @@ extension ChatInviteLinksDataClassExtensions on ChatInviteLinks {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(inviteLinks)
+        const DeepCollectionEquality().hash(inviteLinks),
       ]);
 }
 
@@ -2675,7 +2675,7 @@ extension ChatInviteLinkCountDataClassExtensions on ChatInviteLinkCount {
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(inviteLinkCount),
-        const DeepCollectionEquality().hash(revokedInviteLinkCount)
+        const DeepCollectionEquality().hash(revokedInviteLinkCount),
       ]);
 }
 
@@ -2710,7 +2710,7 @@ extension ChatInviteLinkMemberDataClassExtensions on ChatInviteLinkMember {
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(joinedChatDate),
         const DeepCollectionEquality().hash(viaChatFolderInviteLink),
-        const DeepCollectionEquality().hash(approverUserId)
+        const DeepCollectionEquality().hash(approverUserId),
       ]);
 }
 
@@ -2725,7 +2725,7 @@ extension ChatInviteLinkMembersDataClassExtensions on ChatInviteLinkMembers {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(members)
+        const DeepCollectionEquality().hash(members),
       ]);
 }
 
@@ -2761,7 +2761,7 @@ extension ChatInviteLinkInfoDataClassExtensions on ChatInviteLinkInfo {
         const DeepCollectionEquality().hash(memberCount),
         const DeepCollectionEquality().hash(memberUserIds),
         const DeepCollectionEquality().hash(createsJoinRequest),
-        const DeepCollectionEquality().hash(isPublic)
+        const DeepCollectionEquality().hash(isPublic),
       ]);
 }
 
@@ -2778,7 +2778,7 @@ extension ChatJoinRequestDataClassExtensions on ChatJoinRequest {
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(date),
-        const DeepCollectionEquality().hash(bio)
+        const DeepCollectionEquality().hash(bio),
       ]);
 }
 
@@ -2793,7 +2793,7 @@ extension ChatJoinRequestsDataClassExtensions on ChatJoinRequests {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(requests)
+        const DeepCollectionEquality().hash(requests),
       ]);
 }
 
@@ -2808,7 +2808,7 @@ extension ChatJoinRequestsInfoDataClassExtensions on ChatJoinRequestsInfo {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(userIds)
+        const DeepCollectionEquality().hash(userIds),
       ]);
 }
 
@@ -2831,7 +2831,7 @@ extension BasicGroupDataClassExtensions on BasicGroup {
         const DeepCollectionEquality().hash(memberCount),
         const DeepCollectionEquality().hash(status),
         const DeepCollectionEquality().hash(isActive),
-        const DeepCollectionEquality().hash(upgradedToSupergroupId)
+        const DeepCollectionEquality().hash(upgradedToSupergroupId),
       ]);
 }
 
@@ -2865,7 +2865,7 @@ extension BasicGroupFullInfoDataClassExtensions on BasicGroupFullInfo {
         const DeepCollectionEquality().hash(canHideMembers),
         const DeepCollectionEquality().hash(canToggleAggressiveAntiSpam),
         const DeepCollectionEquality().hash(inviteLink),
-        const DeepCollectionEquality().hash(botCommands)
+        const DeepCollectionEquality().hash(botCommands),
       ]);
 }
 
@@ -2921,7 +2921,7 @@ extension SupergroupDataClassExtensions on Supergroup {
         const DeepCollectionEquality().hash(isVerified),
         const DeepCollectionEquality().hash(restrictionReason),
         const DeepCollectionEquality().hash(isScam),
-        const DeepCollectionEquality().hash(isFake)
+        const DeepCollectionEquality().hash(isFake),
       ]);
 }
 
@@ -3009,7 +3009,7 @@ extension SupergroupFullInfoDataClassExtensions on SupergroupFullInfo {
         const DeepCollectionEquality().hash(inviteLink),
         const DeepCollectionEquality().hash(botCommands),
         const DeepCollectionEquality().hash(upgradedFromBasicGroupId),
-        const DeepCollectionEquality().hash(upgradedFromMaxMessageId)
+        const DeepCollectionEquality().hash(upgradedFromMaxMessageId),
       ]);
 }
 
@@ -3064,7 +3064,7 @@ extension SecretChatDataClassExtensions on SecretChat {
         const DeepCollectionEquality().hash(state),
         const DeepCollectionEquality().hash(isOutbound),
         const DeepCollectionEquality().hash(keyHash),
-        const DeepCollectionEquality().hash(layer)
+        const DeepCollectionEquality().hash(layer),
       ]);
 }
 
@@ -3111,7 +3111,7 @@ extension MessageSendersDataClassExtensions on MessageSenders {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(senders)
+        const DeepCollectionEquality().hash(senders),
       ]);
 }
 
@@ -3127,7 +3127,7 @@ extension ChatMessageSenderDataClassExtensions on ChatMessageSender {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(sender),
-        const DeepCollectionEquality().hash(needsPremium)
+        const DeepCollectionEquality().hash(needsPremium),
       ]);
 }
 
@@ -3154,7 +3154,7 @@ extension MessageViewerDataClassExtensions on MessageViewer {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(viewDate)
+        const DeepCollectionEquality().hash(viewDate),
       ]);
 }
 
@@ -3206,7 +3206,7 @@ extension MessageForwardOriginChatDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(senderChatId),
-        const DeepCollectionEquality().hash(authorSignature)
+        const DeepCollectionEquality().hash(authorSignature),
       ]);
 }
 
@@ -3238,7 +3238,7 @@ extension MessageForwardOriginChannelDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(authorSignature)
+        const DeepCollectionEquality().hash(authorSignature),
       ]);
 }
 
@@ -3309,7 +3309,7 @@ extension MessageForwardInfoDataClassExtensions on MessageForwardInfo {
         const DeepCollectionEquality().hash(date),
         const DeepCollectionEquality().hash(publicServiceAnnouncementType),
         const DeepCollectionEquality().hash(fromChatId),
-        const DeepCollectionEquality().hash(fromMessageId)
+        const DeepCollectionEquality().hash(fromMessageId),
       ]);
 }
 
@@ -3334,7 +3334,7 @@ extension MessageReplyInfoDataClassExtensions on MessageReplyInfo {
         const DeepCollectionEquality().hash(recentReplierIds),
         const DeepCollectionEquality().hash(lastReadInboxMessageId),
         const DeepCollectionEquality().hash(lastReadOutboxMessageId),
-        const DeepCollectionEquality().hash(lastMessageId)
+        const DeepCollectionEquality().hash(lastMessageId),
       ]);
 }
 
@@ -3354,7 +3354,7 @@ extension MessageReactionDataClassExtensions on MessageReaction {
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(totalCount),
         const DeepCollectionEquality().hash(isChosen),
-        const DeepCollectionEquality().hash(recentSenderIds)
+        const DeepCollectionEquality().hash(recentSenderIds),
       ]);
 }
 
@@ -3374,7 +3374,7 @@ extension MessageInteractionInfoDataClassExtensions on MessageInteractionInfo {
         const DeepCollectionEquality().hash(viewCount),
         const DeepCollectionEquality().hash(forwardCount),
         const DeepCollectionEquality().hash(replyInfo),
-        const DeepCollectionEquality().hash(reactions)
+        const DeepCollectionEquality().hash(reactions),
       ]);
 }
 
@@ -3391,7 +3391,7 @@ extension UnreadReactionDataClassExtensions on UnreadReaction {
         runtimeType,
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(senderId),
-        const DeepCollectionEquality().hash(isBig)
+        const DeepCollectionEquality().hash(isBig),
       ]);
 }
 
@@ -3436,7 +3436,7 @@ extension MessageSendingStateFailedDataClassExtensions
         const DeepCollectionEquality().hash(errorMessage),
         const DeepCollectionEquality().hash(canRetry),
         const DeepCollectionEquality().hash(needAnotherSender),
-        const DeepCollectionEquality().hash(retryAfter)
+        const DeepCollectionEquality().hash(retryAfter),
       ]);
 }
 
@@ -3459,7 +3459,7 @@ extension MessageReplyToMessageDataClassExtensions on MessageReplyToMessage {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -3475,7 +3475,7 @@ extension MessageReplyToStoryDataClassExtensions on MessageReplyToStory {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(storySenderChatId),
-        const DeepCollectionEquality().hash(storyId)
+        const DeepCollectionEquality().hash(storyId),
       ]);
 }
 
@@ -3592,7 +3592,7 @@ extension MessageDataClassExtensions on Message {
         const DeepCollectionEquality().hash(mediaAlbumId),
         const DeepCollectionEquality().hash(restrictionReason),
         const DeepCollectionEquality().hash(content),
-        const DeepCollectionEquality().hash(replyMarkup)
+        const DeepCollectionEquality().hash(replyMarkup),
       ]);
 }
 
@@ -3607,7 +3607,7 @@ extension MessagesDataClassExtensions on Messages {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(messages)
+        const DeepCollectionEquality().hash(messages),
       ]);
 }
 
@@ -3624,7 +3624,7 @@ extension FoundMessagesDataClassExtensions on FoundMessages {
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
         const DeepCollectionEquality().hash(messages),
-        const DeepCollectionEquality().hash(nextOffset)
+        const DeepCollectionEquality().hash(nextOffset),
       ]);
 }
 
@@ -3642,7 +3642,7 @@ extension FoundChatMessagesDataClassExtensions on FoundChatMessages {
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
         const DeepCollectionEquality().hash(messages),
-        const DeepCollectionEquality().hash(nextFromMessageId)
+        const DeepCollectionEquality().hash(nextFromMessageId),
       ]);
 }
 
@@ -3659,7 +3659,7 @@ extension MessagePositionDataClassExtensions on MessagePosition {
         runtimeType,
         const DeepCollectionEquality().hash(position),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(date)
+        const DeepCollectionEquality().hash(date),
       ]);
 }
 
@@ -3674,7 +3674,7 @@ extension MessagePositionsDataClassExtensions on MessagePositions {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(positions)
+        const DeepCollectionEquality().hash(positions),
       ]);
 }
 
@@ -3689,7 +3689,7 @@ extension MessageCalendarDayDataClassExtensions on MessageCalendarDay {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(message)
+        const DeepCollectionEquality().hash(message),
       ]);
 }
 
@@ -3704,7 +3704,7 @@ extension MessageCalendarDataClassExtensions on MessageCalendar {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(days)
+        const DeepCollectionEquality().hash(days),
       ]);
 }
 
@@ -3825,7 +3825,7 @@ extension MessageSponsorTypeBotDataClassExtensions on MessageSponsorTypeBot {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
-        const DeepCollectionEquality().hash(link)
+        const DeepCollectionEquality().hash(link),
       ]);
 }
 
@@ -3841,7 +3841,7 @@ extension MessageSponsorTypePublicChannelDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(link)
+        const DeepCollectionEquality().hash(link),
       ]);
 }
 
@@ -3857,7 +3857,7 @@ extension MessageSponsorTypePrivateChannelDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(inviteLink)
+        const DeepCollectionEquality().hash(inviteLink),
       ]);
 }
 
@@ -3873,7 +3873,7 @@ extension MessageSponsorTypeWebsiteDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(name)
+        const DeepCollectionEquality().hash(name),
       ]);
 }
 
@@ -3890,7 +3890,7 @@ extension MessageSponsorDataClassExtensions on MessageSponsor {
         runtimeType,
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(photo),
-        const DeepCollectionEquality().hash(info)
+        const DeepCollectionEquality().hash(info),
       ]);
 }
 
@@ -3913,7 +3913,7 @@ extension SponsoredMessageDataClassExtensions on SponsoredMessage {
         const DeepCollectionEquality().hash(isRecommended),
         const DeepCollectionEquality().hash(content),
         const DeepCollectionEquality().hash(sponsor),
-        const DeepCollectionEquality().hash(additionalInfo)
+        const DeepCollectionEquality().hash(additionalInfo),
       ]);
 }
 
@@ -3929,7 +3929,7 @@ extension SponsoredMessagesDataClassExtensions on SponsoredMessages {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(messages),
-        const DeepCollectionEquality().hash(messagesBetween)
+        const DeepCollectionEquality().hash(messagesBetween),
       ]);
 }
 
@@ -3951,7 +3951,7 @@ extension FileDownloadDataClassExtensions on FileDownload {
         const DeepCollectionEquality().hash(message),
         const DeepCollectionEquality().hash(addDate),
         const DeepCollectionEquality().hash(completeDate),
-        const DeepCollectionEquality().hash(isPaused)
+        const DeepCollectionEquality().hash(isPaused),
       ]);
 }
 
@@ -3971,7 +3971,7 @@ extension DownloadedFileCountsDataClassExtensions on DownloadedFileCounts {
         runtimeType,
         const DeepCollectionEquality().hash(activeCount),
         const DeepCollectionEquality().hash(pausedCount),
-        const DeepCollectionEquality().hash(completedCount)
+        const DeepCollectionEquality().hash(completedCount),
       ]);
 }
 
@@ -3989,7 +3989,7 @@ extension FoundFileDownloadsDataClassExtensions on FoundFileDownloads {
         runtimeType,
         const DeepCollectionEquality().hash(totalCounts),
         const DeepCollectionEquality().hash(files),
-        const DeepCollectionEquality().hash(nextOffset)
+        const DeepCollectionEquality().hash(nextOffset),
       ]);
 }
 
@@ -4098,7 +4098,7 @@ extension ChatNotificationSettingsDataClassExtensions
         const DeepCollectionEquality().hash(disablePinnedMessageNotifications),
         const DeepCollectionEquality()
             .hash(useDefaultDisableMentionNotifications),
-        const DeepCollectionEquality().hash(disableMentionNotifications)
+        const DeepCollectionEquality().hash(disableMentionNotifications),
       ]);
 }
 
@@ -4139,7 +4139,7 @@ extension ScopeNotificationSettingsDataClassExtensions
         const DeepCollectionEquality().hash(storySoundId),
         const DeepCollectionEquality().hash(showStorySender),
         const DeepCollectionEquality().hash(disablePinnedMessageNotifications),
-        const DeepCollectionEquality().hash(disableMentionNotifications)
+        const DeepCollectionEquality().hash(disableMentionNotifications),
       ]);
 }
 
@@ -4158,7 +4158,7 @@ extension DraftMessageDataClassExtensions on DraftMessage {
         runtimeType,
         const DeepCollectionEquality().hash(replyToMessageId),
         const DeepCollectionEquality().hash(date),
-        const DeepCollectionEquality().hash(inputMessageText)
+        const DeepCollectionEquality().hash(inputMessageText),
       ]);
 }
 
@@ -4207,7 +4207,7 @@ extension ChatTypeSupergroupDataClassExtensions on ChatTypeSupergroup {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(isChannel)
+        const DeepCollectionEquality().hash(isChannel),
       ]);
 }
 
@@ -4223,7 +4223,7 @@ extension ChatTypeSecretDataClassExtensions on ChatTypeSecret {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(secretChatId),
-        const DeepCollectionEquality().hash(userId)
+        const DeepCollectionEquality().hash(userId),
       ]);
 }
 
@@ -4285,7 +4285,7 @@ extension ChatFolderDataClassExtensions on ChatFolder {
         const DeepCollectionEquality().hash(includeNonContacts),
         const DeepCollectionEquality().hash(includeBots),
         const DeepCollectionEquality().hash(includeGroups),
-        const DeepCollectionEquality().hash(includeChannels)
+        const DeepCollectionEquality().hash(includeChannels),
       ]);
 }
 
@@ -4308,7 +4308,7 @@ extension ChatFolderInfoDataClassExtensions on ChatFolderInfo {
         const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(icon),
         const DeepCollectionEquality().hash(isShareable),
-        const DeepCollectionEquality().hash(hasMyInviteLinks)
+        const DeepCollectionEquality().hash(hasMyInviteLinks),
       ]);
 }
 
@@ -4325,7 +4325,7 @@ extension ChatFolderInviteLinkDataClassExtensions on ChatFolderInviteLink {
         runtimeType,
         const DeepCollectionEquality().hash(inviteLink),
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(chatIds)
+        const DeepCollectionEquality().hash(chatIds),
       ]);
 }
 
@@ -4359,7 +4359,7 @@ extension ChatFolderInviteLinkInfoDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatFolderInfo),
         const DeepCollectionEquality().hash(missingChatIds),
-        const DeepCollectionEquality().hash(addedChatIds)
+        const DeepCollectionEquality().hash(addedChatIds),
       ]);
 }
 
@@ -4375,7 +4375,7 @@ extension RecommendedChatFolderDataClassExtensions on RecommendedChatFolder {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(folder),
-        const DeepCollectionEquality().hash(description)
+        const DeepCollectionEquality().hash(description),
       ]);
 }
 
@@ -4416,7 +4416,7 @@ extension ArchiveChatListSettingsDataClassExtensions
         const DeepCollectionEquality()
             .hash(archiveAndMuteNewChatsFromUnknownUsers),
         const DeepCollectionEquality().hash(keepUnmutedChatsArchived),
-        const DeepCollectionEquality().hash(keepChatsFromFoldersArchived)
+        const DeepCollectionEquality().hash(keepChatsFromFoldersArchived),
       ]);
 }
 
@@ -4497,7 +4497,7 @@ extension ChatSourcePublicServiceAnnouncementDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(type),
-        const DeepCollectionEquality().hash(text)
+        const DeepCollectionEquality().hash(text),
       ]);
 }
 
@@ -4516,7 +4516,7 @@ extension ChatPositionDataClassExtensions on ChatPosition {
         const DeepCollectionEquality().hash(list),
         const DeepCollectionEquality().hash(order),
         const DeepCollectionEquality().hash(isPinned),
-        const DeepCollectionEquality().hash(source)
+        const DeepCollectionEquality().hash(source),
       ]);
 }
 
@@ -4566,7 +4566,7 @@ extension VideoChatDataClassExtensions on VideoChat {
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
         const DeepCollectionEquality().hash(hasParticipants),
-        const DeepCollectionEquality().hash(defaultParticipantId)
+        const DeepCollectionEquality().hash(defaultParticipantId),
       ]);
 }
 
@@ -4667,7 +4667,7 @@ extension ChatDataClassExtensions on Chat {
         const DeepCollectionEquality().hash(pendingJoinRequests),
         const DeepCollectionEquality().hash(replyMarkupMessageId),
         const DeepCollectionEquality().hash(draftMessage),
-        const DeepCollectionEquality().hash(clientData)
+        const DeepCollectionEquality().hash(clientData),
       ]);
 }
 
@@ -4682,7 +4682,7 @@ extension ChatsDataClassExtensions on Chats {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(chatIds)
+        const DeepCollectionEquality().hash(chatIds),
       ]);
 }
 
@@ -4697,7 +4697,7 @@ extension ChatNearbyDataClassExtensions on ChatNearby {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(distance)
+        const DeepCollectionEquality().hash(distance),
       ]);
 }
 
@@ -4714,7 +4714,7 @@ extension ChatsNearbyDataClassExtensions on ChatsNearby {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(usersNearby),
-        const DeepCollectionEquality().hash(supergroupsNearby)
+        const DeepCollectionEquality().hash(supergroupsNearby),
       ]);
 }
 
@@ -4799,7 +4799,7 @@ extension ChatActionBarReportAddBlockDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(canUnarchive),
-        const DeepCollectionEquality().hash(distance)
+        const DeepCollectionEquality().hash(distance),
       ]);
 }
 
@@ -4837,7 +4837,7 @@ extension ChatActionBarJoinRequestDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(isChannel),
-        const DeepCollectionEquality().hash(requestDate)
+        const DeepCollectionEquality().hash(requestDate),
       ]);
 }
 
@@ -4890,7 +4890,7 @@ extension KeyboardButtonTypeRequestPollDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(forceRegular),
-        const DeepCollectionEquality().hash(forceQuiz)
+        const DeepCollectionEquality().hash(forceQuiz),
       ]);
 }
 
@@ -4915,7 +4915,7 @@ extension KeyboardButtonTypeRequestUserDataClassExtensions
         const DeepCollectionEquality().hash(restrictUserIsBot),
         const DeepCollectionEquality().hash(userIsBot),
         const DeepCollectionEquality().hash(restrictUserIsPremium),
-        const DeepCollectionEquality().hash(userIsPremium)
+        const DeepCollectionEquality().hash(userIsPremium),
       ]);
 }
 
@@ -4956,7 +4956,7 @@ extension KeyboardButtonTypeRequestChatDataClassExtensions
         const DeepCollectionEquality().hash(chatIsCreated),
         const DeepCollectionEquality().hash(userAdministratorRights),
         const DeepCollectionEquality().hash(botAdministratorRights),
-        const DeepCollectionEquality().hash(botIsMember)
+        const DeepCollectionEquality().hash(botIsMember),
       ]);
 }
 
@@ -4983,7 +4983,7 @@ extension KeyboardButtonDataClassExtensions on KeyboardButton {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -5023,7 +5023,7 @@ extension InlineKeyboardButtonTypeLoginUrlDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(url),
         const DeepCollectionEquality().hash(id),
-        const DeepCollectionEquality().hash(forwardText)
+        const DeepCollectionEquality().hash(forwardText),
       ]);
 }
 
@@ -5085,7 +5085,7 @@ extension InlineKeyboardButtonTypeSwitchInlineDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(query),
-        const DeepCollectionEquality().hash(targetChat)
+        const DeepCollectionEquality().hash(targetChat),
       ]);
 }
 
@@ -5123,7 +5123,7 @@ extension InlineKeyboardButtonDataClassExtensions on InlineKeyboardButton {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -5160,7 +5160,7 @@ extension ReplyMarkupForceReplyDataClassExtensions on ReplyMarkupForceReply {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(isPersonal),
-        const DeepCollectionEquality().hash(inputFieldPlaceholder)
+        const DeepCollectionEquality().hash(inputFieldPlaceholder),
       ]);
 }
 
@@ -5187,7 +5187,7 @@ extension ReplyMarkupShowKeyboardDataClassExtensions
         const DeepCollectionEquality().hash(resizeKeyboard),
         const DeepCollectionEquality().hash(oneTime),
         const DeepCollectionEquality().hash(isPersonal),
-        const DeepCollectionEquality().hash(inputFieldPlaceholder)
+        const DeepCollectionEquality().hash(inputFieldPlaceholder),
       ]);
 }
 
@@ -5223,7 +5223,7 @@ extension LoginUrlInfoOpenDataClassExtensions on LoginUrlInfoOpen {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(skipConfirmation)
+        const DeepCollectionEquality().hash(skipConfirmation),
       ]);
 }
 
@@ -5244,7 +5244,7 @@ extension LoginUrlInfoRequestConfirmationDataClassExtensions
         const DeepCollectionEquality().hash(url),
         const DeepCollectionEquality().hash(domain),
         const DeepCollectionEquality().hash(botUserId),
-        const DeepCollectionEquality().hash(requestWriteAccess)
+        const DeepCollectionEquality().hash(requestWriteAccess),
       ]);
 }
 
@@ -5263,7 +5263,7 @@ extension FoundWebAppDataClassExtensions on FoundWebApp {
         runtimeType,
         const DeepCollectionEquality().hash(webApp),
         const DeepCollectionEquality().hash(requestWriteAccess),
-        const DeepCollectionEquality().hash(skipConfirmation)
+        const DeepCollectionEquality().hash(skipConfirmation),
       ]);
 }
 
@@ -5278,7 +5278,7 @@ extension WebAppInfoDataClassExtensions on WebAppInfo {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(launchId),
-        const DeepCollectionEquality().hash(url)
+        const DeepCollectionEquality().hash(url),
       ]);
 }
 
@@ -5304,7 +5304,7 @@ extension MessageThreadInfoDataClassExtensions on MessageThreadInfo {
         const DeepCollectionEquality().hash(replyInfo),
         const DeepCollectionEquality().hash(unreadMessageCount),
         const DeepCollectionEquality().hash(messages),
-        const DeepCollectionEquality().hash(draftMessage)
+        const DeepCollectionEquality().hash(draftMessage),
       ]);
 }
 
@@ -5320,7 +5320,7 @@ extension ForumTopicIconDataClassExtensions on ForumTopicIcon {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(color),
-        const DeepCollectionEquality().hash(customEmojiId)
+        const DeepCollectionEquality().hash(customEmojiId),
       ]);
 }
 
@@ -5351,7 +5351,7 @@ extension ForumTopicInfoDataClassExtensions on ForumTopicInfo {
         const DeepCollectionEquality().hash(isGeneral),
         const DeepCollectionEquality().hash(isOutgoing),
         const DeepCollectionEquality().hash(isClosed),
-        const DeepCollectionEquality().hash(isHidden)
+        const DeepCollectionEquality().hash(isHidden),
       ]);
 }
 
@@ -5390,7 +5390,7 @@ extension ForumTopicDataClassExtensions on ForumTopic {
         const DeepCollectionEquality().hash(unreadMentionCount),
         const DeepCollectionEquality().hash(unreadReactionCount),
         const DeepCollectionEquality().hash(notificationSettings),
-        const DeepCollectionEquality().hash(draftMessage)
+        const DeepCollectionEquality().hash(draftMessage),
       ]);
 }
 
@@ -5416,7 +5416,7 @@ extension ForumTopicsDataClassExtensions on ForumTopics {
         const DeepCollectionEquality().hash(topics),
         const DeepCollectionEquality().hash(nextOffsetDate),
         const DeepCollectionEquality().hash(nextOffsetMessageId),
-        const DeepCollectionEquality().hash(nextOffsetMessageThreadId)
+        const DeepCollectionEquality().hash(nextOffsetMessageThreadId),
       ]);
 }
 
@@ -5507,7 +5507,7 @@ extension RichTextUrlDataClassExtensions on RichTextUrl {
         runtimeType,
         const DeepCollectionEquality().hash(text),
         const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(isCached)
+        const DeepCollectionEquality().hash(isCached),
       ]);
 }
 
@@ -5523,7 +5523,7 @@ extension RichTextEmailAddressDataClassExtensions on RichTextEmailAddress {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(emailAddress)
+        const DeepCollectionEquality().hash(emailAddress),
       ]);
 }
 
@@ -5572,7 +5572,7 @@ extension RichTextPhoneNumberDataClassExtensions on RichTextPhoneNumber {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(phoneNumber)
+        const DeepCollectionEquality().hash(phoneNumber),
       ]);
 }
 
@@ -5589,7 +5589,7 @@ extension RichTextIconDataClassExtensions on RichTextIcon {
         runtimeType,
         const DeepCollectionEquality().hash(document),
         const DeepCollectionEquality().hash(width),
-        const DeepCollectionEquality().hash(height)
+        const DeepCollectionEquality().hash(height),
       ]);
 }
 
@@ -5606,7 +5606,7 @@ extension RichTextReferenceDataClassExtensions on RichTextReference {
         runtimeType,
         const DeepCollectionEquality().hash(text),
         const DeepCollectionEquality().hash(anchorName),
-        const DeepCollectionEquality().hash(url)
+        const DeepCollectionEquality().hash(url),
       ]);
 }
 
@@ -5634,7 +5634,7 @@ extension RichTextAnchorLinkDataClassExtensions on RichTextAnchorLink {
         runtimeType,
         const DeepCollectionEquality().hash(text),
         const DeepCollectionEquality().hash(anchorName),
-        const DeepCollectionEquality().hash(url)
+        const DeepCollectionEquality().hash(url),
       ]);
 }
 
@@ -5660,7 +5660,7 @@ extension PageBlockCaptionDataClassExtensions on PageBlockCaption {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(credit)
+        const DeepCollectionEquality().hash(credit),
       ]);
 }
 
@@ -5675,7 +5675,7 @@ extension PageBlockListItemDataClassExtensions on PageBlockListItem {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(label),
-        const DeepCollectionEquality().hash(pageBlocks)
+        const DeepCollectionEquality().hash(pageBlocks),
       ]);
 }
 
@@ -5777,7 +5777,7 @@ extension PageBlockTableCellDataClassExtensions on PageBlockTableCell {
         const DeepCollectionEquality().hash(colspan),
         const DeepCollectionEquality().hash(rowspan),
         const DeepCollectionEquality().hash(align),
-        const DeepCollectionEquality().hash(valign)
+        const DeepCollectionEquality().hash(valign),
       ]);
 }
 
@@ -5803,7 +5803,7 @@ extension PageBlockRelatedArticleDataClassExtensions
         const DeepCollectionEquality().hash(description),
         const DeepCollectionEquality().hash(photo),
         const DeepCollectionEquality().hash(author),
-        const DeepCollectionEquality().hash(publishDate)
+        const DeepCollectionEquality().hash(publishDate),
       ]);
 }
 
@@ -5850,7 +5850,7 @@ extension PageBlockAuthorDateDataClassExtensions on PageBlockAuthorDate {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(author),
-        const DeepCollectionEquality().hash(publishDate)
+        const DeepCollectionEquality().hash(publishDate),
       ]);
 }
 
@@ -5912,7 +5912,7 @@ extension PageBlockPreformattedDataClassExtensions on PageBlockPreformatted {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(language)
+        const DeepCollectionEquality().hash(language),
       ]);
 }
 
@@ -5969,7 +5969,7 @@ extension PageBlockBlockQuoteDataClassExtensions on PageBlockBlockQuote {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(credit)
+        const DeepCollectionEquality().hash(credit),
       ]);
 }
 
@@ -5984,7 +5984,7 @@ extension PageBlockPullQuoteDataClassExtensions on PageBlockPullQuote {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(credit)
+        const DeepCollectionEquality().hash(credit),
       ]);
 }
 
@@ -6002,7 +6002,7 @@ extension PageBlockAnimationDataClassExtensions on PageBlockAnimation {
         runtimeType,
         const DeepCollectionEquality().hash(animation),
         const DeepCollectionEquality().hash(caption),
-        const DeepCollectionEquality().hash(needAutoplay)
+        const DeepCollectionEquality().hash(needAutoplay),
       ]);
 }
 
@@ -6017,7 +6017,7 @@ extension PageBlockAudioDataClassExtensions on PageBlockAudio {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(audio),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -6034,7 +6034,7 @@ extension PageBlockPhotoDataClassExtensions on PageBlockPhoto {
         runtimeType,
         const DeepCollectionEquality().hash(photo),
         const DeepCollectionEquality().hash(caption),
-        const DeepCollectionEquality().hash(url)
+        const DeepCollectionEquality().hash(url),
       ]);
 }
 
@@ -6054,7 +6054,7 @@ extension PageBlockVideoDataClassExtensions on PageBlockVideo {
         const DeepCollectionEquality().hash(video),
         const DeepCollectionEquality().hash(caption),
         const DeepCollectionEquality().hash(needAutoplay),
-        const DeepCollectionEquality().hash(isLooped)
+        const DeepCollectionEquality().hash(isLooped),
       ]);
 }
 
@@ -6069,7 +6069,7 @@ extension PageBlockVoiceNoteDataClassExtensions on PageBlockVoiceNote {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(voiceNote),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -6110,7 +6110,7 @@ extension PageBlockEmbeddedDataClassExtensions on PageBlockEmbedded {
         const DeepCollectionEquality().hash(height),
         const DeepCollectionEquality().hash(caption),
         const DeepCollectionEquality().hash(isFullWidth),
-        const DeepCollectionEquality().hash(allowScrolling)
+        const DeepCollectionEquality().hash(allowScrolling),
       ]);
 }
 
@@ -6134,7 +6134,7 @@ extension PageBlockEmbeddedPostDataClassExtensions on PageBlockEmbeddedPost {
         const DeepCollectionEquality().hash(authorPhoto),
         const DeepCollectionEquality().hash(date),
         const DeepCollectionEquality().hash(pageBlocks),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -6149,7 +6149,7 @@ extension PageBlockCollageDataClassExtensions on PageBlockCollage {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(pageBlocks),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -6164,7 +6164,7 @@ extension PageBlockSlideshowDataClassExtensions on PageBlockSlideshow {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(pageBlocks),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -6181,7 +6181,7 @@ extension PageBlockChatLinkDataClassExtensions on PageBlockChatLink {
         runtimeType,
         const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(photo),
-        const DeepCollectionEquality().hash(username)
+        const DeepCollectionEquality().hash(username),
       ]);
 }
 
@@ -6200,7 +6200,7 @@ extension PageBlockTableDataClassExtensions on PageBlockTable {
         const DeepCollectionEquality().hash(caption),
         const DeepCollectionEquality().hash(cells),
         const DeepCollectionEquality().hash(isBordered),
-        const DeepCollectionEquality().hash(isStriped)
+        const DeepCollectionEquality().hash(isStriped),
       ]);
 }
 
@@ -6217,7 +6217,7 @@ extension PageBlockDetailsDataClassExtensions on PageBlockDetails {
         runtimeType,
         const DeepCollectionEquality().hash(header),
         const DeepCollectionEquality().hash(pageBlocks),
-        const DeepCollectionEquality().hash(isOpen)
+        const DeepCollectionEquality().hash(isOpen),
       ]);
 }
 
@@ -6233,7 +6233,7 @@ extension PageBlockRelatedArticlesDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(header),
-        const DeepCollectionEquality().hash(articles)
+        const DeepCollectionEquality().hash(articles),
       ]);
 }
 
@@ -6254,7 +6254,7 @@ extension PageBlockMapDataClassExtensions on PageBlockMap {
         const DeepCollectionEquality().hash(zoom),
         const DeepCollectionEquality().hash(width),
         const DeepCollectionEquality().hash(height),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -6278,7 +6278,7 @@ extension WebPageInstantViewDataClassExtensions on WebPageInstantView {
         const DeepCollectionEquality().hash(version),
         const DeepCollectionEquality().hash(isRtl),
         const DeepCollectionEquality().hash(isFull),
-        const DeepCollectionEquality().hash(feedbackLink)
+        const DeepCollectionEquality().hash(feedbackLink),
       ]);
 }
 
@@ -6339,7 +6339,7 @@ extension WebPageDataClassExtensions on WebPage {
         const DeepCollectionEquality().hash(voiceNote),
         const DeepCollectionEquality().hash(storySenderChatId),
         const DeepCollectionEquality().hash(storyId),
-        const DeepCollectionEquality().hash(instantViewVersion)
+        const DeepCollectionEquality().hash(instantViewVersion),
       ]);
 }
 
@@ -6363,7 +6363,7 @@ extension CountryInfoDataClassExtensions on CountryInfo {
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(englishName),
         const DeepCollectionEquality().hash(isHidden),
-        const DeepCollectionEquality().hash(callingCodes)
+        const DeepCollectionEquality().hash(callingCodes),
       ]);
 }
 
@@ -6397,7 +6397,7 @@ extension PhoneNumberInfoDataClassExtensions on PhoneNumberInfo {
         const DeepCollectionEquality().hash(country),
         const DeepCollectionEquality().hash(countryCallingCode),
         const DeepCollectionEquality().hash(formattedPhoneNumber),
-        const DeepCollectionEquality().hash(isAnonymous)
+        const DeepCollectionEquality().hash(isAnonymous),
       ]);
 }
 
@@ -6412,7 +6412,7 @@ extension BankCardActionOpenUrlDataClassExtensions on BankCardActionOpenUrl {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(url)
+        const DeepCollectionEquality().hash(url),
       ]);
 }
 
@@ -6427,7 +6427,7 @@ extension BankCardInfoDataClassExtensions on BankCardInfo {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(actions)
+        const DeepCollectionEquality().hash(actions),
       ]);
 }
 
@@ -6453,7 +6453,7 @@ extension AddressDataClassExtensions on Address {
         const DeepCollectionEquality().hash(city),
         const DeepCollectionEquality().hash(streetLine1),
         const DeepCollectionEquality().hash(streetLine2),
-        const DeepCollectionEquality().hash(postalCode)
+        const DeepCollectionEquality().hash(postalCode),
       ]);
 }
 
@@ -6484,7 +6484,7 @@ extension ThemeParametersDataClassExtensions on ThemeParameters {
         const DeepCollectionEquality().hash(hintColor),
         const DeepCollectionEquality().hash(linkColor),
         const DeepCollectionEquality().hash(buttonColor),
-        const DeepCollectionEquality().hash(buttonTextColor)
+        const DeepCollectionEquality().hash(buttonTextColor),
       ]);
 }
 
@@ -6499,7 +6499,7 @@ extension LabeledPricePartDataClassExtensions on LabeledPricePart {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(label),
-        const DeepCollectionEquality().hash(amount)
+        const DeepCollectionEquality().hash(amount),
       ]);
 }
 
@@ -6550,7 +6550,7 @@ extension InvoiceDataClassExtensions on Invoice {
         const DeepCollectionEquality().hash(needShippingAddress),
         const DeepCollectionEquality().hash(sendPhoneNumberToProvider),
         const DeepCollectionEquality().hash(sendEmailAddressToProvider),
-        const DeepCollectionEquality().hash(isFlexible)
+        const DeepCollectionEquality().hash(isFlexible),
       ]);
 }
 
@@ -6572,7 +6572,7 @@ extension OrderInfoDataClassExtensions on OrderInfo {
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(phoneNumber),
         const DeepCollectionEquality().hash(emailAddress),
-        const DeepCollectionEquality().hash(shippingAddress)
+        const DeepCollectionEquality().hash(shippingAddress),
       ]);
 }
 
@@ -6589,7 +6589,7 @@ extension ShippingOptionDataClassExtensions on ShippingOption {
         runtimeType,
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(priceParts)
+        const DeepCollectionEquality().hash(priceParts),
       ]);
 }
 
@@ -6604,7 +6604,7 @@ extension SavedCredentialsDataClassExtensions on SavedCredentials {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(id),
-        const DeepCollectionEquality().hash(title)
+        const DeepCollectionEquality().hash(title),
       ]);
 }
 
@@ -6640,7 +6640,7 @@ extension InputCredentialsNewDataClassExtensions on InputCredentialsNew {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(data),
-        const DeepCollectionEquality().hash(allowSave)
+        const DeepCollectionEquality().hash(allowSave),
       ]);
 }
 
@@ -6709,7 +6709,7 @@ extension PaymentProviderStripeDataClassExtensions on PaymentProviderStripe {
         const DeepCollectionEquality().hash(publishableKey),
         const DeepCollectionEquality().hash(needCountry),
         const DeepCollectionEquality().hash(needPostalCode),
-        const DeepCollectionEquality().hash(needCardholderName)
+        const DeepCollectionEquality().hash(needCardholderName),
       ]);
 }
 
@@ -6735,7 +6735,7 @@ extension PaymentOptionDataClassExtensions on PaymentOption {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(url)
+        const DeepCollectionEquality().hash(url),
       ]);
 }
 
@@ -6785,7 +6785,7 @@ extension PaymentFormDataClassExtensions on PaymentForm {
         const DeepCollectionEquality().hash(needPassword),
         const DeepCollectionEquality().hash(productTitle),
         const DeepCollectionEquality().hash(productDescription),
-        const DeepCollectionEquality().hash(productPhoto)
+        const DeepCollectionEquality().hash(productPhoto),
       ]);
 }
 
@@ -6802,7 +6802,7 @@ extension ValidatedOrderInfoDataClassExtensions on ValidatedOrderInfo {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(orderInfoId),
-        const DeepCollectionEquality().hash(shippingOptions)
+        const DeepCollectionEquality().hash(shippingOptions),
       ]);
 }
 
@@ -6818,7 +6818,7 @@ extension PaymentResultDataClassExtensions on PaymentResult {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(success),
-        const DeepCollectionEquality().hash(verificationUrl)
+        const DeepCollectionEquality().hash(verificationUrl),
       ]);
 }
 
@@ -6856,7 +6856,7 @@ extension PaymentReceiptDataClassExtensions on PaymentReceipt {
         const DeepCollectionEquality().hash(orderInfo),
         const DeepCollectionEquality().hash(shippingOption),
         const DeepCollectionEquality().hash(credentialsTitle),
-        const DeepCollectionEquality().hash(tipAmount)
+        const DeepCollectionEquality().hash(tipAmount),
       ]);
 }
 
@@ -6879,7 +6879,7 @@ extension InputInvoiceMessageDataClassExtensions on InputInvoiceMessage {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -6921,7 +6921,7 @@ extension MessageExtendedMediaPreviewDataClassExtensions
         const DeepCollectionEquality().hash(height),
         const DeepCollectionEquality().hash(duration),
         const DeepCollectionEquality().hash(minithumbnail),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -6937,7 +6937,7 @@ extension MessageExtendedMediaPhotoDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(photo),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -6953,7 +6953,7 @@ extension MessageExtendedMediaVideoDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(video),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -6981,7 +6981,7 @@ extension DatedFileDataClassExtensions on DatedFile {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(file),
-        const DeepCollectionEquality().hash(date)
+        const DeepCollectionEquality().hash(date),
       ]);
 }
 
@@ -7135,7 +7135,7 @@ extension DateDataClassExtensions on Date {
         runtimeType,
         const DeepCollectionEquality().hash(day),
         const DeepCollectionEquality().hash(month),
-        const DeepCollectionEquality().hash(year)
+        const DeepCollectionEquality().hash(year),
       ]);
 }
 
@@ -7171,7 +7171,7 @@ extension PersonalDetailsDataClassExtensions on PersonalDetails {
         const DeepCollectionEquality().hash(birthdate),
         const DeepCollectionEquality().hash(gender),
         const DeepCollectionEquality().hash(countryCode),
-        const DeepCollectionEquality().hash(residenceCountryCode)
+        const DeepCollectionEquality().hash(residenceCountryCode),
       ]);
 }
 
@@ -7197,7 +7197,7 @@ extension IdentityDocumentDataClassExtensions on IdentityDocument {
         const DeepCollectionEquality().hash(frontSide),
         const DeepCollectionEquality().hash(reverseSide),
         const DeepCollectionEquality().hash(selfie),
-        const DeepCollectionEquality().hash(translation)
+        const DeepCollectionEquality().hash(translation),
       ]);
 }
 
@@ -7223,7 +7223,7 @@ extension InputIdentityDocumentDataClassExtensions on InputIdentityDocument {
         const DeepCollectionEquality().hash(frontSide),
         const DeepCollectionEquality().hash(reverseSide),
         const DeepCollectionEquality().hash(selfie),
-        const DeepCollectionEquality().hash(translation)
+        const DeepCollectionEquality().hash(translation),
       ]);
 }
 
@@ -7239,7 +7239,7 @@ extension PersonalDocumentDataClassExtensions on PersonalDocument {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(files),
-        const DeepCollectionEquality().hash(translation)
+        const DeepCollectionEquality().hash(translation),
       ]);
 }
 
@@ -7255,7 +7255,7 @@ extension InputPersonalDocumentDataClassExtensions on InputPersonalDocument {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(files),
-        const DeepCollectionEquality().hash(translation)
+        const DeepCollectionEquality().hash(translation),
       ]);
 }
 
@@ -7402,7 +7402,7 @@ extension PassportElementPassportRegistrationDataClassExtensions
   int get overriddenHashCode => Object.hashAll(
         [
           runtimeType,
-          const DeepCollectionEquality().hash(passportRegistration)
+          const DeepCollectionEquality().hash(passportRegistration),
         ],
       );
 }
@@ -7418,7 +7418,7 @@ extension PassportElementTemporaryRegistrationDataClassExtensions
 
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(temporaryRegistration)
+        const DeepCollectionEquality().hash(temporaryRegistration),
       ]);
 }
 
@@ -7594,7 +7594,7 @@ extension InputPassportElementPassportRegistrationDataClassExtensions
   int get overriddenHashCode => Object.hashAll(
         [
           runtimeType,
-          const DeepCollectionEquality().hash(passportRegistration)
+          const DeepCollectionEquality().hash(passportRegistration),
         ],
       );
 }
@@ -7610,7 +7610,7 @@ extension InputPassportElementTemporaryRegistrationDataClassExtensions
 
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(temporaryRegistration)
+        const DeepCollectionEquality().hash(temporaryRegistration),
       ]);
 }
 
@@ -7775,7 +7775,7 @@ extension PassportElementErrorDataClassExtensions on PassportElementError {
         runtimeType,
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(message),
-        const DeepCollectionEquality().hash(source)
+        const DeepCollectionEquality().hash(source),
       ]);
 }
 
@@ -7798,7 +7798,7 @@ extension PassportSuitableElementDataClassExtensions
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(isSelfieRequired),
         const DeepCollectionEquality().hash(isTranslationRequired),
-        const DeepCollectionEquality().hash(isNativeNameRequired)
+        const DeepCollectionEquality().hash(isNativeNameRequired),
       ]);
 }
 
@@ -7832,7 +7832,7 @@ extension PassportAuthorizationFormDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(requiredElements),
-        const DeepCollectionEquality().hash(privacyPolicyUrl)
+        const DeepCollectionEquality().hash(privacyPolicyUrl),
       ]);
 }
 
@@ -7848,7 +7848,7 @@ extension PassportElementsWithErrorsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(elements),
-        const DeepCollectionEquality().hash(errors)
+        const DeepCollectionEquality().hash(errors),
       ]);
 }
 
@@ -7865,7 +7865,7 @@ extension EncryptedCredentialsDataClassExtensions on EncryptedCredentials {
         runtimeType,
         const DeepCollectionEquality().hash(data),
         const DeepCollectionEquality().hash(hash),
-        const DeepCollectionEquality().hash(secret)
+        const DeepCollectionEquality().hash(secret),
       ]);
 }
 
@@ -7897,7 +7897,7 @@ extension EncryptedPassportElementDataClassExtensions
         const DeepCollectionEquality().hash(translation),
         const DeepCollectionEquality().hash(files),
         const DeepCollectionEquality().hash(value),
-        const DeepCollectionEquality().hash(hash)
+        const DeepCollectionEquality().hash(hash),
       ]);
 }
 
@@ -7937,7 +7937,7 @@ extension InputPassportElementErrorSourceDataFieldDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(fieldName),
-        const DeepCollectionEquality().hash(dataHash)
+        const DeepCollectionEquality().hash(dataHash),
       ]);
 }
 
@@ -8046,7 +8046,7 @@ extension InputPassportElementErrorDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(message),
-        const DeepCollectionEquality().hash(source)
+        const DeepCollectionEquality().hash(source),
       ]);
 }
 
@@ -8069,7 +8069,7 @@ extension MessageTextDataClassExtensions on MessageText {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(webPage)
+        const DeepCollectionEquality().hash(webPage),
       ]);
 }
 
@@ -8088,7 +8088,7 @@ extension MessageAnimationDataClassExtensions on MessageAnimation {
         const DeepCollectionEquality().hash(animation),
         const DeepCollectionEquality().hash(caption),
         const DeepCollectionEquality().hash(hasSpoiler),
-        const DeepCollectionEquality().hash(isSecret)
+        const DeepCollectionEquality().hash(isSecret),
       ]);
 }
 
@@ -8103,7 +8103,7 @@ extension MessageAudioDataClassExtensions on MessageAudio {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(audio),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -8118,7 +8118,7 @@ extension MessageDocumentDataClassExtensions on MessageDocument {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(document),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -8137,7 +8137,7 @@ extension MessagePhotoDataClassExtensions on MessagePhoto {
         const DeepCollectionEquality().hash(photo),
         const DeepCollectionEquality().hash(caption),
         const DeepCollectionEquality().hash(hasSpoiler),
-        const DeepCollectionEquality().hash(isSecret)
+        const DeepCollectionEquality().hash(isSecret),
       ]);
 }
 
@@ -8160,7 +8160,7 @@ extension MessageStickerDataClassExtensions on MessageSticker {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(sticker),
-        const DeepCollectionEquality().hash(isPremium)
+        const DeepCollectionEquality().hash(isPremium),
       ]);
 }
 
@@ -8179,7 +8179,7 @@ extension MessageVideoDataClassExtensions on MessageVideo {
         const DeepCollectionEquality().hash(video),
         const DeepCollectionEquality().hash(caption),
         const DeepCollectionEquality().hash(hasSpoiler),
-        const DeepCollectionEquality().hash(isSecret)
+        const DeepCollectionEquality().hash(isSecret),
       ]);
 }
 
@@ -8204,7 +8204,7 @@ extension MessageVideoNoteDataClassExtensions on MessageVideoNote {
         runtimeType,
         const DeepCollectionEquality().hash(videoNote),
         const DeepCollectionEquality().hash(isViewed),
-        const DeepCollectionEquality().hash(isSecret)
+        const DeepCollectionEquality().hash(isSecret),
       ]);
 }
 
@@ -8221,7 +8221,7 @@ extension MessageVoiceNoteDataClassExtensions on MessageVoiceNote {
         runtimeType,
         const DeepCollectionEquality().hash(voiceNote),
         const DeepCollectionEquality().hash(caption),
-        const DeepCollectionEquality().hash(isListened)
+        const DeepCollectionEquality().hash(isListened),
       ]);
 }
 
@@ -8243,7 +8243,7 @@ extension MessageLocationDataClassExtensions on MessageLocation {
         const DeepCollectionEquality().hash(livePeriod),
         const DeepCollectionEquality().hash(expiresIn),
         const DeepCollectionEquality().hash(heading),
-        const DeepCollectionEquality().hash(proximityAlertRadius)
+        const DeepCollectionEquality().hash(proximityAlertRadius),
       ]);
 }
 
@@ -8282,7 +8282,7 @@ extension MessageAnimatedEmojiDataClassExtensions on MessageAnimatedEmoji {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(animatedEmoji),
-        const DeepCollectionEquality().hash(emoji)
+        const DeepCollectionEquality().hash(emoji),
       ]);
 }
 
@@ -8307,7 +8307,7 @@ extension MessageDiceDataClassExtensions on MessageDice {
         const DeepCollectionEquality().hash(finalState),
         const DeepCollectionEquality().hash(emoji),
         const DeepCollectionEquality().hash(value),
-        const DeepCollectionEquality().hash(successAnimationFrameNumber)
+        const DeepCollectionEquality().hash(successAnimationFrameNumber),
       ]);
 }
 
@@ -8347,7 +8347,7 @@ extension MessageStoryDataClassExtensions on MessageStory {
         runtimeType,
         const DeepCollectionEquality().hash(storySenderChatId),
         const DeepCollectionEquality().hash(storyId),
-        const DeepCollectionEquality().hash(viaMention)
+        const DeepCollectionEquality().hash(viaMention),
       ]);
 }
 
@@ -8384,7 +8384,7 @@ extension MessageInvoiceDataClassExtensions on MessageInvoice {
         const DeepCollectionEquality().hash(isTest),
         const DeepCollectionEquality().hash(needShippingAddress),
         const DeepCollectionEquality().hash(receiptMessageId),
-        const DeepCollectionEquality().hash(extendedMedia)
+        const DeepCollectionEquality().hash(extendedMedia),
       ]);
 }
 
@@ -8402,7 +8402,7 @@ extension MessageCallDataClassExtensions on MessageCall {
         runtimeType,
         const DeepCollectionEquality().hash(isVideo),
         const DeepCollectionEquality().hash(discardReason),
-        const DeepCollectionEquality().hash(duration)
+        const DeepCollectionEquality().hash(duration),
       ]);
 }
 
@@ -8419,7 +8419,7 @@ extension MessageVideoChatScheduledDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(startDate)
+        const DeepCollectionEquality().hash(startDate),
       ]);
 }
 
@@ -8462,7 +8462,7 @@ extension MessageInviteVideoChatParticipantsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(userIds)
+        const DeepCollectionEquality().hash(userIds),
       ]);
 }
 
@@ -8479,7 +8479,7 @@ extension MessageBasicGroupChatCreateDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(memberUserIds)
+        const DeepCollectionEquality().hash(memberUserIds),
       ]);
 }
 
@@ -8593,7 +8593,7 @@ extension MessageChatUpgradeFromDataClassExtensions on MessageChatUpgradeFrom {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(basicGroupId)
+        const DeepCollectionEquality().hash(basicGroupId),
       ]);
 }
 
@@ -8630,7 +8630,7 @@ extension MessageChatSetBackgroundDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldBackgroundMessageId),
-        const DeepCollectionEquality().hash(background)
+        const DeepCollectionEquality().hash(background),
       ]);
 }
 
@@ -8659,7 +8659,7 @@ extension MessageChatSetMessageAutoDeleteTimeDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(messageAutoDeleteTime),
-        const DeepCollectionEquality().hash(fromUserId)
+        const DeepCollectionEquality().hash(fromUserId),
       ]);
 }
 
@@ -8675,7 +8675,7 @@ extension MessageForumTopicCreatedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(icon)
+        const DeepCollectionEquality().hash(icon),
       ]);
 }
 
@@ -8695,7 +8695,7 @@ extension MessageForumTopicEditedDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(editIconCustomEmojiId),
-        const DeepCollectionEquality().hash(iconCustomEmojiId)
+        const DeepCollectionEquality().hash(iconCustomEmojiId),
       ]);
 }
 
@@ -8763,7 +8763,7 @@ extension MessageGameScoreDataClassExtensions on MessageGameScore {
         runtimeType,
         const DeepCollectionEquality().hash(gameMessageId),
         const DeepCollectionEquality().hash(gameId),
-        const DeepCollectionEquality().hash(score)
+        const DeepCollectionEquality().hash(score),
       ]);
 }
 
@@ -8795,7 +8795,7 @@ extension MessagePaymentSuccessfulDataClassExtensions
         const DeepCollectionEquality().hash(totalAmount),
         const DeepCollectionEquality().hash(isRecurring),
         const DeepCollectionEquality().hash(isFirstRecurring),
-        const DeepCollectionEquality().hash(invoiceName)
+        const DeepCollectionEquality().hash(invoiceName),
       ]);
 }
 
@@ -8832,7 +8832,7 @@ extension MessagePaymentSuccessfulBotDataClassExtensions
         const DeepCollectionEquality().hash(shippingOptionId),
         const DeepCollectionEquality().hash(orderInfo),
         const DeepCollectionEquality().hash(telegramPaymentChargeId),
-        const DeepCollectionEquality().hash(providerPaymentChargeId)
+        const DeepCollectionEquality().hash(providerPaymentChargeId),
       ]);
 }
 
@@ -8860,7 +8860,7 @@ extension MessageGiftedPremiumDataClassExtensions on MessageGiftedPremium {
         const DeepCollectionEquality().hash(cryptocurrency),
         const DeepCollectionEquality().hash(cryptocurrencyAmount),
         const DeepCollectionEquality().hash(monthCount),
-        const DeepCollectionEquality().hash(sticker)
+        const DeepCollectionEquality().hash(sticker),
       ]);
 }
 
@@ -8884,7 +8884,7 @@ extension MessageUserSharedDataClassExtensions on MessageUserShared {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(buttonId)
+        const DeepCollectionEquality().hash(buttonId),
       ]);
 }
 
@@ -8899,7 +8899,7 @@ extension MessageChatSharedDataClassExtensions on MessageChatShared {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(buttonId)
+        const DeepCollectionEquality().hash(buttonId),
       ]);
 }
 
@@ -8953,7 +8953,7 @@ extension MessageWebAppDataReceivedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(buttonText),
-        const DeepCollectionEquality().hash(data)
+        const DeepCollectionEquality().hash(data),
       ]);
 }
 
@@ -8982,7 +8982,7 @@ extension MessagePassportDataReceivedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(elements),
-        const DeepCollectionEquality().hash(credentials)
+        const DeepCollectionEquality().hash(credentials),
       ]);
 }
 
@@ -9000,7 +9000,7 @@ extension MessageProximityAlertTriggeredDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(travelerId),
         const DeepCollectionEquality().hash(watcherId),
-        const DeepCollectionEquality().hash(distance)
+        const DeepCollectionEquality().hash(distance),
       ]);
 }
 
@@ -9225,7 +9225,7 @@ extension InputThumbnailDataClassExtensions on InputThumbnail {
         runtimeType,
         const DeepCollectionEquality().hash(thumbnail),
         const DeepCollectionEquality().hash(width),
-        const DeepCollectionEquality().hash(height)
+        const DeepCollectionEquality().hash(height),
       ]);
 }
 
@@ -9286,7 +9286,7 @@ extension MessageSendOptionsDataClassExtensions on MessageSendOptions {
         const DeepCollectionEquality().hash(protectContent),
         const DeepCollectionEquality().hash(updateOrderOfInstalledStickerSets),
         const DeepCollectionEquality().hash(schedulingState),
-        const DeepCollectionEquality().hash(sendingId)
+        const DeepCollectionEquality().hash(sendingId),
       ]);
 }
 
@@ -9304,7 +9304,7 @@ extension MessageCopyOptionsDataClassExtensions on MessageCopyOptions {
         runtimeType,
         const DeepCollectionEquality().hash(sendCopy),
         const DeepCollectionEquality().hash(replaceCaption),
-        const DeepCollectionEquality().hash(newCaption)
+        const DeepCollectionEquality().hash(newCaption),
       ]);
 }
 
@@ -9330,7 +9330,7 @@ extension InputMessageTextDataClassExtensions on InputMessageText {
         runtimeType,
         const DeepCollectionEquality().hash(text),
         const DeepCollectionEquality().hash(disableWebPagePreview),
-        const DeepCollectionEquality().hash(clearDraft)
+        const DeepCollectionEquality().hash(clearDraft),
       ]);
 }
 
@@ -9358,7 +9358,7 @@ extension InputMessageAnimationDataClassExtensions on InputMessageAnimation {
         const DeepCollectionEquality().hash(width),
         const DeepCollectionEquality().hash(height),
         const DeepCollectionEquality().hash(caption),
-        const DeepCollectionEquality().hash(hasSpoiler)
+        const DeepCollectionEquality().hash(hasSpoiler),
       ]);
 }
 
@@ -9382,7 +9382,7 @@ extension InputMessageAudioDataClassExtensions on InputMessageAudio {
         const DeepCollectionEquality().hash(duration),
         const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(performer),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -9404,7 +9404,7 @@ extension InputMessageDocumentDataClassExtensions on InputMessageDocument {
         const DeepCollectionEquality().hash(document),
         const DeepCollectionEquality().hash(thumbnail),
         const DeepCollectionEquality().hash(disableContentTypeDetection),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -9433,7 +9433,7 @@ extension InputMessagePhotoDataClassExtensions on InputMessagePhoto {
         const DeepCollectionEquality().hash(height),
         const DeepCollectionEquality().hash(caption),
         const DeepCollectionEquality().hash(selfDestructTime),
-        const DeepCollectionEquality().hash(hasSpoiler)
+        const DeepCollectionEquality().hash(hasSpoiler),
       ]);
 }
 
@@ -9454,7 +9454,7 @@ extension InputMessageStickerDataClassExtensions on InputMessageSticker {
         const DeepCollectionEquality().hash(thumbnail),
         const DeepCollectionEquality().hash(width),
         const DeepCollectionEquality().hash(height),
-        const DeepCollectionEquality().hash(emoji)
+        const DeepCollectionEquality().hash(emoji),
       ]);
 }
 
@@ -9488,7 +9488,7 @@ extension InputMessageVideoDataClassExtensions on InputMessageVideo {
         const DeepCollectionEquality().hash(supportsStreaming),
         const DeepCollectionEquality().hash(caption),
         const DeepCollectionEquality().hash(selfDestructTime),
-        const DeepCollectionEquality().hash(hasSpoiler)
+        const DeepCollectionEquality().hash(hasSpoiler),
       ]);
 }
 
@@ -9507,7 +9507,7 @@ extension InputMessageVideoNoteDataClassExtensions on InputMessageVideoNote {
         const DeepCollectionEquality().hash(videoNote),
         const DeepCollectionEquality().hash(thumbnail),
         const DeepCollectionEquality().hash(duration),
-        const DeepCollectionEquality().hash(length)
+        const DeepCollectionEquality().hash(length),
       ]);
 }
 
@@ -9526,7 +9526,7 @@ extension InputMessageVoiceNoteDataClassExtensions on InputMessageVoiceNote {
         const DeepCollectionEquality().hash(voiceNote),
         const DeepCollectionEquality().hash(duration),
         const DeepCollectionEquality().hash(waveform),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -9546,7 +9546,7 @@ extension InputMessageLocationDataClassExtensions on InputMessageLocation {
         const DeepCollectionEquality().hash(location),
         const DeepCollectionEquality().hash(livePeriod),
         const DeepCollectionEquality().hash(heading),
-        const DeepCollectionEquality().hash(proximityAlertRadius)
+        const DeepCollectionEquality().hash(proximityAlertRadius),
       ]);
 }
 
@@ -9584,7 +9584,7 @@ extension InputMessageDiceDataClassExtensions on InputMessageDice {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(emoji),
-        const DeepCollectionEquality().hash(clearDraft)
+        const DeepCollectionEquality().hash(clearDraft),
       ]);
 }
 
@@ -9600,7 +9600,7 @@ extension InputMessageGameDataClassExtensions on InputMessageGame {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
-        const DeepCollectionEquality().hash(gameShortName)
+        const DeepCollectionEquality().hash(gameShortName),
       ]);
 }
 
@@ -9641,7 +9641,7 @@ extension InputMessageInvoiceDataClassExtensions on InputMessageInvoice {
         const DeepCollectionEquality().hash(providerToken),
         const DeepCollectionEquality().hash(providerData),
         const DeepCollectionEquality().hash(startParameter),
-        const DeepCollectionEquality().hash(extendedMediaContent)
+        const DeepCollectionEquality().hash(extendedMediaContent),
       ]);
 }
 
@@ -9667,7 +9667,7 @@ extension InputMessagePollDataClassExtensions on InputMessagePoll {
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(openPeriod),
         const DeepCollectionEquality().hash(closeDate),
-        const DeepCollectionEquality().hash(isClosed)
+        const DeepCollectionEquality().hash(isClosed),
       ]);
 }
 
@@ -9683,7 +9683,7 @@ extension InputMessageStoryDataClassExtensions on InputMessageStory {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(storySenderChatId),
-        const DeepCollectionEquality().hash(storyId)
+        const DeepCollectionEquality().hash(storyId),
       ]);
 }
 
@@ -9704,7 +9704,7 @@ extension InputMessageForwardedDataClassExtensions on InputMessageForwarded {
         const DeepCollectionEquality().hash(fromChatId),
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(inGameShare),
-        const DeepCollectionEquality().hash(copyOptions)
+        const DeepCollectionEquality().hash(copyOptions),
       ]);
 }
 
@@ -10171,7 +10171,7 @@ extension StickerSetDataClassExtensions on StickerSet {
         const DeepCollectionEquality().hash(stickerType),
         const DeepCollectionEquality().hash(isViewed),
         const DeepCollectionEquality().hash(stickers),
-        const DeepCollectionEquality().hash(emojis)
+        const DeepCollectionEquality().hash(emojis),
       ]);
 }
 
@@ -10212,7 +10212,7 @@ extension StickerSetInfoDataClassExtensions on StickerSetInfo {
         const DeepCollectionEquality().hash(stickerType),
         const DeepCollectionEquality().hash(isViewed),
         const DeepCollectionEquality().hash(size),
-        const DeepCollectionEquality().hash(covers)
+        const DeepCollectionEquality().hash(covers),
       ]);
 }
 
@@ -10227,7 +10227,7 @@ extension StickerSetsDataClassExtensions on StickerSets {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(sets)
+        const DeepCollectionEquality().hash(sets),
       ]);
 }
 
@@ -10244,7 +10244,7 @@ extension TrendingStickerSetsDataClassExtensions on TrendingStickerSets {
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
         const DeepCollectionEquality().hash(sets),
-        const DeepCollectionEquality().hash(isPremium)
+        const DeepCollectionEquality().hash(isPremium),
       ]);
 }
 
@@ -10261,7 +10261,7 @@ extension EmojiCategoryDataClassExtensions on EmojiCategory {
         runtimeType,
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(icon),
-        const DeepCollectionEquality().hash(emojis)
+        const DeepCollectionEquality().hash(emojis),
       ]);
 }
 
@@ -10385,7 +10385,7 @@ extension CallProtocolDataClassExtensions on CallProtocol {
         const DeepCollectionEquality().hash(udpReflector),
         const DeepCollectionEquality().hash(minLayer),
         const DeepCollectionEquality().hash(maxLayer),
-        const DeepCollectionEquality().hash(libraryVersions)
+        const DeepCollectionEquality().hash(libraryVersions),
       ]);
 }
 
@@ -10409,7 +10409,7 @@ extension CallServerTypeTelegramReflectorDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(peerTag),
-        const DeepCollectionEquality().hash(isTcp)
+        const DeepCollectionEquality().hash(isTcp),
       ]);
 }
 
@@ -10430,7 +10430,7 @@ extension CallServerTypeWebrtcDataClassExtensions on CallServerTypeWebrtc {
         const DeepCollectionEquality().hash(username),
         const DeepCollectionEquality().hash(password),
         const DeepCollectionEquality().hash(supportsTurn),
-        const DeepCollectionEquality().hash(supportsStun)
+        const DeepCollectionEquality().hash(supportsStun),
       ]);
 }
 
@@ -10452,7 +10452,7 @@ extension CallServerDataClassExtensions on CallServer {
         const DeepCollectionEquality().hash(ipAddress),
         const DeepCollectionEquality().hash(ipv6Address),
         const DeepCollectionEquality().hash(port),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -10497,7 +10497,7 @@ extension CallStatePendingDataClassExtensions on CallStatePending {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(isCreated),
-        const DeepCollectionEquality().hash(isReceived)
+        const DeepCollectionEquality().hash(isReceived),
       ]);
 }
 
@@ -10530,7 +10530,7 @@ extension CallStateReadyDataClassExtensions on CallStateReady {
         const DeepCollectionEquality().hash(config),
         const DeepCollectionEquality().hash(encryptionKey),
         const DeepCollectionEquality().hash(emojis),
-        const DeepCollectionEquality().hash(allowP2p)
+        const DeepCollectionEquality().hash(allowP2p),
       ]);
 }
 
@@ -10558,7 +10558,7 @@ extension CallStateDiscardedDataClassExtensions on CallStateDiscarded {
         const DeepCollectionEquality().hash(reason),
         const DeepCollectionEquality().hash(needRating),
         const DeepCollectionEquality().hash(needDebugInformation),
-        const DeepCollectionEquality().hash(needLog)
+        const DeepCollectionEquality().hash(needLog),
       ]);
 }
 
@@ -10623,7 +10623,7 @@ extension GroupCallStreamDataClassExtensions on GroupCallStream {
         runtimeType,
         const DeepCollectionEquality().hash(channelId),
         const DeepCollectionEquality().hash(scale),
-        const DeepCollectionEquality().hash(timeOffset)
+        const DeepCollectionEquality().hash(timeOffset),
       ]);
 }
 
@@ -10650,7 +10650,7 @@ extension RtmpUrlDataClassExtensions on RtmpUrl {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(streamKey)
+        const DeepCollectionEquality().hash(streamKey),
       ]);
 }
 
@@ -10666,7 +10666,7 @@ extension GroupCallRecentSpeakerDataClassExtensions on GroupCallRecentSpeaker {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(participantId),
-        const DeepCollectionEquality().hash(isSpeaking)
+        const DeepCollectionEquality().hash(isSpeaking),
       ]);
 }
 
@@ -10738,7 +10738,7 @@ extension GroupCallDataClassExtensions on GroupCall {
         const DeepCollectionEquality().hash(canToggleMuteNewParticipants),
         const DeepCollectionEquality().hash(recordDuration),
         const DeepCollectionEquality().hash(isVideoRecorded),
-        const DeepCollectionEquality().hash(duration)
+        const DeepCollectionEquality().hash(duration),
       ]);
 }
 
@@ -10754,7 +10754,7 @@ extension GroupCallVideoSourceGroupDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(semantics),
-        const DeepCollectionEquality().hash(sourceIds)
+        const DeepCollectionEquality().hash(sourceIds),
       ]);
 }
 
@@ -10773,7 +10773,7 @@ extension GroupCallParticipantVideoInfoDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(sourceGroups),
         const DeepCollectionEquality().hash(endpointId),
-        const DeepCollectionEquality().hash(isPaused)
+        const DeepCollectionEquality().hash(isPaused),
       ]);
 }
 
@@ -10840,7 +10840,7 @@ extension GroupCallParticipantDataClassExtensions on GroupCallParticipant {
         const DeepCollectionEquality().hash(isMutedForCurrentUser),
         const DeepCollectionEquality().hash(canUnmuteSelf),
         const DeepCollectionEquality().hash(volumeLevel),
-        const DeepCollectionEquality().hash(order)
+        const DeepCollectionEquality().hash(order),
       ]);
 }
 
@@ -10946,7 +10946,7 @@ extension CallDataClassExtensions on Call {
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(isOutgoing),
         const DeepCollectionEquality().hash(isVideo),
-        const DeepCollectionEquality().hash(state)
+        const DeepCollectionEquality().hash(state),
       ]);
 }
 
@@ -10984,7 +10984,7 @@ extension FirebaseAuthenticationSettingsIosDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(deviceToken),
-        const DeepCollectionEquality().hash(isAppSandbox)
+        const DeepCollectionEquality().hash(isAppSandbox),
       ]);
 }
 
@@ -11016,7 +11016,7 @@ extension PhoneNumberAuthenticationSettingsDataClassExtensions
         const DeepCollectionEquality().hash(isCurrentPhoneNumber),
         const DeepCollectionEquality().hash(allowSmsRetrieverApi),
         const DeepCollectionEquality().hash(firebaseAuthenticationSettings),
-        const DeepCollectionEquality().hash(authenticationTokens)
+        const DeepCollectionEquality().hash(authenticationTokens),
       ]);
 }
 
@@ -11033,7 +11033,7 @@ extension AddedReactionDataClassExtensions on AddedReaction {
         runtimeType,
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(senderId),
-        const DeepCollectionEquality().hash(date)
+        const DeepCollectionEquality().hash(date),
       ]);
 }
 
@@ -11050,7 +11050,7 @@ extension AddedReactionsDataClassExtensions on AddedReactions {
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
         const DeepCollectionEquality().hash(reactions),
-        const DeepCollectionEquality().hash(nextOffset)
+        const DeepCollectionEquality().hash(nextOffset),
       ]);
 }
 
@@ -11066,7 +11066,7 @@ extension AvailableReactionDataClassExtensions on AvailableReaction {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(type),
-        const DeepCollectionEquality().hash(needsPremium)
+        const DeepCollectionEquality().hash(needsPremium),
       ]);
 }
 
@@ -11089,7 +11089,7 @@ extension AvailableReactionsDataClassExtensions on AvailableReactions {
         const DeepCollectionEquality().hash(topReactions),
         const DeepCollectionEquality().hash(recentReactions),
         const DeepCollectionEquality().hash(popularReactions),
-        const DeepCollectionEquality().hash(allowCustomEmoji)
+        const DeepCollectionEquality().hash(allowCustomEmoji),
       ]);
 }
 
@@ -11126,7 +11126,7 @@ extension EmojiReactionDataClassExtensions on EmojiReaction {
         const DeepCollectionEquality().hash(activateAnimation),
         const DeepCollectionEquality().hash(effectAnimation),
         const DeepCollectionEquality().hash(aroundAnimation),
-        const DeepCollectionEquality().hash(centerAnimation)
+        const DeepCollectionEquality().hash(centerAnimation),
       ]);
 }
 
@@ -11180,7 +11180,7 @@ extension DiceStickersSlotMachineDataClassExtensions
         const DeepCollectionEquality().hash(lever),
         const DeepCollectionEquality().hash(leftReel),
         const DeepCollectionEquality().hash(centerReel),
-        const DeepCollectionEquality().hash(rightReel)
+        const DeepCollectionEquality().hash(rightReel),
       ]);
 }
 
@@ -11196,7 +11196,7 @@ extension ImportedContactsDataClassExtensions on ImportedContacts {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userIds),
-        const DeepCollectionEquality().hash(importerCount)
+        const DeepCollectionEquality().hash(importerCount),
       ]);
 }
 
@@ -11258,7 +11258,7 @@ extension AttachmentMenuBotColorDataClassExtensions on AttachmentMenuBotColor {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(lightColor),
-        const DeepCollectionEquality().hash(darkColor)
+        const DeepCollectionEquality().hash(darkColor),
       ]);
 }
 
@@ -11315,7 +11315,7 @@ extension AttachmentMenuBotDataClassExtensions on AttachmentMenuBot {
         const DeepCollectionEquality().hash(androidIcon),
         const DeepCollectionEquality().hash(macosIcon),
         const DeepCollectionEquality().hash(iconColor),
-        const DeepCollectionEquality().hash(webAppPlaceholder)
+        const DeepCollectionEquality().hash(webAppPlaceholder),
       ]);
 }
 
@@ -11354,7 +11354,7 @@ extension UserLinkDataClassExtensions on UserLink {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(expiresIn)
+        const DeepCollectionEquality().hash(expiresIn),
       ]);
 }
 
@@ -11403,7 +11403,7 @@ extension InputInlineQueryResultAnimationDataClassExtensions
         const DeepCollectionEquality().hash(videoWidth),
         const DeepCollectionEquality().hash(videoHeight),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -11441,7 +11441,7 @@ extension InputInlineQueryResultArticleDataClassExtensions
         const DeepCollectionEquality().hash(thumbnailWidth),
         const DeepCollectionEquality().hash(thumbnailHeight),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -11470,7 +11470,7 @@ extension InputInlineQueryResultAudioDataClassExtensions
         const DeepCollectionEquality().hash(audioUrl),
         const DeepCollectionEquality().hash(audioDuration),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -11501,7 +11501,7 @@ extension InputInlineQueryResultContactDataClassExtensions
         const DeepCollectionEquality().hash(thumbnailWidth),
         const DeepCollectionEquality().hash(thumbnailHeight),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -11540,7 +11540,7 @@ extension InputInlineQueryResultDocumentDataClassExtensions
         const DeepCollectionEquality().hash(thumbnailWidth),
         const DeepCollectionEquality().hash(thumbnailHeight),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -11560,7 +11560,7 @@ extension InputInlineQueryResultGameDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(gameShortName),
-        const DeepCollectionEquality().hash(replyMarkup)
+        const DeepCollectionEquality().hash(replyMarkup),
       ]);
 }
 
@@ -11595,7 +11595,7 @@ extension InputInlineQueryResultLocationDataClassExtensions
         const DeepCollectionEquality().hash(thumbnailWidth),
         const DeepCollectionEquality().hash(thumbnailHeight),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -11630,7 +11630,7 @@ extension InputInlineQueryResultPhotoDataClassExtensions
         const DeepCollectionEquality().hash(photoWidth),
         const DeepCollectionEquality().hash(photoHeight),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -11661,7 +11661,7 @@ extension InputInlineQueryResultStickerDataClassExtensions
         const DeepCollectionEquality().hash(stickerWidth),
         const DeepCollectionEquality().hash(stickerHeight),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -11692,7 +11692,7 @@ extension InputInlineQueryResultVenueDataClassExtensions
         const DeepCollectionEquality().hash(thumbnailWidth),
         const DeepCollectionEquality().hash(thumbnailHeight),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -11732,7 +11732,7 @@ extension InputInlineQueryResultVideoDataClassExtensions
         const DeepCollectionEquality().hash(videoHeight),
         const DeepCollectionEquality().hash(videoDuration),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -11760,7 +11760,7 @@ extension InputInlineQueryResultVoiceNoteDataClassExtensions
         const DeepCollectionEquality().hash(voiceNoteUrl),
         const DeepCollectionEquality().hash(voiceNoteDuration),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -11793,7 +11793,7 @@ extension InlineQueryResultArticleDataClassExtensions
         const DeepCollectionEquality().hash(hideUrl),
         const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(description),
-        const DeepCollectionEquality().hash(thumbnail)
+        const DeepCollectionEquality().hash(thumbnail),
       ]);
 }
 
@@ -11811,7 +11811,7 @@ extension InlineQueryResultContactDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(contact),
-        const DeepCollectionEquality().hash(thumbnail)
+        const DeepCollectionEquality().hash(thumbnail),
       ]);
 }
 
@@ -11831,7 +11831,7 @@ extension InlineQueryResultLocationDataClassExtensions
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(location),
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(thumbnail)
+        const DeepCollectionEquality().hash(thumbnail),
       ]);
 }
 
@@ -11848,7 +11848,7 @@ extension InlineQueryResultVenueDataClassExtensions on InlineQueryResultVenue {
         runtimeType,
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(venue),
-        const DeepCollectionEquality().hash(thumbnail)
+        const DeepCollectionEquality().hash(thumbnail),
       ]);
 }
 
@@ -11863,7 +11863,7 @@ extension InlineQueryResultGameDataClassExtensions on InlineQueryResultGame {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(id),
-        const DeepCollectionEquality().hash(game)
+        const DeepCollectionEquality().hash(game),
       ]);
 }
 
@@ -11881,7 +11881,7 @@ extension InlineQueryResultAnimationDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(animation),
-        const DeepCollectionEquality().hash(title)
+        const DeepCollectionEquality().hash(title),
       ]);
 }
 
@@ -11896,7 +11896,7 @@ extension InlineQueryResultAudioDataClassExtensions on InlineQueryResultAudio {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(id),
-        const DeepCollectionEquality().hash(audio)
+        const DeepCollectionEquality().hash(audio),
       ]);
 }
 
@@ -11917,7 +11917,7 @@ extension InlineQueryResultDocumentDataClassExtensions
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(document),
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(description)
+        const DeepCollectionEquality().hash(description),
       ]);
 }
 
@@ -11937,7 +11937,7 @@ extension InlineQueryResultPhotoDataClassExtensions on InlineQueryResultPhoto {
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(photo),
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(description)
+        const DeepCollectionEquality().hash(description),
       ]);
 }
 
@@ -11953,7 +11953,7 @@ extension InlineQueryResultStickerDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(id),
-        const DeepCollectionEquality().hash(sticker)
+        const DeepCollectionEquality().hash(sticker),
       ]);
 }
 
@@ -11973,7 +11973,7 @@ extension InlineQueryResultVideoDataClassExtensions on InlineQueryResultVideo {
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(video),
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(description)
+        const DeepCollectionEquality().hash(description),
       ]);
 }
 
@@ -11991,7 +11991,7 @@ extension InlineQueryResultVoiceNoteDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(voiceNote),
-        const DeepCollectionEquality().hash(title)
+        const DeepCollectionEquality().hash(title),
       ]);
 }
 
@@ -12042,7 +12042,7 @@ extension InlineQueryResultsButtonDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -12062,7 +12062,7 @@ extension InlineQueryResultsDataClassExtensions on InlineQueryResults {
         const DeepCollectionEquality().hash(inlineQueryId),
         const DeepCollectionEquality().hash(button),
         const DeepCollectionEquality().hash(results),
-        const DeepCollectionEquality().hash(nextOffset)
+        const DeepCollectionEquality().hash(nextOffset),
       ]);
 }
 
@@ -12098,7 +12098,7 @@ extension CallbackQueryPayloadDataWithPasswordDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(password),
-        const DeepCollectionEquality().hash(data)
+        const DeepCollectionEquality().hash(data),
       ]);
 }
 
@@ -12129,7 +12129,7 @@ extension CallbackQueryAnswerDataClassExtensions on CallbackQueryAnswer {
         runtimeType,
         const DeepCollectionEquality().hash(text),
         const DeepCollectionEquality().hash(showAlert),
-        const DeepCollectionEquality().hash(url)
+        const DeepCollectionEquality().hash(url),
       ]);
 }
 
@@ -12158,7 +12158,7 @@ extension GameHighScoreDataClassExtensions on GameHighScore {
         runtimeType,
         const DeepCollectionEquality().hash(position),
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(score)
+        const DeepCollectionEquality().hash(score),
       ]);
 }
 
@@ -12193,7 +12193,7 @@ extension ChatEventMessageEditedDataClassExtensions on ChatEventMessageEdited {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldMessage),
-        const DeepCollectionEquality().hash(newMessage)
+        const DeepCollectionEquality().hash(newMessage),
       ]);
 }
 
@@ -12212,7 +12212,7 @@ extension ChatEventMessageDeletedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(message),
-        const DeepCollectionEquality().hash(canReportAntiSpamFalsePositive)
+        const DeepCollectionEquality().hash(canReportAntiSpamFalsePositive),
       ]);
 }
 
@@ -12274,7 +12274,7 @@ extension ChatEventMemberJoinedByInviteLinkDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(inviteLink),
-        const DeepCollectionEquality().hash(viaChatFolderInviteLink)
+        const DeepCollectionEquality().hash(viaChatFolderInviteLink),
       ]);
 }
 
@@ -12291,7 +12291,7 @@ extension ChatEventMemberJoinedByRequestDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(approverUserId),
-        const DeepCollectionEquality().hash(inviteLink)
+        const DeepCollectionEquality().hash(inviteLink),
       ]);
 }
 
@@ -12306,7 +12306,7 @@ extension ChatEventMemberInvitedDataClassExtensions on ChatEventMemberInvited {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(status)
+        const DeepCollectionEquality().hash(status),
       ]);
 }
 
@@ -12332,7 +12332,7 @@ extension ChatEventMemberPromotedDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(oldStatus),
-        const DeepCollectionEquality().hash(newStatus)
+        const DeepCollectionEquality().hash(newStatus),
       ]);
 }
 
@@ -12350,7 +12350,7 @@ extension ChatEventMemberRestrictedDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(memberId),
         const DeepCollectionEquality().hash(oldStatus),
-        const DeepCollectionEquality().hash(newStatus)
+        const DeepCollectionEquality().hash(newStatus),
       ]);
 }
 
@@ -12368,7 +12368,7 @@ extension ChatEventAvailableReactionsChangedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldAvailableReactions),
-        const DeepCollectionEquality().hash(newAvailableReactions)
+        const DeepCollectionEquality().hash(newAvailableReactions),
       ]);
 }
 
@@ -12386,7 +12386,7 @@ extension ChatEventDescriptionChangedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldDescription),
-        const DeepCollectionEquality().hash(newDescription)
+        const DeepCollectionEquality().hash(newDescription),
       ]);
 }
 
@@ -12404,7 +12404,7 @@ extension ChatEventLinkedChatChangedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldLinkedChatId),
-        const DeepCollectionEquality().hash(newLinkedChatId)
+        const DeepCollectionEquality().hash(newLinkedChatId),
       ]);
 }
 
@@ -12422,7 +12422,7 @@ extension ChatEventLocationChangedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldLocation),
-        const DeepCollectionEquality().hash(newLocation)
+        const DeepCollectionEquality().hash(newLocation),
       ]);
 }
 
@@ -12444,7 +12444,7 @@ extension ChatEventMessageAutoDeleteTimeChangedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldMessageAutoDeleteTime),
-        const DeepCollectionEquality().hash(newMessageAutoDeleteTime)
+        const DeepCollectionEquality().hash(newMessageAutoDeleteTime),
       ]);
 }
 
@@ -12462,7 +12462,7 @@ extension ChatEventPermissionsChangedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldPermissions),
-        const DeepCollectionEquality().hash(newPermissions)
+        const DeepCollectionEquality().hash(newPermissions),
       ]);
 }
 
@@ -12477,7 +12477,7 @@ extension ChatEventPhotoChangedDataClassExtensions on ChatEventPhotoChanged {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldPhoto),
-        const DeepCollectionEquality().hash(newPhoto)
+        const DeepCollectionEquality().hash(newPhoto),
       ]);
 }
 
@@ -12495,7 +12495,7 @@ extension ChatEventSlowModeDelayChangedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldSlowModeDelay),
-        const DeepCollectionEquality().hash(newSlowModeDelay)
+        const DeepCollectionEquality().hash(newSlowModeDelay),
       ]);
 }
 
@@ -12513,7 +12513,7 @@ extension ChatEventStickerSetChangedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldStickerSetId),
-        const DeepCollectionEquality().hash(newStickerSetId)
+        const DeepCollectionEquality().hash(newStickerSetId),
       ]);
 }
 
@@ -12528,7 +12528,7 @@ extension ChatEventTitleChangedDataClassExtensions on ChatEventTitleChanged {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldTitle),
-        const DeepCollectionEquality().hash(newTitle)
+        const DeepCollectionEquality().hash(newTitle),
       ]);
 }
 
@@ -12546,7 +12546,7 @@ extension ChatEventUsernameChangedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldUsername),
-        const DeepCollectionEquality().hash(newUsername)
+        const DeepCollectionEquality().hash(newUsername),
       ]);
 }
 
@@ -12564,7 +12564,7 @@ extension ChatEventActiveUsernamesChangedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldUsernames),
-        const DeepCollectionEquality().hash(newUsernames)
+        const DeepCollectionEquality().hash(newUsernames),
       ]);
 }
 
@@ -12607,7 +12607,7 @@ extension ChatEventIsAllHistoryAvailableToggledDataClassExtensions
 
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(isAllHistoryAvailable)
+        const DeepCollectionEquality().hash(isAllHistoryAvailable),
       ]);
 }
 
@@ -12624,7 +12624,7 @@ extension ChatEventHasAggressiveAntiSpamEnabledToggledDataClassExtensions
 
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(hasAggressiveAntiSpamEnabled)
+        const DeepCollectionEquality().hash(hasAggressiveAntiSpamEnabled),
       ]);
 }
 
@@ -12656,7 +12656,7 @@ extension ChatEventInviteLinkEditedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldInviteLink),
-        const DeepCollectionEquality().hash(newInviteLink)
+        const DeepCollectionEquality().hash(newInviteLink),
       ]);
 }
 
@@ -12741,7 +12741,7 @@ extension ChatEventVideoChatParticipantIsMutedToggledDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(participantId),
-        const DeepCollectionEquality().hash(isMuted)
+        const DeepCollectionEquality().hash(isMuted),
       ]);
 }
 
@@ -12759,7 +12759,7 @@ extension ChatEventVideoChatParticipantVolumeLevelChangedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(participantId),
-        const DeepCollectionEquality().hash(volumeLevel)
+        const DeepCollectionEquality().hash(volumeLevel),
       ]);
 }
 
@@ -12803,7 +12803,7 @@ extension ChatEventForumTopicEditedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldTopicInfo),
-        const DeepCollectionEquality().hash(newTopicInfo)
+        const DeepCollectionEquality().hash(newTopicInfo),
       ]);
 }
 
@@ -12860,7 +12860,7 @@ extension ChatEventForumTopicPinnedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(oldTopicInfo),
-        const DeepCollectionEquality().hash(newTopicInfo)
+        const DeepCollectionEquality().hash(newTopicInfo),
       ]);
 }
 
@@ -12879,7 +12879,7 @@ extension ChatEventDataClassExtensions on ChatEvent {
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(date),
         const DeepCollectionEquality().hash(memberId),
-        const DeepCollectionEquality().hash(action)
+        const DeepCollectionEquality().hash(action),
       ]);
 }
 
@@ -12941,7 +12941,7 @@ extension ChatEventLogFiltersDataClassExtensions on ChatEventLogFilters {
         const DeepCollectionEquality().hash(settingChanges),
         const DeepCollectionEquality().hash(inviteLinkChanges),
         const DeepCollectionEquality().hash(videoChatChanges),
-        const DeepCollectionEquality().hash(forumChanges)
+        const DeepCollectionEquality().hash(forumChanges),
       ]);
 }
 
@@ -12986,7 +12986,7 @@ extension LanguagePackStringValuePluralizedDataClassExtensions
         const DeepCollectionEquality().hash(twoValue),
         const DeepCollectionEquality().hash(fewValue),
         const DeepCollectionEquality().hash(manyValue),
-        const DeepCollectionEquality().hash(otherValue)
+        const DeepCollectionEquality().hash(otherValue),
       ]);
 }
 
@@ -13011,7 +13011,7 @@ extension LanguagePackStringDataClassExtensions on LanguagePackString {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(key),
-        const DeepCollectionEquality().hash(value)
+        const DeepCollectionEquality().hash(value),
       ]);
 }
 
@@ -13066,7 +13066,7 @@ extension LanguagePackInfoDataClassExtensions on LanguagePackInfo {
         const DeepCollectionEquality().hash(totalStringCount),
         const DeepCollectionEquality().hash(translatedStringCount),
         const DeepCollectionEquality().hash(localStringCount),
-        const DeepCollectionEquality().hash(translationUrl)
+        const DeepCollectionEquality().hash(translationUrl),
       ]);
 }
 
@@ -13387,7 +13387,7 @@ extension PremiumLimitDataClassExtensions on PremiumLimit {
         runtimeType,
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(defaultValue),
-        const DeepCollectionEquality().hash(premiumValue)
+        const DeepCollectionEquality().hash(premiumValue),
       ]);
 }
 
@@ -13405,7 +13405,7 @@ extension PremiumFeaturesDataClassExtensions on PremiumFeatures {
         runtimeType,
         const DeepCollectionEquality().hash(features),
         const DeepCollectionEquality().hash(limits),
-        const DeepCollectionEquality().hash(paymentLink)
+        const DeepCollectionEquality().hash(paymentLink),
       ]);
 }
 
@@ -13474,7 +13474,7 @@ extension PremiumFeaturePromotionAnimationDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(feature),
-        const DeepCollectionEquality().hash(animation)
+        const DeepCollectionEquality().hash(animation),
       ]);
 }
 
@@ -13492,7 +13492,7 @@ extension PremiumStateDataClassExtensions on PremiumState {
         runtimeType,
         const DeepCollectionEquality().hash(state),
         const DeepCollectionEquality().hash(paymentOptions),
-        const DeepCollectionEquality().hash(animations)
+        const DeepCollectionEquality().hash(animations),
       ]);
 }
 
@@ -13516,7 +13516,7 @@ extension StorePaymentPurposePremiumSubscriptionDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(isRestore),
-        const DeepCollectionEquality().hash(isUpgrade)
+        const DeepCollectionEquality().hash(isUpgrade),
       ]);
 }
 
@@ -13534,7 +13534,7 @@ extension StorePaymentPurposeGiftedPremiumDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(currency),
-        const DeepCollectionEquality().hash(amount)
+        const DeepCollectionEquality().hash(amount),
       ]);
 }
 
@@ -13558,7 +13558,7 @@ extension DeviceTokenFirebaseCloudMessagingDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(token),
-        const DeepCollectionEquality().hash(encrypt)
+        const DeepCollectionEquality().hash(encrypt),
       ]);
 }
 
@@ -13575,7 +13575,7 @@ extension DeviceTokenApplePushDataClassExtensions on DeviceTokenApplePush {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(deviceToken),
-        const DeepCollectionEquality().hash(isAppSandbox)
+        const DeepCollectionEquality().hash(isAppSandbox),
       ]);
 }
 
@@ -13595,7 +13595,7 @@ extension DeviceTokenApplePushVoIPDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(deviceToken),
         const DeepCollectionEquality().hash(isAppSandbox),
-        const DeepCollectionEquality().hash(encrypt)
+        const DeepCollectionEquality().hash(encrypt),
       ]);
 }
 
@@ -13653,7 +13653,7 @@ extension DeviceTokenWebPushDataClassExtensions on DeviceTokenWebPush {
         runtimeType,
         const DeepCollectionEquality().hash(endpoint),
         const DeepCollectionEquality().hash(p256dhBase64url),
-        const DeepCollectionEquality().hash(authBase64url)
+        const DeepCollectionEquality().hash(authBase64url),
       ]);
 }
 
@@ -13714,7 +13714,7 @@ extension DeviceTokenHuaweiPushDataClassExtensions on DeviceTokenHuaweiPush {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(token),
-        const DeepCollectionEquality().hash(encrypt)
+        const DeepCollectionEquality().hash(encrypt),
       ]);
 }
 
@@ -13763,7 +13763,7 @@ extension BackgroundFillGradientDataClassExtensions on BackgroundFillGradient {
         runtimeType,
         const DeepCollectionEquality().hash(topColor),
         const DeepCollectionEquality().hash(bottomColor),
-        const DeepCollectionEquality().hash(rotationAngle)
+        const DeepCollectionEquality().hash(rotationAngle),
       ]);
 }
 
@@ -13800,7 +13800,7 @@ extension BackgroundTypeWallpaperDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(isBlurred),
-        const DeepCollectionEquality().hash(isMoving)
+        const DeepCollectionEquality().hash(isMoving),
       ]);
 }
 
@@ -13819,7 +13819,7 @@ extension BackgroundTypePatternDataClassExtensions on BackgroundTypePattern {
         const DeepCollectionEquality().hash(fill),
         const DeepCollectionEquality().hash(intensity),
         const DeepCollectionEquality().hash(isInverted),
-        const DeepCollectionEquality().hash(isMoving)
+        const DeepCollectionEquality().hash(isMoving),
       ]);
 }
 
@@ -13905,7 +13905,7 @@ extension ThemeSettingsDataClassExtensions on ThemeSettings {
         const DeepCollectionEquality().hash(background),
         const DeepCollectionEquality().hash(outgoingMessageFill),
         const DeepCollectionEquality().hash(animateOutgoingMessageFill),
-        const DeepCollectionEquality().hash(outgoingMessageAccentColor)
+        const DeepCollectionEquality().hash(outgoingMessageAccentColor),
       ]);
 }
 
@@ -13924,7 +13924,7 @@ extension ChatThemeDataClassExtensions on ChatTheme {
         runtimeType,
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(lightSettings),
-        const DeepCollectionEquality().hash(darkSettings)
+        const DeepCollectionEquality().hash(darkSettings),
       ]);
 }
 
@@ -14218,7 +14218,7 @@ extension PushMessageContentAnimationDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(animation),
         const DeepCollectionEquality().hash(caption),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14234,7 +14234,7 @@ extension PushMessageContentAudioDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(audio),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14250,7 +14250,7 @@ extension PushMessageContentContactDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14276,7 +14276,7 @@ extension PushMessageContentDocumentDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(document),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14291,7 +14291,7 @@ extension PushMessageContentGameDataClassExtensions on PushMessageContentGame {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14309,7 +14309,7 @@ extension PushMessageContentGameScoreDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(score),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14325,7 +14325,7 @@ extension PushMessageContentInvoiceDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(price),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14341,7 +14341,7 @@ extension PushMessageContentLocationDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(isLive),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14361,7 +14361,7 @@ extension PushMessageContentPhotoDataClassExtensions
         const DeepCollectionEquality().hash(photo),
         const DeepCollectionEquality().hash(caption),
         const DeepCollectionEquality().hash(isSecret),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14378,7 +14378,7 @@ extension PushMessageContentPollDataClassExtensions on PushMessageContentPoll {
         runtimeType,
         const DeepCollectionEquality().hash(question),
         const DeepCollectionEquality().hash(isRegular),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14406,7 +14406,7 @@ extension PushMessageContentStickerDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(sticker),
         const DeepCollectionEquality().hash(emoji),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14434,7 +14434,7 @@ extension PushMessageContentTextDataClassExtensions on PushMessageContentText {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14454,7 +14454,7 @@ extension PushMessageContentVideoDataClassExtensions
         const DeepCollectionEquality().hash(video),
         const DeepCollectionEquality().hash(caption),
         const DeepCollectionEquality().hash(isSecret),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14470,7 +14470,7 @@ extension PushMessageContentVideoNoteDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(videoNote),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14486,7 +14486,7 @@ extension PushMessageContentVoiceNoteDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(voiceNote),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -14515,7 +14515,7 @@ extension PushMessageContentChatAddMembersDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(memberName),
         const DeepCollectionEquality().hash(isCurrentUser),
-        const DeepCollectionEquality().hash(isReturned)
+        const DeepCollectionEquality().hash(isReturned),
       ]);
 }
 
@@ -14582,7 +14582,7 @@ extension PushMessageContentChatDeleteMemberDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(memberName),
         const DeepCollectionEquality().hash(isCurrentUser),
-        const DeepCollectionEquality().hash(isLeft)
+        const DeepCollectionEquality().hash(isLeft),
       ]);
 }
 
@@ -14661,7 +14661,7 @@ extension PushMessageContentMediaAlbumDataClassExtensions
         const DeepCollectionEquality().hash(hasPhotos),
         const DeepCollectionEquality().hash(hasVideos),
         const DeepCollectionEquality().hash(hasAudios),
-        const DeepCollectionEquality().hash(hasDocuments)
+        const DeepCollectionEquality().hash(hasDocuments),
       ]);
 }
 
@@ -14686,7 +14686,7 @@ extension NotificationTypeNewMessageDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(message),
-        const DeepCollectionEquality().hash(showPreview)
+        const DeepCollectionEquality().hash(showPreview),
       ]);
 }
 
@@ -14731,7 +14731,7 @@ extension NotificationTypeNewPushMessageDataClassExtensions
         const DeepCollectionEquality().hash(senderId),
         const DeepCollectionEquality().hash(senderName),
         const DeepCollectionEquality().hash(isOutgoing),
-        const DeepCollectionEquality().hash(content)
+        const DeepCollectionEquality().hash(content),
       ]);
 }
 
@@ -14801,7 +14801,7 @@ extension NotificationSoundDataClassExtensions on NotificationSound {
         const DeepCollectionEquality().hash(date),
         const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(data),
-        const DeepCollectionEquality().hash(sound)
+        const DeepCollectionEquality().hash(sound),
       ]);
 }
 
@@ -14833,7 +14833,7 @@ extension NotificationDataClassExtensions on Notification {
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(date),
         const DeepCollectionEquality().hash(isSilent),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -14855,7 +14855,7 @@ extension NotificationGroupDataClassExtensions on NotificationGroup {
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(notifications)
+        const DeepCollectionEquality().hash(notifications),
       ]);
 }
 
@@ -14919,7 +14919,7 @@ extension JsonObjectMemberDataClassExtensions on JsonObjectMember {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(key),
-        const DeepCollectionEquality().hash(value)
+        const DeepCollectionEquality().hash(value),
       ]);
 }
 
@@ -15488,7 +15488,7 @@ extension SessionDataClassExtensions on Session {
         const DeepCollectionEquality().hash(lastActiveDate),
         const DeepCollectionEquality().hash(ip),
         const DeepCollectionEquality().hash(country),
-        const DeepCollectionEquality().hash(region)
+        const DeepCollectionEquality().hash(region),
       ]);
 }
 
@@ -15504,7 +15504,7 @@ extension SessionsDataClassExtensions on Sessions {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(sessions),
-        const DeepCollectionEquality().hash(inactiveSessionTtlDays)
+        const DeepCollectionEquality().hash(inactiveSessionTtlDays),
       ]);
 }
 
@@ -15534,7 +15534,7 @@ extension ConnectedWebsiteDataClassExtensions on ConnectedWebsite {
         const DeepCollectionEquality().hash(logInDate),
         const DeepCollectionEquality().hash(lastActiveDate),
         const DeepCollectionEquality().hash(ip),
-        const DeepCollectionEquality().hash(location)
+        const DeepCollectionEquality().hash(location),
       ]);
 }
 
@@ -15679,7 +15679,7 @@ extension TargetChatChosenDataClassExtensions on TargetChatChosen {
         const DeepCollectionEquality().hash(allowUserChats),
         const DeepCollectionEquality().hash(allowBotChats),
         const DeepCollectionEquality().hash(allowGroupChats),
-        const DeepCollectionEquality().hash(allowChannelChats)
+        const DeepCollectionEquality().hash(allowChannelChats),
       ]);
 }
 
@@ -15727,7 +15727,7 @@ extension InternalLinkTypeAttachmentMenuBotDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(targetChat),
         const DeepCollectionEquality().hash(botUsername),
-        const DeepCollectionEquality().hash(url)
+        const DeepCollectionEquality().hash(url),
       ]);
 }
 
@@ -15771,7 +15771,7 @@ extension InternalLinkTypeBotAddToChannelDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(botUsername),
-        const DeepCollectionEquality().hash(administratorRights)
+        const DeepCollectionEquality().hash(administratorRights),
       ]);
 }
 
@@ -15791,7 +15791,7 @@ extension InternalLinkTypeBotStartDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(botUsername),
         const DeepCollectionEquality().hash(startParameter),
-        const DeepCollectionEquality().hash(autostart)
+        const DeepCollectionEquality().hash(autostart),
       ]);
 }
 
@@ -15812,7 +15812,7 @@ extension InternalLinkTypeBotStartInGroupDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(botUsername),
         const DeepCollectionEquality().hash(startParameter),
-        const DeepCollectionEquality().hash(administratorRights)
+        const DeepCollectionEquality().hash(administratorRights),
       ]);
 }
 
@@ -15895,7 +15895,7 @@ extension InternalLinkTypeGameDataClassExtensions on InternalLinkTypeGame {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(botUsername),
-        const DeepCollectionEquality().hash(gameShortName)
+        const DeepCollectionEquality().hash(gameShortName),
       ]);
 }
 
@@ -15912,7 +15912,7 @@ extension InternalLinkTypeInstantViewDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(fallbackUrl)
+        const DeepCollectionEquality().hash(fallbackUrl),
       ]);
 }
 
@@ -15979,7 +15979,7 @@ extension InternalLinkTypeMessageDraftDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(containsLink)
+        const DeepCollectionEquality().hash(containsLink),
       ]);
 }
 
@@ -16002,7 +16002,7 @@ extension InternalLinkTypePassportDataRequestDataClassExtensions
         const DeepCollectionEquality().hash(scope),
         const DeepCollectionEquality().hash(publicKey),
         const DeepCollectionEquality().hash(nonce),
-        const DeepCollectionEquality().hash(callbackUrl)
+        const DeepCollectionEquality().hash(callbackUrl),
       ]);
 }
 
@@ -16019,7 +16019,7 @@ extension InternalLinkTypePhoneNumberConfirmationDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(hash),
-        const DeepCollectionEquality().hash(phoneNumber)
+        const DeepCollectionEquality().hash(phoneNumber),
       ]);
 }
 
@@ -16059,7 +16059,7 @@ extension InternalLinkTypeProxyDataClassExtensions on InternalLinkTypeProxy {
         runtimeType,
         const DeepCollectionEquality().hash(server),
         const DeepCollectionEquality().hash(port),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -16120,7 +16120,7 @@ extension InternalLinkTypeStickerSetDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(stickerSetName),
-        const DeepCollectionEquality().hash(expectCustomEmoji)
+        const DeepCollectionEquality().hash(expectCustomEmoji),
       ]);
 }
 
@@ -16136,7 +16136,7 @@ extension InternalLinkTypeStoryDataClassExtensions on InternalLinkTypeStory {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(storySenderUsername),
-        const DeepCollectionEquality().hash(storyId)
+        const DeepCollectionEquality().hash(storyId),
       ]);
 }
 
@@ -16226,7 +16226,7 @@ extension InternalLinkTypeVideoChatDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatUsername),
         const DeepCollectionEquality().hash(inviteHash),
-        const DeepCollectionEquality().hash(isLiveStream)
+        const DeepCollectionEquality().hash(isLiveStream),
       ]);
 }
 
@@ -16246,7 +16246,7 @@ extension InternalLinkTypeWebAppDataClassExtensions on InternalLinkTypeWebApp {
         runtimeType,
         const DeepCollectionEquality().hash(botUsername),
         const DeepCollectionEquality().hash(webAppShortName),
-        const DeepCollectionEquality().hash(startParameter)
+        const DeepCollectionEquality().hash(startParameter),
       ]);
 }
 
@@ -16261,7 +16261,7 @@ extension MessageLinkDataClassExtensions on MessageLink {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(link),
-        const DeepCollectionEquality().hash(isPublic)
+        const DeepCollectionEquality().hash(isPublic),
       ]);
 }
 
@@ -16286,7 +16286,7 @@ extension MessageLinkInfoDataClassExtensions on MessageLinkInfo {
         const DeepCollectionEquality().hash(messageThreadId),
         const DeepCollectionEquality().hash(message),
         const DeepCollectionEquality().hash(mediaTimestamp),
-        const DeepCollectionEquality().hash(forAlbum)
+        const DeepCollectionEquality().hash(forAlbum),
       ]);
 }
 
@@ -16319,7 +16319,7 @@ extension StoryVideoDataClassExtensions on StoryVideo {
         const DeepCollectionEquality().hash(minithumbnail),
         const DeepCollectionEquality().hash(thumbnail),
         const DeepCollectionEquality().hash(preloadPrefixSize),
-        const DeepCollectionEquality().hash(video)
+        const DeepCollectionEquality().hash(video),
       ]);
 }
 
@@ -16354,7 +16354,7 @@ extension StoryContentVideoDataClassExtensions on StoryContentVideo {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(video),
-        const DeepCollectionEquality().hash(alternativeVideo)
+        const DeepCollectionEquality().hash(alternativeVideo),
       ]);
 }
 
@@ -16387,7 +16387,7 @@ extension InputStoryContentPhotoDataClassExtensions on InputStoryContentPhoto {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(photo),
-        const DeepCollectionEquality().hash(addedStickerFileIds)
+        const DeepCollectionEquality().hash(addedStickerFileIds),
       ]);
 }
 
@@ -16408,7 +16408,7 @@ extension InputStoryContentVideoDataClassExtensions on InputStoryContentVideo {
         const DeepCollectionEquality().hash(video),
         const DeepCollectionEquality().hash(addedStickerFileIds),
         const DeepCollectionEquality().hash(duration),
-        const DeepCollectionEquality().hash(isAnimation)
+        const DeepCollectionEquality().hash(isAnimation),
       ]);
 }
 
@@ -16448,7 +16448,7 @@ extension StoryInteractionInfoDataClassExtensions on StoryInteractionInfo {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(viewCount),
-        const DeepCollectionEquality().hash(recentViewerUserIds)
+        const DeepCollectionEquality().hash(recentViewerUserIds),
       ]);
 }
 
@@ -16498,7 +16498,7 @@ extension StoryDataClassExtensions on Story {
         const DeepCollectionEquality().hash(interactionInfo),
         const DeepCollectionEquality().hash(privacySettings),
         const DeepCollectionEquality().hash(content),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -16513,7 +16513,7 @@ extension StoriesDataClassExtensions on Stories {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(stories)
+        const DeepCollectionEquality().hash(stories),
       ]);
 }
 
@@ -16531,7 +16531,7 @@ extension StoryInfoDataClassExtensions on StoryInfo {
         runtimeType,
         const DeepCollectionEquality().hash(storyId),
         const DeepCollectionEquality().hash(date),
-        const DeepCollectionEquality().hash(isForCloseFriends)
+        const DeepCollectionEquality().hash(isForCloseFriends),
       ]);
 }
 
@@ -16553,7 +16553,7 @@ extension ChatActiveStoriesDataClassExtensions on ChatActiveStories {
         const DeepCollectionEquality().hash(list),
         const DeepCollectionEquality().hash(order),
         const DeepCollectionEquality().hash(maxReadStoryId),
-        const DeepCollectionEquality().hash(stories)
+        const DeepCollectionEquality().hash(stories),
       ]);
 }
 
@@ -16744,7 +16744,7 @@ extension StorageStatisticsByFileTypeDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(fileType),
         const DeepCollectionEquality().hash(size),
-        const DeepCollectionEquality().hash(count)
+        const DeepCollectionEquality().hash(count),
       ]);
 }
 
@@ -16764,7 +16764,7 @@ extension StorageStatisticsByChatDataClassExtensions
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(size),
         const DeepCollectionEquality().hash(count),
-        const DeepCollectionEquality().hash(byFileType)
+        const DeepCollectionEquality().hash(byFileType),
       ]);
 }
 
@@ -16781,7 +16781,7 @@ extension StorageStatisticsDataClassExtensions on StorageStatistics {
         runtimeType,
         const DeepCollectionEquality().hash(size),
         const DeepCollectionEquality().hash(count),
-        const DeepCollectionEquality().hash(byChat)
+        const DeepCollectionEquality().hash(byChat),
       ]);
 }
 
@@ -16806,7 +16806,7 @@ extension StorageStatisticsFastDataClassExtensions on StorageStatisticsFast {
         const DeepCollectionEquality().hash(fileCount),
         const DeepCollectionEquality().hash(databaseSize),
         const DeepCollectionEquality().hash(languagePackDatabaseSize),
-        const DeepCollectionEquality().hash(logSize)
+        const DeepCollectionEquality().hash(logSize),
       ]);
 }
 
@@ -16897,7 +16897,7 @@ extension NetworkStatisticsEntryFileDataClassExtensions
         const DeepCollectionEquality().hash(fileType),
         const DeepCollectionEquality().hash(networkType),
         const DeepCollectionEquality().hash(sentBytes),
-        const DeepCollectionEquality().hash(receivedBytes)
+        const DeepCollectionEquality().hash(receivedBytes),
       ]);
 }
 
@@ -16919,7 +16919,7 @@ extension NetworkStatisticsEntryCallDataClassExtensions
         const DeepCollectionEquality().hash(networkType),
         const DeepCollectionEquality().hash(sentBytes),
         const DeepCollectionEquality().hash(receivedBytes),
-        const DeepCollectionEquality().hash(duration)
+        const DeepCollectionEquality().hash(duration),
       ]);
 }
 
@@ -16934,7 +16934,7 @@ extension NetworkStatisticsDataClassExtensions on NetworkStatistics {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(sinceDate),
-        const DeepCollectionEquality().hash(entries)
+        const DeepCollectionEquality().hash(entries),
       ]);
 }
 
@@ -16972,7 +16972,7 @@ extension AutoDownloadSettingsDataClassExtensions on AutoDownloadSettings {
         const DeepCollectionEquality().hash(preloadLargeVideos),
         const DeepCollectionEquality().hash(preloadNextAudio),
         const DeepCollectionEquality().hash(preloadStories),
-        const DeepCollectionEquality().hash(useLessDataForCalls)
+        const DeepCollectionEquality().hash(useLessDataForCalls),
       ]);
 }
 
@@ -16990,7 +16990,7 @@ extension AutoDownloadSettingsPresetsDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(low),
         const DeepCollectionEquality().hash(medium),
-        const DeepCollectionEquality().hash(high)
+        const DeepCollectionEquality().hash(high),
       ]);
 }
 
@@ -17061,7 +17061,7 @@ extension ScopeAutosaveSettingsDataClassExtensions on ScopeAutosaveSettings {
         runtimeType,
         const DeepCollectionEquality().hash(autosavePhotos),
         const DeepCollectionEquality().hash(autosaveVideos),
-        const DeepCollectionEquality().hash(maxVideoFileSize)
+        const DeepCollectionEquality().hash(maxVideoFileSize),
       ]);
 }
 
@@ -17077,7 +17077,7 @@ extension AutosaveSettingsExceptionDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(settings)
+        const DeepCollectionEquality().hash(settings),
       ]);
 }
 
@@ -17099,7 +17099,7 @@ extension AutosaveSettingsDataClassExtensions on AutosaveSettings {
         const DeepCollectionEquality().hash(privateChatSettings),
         const DeepCollectionEquality().hash(groupSettings),
         const DeepCollectionEquality().hash(channelSettings),
-        const DeepCollectionEquality().hash(exceptions)
+        const DeepCollectionEquality().hash(exceptions),
       ]);
 }
 
@@ -17293,7 +17293,7 @@ extension TMeUrlDataClassExtensions on TMeUrl {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -17472,7 +17472,7 @@ extension DeepLinkInfoDataClassExtensions on DeepLinkInfo {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(needUpdateApplication)
+        const DeepCollectionEquality().hash(needUpdateApplication),
       ]);
 }
 
@@ -17523,7 +17523,7 @@ extension ProxyTypeSocks5DataClassExtensions on ProxyTypeSocks5 {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(username),
-        const DeepCollectionEquality().hash(password)
+        const DeepCollectionEquality().hash(password),
       ]);
 }
 
@@ -17540,7 +17540,7 @@ extension ProxyTypeHttpDataClassExtensions on ProxyTypeHttp {
         runtimeType,
         const DeepCollectionEquality().hash(username),
         const DeepCollectionEquality().hash(password),
-        const DeepCollectionEquality().hash(httpOnly)
+        const DeepCollectionEquality().hash(httpOnly),
       ]);
 }
 
@@ -17576,7 +17576,7 @@ extension ProxyDataClassExtensions on Proxy {
         const DeepCollectionEquality().hash(port),
         const DeepCollectionEquality().hash(lastUsedDate),
         const DeepCollectionEquality().hash(isEnabled),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -17608,7 +17608,7 @@ extension InputStickerDataClassExtensions on InputSticker {
         const DeepCollectionEquality().hash(sticker),
         const DeepCollectionEquality().hash(emojis),
         const DeepCollectionEquality().hash(maskPosition),
-        const DeepCollectionEquality().hash(keywords)
+        const DeepCollectionEquality().hash(keywords),
       ]);
 }
 
@@ -17623,7 +17623,7 @@ extension DateRangeDataClassExtensions on DateRange {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(startDate),
-        const DeepCollectionEquality().hash(endDate)
+        const DeepCollectionEquality().hash(endDate),
       ]);
 }
 
@@ -17642,7 +17642,7 @@ extension StatisticalValueDataClassExtensions on StatisticalValue {
         runtimeType,
         const DeepCollectionEquality().hash(value),
         const DeepCollectionEquality().hash(previousValue),
-        const DeepCollectionEquality().hash(growthRatePercentage)
+        const DeepCollectionEquality().hash(growthRatePercentage),
       ]);
 }
 
@@ -17665,7 +17665,7 @@ extension StatisticalGraphDataDataClassExtensions on StatisticalGraphData {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(jsonData),
-        const DeepCollectionEquality().hash(zoomToken)
+        const DeepCollectionEquality().hash(zoomToken),
       ]);
 }
 
@@ -17708,7 +17708,7 @@ extension ChatStatisticsMessageInteractionInfoDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(viewCount),
-        const DeepCollectionEquality().hash(forwardCount)
+        const DeepCollectionEquality().hash(forwardCount),
       ]);
 }
 
@@ -17728,7 +17728,7 @@ extension ChatStatisticsMessageSenderInfoDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(sentMessageCount),
-        const DeepCollectionEquality().hash(averageCharacterCount)
+        const DeepCollectionEquality().hash(averageCharacterCount),
       ]);
 }
 
@@ -17751,7 +17751,7 @@ extension ChatStatisticsAdministratorActionsInfoDataClassExtensions
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(deletedMessageCount),
         const DeepCollectionEquality().hash(bannedUserCount),
-        const DeepCollectionEquality().hash(restrictedUserCount)
+        const DeepCollectionEquality().hash(restrictedUserCount),
       ]);
 }
 
@@ -17768,7 +17768,7 @@ extension ChatStatisticsInviterInfoDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(addedMemberCount)
+        const DeepCollectionEquality().hash(addedMemberCount),
       ]);
 }
 
@@ -17831,7 +17831,7 @@ extension ChatStatisticsSupergroupDataClassExtensions
         const DeepCollectionEquality().hash(weekGraph),
         const DeepCollectionEquality().hash(topSenders),
         const DeepCollectionEquality().hash(topAdministrators),
-        const DeepCollectionEquality().hash(topInviters)
+        const DeepCollectionEquality().hash(topInviters),
       ]);
 }
 
@@ -17890,7 +17890,7 @@ extension ChatStatisticsChannelDataClassExtensions on ChatStatisticsChannel {
         const DeepCollectionEquality().hash(languageGraph),
         const DeepCollectionEquality().hash(messageInteractionGraph),
         const DeepCollectionEquality().hash(instantViewInteractionGraph),
-        const DeepCollectionEquality().hash(recentMessageInteractions)
+        const DeepCollectionEquality().hash(recentMessageInteractions),
       ]);
 }
 
@@ -17904,7 +17904,7 @@ extension MessageStatisticsDataClassExtensions on MessageStatistics {
 
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(messageInteractionGraph)
+        const DeepCollectionEquality().hash(messageInteractionGraph),
       ]);
 }
 
@@ -17919,7 +17919,7 @@ extension PointDataClassExtensions on Point {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(x),
-        const DeepCollectionEquality().hash(y)
+        const DeepCollectionEquality().hash(y),
       ]);
 }
 
@@ -17959,7 +17959,7 @@ extension VectorPathCommandCubicBezierCurveDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(startControlPoint),
         const DeepCollectionEquality().hash(endControlPoint),
-        const DeepCollectionEquality().hash(endPoint)
+        const DeepCollectionEquality().hash(endPoint),
       ]);
 }
 
@@ -18046,7 +18046,7 @@ extension BotCommandScopeChatMemberDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(userId)
+        const DeepCollectionEquality().hash(userId),
       ]);
 }
 
@@ -18096,7 +18096,7 @@ extension UpdateMessageSendAcknowledgedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -18113,7 +18113,7 @@ extension UpdateMessageSendSucceededDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(message),
-        const DeepCollectionEquality().hash(oldMessageId)
+        const DeepCollectionEquality().hash(oldMessageId),
       ]);
 }
 
@@ -18135,7 +18135,7 @@ extension UpdateMessageSendFailedDataClassExtensions
         const DeepCollectionEquality().hash(message),
         const DeepCollectionEquality().hash(oldMessageId),
         const DeepCollectionEquality().hash(errorCode),
-        const DeepCollectionEquality().hash(errorMessage)
+        const DeepCollectionEquality().hash(errorMessage),
       ]);
 }
 
@@ -18152,7 +18152,7 @@ extension UpdateMessageContentDataClassExtensions on UpdateMessageContent {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(newContent)
+        const DeepCollectionEquality().hash(newContent),
       ]);
 }
 
@@ -18172,7 +18172,7 @@ extension UpdateMessageEditedDataClassExtensions on UpdateMessageEdited {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(editDate),
-        const DeepCollectionEquality().hash(replyMarkup)
+        const DeepCollectionEquality().hash(replyMarkup),
       ]);
 }
 
@@ -18189,7 +18189,7 @@ extension UpdateMessageIsPinnedDataClassExtensions on UpdateMessageIsPinned {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -18208,7 +18208,7 @@ extension UpdateMessageInteractionInfoDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(interactionInfo)
+        const DeepCollectionEquality().hash(interactionInfo),
       ]);
 }
 
@@ -18224,7 +18224,7 @@ extension UpdateMessageContentOpenedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -18243,7 +18243,7 @@ extension UpdateMessageMentionReadDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(unreadMentionCount)
+        const DeepCollectionEquality().hash(unreadMentionCount),
       ]);
 }
 
@@ -18265,7 +18265,7 @@ extension UpdateMessageUnreadReactionsDataClassExtensions
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(unreadReactions),
-        const DeepCollectionEquality().hash(unreadReactionCount)
+        const DeepCollectionEquality().hash(unreadReactionCount),
       ]);
 }
 
@@ -18281,7 +18281,7 @@ extension UpdateMessageLiveLocationViewedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -18307,7 +18307,7 @@ extension UpdateChatTitleDataClassExtensions on UpdateChatTitle {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(title)
+        const DeepCollectionEquality().hash(title),
       ]);
 }
 
@@ -18322,7 +18322,7 @@ extension UpdateChatPhotoDataClassExtensions on UpdateChatPhoto {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(photo)
+        const DeepCollectionEquality().hash(photo),
       ]);
 }
 
@@ -18338,7 +18338,7 @@ extension UpdateChatPermissionsDataClassExtensions on UpdateChatPermissions {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(permissions)
+        const DeepCollectionEquality().hash(permissions),
       ]);
 }
 
@@ -18356,7 +18356,7 @@ extension UpdateChatLastMessageDataClassExtensions on UpdateChatLastMessage {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(lastMessage),
-        const DeepCollectionEquality().hash(positions)
+        const DeepCollectionEquality().hash(positions),
       ]);
 }
 
@@ -18371,7 +18371,7 @@ extension UpdateChatPositionDataClassExtensions on UpdateChatPosition {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(position)
+        const DeepCollectionEquality().hash(position),
       ]);
 }
 
@@ -18390,7 +18390,7 @@ extension UpdateChatReadInboxDataClassExtensions on UpdateChatReadInbox {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(lastReadInboxMessageId),
-        const DeepCollectionEquality().hash(unreadCount)
+        const DeepCollectionEquality().hash(unreadCount),
       ]);
 }
 
@@ -18406,7 +18406,7 @@ extension UpdateChatReadOutboxDataClassExtensions on UpdateChatReadOutbox {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(lastReadOutboxMessageId)
+        const DeepCollectionEquality().hash(lastReadOutboxMessageId),
       ]);
 }
 
@@ -18421,7 +18421,7 @@ extension UpdateChatActionBarDataClassExtensions on UpdateChatActionBar {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(actionBar)
+        const DeepCollectionEquality().hash(actionBar),
       ]);
 }
 
@@ -18438,7 +18438,7 @@ extension UpdateChatAvailableReactionsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(availableReactions)
+        const DeepCollectionEquality().hash(availableReactions),
       ]);
 }
 
@@ -18456,7 +18456,7 @@ extension UpdateChatDraftMessageDataClassExtensions on UpdateChatDraftMessage {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(draftMessage),
-        const DeepCollectionEquality().hash(positions)
+        const DeepCollectionEquality().hash(positions),
       ]);
 }
 
@@ -18473,7 +18473,7 @@ extension UpdateChatMessageSenderDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageSenderId)
+        const DeepCollectionEquality().hash(messageSenderId),
       ]);
 }
 
@@ -18490,7 +18490,7 @@ extension UpdateChatMessageAutoDeleteTimeDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageAutoDeleteTime)
+        const DeepCollectionEquality().hash(messageAutoDeleteTime),
       ]);
 }
 
@@ -18507,7 +18507,7 @@ extension UpdateChatNotificationSettingsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(notificationSettings)
+        const DeepCollectionEquality().hash(notificationSettings),
       ]);
 }
 
@@ -18524,7 +18524,7 @@ extension UpdateChatPendingJoinRequestsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(pendingJoinRequests)
+        const DeepCollectionEquality().hash(pendingJoinRequests),
       ]);
 }
 
@@ -18540,7 +18540,7 @@ extension UpdateChatReplyMarkupDataClassExtensions on UpdateChatReplyMarkup {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(replyMarkupMessageId)
+        const DeepCollectionEquality().hash(replyMarkupMessageId),
       ]);
 }
 
@@ -18555,7 +18555,7 @@ extension UpdateChatBackgroundDataClassExtensions on UpdateChatBackground {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(background)
+        const DeepCollectionEquality().hash(background),
       ]);
 }
 
@@ -18570,7 +18570,7 @@ extension UpdateChatThemeDataClassExtensions on UpdateChatTheme {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(themeName)
+        const DeepCollectionEquality().hash(themeName),
       ]);
 }
 
@@ -18587,7 +18587,7 @@ extension UpdateChatUnreadMentionCountDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(unreadMentionCount)
+        const DeepCollectionEquality().hash(unreadMentionCount),
       ]);
 }
 
@@ -18604,7 +18604,7 @@ extension UpdateChatUnreadReactionCountDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(unreadReactionCount)
+        const DeepCollectionEquality().hash(unreadReactionCount),
       ]);
 }
 
@@ -18619,7 +18619,7 @@ extension UpdateChatVideoChatDataClassExtensions on UpdateChatVideoChat {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(videoChat)
+        const DeepCollectionEquality().hash(videoChat),
       ]);
 }
 
@@ -18638,7 +18638,7 @@ extension UpdateChatDefaultDisableNotificationDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(defaultDisableNotification)
+        const DeepCollectionEquality().hash(defaultDisableNotification),
       ]);
 }
 
@@ -18655,7 +18655,7 @@ extension UpdateChatHasProtectedContentDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(hasProtectedContent)
+        const DeepCollectionEquality().hash(hasProtectedContent),
       ]);
 }
 
@@ -18672,7 +18672,7 @@ extension UpdateChatIsTranslatableDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(isTranslatable)
+        const DeepCollectionEquality().hash(isTranslatable),
       ]);
 }
 
@@ -18689,7 +18689,7 @@ extension UpdateChatIsMarkedAsUnreadDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(isMarkedAsUnread)
+        const DeepCollectionEquality().hash(isMarkedAsUnread),
       ]);
 }
 
@@ -18704,7 +18704,7 @@ extension UpdateChatIsBlockedDataClassExtensions on UpdateChatIsBlocked {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(isBlocked)
+        const DeepCollectionEquality().hash(isBlocked),
       ]);
 }
 
@@ -18721,7 +18721,7 @@ extension UpdateChatHasScheduledMessagesDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(hasScheduledMessages)
+        const DeepCollectionEquality().hash(hasScheduledMessages),
       ]);
 }
 
@@ -18738,7 +18738,7 @@ extension UpdateChatFoldersDataClassExtensions on UpdateChatFolders {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatFolders),
-        const DeepCollectionEquality().hash(mainChatListPosition)
+        const DeepCollectionEquality().hash(mainChatListPosition),
       ]);
 }
 
@@ -18755,7 +18755,7 @@ extension UpdateChatOnlineMemberCountDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(onlineMemberCount)
+        const DeepCollectionEquality().hash(onlineMemberCount),
       ]);
 }
 
@@ -18770,7 +18770,7 @@ extension UpdateForumTopicInfoDataClassExtensions on UpdateForumTopicInfo {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(info)
+        const DeepCollectionEquality().hash(info),
       ]);
 }
 
@@ -18787,7 +18787,7 @@ extension UpdateScopeNotificationSettingsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(scope),
-        const DeepCollectionEquality().hash(notificationSettings)
+        const DeepCollectionEquality().hash(notificationSettings),
       ]);
 }
 
@@ -18804,7 +18804,7 @@ extension UpdateNotificationDataClassExtensions on UpdateNotification {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(notificationGroupId),
-        const DeepCollectionEquality().hash(notification)
+        const DeepCollectionEquality().hash(notification),
       ]);
 }
 
@@ -18839,7 +18839,7 @@ extension UpdateNotificationGroupDataClassExtensions
         const DeepCollectionEquality().hash(notificationSoundId),
         const DeepCollectionEquality().hash(totalCount),
         const DeepCollectionEquality().hash(addedNotifications),
-        const DeepCollectionEquality().hash(removedNotificationIds)
+        const DeepCollectionEquality().hash(removedNotificationIds),
       ]);
 }
 
@@ -18874,7 +18874,7 @@ extension UpdateHavePendingNotificationsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(haveDelayedNotifications),
-        const DeepCollectionEquality().hash(haveUnreceivedNotifications)
+        const DeepCollectionEquality().hash(haveUnreceivedNotifications),
       ]);
 }
 
@@ -18894,7 +18894,7 @@ extension UpdateDeleteMessagesDataClassExtensions on UpdateDeleteMessages {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageIds),
         const DeepCollectionEquality().hash(isPermanent),
-        const DeepCollectionEquality().hash(fromCache)
+        const DeepCollectionEquality().hash(fromCache),
       ]);
 }
 
@@ -18914,7 +18914,7 @@ extension UpdateChatActionDataClassExtensions on UpdateChatAction {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageThreadId),
         const DeepCollectionEquality().hash(senderId),
-        const DeepCollectionEquality().hash(action)
+        const DeepCollectionEquality().hash(action),
       ]);
 }
 
@@ -18929,7 +18929,7 @@ extension UpdateUserStatusDataClassExtensions on UpdateUserStatus {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(status)
+        const DeepCollectionEquality().hash(status),
       ]);
 }
 
@@ -18992,7 +18992,7 @@ extension UpdateUserFullInfoDataClassExtensions on UpdateUserFullInfo {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(userFullInfo)
+        const DeepCollectionEquality().hash(userFullInfo),
       ]);
 }
 
@@ -19010,7 +19010,7 @@ extension UpdateBasicGroupFullInfoDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(basicGroupId),
-        const DeepCollectionEquality().hash(basicGroupFullInfo)
+        const DeepCollectionEquality().hash(basicGroupFullInfo),
       ]);
 }
 
@@ -19028,7 +19028,7 @@ extension UpdateSupergroupFullInfoDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(supergroupFullInfo)
+        const DeepCollectionEquality().hash(supergroupFullInfo),
       ]);
 }
 
@@ -19044,7 +19044,7 @@ extension UpdateServiceNotificationDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(type),
-        const DeepCollectionEquality().hash(content)
+        const DeepCollectionEquality().hash(content),
       ]);
 }
 
@@ -19078,7 +19078,7 @@ extension UpdateFileGenerationStartDataClassExtensions
         const DeepCollectionEquality().hash(generationId),
         const DeepCollectionEquality().hash(originalPath),
         const DeepCollectionEquality().hash(destinationPath),
-        const DeepCollectionEquality().hash(conversion)
+        const DeepCollectionEquality().hash(conversion),
       ]);
 }
 
@@ -19110,7 +19110,7 @@ extension UpdateFileDownloadsDataClassExtensions on UpdateFileDownloads {
         runtimeType,
         const DeepCollectionEquality().hash(totalSize),
         const DeepCollectionEquality().hash(totalCount),
-        const DeepCollectionEquality().hash(downloadedSize)
+        const DeepCollectionEquality().hash(downloadedSize),
       ]);
 }
 
@@ -19127,7 +19127,7 @@ extension UpdateFileAddedToDownloadsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(fileDownload),
-        const DeepCollectionEquality().hash(counts)
+        const DeepCollectionEquality().hash(counts),
       ]);
 }
 
@@ -19147,7 +19147,7 @@ extension UpdateFileDownloadDataClassExtensions on UpdateFileDownload {
         const DeepCollectionEquality().hash(fileId),
         const DeepCollectionEquality().hash(completeDate),
         const DeepCollectionEquality().hash(isPaused),
-        const DeepCollectionEquality().hash(counts)
+        const DeepCollectionEquality().hash(counts),
       ]);
 }
 
@@ -19163,7 +19163,7 @@ extension UpdateFileRemovedFromDownloadsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(fileId),
-        const DeepCollectionEquality().hash(counts)
+        const DeepCollectionEquality().hash(counts),
       ]);
 }
 
@@ -19204,7 +19204,7 @@ extension UpdateGroupCallParticipantDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(participant)
+        const DeepCollectionEquality().hash(participant),
       ]);
 }
 
@@ -19220,7 +19220,7 @@ extension UpdateNewCallSignalingDataDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(callId),
-        const DeepCollectionEquality().hash(data)
+        const DeepCollectionEquality().hash(data),
       ]);
 }
 
@@ -19236,7 +19236,7 @@ extension UpdateUserPrivacySettingRulesDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(setting),
-        const DeepCollectionEquality().hash(rules)
+        const DeepCollectionEquality().hash(rules),
       ]);
 }
 
@@ -19256,7 +19256,7 @@ extension UpdateUnreadMessageCountDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatList),
         const DeepCollectionEquality().hash(unreadCount),
-        const DeepCollectionEquality().hash(unreadUnmutedCount)
+        const DeepCollectionEquality().hash(unreadUnmutedCount),
       ]);
 }
 
@@ -19285,7 +19285,7 @@ extension UpdateUnreadChatCountDataClassExtensions on UpdateUnreadChatCount {
         const DeepCollectionEquality().hash(unreadCount),
         const DeepCollectionEquality().hash(unreadUnmutedCount),
         const DeepCollectionEquality().hash(markedAsUnreadCount),
-        const DeepCollectionEquality().hash(markedAsUnreadUnmutedCount)
+        const DeepCollectionEquality().hash(markedAsUnreadUnmutedCount),
       ]);
 }
 
@@ -19312,7 +19312,7 @@ extension UpdateStoryDeletedDataClassExtensions on UpdateStoryDeleted {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(storySenderChatId),
-        const DeepCollectionEquality().hash(storyId)
+        const DeepCollectionEquality().hash(storyId),
       ]);
 }
 
@@ -19342,7 +19342,7 @@ extension UpdateStoryListChatCountDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(storyList),
-        const DeepCollectionEquality().hash(chatCount)
+        const DeepCollectionEquality().hash(chatCount),
       ]);
 }
 
@@ -19357,7 +19357,7 @@ extension UpdateOptionDataClassExtensions on UpdateOption {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(value)
+        const DeepCollectionEquality().hash(value),
       ]);
 }
 
@@ -19387,7 +19387,7 @@ extension UpdateInstalledStickerSetsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(stickerType),
-        const DeepCollectionEquality().hash(stickerSetIds)
+        const DeepCollectionEquality().hash(stickerSetIds),
       ]);
 }
 
@@ -19405,7 +19405,7 @@ extension UpdateTrendingStickerSetsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(stickerType),
-        const DeepCollectionEquality().hash(stickerSets)
+        const DeepCollectionEquality().hash(stickerSets),
       ]);
 }
 
@@ -19420,7 +19420,7 @@ extension UpdateRecentStickersDataClassExtensions on UpdateRecentStickers {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(isAttached),
-        const DeepCollectionEquality().hash(stickerIds)
+        const DeepCollectionEquality().hash(stickerIds),
       ]);
 }
 
@@ -19461,7 +19461,7 @@ extension UpdateSavedNotificationSoundsDataClassExtensions
   int get overriddenHashCode => Object.hashAll(
         [
           runtimeType,
-          const DeepCollectionEquality().hash(notificationSoundIds)
+          const DeepCollectionEquality().hash(notificationSoundIds),
         ],
       );
 }
@@ -19479,7 +19479,7 @@ extension UpdateSelectedBackgroundDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(forDarkTheme),
-        const DeepCollectionEquality().hash(background)
+        const DeepCollectionEquality().hash(background),
       ]);
 }
 
@@ -19511,7 +19511,7 @@ extension UpdateLanguagePackStringsDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(localizationTarget),
         const DeepCollectionEquality().hash(languagePackId),
-        const DeepCollectionEquality().hash(strings)
+        const DeepCollectionEquality().hash(strings),
       ]);
 }
 
@@ -19539,7 +19539,7 @@ extension UpdateTermsOfServiceDataClassExtensions on UpdateTermsOfService {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(termsOfServiceId),
-        const DeepCollectionEquality().hash(termsOfService)
+        const DeepCollectionEquality().hash(termsOfService),
       ]);
 }
 
@@ -19635,7 +19635,7 @@ extension UpdateAnimatedEmojiMessageClickedDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(sticker)
+        const DeepCollectionEquality().hash(sticker),
       ]);
 }
 
@@ -19651,7 +19651,7 @@ extension UpdateAnimationSearchParametersDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(provider),
-        const DeepCollectionEquality().hash(emojis)
+        const DeepCollectionEquality().hash(emojis),
       ]);
 }
 
@@ -19668,7 +19668,7 @@ extension UpdateSuggestedActionsDataClassExtensions on UpdateSuggestedActions {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(addedActions),
-        const DeepCollectionEquality().hash(removedActions)
+        const DeepCollectionEquality().hash(removedActions),
       ]);
 }
 
@@ -19684,7 +19684,7 @@ extension UpdateAddChatMembersPrivacyForbiddenDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(userIds)
+        const DeepCollectionEquality().hash(userIds),
       ]);
 }
 
@@ -19699,7 +19699,7 @@ extension UpdateAutosaveSettingsDataClassExtensions on UpdateAutosaveSettings {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(scope),
-        const DeepCollectionEquality().hash(settings)
+        const DeepCollectionEquality().hash(settings),
       ]);
 }
 
@@ -19724,7 +19724,7 @@ extension UpdateNewInlineQueryDataClassExtensions on UpdateNewInlineQuery {
         const DeepCollectionEquality().hash(userLocation),
         const DeepCollectionEquality().hash(chatType),
         const DeepCollectionEquality().hash(query),
-        const DeepCollectionEquality().hash(offset)
+        const DeepCollectionEquality().hash(offset),
       ]);
 }
 
@@ -19749,7 +19749,7 @@ extension UpdateNewChosenInlineResultDataClassExtensions
         const DeepCollectionEquality().hash(userLocation),
         const DeepCollectionEquality().hash(query),
         const DeepCollectionEquality().hash(resultId),
-        const DeepCollectionEquality().hash(inlineMessageId)
+        const DeepCollectionEquality().hash(inlineMessageId),
       ]);
 }
 
@@ -19774,7 +19774,7 @@ extension UpdateNewCallbackQueryDataClassExtensions on UpdateNewCallbackQuery {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(chatInstance),
-        const DeepCollectionEquality().hash(payload)
+        const DeepCollectionEquality().hash(payload),
       ]);
 }
 
@@ -19799,7 +19799,7 @@ extension UpdateNewInlineCallbackQueryDataClassExtensions
         const DeepCollectionEquality().hash(senderUserId),
         const DeepCollectionEquality().hash(inlineMessageId),
         const DeepCollectionEquality().hash(chatInstance),
-        const DeepCollectionEquality().hash(payload)
+        const DeepCollectionEquality().hash(payload),
       ]);
 }
 
@@ -19821,7 +19821,7 @@ extension UpdateNewShippingQueryDataClassExtensions on UpdateNewShippingQuery {
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(senderUserId),
         const DeepCollectionEquality().hash(invoicePayload),
-        const DeepCollectionEquality().hash(shippingAddress)
+        const DeepCollectionEquality().hash(shippingAddress),
       ]);
 }
 
@@ -19851,7 +19851,7 @@ extension UpdateNewPreCheckoutQueryDataClassExtensions
         const DeepCollectionEquality().hash(totalAmount),
         const DeepCollectionEquality().hash(invoicePayload),
         const DeepCollectionEquality().hash(shippingOptionId),
-        const DeepCollectionEquality().hash(orderInfo)
+        const DeepCollectionEquality().hash(orderInfo),
       ]);
 }
 
@@ -19879,7 +19879,7 @@ extension UpdateNewCustomQueryDataClassExtensions on UpdateNewCustomQuery {
         runtimeType,
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(data),
-        const DeepCollectionEquality().hash(timeout)
+        const DeepCollectionEquality().hash(timeout),
       ]);
 }
 
@@ -19907,7 +19907,7 @@ extension UpdatePollAnswerDataClassExtensions on UpdatePollAnswer {
         runtimeType,
         const DeepCollectionEquality().hash(pollId),
         const DeepCollectionEquality().hash(voterId),
-        const DeepCollectionEquality().hash(optionIds)
+        const DeepCollectionEquality().hash(optionIds),
       ]);
 }
 
@@ -19936,7 +19936,7 @@ extension UpdateChatMemberDataClassExtensions on UpdateChatMember {
         const DeepCollectionEquality().hash(inviteLink),
         const DeepCollectionEquality().hash(viaChatFolderInviteLink),
         const DeepCollectionEquality().hash(oldChatMember),
-        const DeepCollectionEquality().hash(newChatMember)
+        const DeepCollectionEquality().hash(newChatMember),
       ]);
 }
 
@@ -19956,7 +19956,7 @@ extension UpdateNewChatJoinRequestDataClassExtensions
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(request),
         const DeepCollectionEquality().hash(userChatId),
-        const DeepCollectionEquality().hash(inviteLink)
+        const DeepCollectionEquality().hash(inviteLink),
       ]);
 }
 
@@ -20003,7 +20003,7 @@ extension LogStreamFileDataClassExtensions on LogStreamFile {
         runtimeType,
         const DeepCollectionEquality().hash(path),
         const DeepCollectionEquality().hash(maxFileSize),
-        const DeepCollectionEquality().hash(redirectStderr)
+        const DeepCollectionEquality().hash(redirectStderr),
       ]);
 }
 
@@ -20052,7 +20052,7 @@ extension UserSupportInfoDataClassExtensions on UserSupportInfo {
         runtimeType,
         const DeepCollectionEquality().hash(message),
         const DeepCollectionEquality().hash(author),
-        const DeepCollectionEquality().hash(date)
+        const DeepCollectionEquality().hash(date),
       ]);
 }
 
@@ -20193,7 +20193,7 @@ extension SetTdlibParametersDataClassExtensions on SetTdlibParameters {
         const DeepCollectionEquality().hash(systemVersion),
         const DeepCollectionEquality().hash(applicationVersion),
         const DeepCollectionEquality().hash(enableStorageOptimizer),
-        const DeepCollectionEquality().hash(ignoreFileNames)
+        const DeepCollectionEquality().hash(ignoreFileNames),
       ]);
 }
 
@@ -20210,7 +20210,7 @@ extension SetAuthenticationPhoneNumberDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(phoneNumber),
-        const DeepCollectionEquality().hash(settings)
+        const DeepCollectionEquality().hash(settings),
       ]);
 }
 
@@ -20286,7 +20286,7 @@ extension RegisterUserDataClassExtensions on RegisterUser {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(firstName),
-        const DeepCollectionEquality().hash(lastName)
+        const DeepCollectionEquality().hash(lastName),
       ]);
 }
 
@@ -20353,7 +20353,7 @@ extension RecoverAuthenticationPasswordDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(recoveryCode),
         const DeepCollectionEquality().hash(newPassword),
-        const DeepCollectionEquality().hash(newHint)
+        const DeepCollectionEquality().hash(newHint),
       ]);
 }
 
@@ -20468,7 +20468,7 @@ extension SetPasswordDataClassExtensions on SetPassword {
         const DeepCollectionEquality().hash(newPassword),
         const DeepCollectionEquality().hash(newHint),
         const DeepCollectionEquality().hash(setRecoveryEmailAddress),
-        const DeepCollectionEquality().hash(newRecoveryEmailAddress)
+        const DeepCollectionEquality().hash(newRecoveryEmailAddress),
       ]);
 }
 
@@ -20483,7 +20483,7 @@ extension SetLoginEmailAddressDataClassExtensions on SetLoginEmailAddress {
   int get overriddenHashCode => Object.hashAll(
         [
           runtimeType,
-          const DeepCollectionEquality().hash(newLoginEmailAddress)
+          const DeepCollectionEquality().hash(newLoginEmailAddress),
         ],
       );
 }
@@ -20536,7 +20536,7 @@ extension SetRecoveryEmailAddressDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(password),
-        const DeepCollectionEquality().hash(newRecoveryEmailAddress)
+        const DeepCollectionEquality().hash(newRecoveryEmailAddress),
       ]);
 }
 
@@ -20600,7 +20600,7 @@ extension RecoverPasswordDataClassExtensions on RecoverPassword {
         runtimeType,
         const DeepCollectionEquality().hash(recoveryCode),
         const DeepCollectionEquality().hash(newPassword),
-        const DeepCollectionEquality().hash(newHint)
+        const DeepCollectionEquality().hash(newHint),
       ]);
 }
 
@@ -20632,7 +20632,7 @@ extension CreateTemporaryPasswordDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(password),
-        const DeepCollectionEquality().hash(validFor)
+        const DeepCollectionEquality().hash(validFor),
       ]);
 }
 
@@ -20765,7 +20765,7 @@ extension GetMessageDataClassExtensions on GetMessage {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -20780,7 +20780,7 @@ extension GetMessageLocallyDataClassExtensions on GetMessageLocally {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -20795,7 +20795,7 @@ extension GetRepliedMessageDataClassExtensions on GetRepliedMessage {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -20826,7 +20826,7 @@ extension GetCallbackQueryMessageDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(callbackQueryId)
+        const DeepCollectionEquality().hash(callbackQueryId),
       ]);
 }
 
@@ -20841,7 +20841,7 @@ extension GetMessagesDataClassExtensions on GetMessages {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageIds)
+        const DeepCollectionEquality().hash(messageIds),
       ]);
 }
 
@@ -20856,7 +20856,7 @@ extension GetMessageThreadDataClassExtensions on GetMessageThread {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -20871,7 +20871,7 @@ extension GetMessageViewersDataClassExtensions on GetMessageViewers {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -20899,7 +20899,7 @@ extension GetRemoteFileDataClassExtensions on GetRemoteFile {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(remoteFileId),
-        const DeepCollectionEquality().hash(fileType)
+        const DeepCollectionEquality().hash(fileType),
       ]);
 }
 
@@ -20914,7 +20914,7 @@ extension LoadChatsDataClassExtensions on LoadChats {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatList),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -20929,7 +20929,7 @@ extension GetChatsDataClassExtensions on GetChats {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatList),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -20967,7 +20967,7 @@ extension SearchChatsDataClassExtensions on SearchChats {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(query),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -20982,7 +20982,7 @@ extension SearchChatsOnServerDataClassExtensions on SearchChatsOnServer {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(query),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -21009,7 +21009,7 @@ extension GetTopChatsDataClassExtensions on GetTopChats {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(category),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -21024,7 +21024,7 @@ extension RemoveTopChatDataClassExtensions on RemoveTopChat {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(category),
-        const DeepCollectionEquality().hash(chatId)
+        const DeepCollectionEquality().hash(chatId),
       ]);
 }
 
@@ -21040,7 +21040,7 @@ extension SearchRecentlyFoundChatsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(query),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -21100,7 +21100,7 @@ extension CheckChatUsernameDataClassExtensions on CheckChatUsername {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(username)
+        const DeepCollectionEquality().hash(username),
       ]);
 }
 
@@ -21159,7 +21159,7 @@ extension GetGroupsInCommonDataClassExtensions on GetGroupsInCommon {
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(offsetChatId),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -21181,7 +21181,7 @@ extension GetChatHistoryDataClassExtensions on GetChatHistory {
         const DeepCollectionEquality().hash(fromMessageId),
         const DeepCollectionEquality().hash(offset),
         const DeepCollectionEquality().hash(limit),
-        const DeepCollectionEquality().hash(onlyLocal)
+        const DeepCollectionEquality().hash(onlyLocal),
       ]);
 }
 
@@ -21204,7 +21204,7 @@ extension GetMessageThreadHistoryDataClassExtensions
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(fromMessageId),
         const DeepCollectionEquality().hash(offset),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -21222,7 +21222,7 @@ extension DeleteChatHistoryDataClassExtensions on DeleteChatHistory {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(removeFromChatList),
-        const DeepCollectionEquality().hash(revoke)
+        const DeepCollectionEquality().hash(revoke),
       ]);
 }
 
@@ -21263,7 +21263,7 @@ extension SearchChatMessagesDataClassExtensions on SearchChatMessages {
         const DeepCollectionEquality().hash(offset),
         const DeepCollectionEquality().hash(limit),
         const DeepCollectionEquality().hash(filter),
-        const DeepCollectionEquality().hash(messageThreadId)
+        const DeepCollectionEquality().hash(messageThreadId),
       ]);
 }
 
@@ -21288,7 +21288,7 @@ extension SearchMessagesDataClassExtensions on SearchMessages {
         const DeepCollectionEquality().hash(limit),
         const DeepCollectionEquality().hash(filter),
         const DeepCollectionEquality().hash(minDate),
-        const DeepCollectionEquality().hash(maxDate)
+        const DeepCollectionEquality().hash(maxDate),
       ]);
 }
 
@@ -21309,7 +21309,7 @@ extension SearchSecretMessagesDataClassExtensions on SearchSecretMessages {
         const DeepCollectionEquality().hash(query),
         const DeepCollectionEquality().hash(offset),
         const DeepCollectionEquality().hash(limit),
-        const DeepCollectionEquality().hash(filter)
+        const DeepCollectionEquality().hash(filter),
       ]);
 }
 
@@ -21326,7 +21326,7 @@ extension SearchCallMessagesDataClassExtensions on SearchCallMessages {
         runtimeType,
         const DeepCollectionEquality().hash(offset),
         const DeepCollectionEquality().hash(limit),
-        const DeepCollectionEquality().hash(onlyMissed)
+        const DeepCollectionEquality().hash(onlyMissed),
       ]);
 }
 
@@ -21342,7 +21342,7 @@ extension SearchOutgoingDocumentMessagesDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(query),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -21370,7 +21370,7 @@ extension SearchChatRecentLocationMessagesDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -21395,7 +21395,7 @@ extension GetChatMessageByDateDataClassExtensions on GetChatMessageByDate {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(date)
+        const DeepCollectionEquality().hash(date),
       ]);
 }
 
@@ -21416,7 +21416,7 @@ extension GetChatSparseMessagePositionsDataClassExtensions
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(filter),
         const DeepCollectionEquality().hash(fromMessageId),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -21434,7 +21434,7 @@ extension GetChatMessageCalendarDataClassExtensions on GetChatMessageCalendar {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(filter),
-        const DeepCollectionEquality().hash(fromMessageId)
+        const DeepCollectionEquality().hash(fromMessageId),
       ]);
 }
 
@@ -21452,7 +21452,7 @@ extension GetChatMessageCountDataClassExtensions on GetChatMessageCount {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(filter),
-        const DeepCollectionEquality().hash(returnLocal)
+        const DeepCollectionEquality().hash(returnLocal),
       ]);
 }
 
@@ -21472,7 +21472,7 @@ extension GetChatMessagePositionDataClassExtensions on GetChatMessagePosition {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(filter),
-        const DeepCollectionEquality().hash(messageThreadId)
+        const DeepCollectionEquality().hash(messageThreadId),
       ]);
 }
 
@@ -21505,7 +21505,7 @@ extension GetMessagePublicForwardsDataClassExtensions
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(offset),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -21534,7 +21534,7 @@ extension ClickChatSponsoredMessageDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -21551,7 +21551,7 @@ extension RemoveNotificationDataClassExtensions on RemoveNotification {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(notificationGroupId),
-        const DeepCollectionEquality().hash(notificationId)
+        const DeepCollectionEquality().hash(notificationId),
       ]);
 }
 
@@ -21569,7 +21569,7 @@ extension RemoveNotificationGroupDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(notificationGroupId),
-        const DeepCollectionEquality().hash(maxNotificationId)
+        const DeepCollectionEquality().hash(maxNotificationId),
       ]);
 }
 
@@ -21592,7 +21592,7 @@ extension GetMessageLinkDataClassExtensions on GetMessageLink {
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(mediaTimestamp),
         const DeepCollectionEquality().hash(forAlbum),
-        const DeepCollectionEquality().hash(inMessageThread)
+        const DeepCollectionEquality().hash(inMessageThread),
       ]);
 }
 
@@ -21610,7 +21610,7 @@ extension GetMessageEmbeddingCodeDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(forAlbum)
+        const DeepCollectionEquality().hash(forAlbum),
       ]);
 }
 
@@ -21637,7 +21637,7 @@ extension TranslateTextDataClassExtensions on TranslateText {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(toLanguageCode)
+        const DeepCollectionEquality().hash(toLanguageCode),
       ]);
 }
 
@@ -21655,7 +21655,7 @@ extension TranslateMessageTextDataClassExtensions on TranslateMessageText {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(toLanguageCode)
+        const DeepCollectionEquality().hash(toLanguageCode),
       ]);
 }
 
@@ -21670,7 +21670,7 @@ extension RecognizeSpeechDataClassExtensions on RecognizeSpeech {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -21687,7 +21687,7 @@ extension RateSpeechRecognitionDataClassExtensions on RateSpeechRecognition {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(isGood)
+        const DeepCollectionEquality().hash(isGood),
       ]);
 }
 
@@ -21716,7 +21716,7 @@ extension SetChatMessageSenderDataClassExtensions on SetChatMessageSender {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageSenderId)
+        const DeepCollectionEquality().hash(messageSenderId),
       ]);
 }
 
@@ -21742,7 +21742,7 @@ extension SendMessageDataClassExtensions on SendMessage {
         const DeepCollectionEquality().hash(replyTo),
         const DeepCollectionEquality().hash(options),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -21768,7 +21768,7 @@ extension SendMessageAlbumDataClassExtensions on SendMessageAlbum {
         const DeepCollectionEquality().hash(replyTo),
         const DeepCollectionEquality().hash(options),
         const DeepCollectionEquality().hash(inputMessageContents),
-        const DeepCollectionEquality().hash(onlyPreview)
+        const DeepCollectionEquality().hash(onlyPreview),
       ]);
 }
 
@@ -21785,7 +21785,7 @@ extension SendBotStartMessageDataClassExtensions on SendBotStartMessage {
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(parameter)
+        const DeepCollectionEquality().hash(parameter),
       ]);
 }
 
@@ -21812,7 +21812,7 @@ extension SendInlineQueryResultMessageDataClassExtensions
         const DeepCollectionEquality().hash(options),
         const DeepCollectionEquality().hash(queryId),
         const DeepCollectionEquality().hash(resultId),
-        const DeepCollectionEquality().hash(hideViaBot)
+        const DeepCollectionEquality().hash(hideViaBot),
       ]);
 }
 
@@ -21842,7 +21842,7 @@ extension ForwardMessagesDataClassExtensions on ForwardMessages {
         const DeepCollectionEquality().hash(options),
         const DeepCollectionEquality().hash(sendCopy),
         const DeepCollectionEquality().hash(removeCaption),
-        const DeepCollectionEquality().hash(onlyPreview)
+        const DeepCollectionEquality().hash(onlyPreview),
       ]);
 }
 
@@ -21857,7 +21857,7 @@ extension ResendMessagesDataClassExtensions on ResendMessages {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageIds)
+        const DeepCollectionEquality().hash(messageIds),
       ]);
 }
 
@@ -21880,7 +21880,7 @@ extension AddLocalMessageDataClassExtensions on AddLocalMessage {
         const DeepCollectionEquality().hash(senderId),
         const DeepCollectionEquality().hash(replyTo),
         const DeepCollectionEquality().hash(disableNotification),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -21897,7 +21897,7 @@ extension DeleteMessagesDataClassExtensions on DeleteMessages {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageIds),
-        const DeepCollectionEquality().hash(revoke)
+        const DeepCollectionEquality().hash(revoke),
       ]);
 }
 
@@ -21913,7 +21913,7 @@ extension DeleteChatMessagesBySenderDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(senderId)
+        const DeepCollectionEquality().hash(senderId),
       ]);
 }
 
@@ -21933,7 +21933,7 @@ extension DeleteChatMessagesByDateDataClassExtensions
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(minDate),
         const DeepCollectionEquality().hash(maxDate),
-        const DeepCollectionEquality().hash(revoke)
+        const DeepCollectionEquality().hash(revoke),
       ]);
 }
 
@@ -21954,7 +21954,7 @@ extension EditMessageTextDataClassExtensions on EditMessageText {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -21980,7 +21980,7 @@ extension EditMessageLiveLocationDataClassExtensions
         const DeepCollectionEquality().hash(replyMarkup),
         const DeepCollectionEquality().hash(location),
         const DeepCollectionEquality().hash(heading),
-        const DeepCollectionEquality().hash(proximityAlertRadius)
+        const DeepCollectionEquality().hash(proximityAlertRadius),
       ]);
 }
 
@@ -22001,7 +22001,7 @@ extension EditMessageMediaDataClassExtensions on EditMessageMedia {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -22021,7 +22021,7 @@ extension EditMessageCaptionDataClassExtensions on EditMessageCaption {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -22039,7 +22039,7 @@ extension EditMessageReplyMarkupDataClassExtensions on EditMessageReplyMarkup {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(replyMarkup)
+        const DeepCollectionEquality().hash(replyMarkup),
       ]);
 }
 
@@ -22059,7 +22059,7 @@ extension EditInlineMessageTextDataClassExtensions on EditInlineMessageText {
         runtimeType,
         const DeepCollectionEquality().hash(inlineMessageId),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -22084,7 +22084,7 @@ extension EditInlineMessageLiveLocationDataClassExtensions
         const DeepCollectionEquality().hash(replyMarkup),
         const DeepCollectionEquality().hash(location),
         const DeepCollectionEquality().hash(heading),
-        const DeepCollectionEquality().hash(proximityAlertRadius)
+        const DeepCollectionEquality().hash(proximityAlertRadius),
       ]);
 }
 
@@ -22104,7 +22104,7 @@ extension EditInlineMessageMediaDataClassExtensions on EditInlineMessageMedia {
         runtimeType,
         const DeepCollectionEquality().hash(inlineMessageId),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(inputMessageContent)
+        const DeepCollectionEquality().hash(inputMessageContent),
       ]);
 }
 
@@ -22124,7 +22124,7 @@ extension EditInlineMessageCaptionDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(inlineMessageId),
         const DeepCollectionEquality().hash(replyMarkup),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -22142,7 +22142,7 @@ extension EditInlineMessageReplyMarkupDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(inlineMessageId),
-        const DeepCollectionEquality().hash(replyMarkup)
+        const DeepCollectionEquality().hash(replyMarkup),
       ]);
 }
 
@@ -22161,7 +22161,7 @@ extension EditMessageSchedulingStateDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(schedulingState)
+        const DeepCollectionEquality().hash(schedulingState),
       ]);
 }
 
@@ -22187,7 +22187,7 @@ extension CreateForumTopicDataClassExtensions on CreateForumTopic {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(icon)
+        const DeepCollectionEquality().hash(icon),
       ]);
 }
 
@@ -22211,7 +22211,7 @@ extension EditForumTopicDataClassExtensions on EditForumTopic {
         const DeepCollectionEquality().hash(messageThreadId),
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(editIconCustomEmoji),
-        const DeepCollectionEquality().hash(iconCustomEmojiId)
+        const DeepCollectionEquality().hash(iconCustomEmojiId),
       ]);
 }
 
@@ -22227,7 +22227,7 @@ extension GetForumTopicDataClassExtensions on GetForumTopic {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageThreadId)
+        const DeepCollectionEquality().hash(messageThreadId),
       ]);
 }
 
@@ -22243,7 +22243,7 @@ extension GetForumTopicLinkDataClassExtensions on GetForumTopicLink {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageThreadId)
+        const DeepCollectionEquality().hash(messageThreadId),
       ]);
 }
 
@@ -22268,7 +22268,7 @@ extension GetForumTopicsDataClassExtensions on GetForumTopics {
         const DeepCollectionEquality().hash(offsetDate),
         const DeepCollectionEquality().hash(offsetMessageId),
         const DeepCollectionEquality().hash(offsetMessageThreadId),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -22288,7 +22288,7 @@ extension SetForumTopicNotificationSettingsDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageThreadId),
-        const DeepCollectionEquality().hash(notificationSettings)
+        const DeepCollectionEquality().hash(notificationSettings),
       ]);
 }
 
@@ -22307,7 +22307,7 @@ extension ToggleForumTopicIsClosedDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageThreadId),
-        const DeepCollectionEquality().hash(isClosed)
+        const DeepCollectionEquality().hash(isClosed),
       ]);
 }
 
@@ -22323,7 +22323,7 @@ extension ToggleGeneralForumTopicIsHiddenDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(isHidden)
+        const DeepCollectionEquality().hash(isHidden),
       ]);
 }
 
@@ -22342,7 +22342,7 @@ extension ToggleForumTopicIsPinnedDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageThreadId),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -22358,7 +22358,7 @@ extension SetPinnedForumTopicsDataClassExtensions on SetPinnedForumTopics {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageThreadIds)
+        const DeepCollectionEquality().hash(messageThreadIds),
       ]);
 }
 
@@ -22374,7 +22374,7 @@ extension DeleteForumTopicDataClassExtensions on DeleteForumTopic {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageThreadId)
+        const DeepCollectionEquality().hash(messageThreadId),
       ]);
 }
 
@@ -22413,7 +22413,7 @@ extension GetMessageAvailableReactionsDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(rowSize)
+        const DeepCollectionEquality().hash(rowSize),
       ]);
 }
 
@@ -22444,7 +22444,7 @@ extension AddMessageReactionDataClassExtensions on AddMessageReaction {
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(reactionType),
         const DeepCollectionEquality().hash(isBig),
-        const DeepCollectionEquality().hash(updateRecentReactions)
+        const DeepCollectionEquality().hash(updateRecentReactions),
       ]);
 }
 
@@ -22462,7 +22462,7 @@ extension RemoveMessageReactionDataClassExtensions on RemoveMessageReaction {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(reactionType)
+        const DeepCollectionEquality().hash(reactionType),
       ]);
 }
 
@@ -22485,7 +22485,7 @@ extension GetMessageAddedReactionsDataClassExtensions
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(reactionType),
         const DeepCollectionEquality().hash(offset),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -22524,7 +22524,7 @@ extension ParseTextEntitiesDataClassExtensions on ParseTextEntities {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(text),
-        const DeepCollectionEquality().hash(parseMode)
+        const DeepCollectionEquality().hash(parseMode),
       ]);
 }
 
@@ -22606,7 +22606,7 @@ extension GetLanguagePackStringDataClassExtensions on GetLanguagePackString {
         const DeepCollectionEquality().hash(languagePackDatabasePath),
         const DeepCollectionEquality().hash(localizationTarget),
         const DeepCollectionEquality().hash(languagePackId),
-        const DeepCollectionEquality().hash(key)
+        const DeepCollectionEquality().hash(key),
       ]);
 }
 
@@ -22658,7 +22658,7 @@ extension SetPollAnswerDataClassExtensions on SetPollAnswer {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(optionIds)
+        const DeepCollectionEquality().hash(optionIds),
       ]);
 }
 
@@ -22679,7 +22679,7 @@ extension GetPollVotersDataClassExtensions on GetPollVoters {
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(optionId),
         const DeepCollectionEquality().hash(offset),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -22697,7 +22697,7 @@ extension StopPollDataClassExtensions on StopPoll {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(replyMarkup)
+        const DeepCollectionEquality().hash(replyMarkup),
       ]);
 }
 
@@ -22726,7 +22726,7 @@ extension GetLoginUrlInfoDataClassExtensions on GetLoginUrlInfo {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(buttonId)
+        const DeepCollectionEquality().hash(buttonId),
       ]);
 }
 
@@ -22746,7 +22746,7 @@ extension GetLoginUrlDataClassExtensions on GetLoginUrl {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(buttonId),
-        const DeepCollectionEquality().hash(allowWriteAccess)
+        const DeepCollectionEquality().hash(allowWriteAccess),
       ]);
 }
 
@@ -22768,7 +22768,7 @@ extension ShareUserWithBotDataClassExtensions on ShareUserWithBot {
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(buttonId),
         const DeepCollectionEquality().hash(sharedUserId),
-        const DeepCollectionEquality().hash(onlyCheck)
+        const DeepCollectionEquality().hash(onlyCheck),
       ]);
 }
 
@@ -22790,7 +22790,7 @@ extension ShareChatWithBotDataClassExtensions on ShareChatWithBot {
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(buttonId),
         const DeepCollectionEquality().hash(sharedChatId),
-        const DeepCollectionEquality().hash(onlyCheck)
+        const DeepCollectionEquality().hash(onlyCheck),
       ]);
 }
 
@@ -22812,7 +22812,7 @@ extension GetInlineQueryResultsDataClassExtensions on GetInlineQueryResults {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(userLocation),
         const DeepCollectionEquality().hash(query),
-        const DeepCollectionEquality().hash(offset)
+        const DeepCollectionEquality().hash(offset),
       ]);
 }
 
@@ -22836,7 +22836,7 @@ extension AnswerInlineQueryDataClassExtensions on AnswerInlineQuery {
         const DeepCollectionEquality().hash(button),
         const DeepCollectionEquality().hash(results),
         const DeepCollectionEquality().hash(cacheTime),
-        const DeepCollectionEquality().hash(nextOffset)
+        const DeepCollectionEquality().hash(nextOffset),
       ]);
 }
 
@@ -22852,7 +22852,7 @@ extension SearchWebAppDataClassExtensions on SearchWebApp {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
-        const DeepCollectionEquality().hash(webAppShortName)
+        const DeepCollectionEquality().hash(webAppShortName),
       ]);
 }
 
@@ -22881,7 +22881,7 @@ extension GetWebAppLinkUrlDataClassExtensions on GetWebAppLinkUrl {
         const DeepCollectionEquality().hash(startParameter),
         const DeepCollectionEquality().hash(theme),
         const DeepCollectionEquality().hash(applicationName),
-        const DeepCollectionEquality().hash(allowWriteAccess)
+        const DeepCollectionEquality().hash(allowWriteAccess),
       ]);
 }
 
@@ -22901,7 +22901,7 @@ extension GetWebAppUrlDataClassExtensions on GetWebAppUrl {
         const DeepCollectionEquality().hash(botUserId),
         const DeepCollectionEquality().hash(url),
         const DeepCollectionEquality().hash(theme),
-        const DeepCollectionEquality().hash(applicationName)
+        const DeepCollectionEquality().hash(applicationName),
       ]);
 }
 
@@ -22918,7 +22918,7 @@ extension SendWebAppDataDataClassExtensions on SendWebAppData {
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
         const DeepCollectionEquality().hash(buttonText),
-        const DeepCollectionEquality().hash(data)
+        const DeepCollectionEquality().hash(data),
       ]);
 }
 
@@ -22945,7 +22945,7 @@ extension OpenWebAppDataClassExtensions on OpenWebApp {
         const DeepCollectionEquality().hash(theme),
         const DeepCollectionEquality().hash(applicationName),
         const DeepCollectionEquality().hash(messageThreadId),
-        const DeepCollectionEquality().hash(replyTo)
+        const DeepCollectionEquality().hash(replyTo),
       ]);
 }
 
@@ -22974,7 +22974,7 @@ extension AnswerWebAppQueryDataClassExtensions on AnswerWebAppQuery {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(webAppQueryId),
-        const DeepCollectionEquality().hash(result)
+        const DeepCollectionEquality().hash(result),
       ]);
 }
 
@@ -22991,7 +22991,7 @@ extension GetCallbackQueryAnswerDataClassExtensions on GetCallbackQueryAnswer {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(payload)
+        const DeepCollectionEquality().hash(payload),
       ]);
 }
 
@@ -23013,7 +23013,7 @@ extension AnswerCallbackQueryDataClassExtensions on AnswerCallbackQuery {
         const DeepCollectionEquality().hash(text),
         const DeepCollectionEquality().hash(showAlert),
         const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(cacheTime)
+        const DeepCollectionEquality().hash(cacheTime),
       ]);
 }
 
@@ -23033,7 +23033,7 @@ extension AnswerShippingQueryDataClassExtensions on AnswerShippingQuery {
         runtimeType,
         const DeepCollectionEquality().hash(shippingQueryId),
         const DeepCollectionEquality().hash(shippingOptions),
-        const DeepCollectionEquality().hash(errorMessage)
+        const DeepCollectionEquality().hash(errorMessage),
       ]);
 }
 
@@ -23050,7 +23050,7 @@ extension AnswerPreCheckoutQueryDataClassExtensions on AnswerPreCheckoutQuery {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(preCheckoutQueryId),
-        const DeepCollectionEquality().hash(errorMessage)
+        const DeepCollectionEquality().hash(errorMessage),
       ]);
 }
 
@@ -23074,7 +23074,7 @@ extension SetGameScoreDataClassExtensions on SetGameScore {
         const DeepCollectionEquality().hash(editMessage),
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(score),
-        const DeepCollectionEquality().hash(force)
+        const DeepCollectionEquality().hash(force),
       ]);
 }
 
@@ -23097,7 +23097,7 @@ extension SetInlineGameScoreDataClassExtensions on SetInlineGameScore {
         const DeepCollectionEquality().hash(editMessage),
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(score),
-        const DeepCollectionEquality().hash(force)
+        const DeepCollectionEquality().hash(force),
       ]);
 }
 
@@ -23114,7 +23114,7 @@ extension GetGameHighScoresDataClassExtensions on GetGameHighScores {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(userId)
+        const DeepCollectionEquality().hash(userId),
       ]);
 }
 
@@ -23131,7 +23131,7 @@ extension GetInlineGameHighScoresDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(inlineMessageId),
-        const DeepCollectionEquality().hash(userId)
+        const DeepCollectionEquality().hash(userId),
       ]);
 }
 
@@ -23146,7 +23146,7 @@ extension DeleteChatReplyMarkupDataClassExtensions on DeleteChatReplyMarkup {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -23164,7 +23164,7 @@ extension SendChatActionDataClassExtensions on SendChatAction {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageThreadId),
-        const DeepCollectionEquality().hash(action)
+        const DeepCollectionEquality().hash(action),
       ]);
 }
 
@@ -23207,7 +23207,7 @@ extension ViewMessagesDataClassExtensions on ViewMessages {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageIds),
         const DeepCollectionEquality().hash(source),
-        const DeepCollectionEquality().hash(forceRead)
+        const DeepCollectionEquality().hash(forceRead),
       ]);
 }
 
@@ -23222,7 +23222,7 @@ extension OpenMessageContentDataClassExtensions on OpenMessageContent {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -23238,7 +23238,7 @@ extension ClickAnimatedEmojiMessageDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -23253,7 +23253,7 @@ extension GetInternalLinkDataClassExtensions on GetInternalLink {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(type),
-        const DeepCollectionEquality().hash(isHttp)
+        const DeepCollectionEquality().hash(isHttp),
       ]);
 }
 
@@ -23291,7 +23291,7 @@ extension GetExternalLinkDataClassExtensions on GetExternalLink {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(link),
-        const DeepCollectionEquality().hash(allowWriteAccess)
+        const DeepCollectionEquality().hash(allowWriteAccess),
       ]);
 }
 
@@ -23320,7 +23320,7 @@ extension ReadAllMessageThreadMentionsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageThreadId)
+        const DeepCollectionEquality().hash(messageThreadId),
       ]);
 }
 
@@ -23349,7 +23349,7 @@ extension ReadAllMessageThreadReactionsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageThreadId)
+        const DeepCollectionEquality().hash(messageThreadId),
       ]);
 }
 
@@ -23364,7 +23364,7 @@ extension CreatePrivateChatDataClassExtensions on CreatePrivateChat {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(force)
+        const DeepCollectionEquality().hash(force),
       ]);
 }
 
@@ -23380,7 +23380,7 @@ extension CreateBasicGroupChatDataClassExtensions on CreateBasicGroupChat {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(basicGroupId),
-        const DeepCollectionEquality().hash(force)
+        const DeepCollectionEquality().hash(force),
       ]);
 }
 
@@ -23396,7 +23396,7 @@ extension CreateSupergroupChatDataClassExtensions on CreateSupergroupChat {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(force)
+        const DeepCollectionEquality().hash(force),
       ]);
 }
 
@@ -23428,7 +23428,7 @@ extension CreateNewBasicGroupChatDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(userIds),
         const DeepCollectionEquality().hash(title),
-        const DeepCollectionEquality().hash(messageAutoDeleteTime)
+        const DeepCollectionEquality().hash(messageAutoDeleteTime),
       ]);
 }
 
@@ -23456,7 +23456,7 @@ extension CreateNewSupergroupChatDataClassExtensions
         const DeepCollectionEquality().hash(description),
         const DeepCollectionEquality().hash(location),
         const DeepCollectionEquality().hash(messageAutoDeleteTime),
-        const DeepCollectionEquality().hash(forImport)
+        const DeepCollectionEquality().hash(forImport),
       ]);
 }
 
@@ -23508,7 +23508,7 @@ extension AddChatToListDataClassExtensions on AddChatToList {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(chatList)
+        const DeepCollectionEquality().hash(chatList),
       ]);
 }
 
@@ -23549,7 +23549,7 @@ extension EditChatFolderDataClassExtensions on EditChatFolder {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatFolderId),
-        const DeepCollectionEquality().hash(folder)
+        const DeepCollectionEquality().hash(folder),
       ]);
 }
 
@@ -23566,7 +23566,7 @@ extension DeleteChatFolderDataClassExtensions on DeleteChatFolder {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatFolderId),
-        const DeepCollectionEquality().hash(leaveChatIds)
+        const DeepCollectionEquality().hash(leaveChatIds),
       ]);
 }
 
@@ -23609,7 +23609,7 @@ extension ReorderChatFoldersDataClassExtensions on ReorderChatFolders {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatFolderIds),
-        const DeepCollectionEquality().hash(mainChatListPosition)
+        const DeepCollectionEquality().hash(mainChatListPosition),
       ]);
 }
 
@@ -23664,7 +23664,7 @@ extension CreateChatFolderInviteLinkDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatFolderId),
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(chatIds)
+        const DeepCollectionEquality().hash(chatIds),
       ]);
 }
 
@@ -23699,7 +23699,7 @@ extension EditChatFolderInviteLinkDataClassExtensions
         const DeepCollectionEquality().hash(chatFolderId),
         const DeepCollectionEquality().hash(inviteLink),
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(chatIds)
+        const DeepCollectionEquality().hash(chatIds),
       ]);
 }
 
@@ -23716,7 +23716,7 @@ extension DeleteChatFolderInviteLinkDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatFolderId),
-        const DeepCollectionEquality().hash(inviteLink)
+        const DeepCollectionEquality().hash(inviteLink),
       ]);
 }
 
@@ -23745,7 +23745,7 @@ extension AddChatFolderByInviteLinkDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(inviteLink),
-        const DeepCollectionEquality().hash(chatIds)
+        const DeepCollectionEquality().hash(chatIds),
       ]);
 }
 
@@ -23776,7 +23776,7 @@ extension ProcessChatFolderNewChatsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatFolderId),
-        const DeepCollectionEquality().hash(addedChatIds)
+        const DeepCollectionEquality().hash(addedChatIds),
       ]);
 }
 
@@ -23813,7 +23813,7 @@ extension SetChatTitleDataClassExtensions on SetChatTitle {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(title)
+        const DeepCollectionEquality().hash(title),
       ]);
 }
 
@@ -23828,7 +23828,7 @@ extension SetChatPhotoDataClassExtensions on SetChatPhoto {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(photo)
+        const DeepCollectionEquality().hash(photo),
       ]);
 }
 
@@ -23845,7 +23845,7 @@ extension SetChatMessageAutoDeleteTimeDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageAutoDeleteTime)
+        const DeepCollectionEquality().hash(messageAutoDeleteTime),
       ]);
 }
 
@@ -23861,7 +23861,7 @@ extension SetChatPermissionsDataClassExtensions on SetChatPermissions {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(permissions)
+        const DeepCollectionEquality().hash(permissions),
       ]);
 }
 
@@ -23881,7 +23881,7 @@ extension SetChatBackgroundDataClassExtensions on SetChatBackground {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(background),
         const DeepCollectionEquality().hash(type),
-        const DeepCollectionEquality().hash(darkThemeDimming)
+        const DeepCollectionEquality().hash(darkThemeDimming),
       ]);
 }
 
@@ -23896,7 +23896,7 @@ extension SetChatThemeDataClassExtensions on SetChatTheme {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(themeName)
+        const DeepCollectionEquality().hash(themeName),
       ]);
 }
 
@@ -23915,7 +23915,7 @@ extension SetChatDraftMessageDataClassExtensions on SetChatDraftMessage {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageThreadId),
-        const DeepCollectionEquality().hash(draftMessage)
+        const DeepCollectionEquality().hash(draftMessage),
       ]);
 }
 
@@ -23932,7 +23932,7 @@ extension SetChatNotificationSettingsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(notificationSettings)
+        const DeepCollectionEquality().hash(notificationSettings),
       ]);
 }
 
@@ -23949,7 +23949,7 @@ extension ToggleChatHasProtectedContentDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(hasProtectedContent)
+        const DeepCollectionEquality().hash(hasProtectedContent),
       ]);
 }
 
@@ -23966,7 +23966,7 @@ extension ToggleChatIsTranslatableDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(isTranslatable)
+        const DeepCollectionEquality().hash(isTranslatable),
       ]);
 }
 
@@ -23983,7 +23983,7 @@ extension ToggleChatIsMarkedAsUnreadDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(isMarkedAsUnread)
+        const DeepCollectionEquality().hash(isMarkedAsUnread),
       ]);
 }
 
@@ -24002,7 +24002,7 @@ extension ToggleChatDefaultDisableNotificationDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(defaultDisableNotification)
+        const DeepCollectionEquality().hash(defaultDisableNotification),
       ]);
 }
 
@@ -24019,7 +24019,7 @@ extension SetChatAvailableReactionsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(availableReactions)
+        const DeepCollectionEquality().hash(availableReactions),
       ]);
 }
 
@@ -24034,7 +24034,7 @@ extension SetChatClientDataDataClassExtensions on SetChatClientData {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(clientData)
+        const DeepCollectionEquality().hash(clientData),
       ]);
 }
 
@@ -24050,7 +24050,7 @@ extension SetChatDescriptionDataClassExtensions on SetChatDescription {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(description)
+        const DeepCollectionEquality().hash(description),
       ]);
 }
 
@@ -24066,7 +24066,7 @@ extension SetChatDiscussionGroupDataClassExtensions on SetChatDiscussionGroup {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(discussionChatId)
+        const DeepCollectionEquality().hash(discussionChatId),
       ]);
 }
 
@@ -24081,7 +24081,7 @@ extension SetChatLocationDataClassExtensions on SetChatLocation {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(location)
+        const DeepCollectionEquality().hash(location),
       ]);
 }
 
@@ -24097,7 +24097,7 @@ extension SetChatSlowModeDelayDataClassExtensions on SetChatSlowModeDelay {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(slowModeDelay)
+        const DeepCollectionEquality().hash(slowModeDelay),
       ]);
 }
 
@@ -24118,7 +24118,7 @@ extension PinChatMessageDataClassExtensions on PinChatMessage {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(disableNotification),
-        const DeepCollectionEquality().hash(onlyForSelf)
+        const DeepCollectionEquality().hash(onlyForSelf),
       ]);
 }
 
@@ -24133,7 +24133,7 @@ extension UnpinChatMessageDataClassExtensions on UnpinChatMessage {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -24162,7 +24162,7 @@ extension UnpinAllMessageThreadMessagesDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageThreadId)
+        const DeepCollectionEquality().hash(messageThreadId),
       ]);
 }
 
@@ -24204,7 +24204,7 @@ extension AddChatMemberDataClassExtensions on AddChatMember {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(forwardLimit)
+        const DeepCollectionEquality().hash(forwardLimit),
       ]);
 }
 
@@ -24219,7 +24219,7 @@ extension AddChatMembersDataClassExtensions on AddChatMembers {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(userIds)
+        const DeepCollectionEquality().hash(userIds),
       ]);
 }
 
@@ -24236,7 +24236,7 @@ extension SetChatMemberStatusDataClassExtensions on SetChatMemberStatus {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(memberId),
-        const DeepCollectionEquality().hash(status)
+        const DeepCollectionEquality().hash(status),
       ]);
 }
 
@@ -24257,7 +24257,7 @@ extension BanChatMemberDataClassExtensions on BanChatMember {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(memberId),
         const DeepCollectionEquality().hash(bannedUntilDate),
-        const DeepCollectionEquality().hash(revokeMessages)
+        const DeepCollectionEquality().hash(revokeMessages),
       ]);
 }
 
@@ -24282,7 +24282,7 @@ extension TransferChatOwnershipDataClassExtensions on TransferChatOwnership {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(password)
+        const DeepCollectionEquality().hash(password),
       ]);
 }
 
@@ -24297,7 +24297,7 @@ extension GetChatMemberDataClassExtensions on GetChatMember {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(memberId)
+        const DeepCollectionEquality().hash(memberId),
       ]);
 }
 
@@ -24316,7 +24316,7 @@ extension SearchChatMembersDataClassExtensions on SearchChatMembers {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(query),
         const DeepCollectionEquality().hash(limit),
-        const DeepCollectionEquality().hash(filter)
+        const DeepCollectionEquality().hash(filter),
       ]);
 }
 
@@ -24407,7 +24407,7 @@ extension GetChatNotificationSettingsExceptionsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(scope),
-        const DeepCollectionEquality().hash(compareSound)
+        const DeepCollectionEquality().hash(compareSound),
       ]);
 }
 
@@ -24436,7 +24436,7 @@ extension SetScopeNotificationSettingsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(scope),
-        const DeepCollectionEquality().hash(notificationSettings)
+        const DeepCollectionEquality().hash(notificationSettings),
       ]);
 }
 
@@ -24463,7 +24463,7 @@ extension ToggleChatIsPinnedDataClassExtensions on ToggleChatIsPinned {
         runtimeType,
         const DeepCollectionEquality().hash(chatList),
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -24478,7 +24478,7 @@ extension SetPinnedChatsDataClassExtensions on SetPinnedChats {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatList),
-        const DeepCollectionEquality().hash(chatIds)
+        const DeepCollectionEquality().hash(chatIds),
       ]);
 }
 
@@ -24508,7 +24508,7 @@ extension GetStoryDataClassExtensions on GetStory {
         runtimeType,
         const DeepCollectionEquality().hash(storySenderChatId),
         const DeepCollectionEquality().hash(storyId),
-        const DeepCollectionEquality().hash(onlyLocal)
+        const DeepCollectionEquality().hash(onlyLocal),
       ]);
 }
 
@@ -24534,7 +24534,7 @@ extension SendStoryDataClassExtensions on SendStory {
         const DeepCollectionEquality().hash(privacySettings),
         const DeepCollectionEquality().hash(activePeriod),
         const DeepCollectionEquality().hash(isPinned),
-        const DeepCollectionEquality().hash(protectContent)
+        const DeepCollectionEquality().hash(protectContent),
       ]);
 }
 
@@ -24551,7 +24551,7 @@ extension EditStoryDataClassExtensions on EditStory {
         runtimeType,
         const DeepCollectionEquality().hash(storyId),
         const DeepCollectionEquality().hash(content),
-        const DeepCollectionEquality().hash(caption)
+        const DeepCollectionEquality().hash(caption),
       ]);
 }
 
@@ -24568,7 +24568,7 @@ extension SetStoryPrivacySettingsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(storyId),
-        const DeepCollectionEquality().hash(privacySettings)
+        const DeepCollectionEquality().hash(privacySettings),
       ]);
 }
 
@@ -24583,7 +24583,7 @@ extension ToggleStoryIsPinnedDataClassExtensions on ToggleStoryIsPinned {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(storyId),
-        const DeepCollectionEquality().hash(isPinned)
+        const DeepCollectionEquality().hash(isPinned),
       ]);
 }
 
@@ -24633,7 +24633,7 @@ extension SetChatActiveStoriesListDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(storyList)
+        const DeepCollectionEquality().hash(storyList),
       ]);
 }
 
@@ -24663,7 +24663,7 @@ extension GetChatPinnedStoriesDataClassExtensions on GetChatPinnedStories {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(fromStoryId),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -24679,7 +24679,7 @@ extension GetArchivedStoriesDataClassExtensions on GetArchivedStories {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(fromStoryId),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -24695,7 +24695,7 @@ extension OpenStoryDataClassExtensions on OpenStory {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(storySenderChatId),
-        const DeepCollectionEquality().hash(storyId)
+        const DeepCollectionEquality().hash(storyId),
       ]);
 }
 
@@ -24711,7 +24711,7 @@ extension CloseStoryDataClassExtensions on CloseStory {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(storySenderChatId),
-        const DeepCollectionEquality().hash(storyId)
+        const DeepCollectionEquality().hash(storyId),
       ]);
 }
 
@@ -24729,7 +24729,7 @@ extension GetStoryViewersDataClassExtensions on GetStoryViewers {
         runtimeType,
         const DeepCollectionEquality().hash(storyId),
         const DeepCollectionEquality().hash(offsetViewer),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -24749,7 +24749,7 @@ extension ReportStoryDataClassExtensions on ReportStory {
         const DeepCollectionEquality().hash(storySenderChatId),
         const DeepCollectionEquality().hash(storyId),
         const DeepCollectionEquality().hash(reason),
-        const DeepCollectionEquality().hash(text)
+        const DeepCollectionEquality().hash(text),
       ]);
 }
 
@@ -24780,7 +24780,7 @@ extension ToggleBotIsAddedToAttachmentMenuDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
         const DeepCollectionEquality().hash(isAdded),
-        const DeepCollectionEquality().hash(allowWriteAccess)
+        const DeepCollectionEquality().hash(allowWriteAccess),
       ]);
 }
 
@@ -24836,7 +24836,7 @@ extension DownloadFileDataClassExtensions on DownloadFile {
         const DeepCollectionEquality().hash(priority),
         const DeepCollectionEquality().hash(offset),
         const DeepCollectionEquality().hash(limit),
-        const DeepCollectionEquality().hash(synchronous)
+        const DeepCollectionEquality().hash(synchronous),
       ]);
 }
 
@@ -24852,7 +24852,7 @@ extension GetFileDownloadedPrefixSizeDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(fileId),
-        const DeepCollectionEquality().hash(offset)
+        const DeepCollectionEquality().hash(offset),
       ]);
 }
 
@@ -24868,7 +24868,7 @@ extension CancelDownloadFileDataClassExtensions on CancelDownloadFile {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(fileId),
-        const DeepCollectionEquality().hash(onlyIfPending)
+        const DeepCollectionEquality().hash(onlyIfPending),
       ]);
 }
 
@@ -24883,7 +24883,7 @@ extension GetSuggestedFileNameDataClassExtensions on GetSuggestedFileName {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(fileId),
-        const DeepCollectionEquality().hash(directory)
+        const DeepCollectionEquality().hash(directory),
       ]);
 }
 
@@ -24900,7 +24900,7 @@ extension PreliminaryUploadFileDataClassExtensions on PreliminaryUploadFile {
         runtimeType,
         const DeepCollectionEquality().hash(file),
         const DeepCollectionEquality().hash(fileType),
-        const DeepCollectionEquality().hash(priority)
+        const DeepCollectionEquality().hash(priority),
       ]);
 }
 
@@ -24931,7 +24931,7 @@ extension WriteGeneratedFilePartDataClassExtensions on WriteGeneratedFilePart {
         runtimeType,
         const DeepCollectionEquality().hash(generationId),
         const DeepCollectionEquality().hash(offset),
-        const DeepCollectionEquality().hash(data)
+        const DeepCollectionEquality().hash(data),
       ]);
 }
 
@@ -24952,7 +24952,7 @@ extension SetFileGenerationProgressDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(generationId),
         const DeepCollectionEquality().hash(expectedSize),
-        const DeepCollectionEquality().hash(localPrefixSize)
+        const DeepCollectionEquality().hash(localPrefixSize),
       ]);
 }
 
@@ -24968,7 +24968,7 @@ extension FinishFileGenerationDataClassExtensions on FinishFileGeneration {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(generationId),
-        const DeepCollectionEquality().hash(error)
+        const DeepCollectionEquality().hash(error),
       ]);
 }
 
@@ -24985,7 +24985,7 @@ extension ReadFilePartDataClassExtensions on ReadFilePart {
         runtimeType,
         const DeepCollectionEquality().hash(fileId),
         const DeepCollectionEquality().hash(offset),
-        const DeepCollectionEquality().hash(count)
+        const DeepCollectionEquality().hash(count),
       ]);
 }
 
@@ -25016,7 +25016,7 @@ extension AddFileToDownloadsDataClassExtensions on AddFileToDownloads {
         const DeepCollectionEquality().hash(fileId),
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(priority)
+        const DeepCollectionEquality().hash(priority),
       ]);
 }
 
@@ -25031,7 +25031,7 @@ extension ToggleDownloadIsPausedDataClassExtensions on ToggleDownloadIsPaused {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(fileId),
-        const DeepCollectionEquality().hash(isPaused)
+        const DeepCollectionEquality().hash(isPaused),
       ]);
 }
 
@@ -25061,7 +25061,7 @@ extension RemoveFileFromDownloadsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(fileId),
-        const DeepCollectionEquality().hash(deleteFromCache)
+        const DeepCollectionEquality().hash(deleteFromCache),
       ]);
 }
 
@@ -25081,7 +25081,7 @@ extension RemoveAllFilesFromDownloadsDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(onlyActive),
         const DeepCollectionEquality().hash(onlyCompleted),
-        const DeepCollectionEquality().hash(deleteFromCache)
+        const DeepCollectionEquality().hash(deleteFromCache),
       ]);
 }
 
@@ -25103,7 +25103,7 @@ extension SearchFileDownloadsDataClassExtensions on SearchFileDownloads {
         const DeepCollectionEquality().hash(onlyActive),
         const DeepCollectionEquality().hash(onlyCompleted),
         const DeepCollectionEquality().hash(offset),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -25148,7 +25148,7 @@ extension ImportMessagesDataClassExtensions on ImportMessages {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageFile),
-        const DeepCollectionEquality().hash(attachedFiles)
+        const DeepCollectionEquality().hash(attachedFiles),
       ]);
 }
 
@@ -25185,7 +25185,7 @@ extension CreateChatInviteLinkDataClassExtensions on CreateChatInviteLink {
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(expirationDate),
         const DeepCollectionEquality().hash(memberLimit),
-        const DeepCollectionEquality().hash(createsJoinRequest)
+        const DeepCollectionEquality().hash(createsJoinRequest),
       ]);
 }
 
@@ -25211,7 +25211,7 @@ extension EditChatInviteLinkDataClassExtensions on EditChatInviteLink {
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(expirationDate),
         const DeepCollectionEquality().hash(memberLimit),
-        const DeepCollectionEquality().hash(createsJoinRequest)
+        const DeepCollectionEquality().hash(createsJoinRequest),
       ]);
 }
 
@@ -25226,7 +25226,7 @@ extension GetChatInviteLinkDataClassExtensions on GetChatInviteLink {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(inviteLink)
+        const DeepCollectionEquality().hash(inviteLink),
       ]);
 }
 
@@ -25264,7 +25264,7 @@ extension GetChatInviteLinksDataClassExtensions on GetChatInviteLinks {
         const DeepCollectionEquality().hash(isRevoked),
         const DeepCollectionEquality().hash(offsetDate),
         const DeepCollectionEquality().hash(offsetInviteLink),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -25285,7 +25285,7 @@ extension GetChatInviteLinkMembersDataClassExtensions
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(inviteLink),
         const DeepCollectionEquality().hash(offsetMember),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -25300,7 +25300,7 @@ extension RevokeChatInviteLinkDataClassExtensions on RevokeChatInviteLink {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(inviteLink)
+        const DeepCollectionEquality().hash(inviteLink),
       ]);
 }
 
@@ -25316,7 +25316,7 @@ extension DeleteRevokedChatInviteLinkDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(inviteLink)
+        const DeepCollectionEquality().hash(inviteLink),
       ]);
 }
 
@@ -25333,7 +25333,7 @@ extension DeleteAllRevokedChatInviteLinksDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(creatorUserId)
+        const DeepCollectionEquality().hash(creatorUserId),
       ]);
 }
 
@@ -25379,7 +25379,7 @@ extension GetChatJoinRequestsDataClassExtensions on GetChatJoinRequests {
         const DeepCollectionEquality().hash(inviteLink),
         const DeepCollectionEquality().hash(query),
         const DeepCollectionEquality().hash(offsetRequest),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -25396,7 +25396,7 @@ extension ProcessChatJoinRequestDataClassExtensions on ProcessChatJoinRequest {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(approve)
+        const DeepCollectionEquality().hash(approve),
       ]);
 }
 
@@ -25414,7 +25414,7 @@ extension ProcessChatJoinRequestsDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(inviteLink),
-        const DeepCollectionEquality().hash(approve)
+        const DeepCollectionEquality().hash(approve),
       ]);
 }
 
@@ -25431,7 +25431,7 @@ extension CreateCallDataClassExtensions on CreateCall {
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(protocol),
-        const DeepCollectionEquality().hash(isVideo)
+        const DeepCollectionEquality().hash(isVideo),
       ]);
 }
 
@@ -25446,7 +25446,7 @@ extension AcceptCallDataClassExtensions on AcceptCall {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(callId),
-        const DeepCollectionEquality().hash(protocol)
+        const DeepCollectionEquality().hash(protocol),
       ]);
 }
 
@@ -25461,7 +25461,7 @@ extension SendCallSignalingDataDataClassExtensions on SendCallSignalingData {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(callId),
-        const DeepCollectionEquality().hash(data)
+        const DeepCollectionEquality().hash(data),
       ]);
 }
 
@@ -25484,7 +25484,7 @@ extension DiscardCallDataClassExtensions on DiscardCall {
         const DeepCollectionEquality().hash(isDisconnected),
         const DeepCollectionEquality().hash(duration),
         const DeepCollectionEquality().hash(isVideo),
-        const DeepCollectionEquality().hash(connectionId)
+        const DeepCollectionEquality().hash(connectionId),
       ]);
 }
 
@@ -25503,7 +25503,7 @@ extension SendCallRatingDataClassExtensions on SendCallRating {
         const DeepCollectionEquality().hash(callId),
         const DeepCollectionEquality().hash(rating),
         const DeepCollectionEquality().hash(comment),
-        const DeepCollectionEquality().hash(problems)
+        const DeepCollectionEquality().hash(problems),
       ]);
 }
 
@@ -25520,7 +25520,7 @@ extension SendCallDebugInformationDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(callId),
-        const DeepCollectionEquality().hash(debugInformation)
+        const DeepCollectionEquality().hash(debugInformation),
       ]);
 }
 
@@ -25535,7 +25535,7 @@ extension SendCallLogDataClassExtensions on SendCallLog {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(callId),
-        const DeepCollectionEquality().hash(logFile)
+        const DeepCollectionEquality().hash(logFile),
       ]);
 }
 
@@ -25565,7 +25565,7 @@ extension SetVideoChatDefaultParticipantDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(defaultParticipantId)
+        const DeepCollectionEquality().hash(defaultParticipantId),
       ]);
 }
 
@@ -25585,7 +25585,7 @@ extension CreateVideoChatDataClassExtensions on CreateVideoChat {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(startDate),
-        const DeepCollectionEquality().hash(isRtmpStream)
+        const DeepCollectionEquality().hash(isRtmpStream),
       ]);
 }
 
@@ -25657,7 +25657,7 @@ extension ToggleGroupCallEnabledStartNotificationDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(enabledStartNotification)
+        const DeepCollectionEquality().hash(enabledStartNotification),
       ]);
 }
 
@@ -25686,7 +25686,7 @@ extension JoinGroupCallDataClassExtensions on JoinGroupCall {
         const DeepCollectionEquality().hash(payload),
         const DeepCollectionEquality().hash(isMuted),
         const DeepCollectionEquality().hash(isMyVideoEnabled),
-        const DeepCollectionEquality().hash(inviteHash)
+        const DeepCollectionEquality().hash(inviteHash),
       ]);
 }
 
@@ -25706,7 +25706,7 @@ extension StartGroupCallScreenSharingDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
         const DeepCollectionEquality().hash(audioSourceId),
-        const DeepCollectionEquality().hash(payload)
+        const DeepCollectionEquality().hash(payload),
       ]);
 }
 
@@ -25723,7 +25723,7 @@ extension ToggleGroupCallScreenSharingIsPausedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(isPaused)
+        const DeepCollectionEquality().hash(isPaused),
       ]);
 }
 
@@ -25753,7 +25753,7 @@ extension SetGroupCallTitleDataClassExtensions on SetGroupCallTitle {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(title)
+        const DeepCollectionEquality().hash(title),
       ]);
 }
 
@@ -25771,7 +25771,7 @@ extension ToggleGroupCallMuteNewParticipantsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(muteNewParticipants)
+        const DeepCollectionEquality().hash(muteNewParticipants),
       ]);
 }
 
@@ -25788,7 +25788,7 @@ extension InviteGroupCallParticipantsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(userIds)
+        const DeepCollectionEquality().hash(userIds),
       ]);
 }
 
@@ -25805,7 +25805,7 @@ extension GetGroupCallInviteLinkDataClassExtensions on GetGroupCallInviteLink {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(canSelfUnmute)
+        const DeepCollectionEquality().hash(canSelfUnmute),
       ]);
 }
 
@@ -25842,7 +25842,7 @@ extension StartGroupCallRecordingDataClassExtensions
         const DeepCollectionEquality().hash(groupCallId),
         const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(recordVideo),
-        const DeepCollectionEquality().hash(usePortraitOrientation)
+        const DeepCollectionEquality().hash(usePortraitOrientation),
       ]);
 }
 
@@ -25873,7 +25873,7 @@ extension ToggleGroupCallIsMyVideoPausedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(isMyVideoPaused)
+        const DeepCollectionEquality().hash(isMyVideoPaused),
       ]);
 }
 
@@ -25891,7 +25891,7 @@ extension ToggleGroupCallIsMyVideoEnabledDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(isMyVideoEnabled)
+        const DeepCollectionEquality().hash(isMyVideoEnabled),
       ]);
 }
 
@@ -25911,7 +25911,7 @@ extension SetGroupCallParticipantIsSpeakingDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
         const DeepCollectionEquality().hash(audioSource),
-        const DeepCollectionEquality().hash(isSpeaking)
+        const DeepCollectionEquality().hash(isSpeaking),
       ]);
 }
 
@@ -25931,7 +25931,7 @@ extension ToggleGroupCallParticipantIsMutedDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
         const DeepCollectionEquality().hash(participantId),
-        const DeepCollectionEquality().hash(isMuted)
+        const DeepCollectionEquality().hash(isMuted),
       ]);
 }
 
@@ -25952,7 +25952,7 @@ extension SetGroupCallParticipantVolumeLevelDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
         const DeepCollectionEquality().hash(participantId),
-        const DeepCollectionEquality().hash(volumeLevel)
+        const DeepCollectionEquality().hash(volumeLevel),
       ]);
 }
 
@@ -25973,7 +25973,7 @@ extension ToggleGroupCallParticipantIsHandRaisedDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
         const DeepCollectionEquality().hash(participantId),
-        const DeepCollectionEquality().hash(isHandRaised)
+        const DeepCollectionEquality().hash(isHandRaised),
       ]);
 }
 
@@ -25990,7 +25990,7 @@ extension LoadGroupCallParticipantsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(groupCallId),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -26053,7 +26053,7 @@ extension GetGroupCallStreamSegmentDataClassExtensions
         const DeepCollectionEquality().hash(timeOffset),
         const DeepCollectionEquality().hash(scale),
         const DeepCollectionEquality().hash(channelId),
-        const DeepCollectionEquality().hash(videoQuality)
+        const DeepCollectionEquality().hash(videoQuality),
       ]);
 }
 
@@ -26069,7 +26069,7 @@ extension ToggleMessageSenderIsBlockedDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(senderId),
-        const DeepCollectionEquality().hash(isBlocked)
+        const DeepCollectionEquality().hash(isBlocked),
       ]);
 }
 
@@ -26091,7 +26091,7 @@ extension BlockMessageSenderFromRepliesDataClassExtensions
         const DeepCollectionEquality().hash(messageId),
         const DeepCollectionEquality().hash(deleteMessage),
         const DeepCollectionEquality().hash(deleteAllMessages),
-        const DeepCollectionEquality().hash(reportSpam)
+        const DeepCollectionEquality().hash(reportSpam),
       ]);
 }
 
@@ -26107,7 +26107,7 @@ extension GetBlockedMessageSendersDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(offset),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -26123,7 +26123,7 @@ extension AddContactDataClassExtensions on AddContact {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(contact),
-        const DeepCollectionEquality().hash(sharePhoneNumber)
+        const DeepCollectionEquality().hash(sharePhoneNumber),
       ]);
 }
 
@@ -26158,7 +26158,7 @@ extension SearchContactsDataClassExtensions on SearchContacts {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(query),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -26235,7 +26235,7 @@ extension SetUserPersonalProfilePhotoDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(photo)
+        const DeepCollectionEquality().hash(photo),
       ]);
 }
 
@@ -26251,7 +26251,7 @@ extension SuggestUserProfilePhotoDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(photo)
+        const DeepCollectionEquality().hash(photo),
       ]);
 }
 
@@ -26294,7 +26294,7 @@ extension GetUserProfilePhotosDataClassExtensions on GetUserProfilePhotos {
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(offset),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -26314,7 +26314,7 @@ extension GetStickersDataClassExtensions on GetStickers {
         const DeepCollectionEquality().hash(stickerType),
         const DeepCollectionEquality().hash(query),
         const DeepCollectionEquality().hash(limit),
-        const DeepCollectionEquality().hash(chatId)
+        const DeepCollectionEquality().hash(chatId),
       ]);
 }
 
@@ -26332,7 +26332,7 @@ extension SearchStickersDataClassExtensions on SearchStickers {
         runtimeType,
         const DeepCollectionEquality().hash(stickerType),
         const DeepCollectionEquality().hash(emojis),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -26376,7 +26376,7 @@ extension GetArchivedStickerSetsDataClassExtensions on GetArchivedStickerSets {
         runtimeType,
         const DeepCollectionEquality().hash(stickerType),
         const DeepCollectionEquality().hash(offsetStickerSetId),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -26394,7 +26394,7 @@ extension GetTrendingStickerSetsDataClassExtensions on GetTrendingStickerSets {
         runtimeType,
         const DeepCollectionEquality().hash(stickerType),
         const DeepCollectionEquality().hash(offset),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -26447,7 +26447,7 @@ extension SearchInstalledStickerSetsDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(stickerType),
         const DeepCollectionEquality().hash(query),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -26476,7 +26476,7 @@ extension ChangeStickerSetDataClassExtensions on ChangeStickerSet {
         runtimeType,
         const DeepCollectionEquality().hash(setId),
         const DeepCollectionEquality().hash(isInstalled),
-        const DeepCollectionEquality().hash(isArchived)
+        const DeepCollectionEquality().hash(isArchived),
       ]);
 }
 
@@ -26508,7 +26508,7 @@ extension ReorderInstalledStickerSetsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(stickerType),
-        const DeepCollectionEquality().hash(stickerSetIds)
+        const DeepCollectionEquality().hash(stickerSetIds),
       ]);
 }
 
@@ -26535,7 +26535,7 @@ extension AddRecentStickerDataClassExtensions on AddRecentSticker {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(isAttached),
-        const DeepCollectionEquality().hash(sticker)
+        const DeepCollectionEquality().hash(sticker),
       ]);
 }
 
@@ -26550,7 +26550,7 @@ extension RemoveRecentStickerDataClassExtensions on RemoveRecentSticker {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(isAttached),
-        const DeepCollectionEquality().hash(sticker)
+        const DeepCollectionEquality().hash(sticker),
       ]);
 }
 
@@ -26624,7 +26624,7 @@ extension SearchEmojisDataClassExtensions on SearchEmojis {
         runtimeType,
         const DeepCollectionEquality().hash(text),
         const DeepCollectionEquality().hash(exactMatch),
-        const DeepCollectionEquality().hash(inputLanguageCodes)
+        const DeepCollectionEquality().hash(inputLanguageCodes),
       ]);
 }
 
@@ -26747,7 +26747,7 @@ extension SearchHashtagsDataClassExtensions on SearchHashtags {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(prefix),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -26785,7 +26785,7 @@ extension GetWebPageInstantViewDataClassExtensions on GetWebPageInstantView {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(url),
-        const DeepCollectionEquality().hash(forceFull)
+        const DeepCollectionEquality().hash(forceFull),
       ]);
 }
 
@@ -26800,7 +26800,7 @@ extension SetProfilePhotoDataClassExtensions on SetProfilePhoto {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(photo),
-        const DeepCollectionEquality().hash(isPublic)
+        const DeepCollectionEquality().hash(isPublic),
       ]);
 }
 
@@ -26828,7 +26828,7 @@ extension SetNameDataClassExtensions on SetName {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(firstName),
-        const DeepCollectionEquality().hash(lastName)
+        const DeepCollectionEquality().hash(lastName),
       ]);
 }
 
@@ -26866,7 +26866,7 @@ extension ToggleUsernameIsActiveDataClassExtensions on ToggleUsernameIsActive {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(username),
-        const DeepCollectionEquality().hash(isActive)
+        const DeepCollectionEquality().hash(isActive),
       ]);
 }
 
@@ -26919,7 +26919,7 @@ extension ChangePhoneNumberDataClassExtensions on ChangePhoneNumber {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(phoneNumber),
-        const DeepCollectionEquality().hash(settings)
+        const DeepCollectionEquality().hash(settings),
       ]);
 }
 
@@ -26978,7 +26978,7 @@ extension SetCommandsDataClassExtensions on SetCommands {
         runtimeType,
         const DeepCollectionEquality().hash(scope),
         const DeepCollectionEquality().hash(languageCode),
-        const DeepCollectionEquality().hash(commands)
+        const DeepCollectionEquality().hash(commands),
       ]);
 }
 
@@ -26994,7 +26994,7 @@ extension DeleteCommandsDataClassExtensions on DeleteCommands {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(scope),
-        const DeepCollectionEquality().hash(languageCode)
+        const DeepCollectionEquality().hash(languageCode),
       ]);
 }
 
@@ -27010,7 +27010,7 @@ extension GetCommandsDataClassExtensions on GetCommands {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(scope),
-        const DeepCollectionEquality().hash(languageCode)
+        const DeepCollectionEquality().hash(languageCode),
       ]);
 }
 
@@ -27025,7 +27025,7 @@ extension SetMenuButtonDataClassExtensions on SetMenuButton {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(menuButton)
+        const DeepCollectionEquality().hash(menuButton),
       ]);
 }
 
@@ -27054,7 +27054,7 @@ extension SetDefaultGroupAdministratorRightsDataClassExtensions
 
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(defaultGroupAdministratorRights)
+        const DeepCollectionEquality().hash(defaultGroupAdministratorRights),
       ]);
 }
 
@@ -27071,7 +27071,7 @@ extension SetDefaultChannelAdministratorRightsDataClassExtensions
 
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(defaultChannelAdministratorRights)
+        const DeepCollectionEquality().hash(defaultChannelAdministratorRights),
       ]);
 }
 
@@ -27089,7 +27089,7 @@ extension SetBotNameDataClassExtensions on SetBotName {
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
         const DeepCollectionEquality().hash(languageCode),
-        const DeepCollectionEquality().hash(name)
+        const DeepCollectionEquality().hash(name),
       ]);
 }
 
@@ -27105,7 +27105,7 @@ extension GetBotNameDataClassExtensions on GetBotName {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
-        const DeepCollectionEquality().hash(languageCode)
+        const DeepCollectionEquality().hash(languageCode),
       ]);
 }
 
@@ -27120,7 +27120,7 @@ extension SetBotProfilePhotoDataClassExtensions on SetBotProfilePhoto {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
-        const DeepCollectionEquality().hash(photo)
+        const DeepCollectionEquality().hash(photo),
       ]);
 }
 
@@ -27138,7 +27138,7 @@ extension ToggleBotUsernameIsActiveDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
         const DeepCollectionEquality().hash(username),
-        const DeepCollectionEquality().hash(isActive)
+        const DeepCollectionEquality().hash(isActive),
       ]);
 }
 
@@ -27154,7 +27154,7 @@ extension ReorderBotActiveUsernamesDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
-        const DeepCollectionEquality().hash(usernames)
+        const DeepCollectionEquality().hash(usernames),
       ]);
 }
 
@@ -27173,7 +27173,7 @@ extension SetBotInfoDescriptionDataClassExtensions on SetBotInfoDescription {
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
         const DeepCollectionEquality().hash(languageCode),
-        const DeepCollectionEquality().hash(description)
+        const DeepCollectionEquality().hash(description),
       ]);
 }
 
@@ -27189,7 +27189,7 @@ extension GetBotInfoDescriptionDataClassExtensions on GetBotInfoDescription {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
-        const DeepCollectionEquality().hash(languageCode)
+        const DeepCollectionEquality().hash(languageCode),
       ]);
 }
 
@@ -27209,7 +27209,7 @@ extension SetBotInfoShortDescriptionDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
         const DeepCollectionEquality().hash(languageCode),
-        const DeepCollectionEquality().hash(shortDescription)
+        const DeepCollectionEquality().hash(shortDescription),
       ]);
 }
 
@@ -27226,7 +27226,7 @@ extension GetBotInfoShortDescriptionDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(botUserId),
-        const DeepCollectionEquality().hash(languageCode)
+        const DeepCollectionEquality().hash(languageCode),
       ]);
 }
 
@@ -27272,7 +27272,7 @@ extension ToggleSessionCanAcceptCallsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(sessionId),
-        const DeepCollectionEquality().hash(canAcceptCalls)
+        const DeepCollectionEquality().hash(canAcceptCalls),
       ]);
 }
 
@@ -27289,7 +27289,7 @@ extension ToggleSessionCanAcceptSecretChatsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(sessionId),
-        const DeepCollectionEquality().hash(canAcceptSecretChats)
+        const DeepCollectionEquality().hash(canAcceptSecretChats),
       ]);
 }
 
@@ -27303,7 +27303,7 @@ extension SetInactiveSessionTtlDataClassExtensions on SetInactiveSessionTtl {
 
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(inactiveSessionTtlDays)
+        const DeepCollectionEquality().hash(inactiveSessionTtlDays),
       ]);
 }
 
@@ -27347,7 +27347,7 @@ extension SetSupergroupUsernameDataClassExtensions on SetSupergroupUsername {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(username)
+        const DeepCollectionEquality().hash(username),
       ]);
 }
 
@@ -27366,7 +27366,7 @@ extension ToggleSupergroupUsernameIsActiveDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
         const DeepCollectionEquality().hash(username),
-        const DeepCollectionEquality().hash(isActive)
+        const DeepCollectionEquality().hash(isActive),
       ]);
 }
 
@@ -27397,7 +27397,7 @@ extension ReorderSupergroupActiveUsernamesDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(usernames)
+        const DeepCollectionEquality().hash(usernames),
       ]);
 }
 
@@ -27415,7 +27415,7 @@ extension SetSupergroupStickerSetDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(stickerSetId)
+        const DeepCollectionEquality().hash(stickerSetId),
       ]);
 }
 
@@ -27433,7 +27433,7 @@ extension ToggleSupergroupSignMessagesDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(signMessages)
+        const DeepCollectionEquality().hash(signMessages),
       ]);
 }
 
@@ -27451,7 +27451,7 @@ extension ToggleSupergroupJoinToSendMessagesDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(joinToSendMessages)
+        const DeepCollectionEquality().hash(joinToSendMessages),
       ]);
 }
 
@@ -27469,7 +27469,7 @@ extension ToggleSupergroupJoinByRequestDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(joinByRequest)
+        const DeepCollectionEquality().hash(joinByRequest),
       ]);
 }
 
@@ -27487,7 +27487,7 @@ extension ToggleSupergroupIsAllHistoryAvailableDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(isAllHistoryAvailable)
+        const DeepCollectionEquality().hash(isAllHistoryAvailable),
       ]);
 }
 
@@ -27505,7 +27505,7 @@ extension ToggleSupergroupHasHiddenMembersDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(hasHiddenMembers)
+        const DeepCollectionEquality().hash(hasHiddenMembers),
       ]);
 }
 
@@ -27525,7 +27525,7 @@ extension ToggleSupergroupHasAggressiveAntiSpamEnabledDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(hasAggressiveAntiSpamEnabled)
+        const DeepCollectionEquality().hash(hasAggressiveAntiSpamEnabled),
       ]);
 }
 
@@ -27542,7 +27542,7 @@ extension ToggleSupergroupIsForumDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(isForum)
+        const DeepCollectionEquality().hash(isForum),
       ]);
 }
 
@@ -27572,7 +27572,7 @@ extension ReportSupergroupSpamDataClassExtensions on ReportSupergroupSpam {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(messageIds)
+        const DeepCollectionEquality().hash(messageIds),
       ]);
 }
 
@@ -27589,7 +27589,7 @@ extension ReportSupergroupAntiSpamFalsePositiveDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(supergroupId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -27609,7 +27609,7 @@ extension GetSupergroupMembersDataClassExtensions on GetSupergroupMembers {
         const DeepCollectionEquality().hash(supergroupId),
         const DeepCollectionEquality().hash(filter),
         const DeepCollectionEquality().hash(offset),
-        const DeepCollectionEquality().hash(limit)
+        const DeepCollectionEquality().hash(limit),
       ]);
 }
 
@@ -27646,7 +27646,7 @@ extension GetChatEventLogDataClassExtensions on GetChatEventLog {
         const DeepCollectionEquality().hash(fromEventId),
         const DeepCollectionEquality().hash(limit),
         const DeepCollectionEquality().hash(filters),
-        const DeepCollectionEquality().hash(userIds)
+        const DeepCollectionEquality().hash(userIds),
       ]);
 }
 
@@ -27662,7 +27662,7 @@ extension GetPaymentFormDataClassExtensions on GetPaymentForm {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(inputInvoice),
-        const DeepCollectionEquality().hash(theme)
+        const DeepCollectionEquality().hash(theme),
       ]);
 }
 
@@ -27680,7 +27680,7 @@ extension ValidateOrderInfoDataClassExtensions on ValidateOrderInfo {
         runtimeType,
         const DeepCollectionEquality().hash(inputInvoice),
         const DeepCollectionEquality().hash(orderInfo),
-        const DeepCollectionEquality().hash(allowSave)
+        const DeepCollectionEquality().hash(allowSave),
       ]);
 }
 
@@ -27708,7 +27708,7 @@ extension SendPaymentFormDataClassExtensions on SendPaymentForm {
         const DeepCollectionEquality().hash(orderInfoId),
         const DeepCollectionEquality().hash(shippingOptionId),
         const DeepCollectionEquality().hash(credentials),
-        const DeepCollectionEquality().hash(tipAmount)
+        const DeepCollectionEquality().hash(tipAmount),
       ]);
 }
 
@@ -27723,7 +27723,7 @@ extension GetPaymentReceiptDataClassExtensions on GetPaymentReceipt {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(messageId)
+        const DeepCollectionEquality().hash(messageId),
       ]);
 }
 
@@ -27795,7 +27795,7 @@ extension GetBackgroundUrlDataClassExtensions on GetBackgroundUrl {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -27824,7 +27824,7 @@ extension SetBackgroundDataClassExtensions on SetBackground {
         runtimeType,
         const DeepCollectionEquality().hash(background),
         const DeepCollectionEquality().hash(type),
-        const DeepCollectionEquality().hash(forDarkTheme)
+        const DeepCollectionEquality().hash(forDarkTheme),
       ]);
 }
 
@@ -27887,7 +27887,7 @@ extension GetLanguagePackStringsDataClassExtensions on GetLanguagePackStrings {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(languagePackId),
-        const DeepCollectionEquality().hash(keys)
+        const DeepCollectionEquality().hash(keys),
       ]);
 }
 
@@ -27930,7 +27930,7 @@ extension SetCustomLanguagePackDataClassExtensions on SetCustomLanguagePack {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(info),
-        const DeepCollectionEquality().hash(strings)
+        const DeepCollectionEquality().hash(strings),
       ]);
 }
 
@@ -27959,7 +27959,7 @@ extension SetCustomLanguagePackStringDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(languagePackId),
-        const DeepCollectionEquality().hash(newString)
+        const DeepCollectionEquality().hash(newString),
       ]);
 }
 
@@ -27989,7 +27989,7 @@ extension RegisterDeviceDataClassExtensions on RegisterDevice {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(deviceToken),
-        const DeepCollectionEquality().hash(otherUserIds)
+        const DeepCollectionEquality().hash(otherUserIds),
       ]);
 }
 
@@ -28043,7 +28043,7 @@ extension SetUserPrivacySettingRulesDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(setting),
-        const DeepCollectionEquality().hash(rules)
+        const DeepCollectionEquality().hash(rules),
       ]);
 }
 
@@ -28082,7 +28082,7 @@ extension SetOptionDataClassExtensions on SetOption {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(value)
+        const DeepCollectionEquality().hash(value),
       ]);
 }
 
@@ -28116,7 +28116,7 @@ extension DeleteAccountDataClassExtensions on DeleteAccount {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(reason),
-        const DeepCollectionEquality().hash(password)
+        const DeepCollectionEquality().hash(password),
       ]);
 }
 
@@ -28131,7 +28131,7 @@ extension SetDefaultMessageAutoDeleteTimeDataClassExtensions
 
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(messageAutoDeleteTime)
+        const DeepCollectionEquality().hash(messageAutoDeleteTime),
       ]);
 }
 
@@ -28172,7 +28172,7 @@ extension ReportChatDataClassExtensions on ReportChat {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageIds),
         const DeepCollectionEquality().hash(reason),
-        const DeepCollectionEquality().hash(text)
+        const DeepCollectionEquality().hash(text),
       ]);
 }
 
@@ -28191,7 +28191,7 @@ extension ReportChatPhotoDataClassExtensions on ReportChatPhoto {
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(fileId),
         const DeepCollectionEquality().hash(reason),
-        const DeepCollectionEquality().hash(text)
+        const DeepCollectionEquality().hash(text),
       ]);
 }
 
@@ -28208,7 +28208,7 @@ extension ReportMessageReactionsDataClassExtensions on ReportMessageReactions {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(senderId)
+        const DeepCollectionEquality().hash(senderId),
       ]);
 }
 
@@ -28223,7 +28223,7 @@ extension GetChatStatisticsDataClassExtensions on GetChatStatistics {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(isDark)
+        const DeepCollectionEquality().hash(isDark),
       ]);
 }
 
@@ -28240,7 +28240,7 @@ extension GetMessageStatisticsDataClassExtensions on GetMessageStatistics {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(messageId),
-        const DeepCollectionEquality().hash(isDark)
+        const DeepCollectionEquality().hash(isDark),
       ]);
 }
 
@@ -28257,7 +28257,7 @@ extension GetStatisticalGraphDataClassExtensions on GetStatisticalGraph {
         runtimeType,
         const DeepCollectionEquality().hash(chatId),
         const DeepCollectionEquality().hash(token),
-        const DeepCollectionEquality().hash(x)
+        const DeepCollectionEquality().hash(x),
       ]);
 }
 
@@ -28320,7 +28320,7 @@ extension OptimizeStorageDataClassExtensions on OptimizeStorage {
         const DeepCollectionEquality().hash(chatIds),
         const DeepCollectionEquality().hash(excludeChatIds),
         const DeepCollectionEquality().hash(returnDeletedFileStatistics),
-        const DeepCollectionEquality().hash(chatLimit)
+        const DeepCollectionEquality().hash(chatLimit),
       ]);
 }
 
@@ -28389,7 +28389,7 @@ extension SetAutoDownloadSettingsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(settings),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -28412,7 +28412,7 @@ extension SetAutosaveSettingsDataClassExtensions on SetAutosaveSettings {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(scope),
-        const DeepCollectionEquality().hash(settings)
+        const DeepCollectionEquality().hash(settings),
       ]);
 }
 
@@ -28450,7 +28450,7 @@ extension GetPassportElementDataClassExtensions on GetPassportElement {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(type),
-        const DeepCollectionEquality().hash(password)
+        const DeepCollectionEquality().hash(password),
       ]);
 }
 
@@ -28477,7 +28477,7 @@ extension SetPassportElementDataClassExtensions on SetPassportElement {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(element),
-        const DeepCollectionEquality().hash(password)
+        const DeepCollectionEquality().hash(password),
       ]);
 }
 
@@ -28504,7 +28504,7 @@ extension SetPassportElementErrorsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(errors)
+        const DeepCollectionEquality().hash(errors),
       ]);
 }
 
@@ -28535,7 +28535,7 @@ extension SendPhoneNumberVerificationCodeDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(phoneNumber),
-        const DeepCollectionEquality().hash(settings)
+        const DeepCollectionEquality().hash(settings),
       ]);
 }
 
@@ -28613,7 +28613,7 @@ extension GetPassportAuthorizationFormDataClassExtensions
         const DeepCollectionEquality().hash(botUserId),
         const DeepCollectionEquality().hash(scope),
         const DeepCollectionEquality().hash(publicKey),
-        const DeepCollectionEquality().hash(nonce)
+        const DeepCollectionEquality().hash(nonce),
       ]);
 }
 
@@ -28630,7 +28630,7 @@ extension GetPassportAuthorizationFormAvailableElementsDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(authorizationFormId),
-        const DeepCollectionEquality().hash(password)
+        const DeepCollectionEquality().hash(password),
       ]);
 }
 
@@ -28647,7 +28647,7 @@ extension SendPassportAuthorizationFormDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(authorizationFormId),
-        const DeepCollectionEquality().hash(types)
+        const DeepCollectionEquality().hash(types),
       ]);
 }
 
@@ -28666,7 +28666,7 @@ extension SendPhoneNumberConfirmationCodeDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(hash),
         const DeepCollectionEquality().hash(phoneNumber),
-        const DeepCollectionEquality().hash(settings)
+        const DeepCollectionEquality().hash(settings),
       ]);
 }
 
@@ -28705,7 +28705,7 @@ extension SetBotUpdatesStatusDataClassExtensions on SetBotUpdatesStatus {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(pendingUpdateCount),
-        const DeepCollectionEquality().hash(errorMessage)
+        const DeepCollectionEquality().hash(errorMessage),
       ]);
 }
 
@@ -28723,7 +28723,7 @@ extension UploadStickerFileDataClassExtensions on UploadStickerFile {
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(stickerFormat),
-        const DeepCollectionEquality().hash(sticker)
+        const DeepCollectionEquality().hash(sticker),
       ]);
 }
 
@@ -28776,7 +28776,7 @@ extension CreateNewStickerSetDataClassExtensions on CreateNewStickerSet {
         const DeepCollectionEquality().hash(stickerType),
         const DeepCollectionEquality().hash(needsRepainting),
         const DeepCollectionEquality().hash(stickers),
-        const DeepCollectionEquality().hash(source)
+        const DeepCollectionEquality().hash(source),
       ]);
 }
 
@@ -28793,7 +28793,7 @@ extension AddStickerToSetDataClassExtensions on AddStickerToSet {
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(sticker)
+        const DeepCollectionEquality().hash(sticker),
       ]);
 }
 
@@ -28810,7 +28810,7 @@ extension SetStickerSetThumbnailDataClassExtensions on SetStickerSetThumbnail {
         runtimeType,
         const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(thumbnail)
+        const DeepCollectionEquality().hash(thumbnail),
       ]);
 }
 
@@ -28827,7 +28827,7 @@ extension SetCustomEmojiStickerSetThumbnailDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(customEmojiId)
+        const DeepCollectionEquality().hash(customEmojiId),
       ]);
 }
 
@@ -28842,7 +28842,7 @@ extension SetStickerSetTitleDataClassExtensions on SetStickerSetTitle {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(title)
+        const DeepCollectionEquality().hash(title),
       ]);
 }
 
@@ -28869,7 +28869,7 @@ extension SetStickerPositionInSetDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(sticker),
-        const DeepCollectionEquality().hash(position)
+        const DeepCollectionEquality().hash(position),
       ]);
 }
 
@@ -28896,7 +28896,7 @@ extension SetStickerEmojisDataClassExtensions on SetStickerEmojis {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(sticker),
-        const DeepCollectionEquality().hash(emojis)
+        const DeepCollectionEquality().hash(emojis),
       ]);
 }
 
@@ -28911,7 +28911,7 @@ extension SetStickerKeywordsDataClassExtensions on SetStickerKeywords {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(sticker),
-        const DeepCollectionEquality().hash(keywords)
+        const DeepCollectionEquality().hash(keywords),
       ]);
 }
 
@@ -28927,7 +28927,7 @@ extension SetStickerMaskPositionDataClassExtensions on SetStickerMaskPosition {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(sticker),
-        const DeepCollectionEquality().hash(maskPosition)
+        const DeepCollectionEquality().hash(maskPosition),
       ]);
 }
 
@@ -28950,7 +28950,7 @@ extension GetMapThumbnailFileDataClassExtensions on GetMapThumbnailFile {
         const DeepCollectionEquality().hash(width),
         const DeepCollectionEquality().hash(height),
         const DeepCollectionEquality().hash(scale),
-        const DeepCollectionEquality().hash(chatId)
+        const DeepCollectionEquality().hash(chatId),
       ]);
 }
 
@@ -29041,7 +29041,7 @@ extension AssignAppStoreTransactionDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(receipt),
-        const DeepCollectionEquality().hash(purpose)
+        const DeepCollectionEquality().hash(purpose),
       ]);
 }
 
@@ -29064,7 +29064,7 @@ extension AssignGooglePlayTransactionDataClassExtensions
         const DeepCollectionEquality().hash(packageName),
         const DeepCollectionEquality().hash(storeProductId),
         const DeepCollectionEquality().hash(purchaseToken),
-        const DeepCollectionEquality().hash(purpose)
+        const DeepCollectionEquality().hash(purpose),
       ]);
 }
 
@@ -29092,7 +29092,7 @@ extension SendCustomRequestDataClassExtensions on SendCustomRequest {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(method),
-        const DeepCollectionEquality().hash(parameters)
+        const DeepCollectionEquality().hash(parameters),
       ]);
 }
 
@@ -29108,7 +29108,7 @@ extension AnswerCustomQueryDataClassExtensions on AnswerCustomQuery {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(customQueryId),
-        const DeepCollectionEquality().hash(data)
+        const DeepCollectionEquality().hash(data),
       ]);
 }
 
@@ -29166,7 +29166,7 @@ extension GetPhoneNumberInfoSyncDataClassExtensions on GetPhoneNumberInfoSync {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(languageCode),
-        const DeepCollectionEquality().hash(phoneNumberPrefix)
+        const DeepCollectionEquality().hash(phoneNumberPrefix),
       ]);
 }
 
@@ -29202,7 +29202,7 @@ extension AddApplicationChangelogDataClassExtensions
 
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(previousApplicationVersion)
+        const DeepCollectionEquality().hash(previousApplicationVersion),
       ]);
 }
 
@@ -29220,7 +29220,7 @@ extension SaveApplicationLogEventDataClassExtensions
         runtimeType,
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(chatId),
-        const DeepCollectionEquality().hash(data)
+        const DeepCollectionEquality().hash(data),
       ]);
 }
 
@@ -29248,7 +29248,7 @@ extension AddProxyDataClassExtensions on AddProxy {
         const DeepCollectionEquality().hash(server),
         const DeepCollectionEquality().hash(port),
         const DeepCollectionEquality().hash(enable),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -29269,7 +29269,7 @@ extension EditProxyDataClassExtensions on EditProxy {
         const DeepCollectionEquality().hash(server),
         const DeepCollectionEquality().hash(port),
         const DeepCollectionEquality().hash(enable),
-        const DeepCollectionEquality().hash(type)
+        const DeepCollectionEquality().hash(type),
       ]);
 }
 
@@ -29399,7 +29399,7 @@ extension SetLogTagVerbosityLevelDataClassExtensions
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(tag),
-        const DeepCollectionEquality().hash(newVerbosityLevel)
+        const DeepCollectionEquality().hash(newVerbosityLevel),
       ]);
 }
 
@@ -29427,7 +29427,7 @@ extension AddLogMessageDataClassExtensions on AddLogMessage {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(verbosityLevel),
-        const DeepCollectionEquality().hash(text)
+        const DeepCollectionEquality().hash(text),
       ]);
 }
 
@@ -29454,7 +29454,7 @@ extension SetUserSupportInfoDataClassExtensions on SetUserSupportInfo {
   int get overriddenHashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(message)
+        const DeepCollectionEquality().hash(message),
       ]);
 }
 
@@ -29578,7 +29578,7 @@ extension TestProxyDataClassExtensions on TestProxy {
         const DeepCollectionEquality().hash(port),
         const DeepCollectionEquality().hash(type),
         const DeepCollectionEquality().hash(dcId),
-        const DeepCollectionEquality().hash(timeout)
+        const DeepCollectionEquality().hash(timeout),
       ]);
 }
 
