@@ -10,6 +10,7 @@ void listf() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+    telegramApp.addLog("running listf");
   String text = "You dont have any saved Fosh!";
   if (database.fosh != null && database.fosh!.values.isNotEmpty) {
     text = "Your saved fosh list:\n";

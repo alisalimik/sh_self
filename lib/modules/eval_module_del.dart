@@ -12,6 +12,8 @@ void evalModuleDelete() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+        telegramApp.addLog("running eval module delete");
+
   final int? moduleId =
       int.tryParse(getMessageTextFromJsonEval(update.toJson()).split(" ").last);
   final Map<String, String> m = database.getModule(moduleId.toString());

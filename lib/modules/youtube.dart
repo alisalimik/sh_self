@@ -14,6 +14,7 @@ void youtube() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+  telegramApp.addLog("running youtube");
   final String youtubeLink =
       (update.message.content as td.MessageText).text.text.split(" ")[1];
   final regex = RegExp(youtubeRegEx);

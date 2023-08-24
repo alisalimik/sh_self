@@ -11,8 +11,10 @@ Future<void> _function(update) async {
   if (update is! td.UpdateAuthorizationState) return;
   if (update.authorizationState is td.AuthorizationStateWaitTdlibParameters) {
     await telegramApp.client.send(await getConfig());
+    telegramApp.setAuthStatus('Autorization status: Waiting for tdlib');
   } else if (update.authorizationState
       is td.AuthorizationStateWaitPhoneNumber) {
+    telegramApp.setAuthStatus('Autorization status: Waiting for phone');
     if (!stdout.hasTerminal) {
       throw Exception(_noTerminal);
     }
@@ -26,6 +28,7 @@ Future<void> _function(update) async {
       td.SetAuthenticationPhoneNumber(phoneNumber: line),
     );
   } else if (update.authorizationState is td.AuthorizationStateWaitCode) {
+    telegramApp.setAuthStatus('Autorization status: Waiting for code');
     if (!stdout.hasTerminal) {
       throw Exception(_noTerminal);
     }
@@ -35,7 +38,13 @@ Future<void> _function(update) async {
       stdout.write("Bad code entered please try again: ");
       line = stdin.readLineSync(encoding: utf8);
     }
-    await telegramApp.client.send(td.CheckAuthenticationCode(code: line));
+    final response =
+        await telegramApp.client.send(td.CheckAuthenticationCode(code: line));
+    if (response is td.Ok) {
+      telegramApp.setAuthStatus('Autorization status: Waiting for code');
+    }
+  } else if (update.authorizationState is td.AuthorizationStateReady) {
+    telegramApp.setAuthStatus('Autorization status: Ready');
   }
 }
 

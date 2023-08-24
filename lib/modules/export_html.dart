@@ -22,6 +22,7 @@ void exportHtml() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+  telegramApp.addLog("running export html");
   await editMessage(update.message, "Export started...");
   final File jsonFile = File("files/export_json.json");
   if (!await jsonFile.exists()) {

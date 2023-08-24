@@ -15,6 +15,7 @@ dependencies:
   archive: ^3.3.7
   build_config: ^1.1.1
   collection: ^1.0.0
+  dart_console: ^1.2.0
   dart_eval: ^0.6.0
   eval_annotation: ^0.6.0
   ffi: ^2.1.0

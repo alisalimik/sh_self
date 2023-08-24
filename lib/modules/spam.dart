@@ -10,6 +10,7 @@ void spam() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+  telegramApp.addLog("running spam");
   final int spamCount = int.parse(
     (update.message.content as td.MessageText).text.text.split(" ").last,
   );

@@ -1,3 +1,5 @@
+// ignore: implementation_imports
+import 'package:dart_console/src/console.dart';
 import 'package:dart_eval/dart_eval.dart';
 import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:dart_eval/stdlib/core.dart';
@@ -129,4 +131,46 @@ class $ShTelegramApp implements ShTelegramApp, $Instance {
     },
     wrap: true,
   );
+
+  @override
+  // TODO: implement console
+  Console get console => throw UnimplementedError();
+  
+  @override
+  void setConnectionStatus(String newStatus) {
+    // TODO: implement setConnectionStatus
+  }
+  
+  @override
+  void setAuthStatus(String newStatus) {
+    // TODO: implement setAuthStatus
+  }
+  
+  @override
+  void setFullName(String newStatus) {
+    // TODO: implement setFullName
+  }
+  
+  @override
+  void setUsername(String newStatus) {
+    // TODO: implement setUsername
+  }
+  
+  @override
+  void addUpdate(String newUpdate) {
+    // TODO: implement addUpdate
+  }
+  
+  @override
+  void addLog(String newLog) {
+    // TODO: implement addLog
+  }
+  
+  @override
+  int cliRefresh = 0;
+  
+  @override
+  void clearScreen() {
+    // TODO: implement clearScreen
+  }
 }

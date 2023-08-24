@@ -1,3 +1,4 @@
+import 'package:sh_self/sh_self.dart';
 import 'package:sh_self/tdlib_dart/td_api.dart' as td;
 import 'package:sh_self/utils/helpers.dart';
 import 'package:sh_self/utils/models/sh_filter.dart';
@@ -9,6 +10,7 @@ void reload() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+  telegramApp.addLog("running reload");
   final int index = RegExp(r'^[Rr]eload$')
           .hasMatch((update.message.content as td.MessageText).text.text)
       ? 0

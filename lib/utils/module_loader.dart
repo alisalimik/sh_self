@@ -11,6 +11,7 @@ import 'package:sh_self/utils/models/sh_module.dart';
 import 'package:sh_self/utils/sh_eval_plugin.dart';
 
 Future<void> processModules(td.Update update) async {
+  telegramApp.addUpdate(update.runtimeType.toString());
   final event = getEventType(update);
   final textAndContentType = getMessageTextAndContentType(update);
   final chatTypeAndSenderId = await getEventChatTypeAndSender(update);

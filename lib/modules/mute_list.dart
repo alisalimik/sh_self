@@ -11,6 +11,7 @@ void mutedList() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+  telegramApp.addLog("running mute list");
   final td.MessageText incomingMessage =
       update.message.content as td.MessageText;
   final List<String> command = incomingMessage.text.text.split(" ");

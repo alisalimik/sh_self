@@ -10,6 +10,7 @@ void autoDelete() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+  telegramApp.addLog("running autoDelete");
   final td.MessageText incomingMessage =
       update.message.content as td.MessageText;
   String text = "";

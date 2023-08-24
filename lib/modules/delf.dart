@@ -10,6 +10,8 @@ void delf() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+    telegramApp.addLog("running delf");
+
   final int fId = int.tryParse(
         (update.message.content as td.MessageText).text.text.split(" ").last,
       ) ??

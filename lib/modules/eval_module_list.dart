@@ -10,6 +10,7 @@ void evalModuleList() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+  telegramApp.addLog("running eval module list");
   final modules = database.getModules();
   if (modules == null) return;
 

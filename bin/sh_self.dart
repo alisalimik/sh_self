@@ -28,3 +28,5 @@ void _testEnvironment() {
   stdout.write("Current dir: ${Directory.current.path}");
   stdout.write("dart runtime: ${!isRunningOnSelfExecutable()}");
 }
+
+final previousStdout = stdout;

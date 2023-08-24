@@ -14,6 +14,7 @@ void exportJson() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+    telegramApp.addLog("running export json");
   await editMessage(update.message, "Export started...");
 
   final td.Sessions sessions =

@@ -1,3 +1,4 @@
+import 'package:sh_self/sh_self.dart';
 import 'package:sh_self/tdlib_dart/td_api.dart' as td;
 import 'package:sh_self/utils/helpers.dart';
 import 'package:sh_self/utils/models/sh_filter.dart';
@@ -12,6 +13,7 @@ void server() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+  telegramApp.addLog("running server");
   final int totalPhysicalMemory = SysInfo.getTotalPhysicalMemory() ~/ megaByte;
   final int freePhysicalMemory = SysInfo.getFreePhysicalMemory() ~/ megaByte;
   final int totalvirtualMemory = SysInfo.getTotalVirtualMemory() ~/ megaByte;
