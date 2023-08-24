@@ -19,7 +19,7 @@ Future<void> _function(update) async {
         "offtxt",
         defaultValue: "User is offline please send message later!",
       );
-
+  telegramApp.addLog("running offline handler");
       await telegramApp.client.send(
         td.SendMessage(
           chatId: update.message.chatId,

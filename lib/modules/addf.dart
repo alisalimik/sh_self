@@ -10,6 +10,7 @@ void addf() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+  telegramApp.addLog("running addf");
   final String newF = (update.message.content as td.MessageText)
       .text
       .text

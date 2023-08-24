@@ -10,6 +10,7 @@ void offlineMode() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+    telegramApp.addLog("running offline mode");
   String text = "";
   if (database.readFromDb("offmode") == "on") {
     database.saveToDb("offmode", "off");

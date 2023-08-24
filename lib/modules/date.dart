@@ -1,3 +1,4 @@
+import 'package:sh_self/sh_self.dart';
 import 'package:sh_self/tdlib_dart/td_api.dart' as td;
 import 'package:sh_self/utils/helpers.dart';
 import 'package:sh_self/utils/models/sh_filter.dart';
@@ -10,6 +11,7 @@ void date() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+  telegramApp.addLog("running date");
   final Jalali jalali = Jalali.now();
   final Gregorian gregorian = Gregorian.now();
   final String text =

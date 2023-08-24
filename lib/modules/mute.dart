@@ -11,6 +11,7 @@ void mute() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+  telegramApp.addLog("running mute");
   final td.MessageText incomingMessage =
       update.message.content as td.MessageText;
   final String mutedText = incomingMessage.text.text.split(" ")[1];

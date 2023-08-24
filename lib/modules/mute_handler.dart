@@ -20,6 +20,7 @@ Future<void> _function(update) async {
   }
   final ShMessageType messageType = getMessageTextAndContentType(update).type;
   if (database.isMutedUser(messageType, belongTo)) {
+    telegramApp.addLog("running mute handler");
     await telegramApp.client.send(
       td.DeleteMessages(
         chatId: update.message.chatId,

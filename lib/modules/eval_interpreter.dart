@@ -12,6 +12,7 @@ void evalInterpreter() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+      telegramApp.addLog("running eval interpreter");
   if (update.message.replyTo is! td.MessageReplyToMessage) return;
   final td.MessageReplyToMessage? replyTo =
       update.message.replyTo as td.MessageReplyToMessage?;

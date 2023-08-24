@@ -59,7 +59,16 @@ void openTDlibDependecies(ShPlatformInfo platformInfo) {
         libName,
       );
     }
-    openedShredLibs.add(DynamicLibrary.open(libPath));
+    final lib = DynamicLibrary.open(libPath);
+    if (libPath.contains('tdjson')) {
+      final f = lib
+          .lookupFunction<Void Function(Int8, Bool), void Function(int, bool)>(
+        'td_set_log_verbosity_level',
+        isLeaf: true,
+      );
+      f(0, true);
+    }
+    openedShredLibs.add(lib);
   }
 }
 

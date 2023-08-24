@@ -10,6 +10,7 @@ void offlineText() => ShModule.onNewMessage(
     );
 Future<void> _function(update) async {
   if (update is! td.UpdateNewMessage) return;
+    telegramApp.addLog("running offline text");
   final String text =
       (update.message.content as td.MessageText).text.text.substring(7);
   database.saveToDb("offtxt", text);
