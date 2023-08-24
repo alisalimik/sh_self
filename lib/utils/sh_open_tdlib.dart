@@ -89,7 +89,7 @@ Map<String, Map<String, List<String>>> librariesToLoad = {
 };
 
 String getPlatformArch() {
-  return SysInfo.kernelArchitecture == ProcessorArchitecture.arm64
+  return SysInfo.rawKernelArchitecture.toLowerCase().contains('arm')
       ? 'arm64'
       : 'x64';
 }
