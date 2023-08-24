@@ -83,8 +83,9 @@ class ShTelegramApp {
   }
 
   void _updateCli() {
-    clearScreen();
     List<Table> tables = _getTables();
+    clearScreen();
+    console.resetCursorPosition();
     tables.forEach((element) {
       console.writeLine(element);
     });
