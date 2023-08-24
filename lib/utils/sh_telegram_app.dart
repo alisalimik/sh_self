@@ -14,7 +14,7 @@ class ShTelegramApp {
   StreamSubscription<td.TdObject>? _eventsSubscription;
   td.User? me;
   bool isModulesLoaded = false;
-  final console = null;
+  final console = Console();
   int cliRefresh = 0;
   ShTelegramApp({this.modules = const []}) {
     client = Client.create();
@@ -72,6 +72,7 @@ class ShTelegramApp {
   }
 
   void clearScreen() {
+    console.clearScreen();
     if (Platform.isWindows) {
       // For Windows, use the 'cls' command to clear the screen
       Process.runSync('cmd', ['/c', 'cls'], runInShell: true);
@@ -84,9 +85,9 @@ class ShTelegramApp {
   void _updateCli() {
     clearScreen();
     List<Table> tables = _getTables();
-    List<String> out = tables.first.toString().split("\n") +
-        tables.last.toString().split("\n");
-    _updateOutput(out);
+    tables.forEach((element) {
+      console.writeLine(element);
+    });
     /*
     //console.clearScreen();
     console.resetCursorPosition();
