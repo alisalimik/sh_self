@@ -167,10 +167,10 @@ class $ShTelegramApp implements ShTelegramApp, $Instance {
   }
   
   @override
-  int cliRefresh = 0;
-  
-  @override
   void clearScreen() {
     // TODO: implement clearScreen
   }
+  
+  @override
+  bool shouldRefreshCli = false;
 }

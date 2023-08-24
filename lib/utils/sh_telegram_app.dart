@@ -15,7 +15,7 @@ class ShTelegramApp {
   td.User? me;
   bool isModulesLoaded = false;
   final console = Console();
-  int cliRefresh = 0;
+  bool shouldRefreshCli = false;
   ShTelegramApp({this.modules = const []}) {
     client = Client.create();
     _eventsSubscription?.cancel();
@@ -51,26 +51,6 @@ class ShTelegramApp {
     processModules(event as td.Update);
   }
 
-  void _updateOutput(List<String> lines) {
-    // Move the cursor to the beginning of the output block
-    stdout.write('\x1b[${lines.length}A');
-
-    // Clear the lines
-    for (var i = 0; i < lines.length; i++) {
-      stdout.write('\x1b[K\x1b[1B'); // Clear current line and move down
-    }
-
-    // Print the updated lines
-    for (var line in lines) {
-      stdout.writeln(line);
-    }
-
-    // Move the cursor back to the original position
-    stdout.write('\x1b[${lines.length * cliRefresh}A');
-    //stdout.flush();
-    cliRefresh += 1;
-  }
-
   void clearScreen() {
     console.clearScreen();
     if (Platform.isWindows) {
@@ -83,12 +63,18 @@ class ShTelegramApp {
   }
 
   void _updateCli() {
-    List<Table> tables = _getTables();
-    clearScreen();
-    console.resetCursorPosition();
-    tables.forEach((element) {
-      console.writeLine(element);
+    Timer.periodic(const Duration(milliseconds: 200), (timer) {
+      if (shouldRefreshCli) {
+        shouldRefreshCli = false;
+        final List<Table> tables = _getTables();
+        clearScreen();
+        console.resetCursorPosition();
+        for (final element in tables) {
+          console.writeLine(element);
+        }
+      }
     });
+
     /*
     //console.clearScreen();
     console.resetCursorPosition();
@@ -153,22 +139,22 @@ class ShTelegramApp {
 
   void setConnectionStatus(String newStatus) {
     table1Entries.first.last = newStatus;
-    _updateCli();
+    shouldRefreshCli = true;
   }
 
   void setAuthStatus(String newStatus) {
     table1Entries[1].last = newStatus;
-    _updateCli();
+    shouldRefreshCli = true;
   }
 
   void setFullName(String newStatus) {
     table1Entries[3].last = "Fullname: $newStatus";
-    _updateCli();
+    shouldRefreshCli = true;
   }
 
   void setUsername(String newStatus) {
     table1Entries[4].last = "Username: $newStatus";
-    _updateCli();
+    shouldRefreshCli = true;
   }
 
   void addUpdate(String newUpdate) {
@@ -179,7 +165,7 @@ class ShTelegramApp {
         table2entries[i].first = table2entries[i + 1].first;
       }
     }
-    _updateCli();
+    shouldRefreshCli = true;
   }
 
   void addLog(String newLog) {
@@ -190,7 +176,7 @@ class ShTelegramApp {
         table2entries[i].last = table2entries[i + 1].last;
       }
     }
-    _updateCli();
+    shouldRefreshCli = true;
   }
 }
 
