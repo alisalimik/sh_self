@@ -55,7 +55,7 @@ class ShTelegramApp {
     console.clearScreen();
     if (Platform.isWindows) {
       // For Windows, use the 'cls' command to clear the screen
-      Process.runSync('cmd', ['/c', 'cls'], runInShell: true);
+      //Process.runSync('cmd', ['/c', 'cls'], runInShell: true);
     } else {
       // For other platforms, use ANSI escape code to clear the screen
       stdout.write('\x1B[2J\x1B[0;0H');
